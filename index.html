@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video with Transcript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="video-input">
+    <input type="text" id="videoLink" placeholder="Paste your video link here" />
+    <button id="loadVideo">Load Video</button>
+  </div>
+
+  <div class="container-grade">
+    <div class="transcript">
+      <h2>Video Transcript</h2>
+      <div id="transcriptContent">No transcript available.</div>
+    </div>
+
+    <div class="scoring criteria">
+      <h2>Tiêu chí chấm</h2>
+      <button class="criteria-button">Warm Up</button>
+      <button class="criteria-button">Lead In</button>
+      <button class="criteria-button">Teaching Vocab</button>
+      <button class="criteria-button">Pronunciation</button>
+      <button class="criteria-button">Grammar</button>
+      <!-- Add more criteria buttons as needed -->
+    </div>
+  
+    <div class="video-player">
+      <!-- <iframe id="video" src="https://drive.google.com/file/d/1nns5f5M-dkmqai-8ldkC89mziFUfANpd/preview" allow="autoplay"></iframe> -->
+      <iframe id="video" src="" allow="autoplay"></iframe>
+
+      <!-- <iframe src="https://drive.google.com/file/d/1nns5f5M-dkmqai-8ldkC89mziFUfANpd/preview" allow="autoplay"></iframe> -->
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+  
+  .container-grade {
+    display: flex;
+    flex-direction: row; /* Keep this as row layout */
+  }
+  
+  .video-input {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .video-input input {
+    flex: 1; /* Allow the input to take available space */
+    padding: 10px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and button */
+  }
+  
+  .video-input button {
+    padding: 10px 15px; /* Padding for the button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .video-input button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .transcript {
+    flex: 1 1 40%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .transcript div {
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  
+  .transcript div:hover {
+    background-color: #ddd;
+  }
+  
+  .video-player {
+    flex: 1 1 60%;
+    padding: 20px;
+    height: 500px; /* Set the height of the video player */
+  }
+  
+  .video-player iframe {
+    width: 100%;
+    height: 100%; /* Make the iframe fill the video player */
+  }
+
+  .scoring {
+    flex: 1 1 20%; /* Adjust the flex basis as needed */
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 1px solid #ccc; /* Optional: Add a border for separation */
+  }
+
+  .criteria-button {
+    display: block; /* Make buttons stack vertically */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for buttons */
+    margin: 5px 0; /* Space between buttons */
+    background-color: #28a745; /* Green background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  .criteria-button:hover {
+    background-color: #218838; /* Darker shade on hover */
+  }
