@@ -134,4 +134,81 @@ body {
     border-radius: 5px; /* Rounded corners */
     padding: 10px; /* Padding inside the display area */
     margin-top: 20px; /* Space above the display area */
+    display: flex; /* Use flexbox for alignment */
+    align-items: row; /* Center items vertically */
+  }
+
+  .criteria-info {
+    flex: 40%;
+    margin-top: 10px; /* Space above the criteria info */
+    padding: 10px; /* Padding inside the criteria info */
+    background-color: #f0f0f0; /* Light background for the info area */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border for visibility */
+  }
+
+  .score-recommendation {
+    flex: 30%;
+    margin-top: 10px; /* Space above the criteria info */
+    padding: 10px; /* Padding inside the criteria info */
+    background-color: #f0f0f0; /* Light background for the info area */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border for visibility */
+  }
+
+  .score-note {
+    margin-top: 10px; /* Space above the score note section */
+    padding: 10px; /* Padding inside the score note section */
+    background-color: #f9f9f9; /* Light background for the score note area */
+    border: 1px solid #ccc; /* Border for visibility */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .score-input, .note-input {
+    margin-bottom: 15px; /* Space between input fields */
+    width: 100%; /* Ensure the input fields take full width */
+  }
+
+  label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space below labels */
+  }
+
+  input[type="number"], textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 8px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+  }
+
+  textarea {
+    width: 100%; /* Full width for the textarea */
+    padding: 8px; /* Padding inside the textarea */
+    border: 1px solid #ccc; /* Border for the textarea */
+    border-radius: 4px; /* Rounded corners for the textarea */
+    resize: vertical; /* Allow vertical resizing only */
+  }
+
+  table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+  }
+
+  th, td {
+    border: 1px solid #ccc; /* Border for table cells */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+  }
+
+  th {
+    background-color: #f2a900; /* Header background color */
+    color: white; /* Header text color */
+  }
+
+  td {
+    background-color: #f9f9f9; /* Default cell background color */
+  }
+
+  tr:nth-child(even) td {
+    background-color: #ffffff; /* Alternate row color */
   }

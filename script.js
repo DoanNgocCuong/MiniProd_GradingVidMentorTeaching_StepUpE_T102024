@@ -1,4 +1,5 @@
 import { videoTranscripts } from './videoTranscripts.js'; // Adjust the path as necessary
+import { baremScore } from './baremScore.js'; 
 
 document.getElementById('loadVideo').addEventListener('click', () => {
     const videoLink = document.getElementById('videoLink').value.trim(); // Get the input value and trim whitespace
@@ -40,8 +41,13 @@ function addCriteriaListeners(criteria) {
     const buttons = document.querySelectorAll('.criteria-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const criterion = button.getAttribute('data-criteria');
-            highlightTranscript(criteria[criterion]);
+            const criterionKey = button.getAttribute('data-criteria'); // Get the criterion key
+            const criterion = criteria[criterionKey]; // Get the corresponding criterion object
+            
+            if (criterion) {
+                highlightTranscript(criterion); // Highlight the transcript
+                displayCriteriaInfo(criterion, criterionKey); // Show score, reason, and description
+            }
         });
     });
 }
@@ -77,12 +83,59 @@ function highlightTranscript(criterion) {
     }
 }
 
-// Function to display the selected criteria's score and reason
-function displayCriteriaInfo(criterion) {
-    const scoreElement = document.getElementById('criteriaScore');
-    const reasonElement = document.getElementById('criteriaReason');
+// Function to display the selected criteria's score, reason, and description
+function displayCriteriaInfo(criterion,criterionKey) {
+    const criteriaTableBody = document.getElementById('criteriaTableBody');
+    const descriptionRow = document.getElementById('descriptionRow');
+    const evaluationRow = document.getElementById('evaluationRow');
 
-    // Update the score and reason display
-    scoreElement.textContent = `Score: ${criterion.recommendationScore.score !== null ? criterion.recommendationScore.score : 'N/A'}`;
-    reasonElement.textContent = `Reason: ${criterion.recommendationScore.reason}`;
+    // Clear previous rows
+    descriptionRow.innerHTML = '';
+    evaluationRow.innerHTML = '';
+
+    // Get the criteria descriptions from baremScore
+    const criteriaDescriptions = baremScore.criteria;
+
+    // Populate the description row
+    // criteriaDescriptions.forEach(item => {
+    //     const cell = document.createElement('td');
+    //     cell.textContent = item.description; // Use the description from baremScore
+    //     descriptionRow.appendChild(cell);
+    // });
+
+    // Get the evaluation data for the selected criterion
+    // const evaluationData = baremScore.evaluation[criterion.recommendationScore.reason];
+
+    const evaluationData = baremScore.evaluation[criterionKey];
+    // Populate the evaluation row
+    if (evaluationData) {
+        for (let i = 1; i <= 5; i++) {
+            const cell = document.createElement('td');
+            cell.textContent = evaluationData[i.toString()]; // Get evaluation text
+            evaluationRow.appendChild(cell);
+        }
+    } else {
+        console.warn(`No evaluation data found for: ${criterion.recommendationScore.reason}`);
+    }
+
+    // Show the table
+    document.getElementById('criteriaTable').style.display = 'table';
 }
+
+// Function to handle score input and notes
+function handleScoreInput() {
+    const scoreInput = document.getElementById('scoreInput');
+    const noteInput = document.getElementById('noteInput');
+
+    // Example: Log the score and notes when the score is updated
+    scoreInput.addEventListener('change', () => {
+        console.log(`Score entered: ${scoreInput.value}`);
+    });
+
+    noteInput.addEventListener('input', () => {
+        console.log(`Notes entered: ${noteInput.value}`);
+    });
+}
+
+// Call the function to set up event listeners
+handleScoreInput();
