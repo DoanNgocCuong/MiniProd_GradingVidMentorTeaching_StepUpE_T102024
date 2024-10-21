@@ -19,15 +19,20 @@
       <h2>Video Transcript</h2>
       <div id="transcriptContent">No transcript available.</div>
     </div>
-
     <div class="scoring criteria">
-      <h2>Tiêu chí chấm</h2>
-      <button class="criteria-button">Warm Up</button>
-      <button class="criteria-button">Lead In</button>
-      <button class="criteria-button">Teaching Vocab</button>
-      <button class="criteria-button">Pronunciation</button>
-      <button class="criteria-button">Grammar</button>
+      <button class="criteria-button" data-criteria="Wrap-up">Wrap Up</button>
+      <button class="criteria-button" data-criteria="Lead-in">Lead In</button>
+      <button class="criteria-button" data-criteria="Teaching Vocabulary">Teaching Vocab</button>
+      <button class="criteria-button" data-criteria="Pronunciation">Pronunciation</button>
+      <button class="criteria-button" data-criteria="Grammar">Grammar</button>
       <!-- Add more criteria buttons as needed -->
+      <!-- Add more criteria buttons as needed -->
+
+      <div class="criteria-display">
+        <h3>Selected Criteria</h3>
+        <p id="criteriaScore">Score: N/A</p>
+        <p id="criteriaReason">Reason: N/A</p>
+    </div>
     </div>
   
     <div class="video-player">
@@ -36,10 +41,8 @@
 
       <!-- <iframe src="https://drive.google.com/file/d/1nns5f5M-dkmqai-8ldkC89mziFUfANpd/preview" allow="autoplay"></iframe> -->
     </div>
-
   </div>
 </div>
-
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

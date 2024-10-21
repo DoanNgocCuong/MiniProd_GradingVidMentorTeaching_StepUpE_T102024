@@ -50,6 +50,12 @@ body {
     padding: 20px;
     background-color: #ffffff;
     border-bottom: 1px solid #ccc;
+    max-height: 500px; /* Set a maximum height for the transcript area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Optional: Add padding */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Light background color */
   }
   
   .transcript div {
@@ -75,8 +81,6 @@ body {
   .scoring {
     flex: 1 1 20%; /* Adjust the flex basis as needed */
     padding: 20px;
-    background-color: #ffffff;
-    border-left: 1px solid #ccc; /* Optional: Add a border for separation */
   }
 
   .criteria-button {
@@ -94,4 +98,40 @@ body {
 
   .criteria-button:hover {
     background-color: #218838; /* Darker shade on hover */
+  }
+
+  .highlight {
+    background-color: white; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the card */
+    margin: 10px 0; /* Margin around the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    position: relative; /* Position for tooltip */
+  }
+
+  .highlight::after {
+    content: attr(data-criteria); /* Show the criteria as a tooltip */
+    position: absolute;
+    top: -20px; /* Position above the highlight */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for tooltip */
+    color: white; /* White text */
+    padding: 3px 5px; /* Padding for tooltip */
+    border-radius: 3px; /* Rounded corners for tooltip */
+    font-size: 12px; /* Smaller font size */
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Fade in effect */
+  }
+
+  .highlight:hover::after {
+    opacity: 1; /* Show tooltip on hover */
+  }
+
+  .criteria-display {
+    background-color: #f9f9f9; /* Light background for the display area */
+    border: 1px solid #ccc; /* Border for visibility */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the display area */
+    margin-top: 20px; /* Space above the display area */
   }
