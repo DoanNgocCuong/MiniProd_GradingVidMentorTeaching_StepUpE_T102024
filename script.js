@@ -7,17 +7,20 @@ document.getElementById('loadVideo').addEventListener('click', () => {
     const videoLink = document.getElementById('videoLink').value.trim(); // Get the input value and trim whitespace
     
     // Find the corresponding transcript
-    const videoData = videoTranscripts.find(video => video.videoLink === videoLink);
-    
+    const fileId = videoLink.match(/\/d\/(.+?)\//)[1];
+    const videoData = videoTranscripts.find(video => video.videoId === fileId); // Change videoLink to videoId
+        
     if (videoData) {
+        // Create the preview link using the extracted file ID
+        const previewLink = `https://drive.google.com/file/d/${fileId}/preview`;
         // Update the video player
-        document.getElementById('video').src = videoData.videoLink;
+        document.getElementById('video').src = previewLink;
 
         // Update the transcript area
         updateTranscript(videoData.transcript);
         
         // Add event listeners for criteria buttons
-        addCriteriaListeners(videoData.criteria);
+        addCriteriaListeners(videoData.criteria, fileId);
     } else {
         alert('Invalid video link. Please provide a valid video link from the list.');
     }
@@ -39,17 +42,17 @@ function formatTranscript(transcript) {
     return lines.map(line => `<br>${line}`).join('');
 }
 
-function addCriteriaListeners(criteria) {
+function addCriteriaListeners(criteria, videoId) {
     const buttons = document.querySelectorAll('.criteria-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const criterionKey = button.getAttribute('data-criteria'); // Get the criterion key
             currentCriteria = criterionKey
             const criterion = criteria[criterionKey]; // Get the corresponding criterion object
-            
             if (criterion) {
                 highlightTranscript(criterion); // Highlight the transcript
                 displayCriteriaInfo(criterion, criterionKey); // Show score, reason, and description
+                displayCriteriaRecommendation(criterionKey, videoId);
             }
         });
     });
@@ -215,3 +218,33 @@ function initializeResultTable() {
 
 
 
+
+
+function displayCriteriaRecommendation(criterionKey, videoId) {
+    const scoreElement = document.getElementById('criteriaScore');
+    const reasonElement = document.getElementById('criteriaReason');
+
+    // Clear previous recommendations
+    scoreElement.textContent = 'Score: N/A';
+    reasonElement.textContent = 'Reason: N/A';
+
+    // Find the video data by videoId
+    const videoData = videoTranscripts.find(video => video.videoId === videoId);
+
+    if (videoData) {
+        // Get the selected criterion's recommendation score
+        const criterion = videoData.criteria[criterionKey]; // Use the currentCriteria to get the selected criterion
+
+        if (criterion) {
+            const recommendationScore = criterion.recommendationScore; // Get the recommendation score object
+            if (recommendationScore) {
+                scoreElement.textContent = `Score: ${recommendationScore.score}`; // Update score
+                reasonElement.textContent = `Reason: ${recommendationScore.reason}`; // Update reason
+            }
+        } else {
+            console.warn(`No criterion found for: ${currentCriteria}`);
+        }
+    } else {
+        console.warn(`No video found with videoId: ${videoId}`);
+    }
+}

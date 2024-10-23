@@ -1,6 +1,6 @@
 export const videoTranscripts = [
     {
-        videoLink: "https://drive.google.com/file/d/10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o/preview",
+        videoId: "10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o",
         transcript: `[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
         [00:00:07] Speaker 1: We... Alright, how do I say? 
         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -172,7 +172,7 @@ export const videoTranscripts = [
                 "reason": "The teacher leads into the new topic with a relevant example but could further clarify objectives."
             }
         },
-        "Teaching Vocabulary": {
+        "Teaching Vocab": {
             "timestamp": {
                 "start": "00:00:10",
                 "end": "00:00:15"
@@ -182,7 +182,7 @@ export const videoTranscripts = [
                 "reason": "The teacher expands on ideas related to vocabulary (Vietnam Food Contest), encouraging students to understand and use new words."
             }
         },
-        "Teaching Pronunciation": {
+        "Pronunciation": {
             "timestamp": {
                 "start": "00:00:07",
                 "end": "00:00:10"
@@ -192,14 +192,14 @@ export const videoTranscripts = [
                 "reason": "The teacher models pronunciation but could benefit from more explicit correction or modeling."
             }
         },
-        "Teaching Grammar": {
+        "Grammar": {
             "timestamp": null,
             "recommendationScore": {
                 "score": null,
                 "reason": "No explicit grammar teaching observed."
             }
         },
-        "3Ps (Present, Practice, Produce)": {
+        "3Ps": {
             "timestamp": {
                 "start": "00:00:00",
                 "end": "00:00:15"
@@ -209,21 +209,21 @@ export const videoTranscripts = [
                 "reason": "The lesson effectively moves from presenting a problem to expanding ideas, allowing for engagement in different stages."
             }
         },
-        "Error Correction (Proper Method)": {
+        "CorrectingMistakesRightWay": {
             "timestamp": null,
             "recommendationScore": {
                 "score": null,
                 "reason": "No observable error correction in this excerpt."
             }
         },
-        "Error Correction (Proper Timing)": {
+        "CorrectingMistakesRightTime": {
             "timestamp": null,
             "recommendationScore": {
                 "score": null,
                 "reason": "No immediate feedback or error correction observed."
             }
         },
-        "Building Dialogue": {
+        "BuildingConversations": {
             "timestamp": {
                 "start": "00:00:10",
                 "end": "00:00:15"
@@ -233,7 +233,7 @@ export const videoTranscripts = [
                 "reason": "Some dialogue development occurs around the contest, but more depth could be added to encourage natural conversation."
             }
         },
-        "Teaching Idea Development": {
+        "TeachingIdeaDevelopment": {
             "timestamp": {
                 "start": "00:00:10",
                 "end": "00:00:15"
@@ -243,7 +243,7 @@ export const videoTranscripts = [
                 "reason": "The teacher prompts idea expansion but could push for more complex thinking or deeper explanation."
             }
         },
-        "Giving Feedback": {
+        "GivingFeedback": {
             "timestamp": {
                 "start": "00:00:15",
                 "end": "00:00:15"
@@ -254,16 +254,19 @@ export const videoTranscripts = [
             }
         },
         "Wrap-up": {
-            "timestamp": null,
+            "timestamp": {
+                "start": "00:00:15",
+                "end": "00:00:15"
+            },
             "recommendationScore": {
-                "score": null,
-                "reason": "No clear wrap-up was observed in this excerpt."
+                "score": 9,
+                "reason": "Feedback is provided, reinforcing student contributions, though it could be slightly more specific."
             }
         }
     }
     },
     {
-        videoLink: "https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/preview",
+        videoId: "https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/preview",
         transcript: `[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together.
         [00:00:07] Speaker 1: We... Alright, how do I say?
         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right?
@@ -380,7 +383,7 @@ export const videoTranscripts = [
         }
     },
     {
-        videoLink: "https://drive.google.com/file/d/1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl/preview",
+        videoId: "https://drive.google.com/file/d/1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl/preview",
         transcript: `[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
         [00:00:07] Speaker 1: We... Alright, how do I say? 
         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -502,7 +505,7 @@ export const videoTranscripts = [
 ];
 
 //     {
-//         videoLink: "https://drive.google.com/file/d/1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs/preview",
+//         videoId: "https://drive.google.com/file/d/1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -512,7 +515,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_/preview",
+//         videoId: "https://drive.google.com/file/d/1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -522,7 +525,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/1qetq0udB096mOpue8XyHtaUUYudB0k_Y/preview",
+//         videoId: "https://drive.google.com/file/d/1qetq0udB096mOpue8XyHtaUUYudB0k_Y/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -532,7 +535,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD/preview",
+//         videoId: "https://drive.google.com/file/d/1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -542,7 +545,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/1oovK9faTksePgr5RF5H_UegY9VA1800D/preview",
+//         videoId: "https://drive.google.com/file/d/1oovK9faTksePgr5RF5H_UegY9VA1800D/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -552,7 +555,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/1x31CUa503coR26Tl-DIgMxiJaJmAWPmF/preview",
+//         videoId: "https://drive.google.com/file/d/1x31CUa503coR26Tl-DIgMxiJaJmAWPmF/preview",
 //         transcript: <pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">[00:00:00] Speaker 1: Okay, so the day before, we solved that problem together. 
 //         [00:00:07] Speaker 1: We... Alright, how do I say? 
 //         [00:00:10] Speaker 1: We expanded ideas for the Vietnam Food Contest, right? 
@@ -562,7 +565,7 @@ export const videoTranscripts = [
 //         [00:00:44] Speaker 1: I still have to answer. </pre>
 //     },
 //     {
-//         videoLink: "https://drive.google.com/file/d/172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2/preview",
+//         videoId: "https://drive.google.com/file/d/172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2/preview",
 //         transcript: "Transcript for video 10..."
 //     }
 // ];
