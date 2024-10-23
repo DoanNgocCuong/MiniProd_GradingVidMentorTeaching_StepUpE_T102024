@@ -1,6 +1,8 @@
 import { videoTranscripts } from './videoTranscripts.js'; // Adjust the path as necessary
 import { baremScore } from './baremScore.js'; 
 
+initializeResultTable();
+let currentCriteria = '';
 document.getElementById('loadVideo').addEventListener('click', () => {
     const videoLink = document.getElementById('videoLink').value.trim(); // Get the input value and trim whitespace
     
@@ -42,6 +44,7 @@ function addCriteriaListeners(criteria) {
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const criterionKey = button.getAttribute('data-criteria'); // Get the criterion key
+            currentCriteria = criterionKey
             const criterion = criteria[criterionKey]; // Get the corresponding criterion object
             
             if (criterion) {
@@ -139,3 +142,76 @@ function handleScoreInput() {
 
 // Call the function to set up event listeners
 handleScoreInput();
+
+// Function to display results in the result table
+function displayResults(criteria, note, score) {
+    const resultTableBody = document.getElementById('resultTableBody');
+    
+    // Find the row corresponding to the criteria
+    const rows = resultTableBody.getElementsByTagName('tr');
+    for (let row of rows) {
+        const criteriaCell = row.cells[0];
+        if (criteriaCell.textContent === criteria) {
+            // Update the note and score for the corresponding criteria
+            row.cells[1].textContent = note; // Set note text
+            row.cells[2].textContent = score; // Set score text
+            break; // Exit the loop once found
+        }
+    }
+}
+
+// Add event listener for the Save button
+document.getElementById('saveScoreButton').addEventListener('click', () => {
+    const scoreInput = document.getElementById('scoreInput').value; // Get the score input value
+    const noteInput = document.getElementById('noteInput').value; // Get the note input value
+
+    // Assuming you have a way to determine the current criteria (e.g., from a selected button)
+    const currentCriteria = "Warm-up"; // Replace with the actual criteria name as needed
+
+    // Call the function to display results
+    displayResults(currentCriteria, noteInput, scoreInput); // Update the result table
+
+    // Optionally, clear the input fields after saving
+    document.getElementById('scoreInput').value = '';
+    document.getElementById('noteInput').value = '';
+});
+
+// Function to initialize the result table with evaluation criteria
+function initializeResultTable() {
+    const resultTableBody = document.getElementById('resultTableBody');
+    
+    // Clear previous rows
+    resultTableBody.innerHTML = '';
+
+    // Get the evaluation keys from baremScore
+    const evaluationKeys = Object.keys(baremScore.evaluation);
+
+    // Populate the table with evaluation criteria
+    evaluationKeys.forEach(key => {
+        const row = document.createElement('tr');
+
+        // Create cells for Criteria, Note, and Score
+        const criteriaCell = document.createElement('td');
+        criteriaCell.textContent = key; // Set criteria text
+        row.appendChild(criteriaCell);
+
+        const noteCell = document.createElement('td');
+        noteCell.textContent = ''; // Initially empty note
+        row.appendChild(noteCell);
+
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = ''; // Initially empty score
+        row.appendChild(scoreCell);
+
+        // Append the row to the table body
+        resultTableBody.appendChild(row);
+    });
+
+    // Show the table
+    document.getElementById('resultTable').style.display = 'table';
+}
+
+// Call this function when the page loads or when you want to initialize the table
+
+
+

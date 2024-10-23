@@ -139,7 +139,7 @@ body {
   }
 
   .criteria-info {
-    flex: 40%;
+    flex: 50%;
     margin-top: 10px; /* Space above the criteria info */
     padding: 10px; /* Padding inside the criteria info */
     background-color: #f0f0f0; /* Light background for the info area */
@@ -157,6 +157,7 @@ body {
   }
 
   .score-note {
+    flex: 20%;
     margin-top: 10px; /* Space above the score note section */
     padding: 10px; /* Padding inside the score note section */
     background-color: #f9f9f9; /* Light background for the score note area */
@@ -175,14 +176,14 @@ body {
   }
 
   input[type="number"], textarea {
-    width: 100%; /* Full width for input fields */
+    width: 95%; /* Full width for input fields */
     padding: 8px; /* Padding inside input fields */
     border: 1px solid #ccc; /* Border for input fields */
     border-radius: 4px; /* Rounded corners for input fields */
   }
 
   textarea {
-    width: 100%; /* Full width for the textarea */
+    width: 95%; /* Full width for the textarea */
     padding: 8px; /* Padding inside the textarea */
     border: 1px solid #ccc; /* Border for the textarea */
     border-radius: 4px; /* Rounded corners for the textarea */
@@ -211,4 +212,58 @@ body {
 
   tr:nth-child(even) td {
     background-color: #ffffff; /* Alternate row color */
+  }
+
+  /* Add this to your styles.css */
+  .btn-save {
+    background-color: #007bff; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block for proper spacing */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  .btn-save:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  /* Add this to your styles.css */
+  .result-display table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+    margin-top: 10px; /* Space above the table */
+  }
+
+  .result-display th, .result-display td {
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ccc; /* Border for table cells */
+  }
+
+  .result-display th {
+    background-color: #f2a900; /* Header background color */
+    color: white; /* Header text color */
+  }
+
+  /* Set column widths */
+  .result-display th:nth-child(1),
+  .result-display td:nth-child(1) {
+    width: 20%; /* Criteria column */
+  }
+
+  .result-display th:nth-child(2),
+  .result-display td:nth-child(2) {
+    width: 60%; /* Note column */
+  }
+
+  .result-display th:nth-child(3),
+  .result-display td:nth-child(3) {
+    width: 20%; /* Score column */
   }
