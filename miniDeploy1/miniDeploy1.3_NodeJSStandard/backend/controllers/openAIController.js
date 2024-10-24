@@ -1,18 +1,22 @@
-    // controllers/openAIController.js
-const { getOpenAIResponse } = require('../services/openAIService');
+// Import dịch vụ openaiService
+const openaiService = require('../services/openaiService');
 
-exports.callOpenAI = async (req, res) => {
-  const { systemPrompt, userInputPrompt } = req.body;
-
-  if (!systemPrompt || !userInputPrompt) {
-    return res.status(400).json({ error: 'System prompt và user input prompt không được để trống.' });
-  }
-
+// Hàm để xử lý prompt từ người dùng
+const processPrompt = async (req, res) => {
   try {
-    const response = await getOpenAIResponse(systemPrompt, userInputPrompt);
+    // Lấy systemPrompt và userInputPrompt từ yêu cầu POST
+    const { systemPrompt, userInputPrompt } = req.body;
+    // Gọi hàm getOpenAIResponse để lấy phản hồi từ OpenAI
+    const response = await openaiService.getOpenAIResponse(systemPrompt, userInputPrompt);
+    // Gửi phản hồi lại cho người dùng dưới dạng JSON
     res.json({ response });
   } catch (error) {
-    console.error('Lỗi trong quá trình gọi OpenAI:', error);
-    res.status(500).json({ error: 'Có lỗi xảy ra khi gọi OpenAI API.' });
+    // Nếu có lỗi, gửi mã lỗi 500 và thông báo lỗi
+    res.status(500).json({ error: error.message });
   }
+};
+
+// Xuất khẩu hàm processPrompt để sử dụng trong routes
+module.exports = {
+  processPrompt
 };

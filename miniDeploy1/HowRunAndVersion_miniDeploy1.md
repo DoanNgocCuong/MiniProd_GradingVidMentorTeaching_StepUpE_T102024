@@ -1,4 +1,8 @@
-### How to run: 
+# How to run: 
+
+### Ver 1.1: Nhảy cóc lên  ...
+
+### Ver 1.2: Trở về với căn bản ...
 
 ver1.1.0: 
 ```bash
@@ -18,4 +22,9 @@ node app.js
 ```
 Sau đó mở html bằng live server hoặc localhost
 => test thử là thấy thành công 
+
+
+Ver 1.1.2 : 
+
+
 

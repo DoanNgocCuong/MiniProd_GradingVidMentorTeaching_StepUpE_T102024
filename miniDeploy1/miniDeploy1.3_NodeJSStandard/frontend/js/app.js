@@ -1,29 +1,32 @@
-// frontend/js/app.js
-document.getElementById('chat-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const systemPrompt = document.getElementById('systemPrompt').value;
-    const userInputPrompt = document.getElementById('userInputPrompt').value;
-    const responseDiv = document.getElementById('response');
+// Import hàm isEmpty từ validators.js
+import { isEmpty } from './utils/validators.js';
+// Import hàm processPrompt từ openaiApi.js
+import { processPrompt } from './api/openaiApi.js';
 
-    responseDiv.innerHTML = 'Đang xử lý...';
+// Thêm sự kiện click cho nút 'submitBtn'
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  // Lấy giá trị từ ô nhập systemPrompt
+  const systemPrompt = document.getElementById('systemPrompt').value;
+  // Lấy giá trị từ ô nhập userInputPrompt
+  const userInputPrompt = document.getElementById('userInputPrompt').value;
 
-    try {
-        const response = await fetch('http://localhost:3000/api/openai', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ systemPrompt, userInputPrompt })
-        });
+  // Kiểm tra nếu bất kỳ ô nhập nào bị trống
+  if (isEmpty(systemPrompt) || isEmpty(userInputPrompt)) {
+    // Hiển thị thông báo lỗi
+    alert('System prompt và user input prompt không được để trống.');
+    return;
+  }
 
-        const data = await response.json();
-        if (response.ok) {
-            responseDiv.innerHTML = `<p>${data.response}</p>`;
-        } else {
-            responseDiv.innerHTML = `<p>Lỗi: ${data.error}</p>`;
-        }
-    } catch (error) {
-        responseDiv.innerHTML = `<p>Có lỗi xảy ra: ${error.message}</p>`;
-    }
+  // Hiển thị thông báo đang xử lý
+  document.getElementById('response').innerHTML = 'Đang xử lý...';
+
+  try {
+    // Gọi hàm processPrompt để gửi yêu cầu đến backend
+    const response = await processPrompt(systemPrompt, userInputPrompt);
+    // Hiển thị phản hồi từ OpenAI
+    document.getElementById('response').innerText = response;
+  } catch (error) {
+    // Nếu có lỗi, hiển thị thông báo lỗi
+    document.getElementById('response').innerText = 'Đã xảy ra lỗi: ' + error.message;
+  }
 });

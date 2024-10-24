@@ -1,42 +1,49 @@
-/* css/styles.css */
+/* Đây là tệp CSS để tạo kiểu cho trang web */
+
 body {
+    /* Thiết lập font chữ cho toàn bộ trang */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
+    /* Thiết lập khoảng cách xung quanh nội dung */
+    margin: 40px;
+  }
+  
+  h1 {
+    /* Màu chữ cho tiêu đề */
     color: #333;
-}
-
-textarea {
+  }
+  
+  label {
+    /* Đậm chữ cho các nhãn */
+    font-weight: bold;
+  }
+  
+  textarea {
+    /* Chiều rộng của ô nhập liệu */
     width: 100%;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
+    /* Khoảng cách dưới mỗi ô nhập liệu */
+    margin-bottom: 20px;
+  }
+  
+  button {
+    /* Khoảng đệm cho nút bấm */
     padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-#response {
+    /* Kích thước chữ cho nút bấm */
+    font-size: 16px;
+  }
+  
+  #response {
+    /* Khoảng cách trên cho phần phản hồi */
     margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
+    /* Khoảng đệm xung quanh phần phản hồi */
+    padding: 15px;
+    /* Màu nền cho phần phản hồi */
+    background-color: #f1f1f1;
+    /* Bo tròn các góc cho phần phản hồi */
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    /* Khoảng cách dưới cho mỗi nhóm nhập liệu */
+    margin-bottom: 15px;
+  }
+  

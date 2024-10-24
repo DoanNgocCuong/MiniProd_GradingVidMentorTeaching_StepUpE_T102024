@@ -1,23 +1,41 @@
+<!-- Đây là tệp HTML chính cho giao diện người dùng -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat với OpenAI</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Thiết lập mã hóa ký tự là UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Tiêu đề của trang web -->
+  <title>Giao Diện Chat OpenAI</title>
+  <!-- Liên kết tới tệp CSS để tạo kiểu cho trang web -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Chat với OpenAI</h1>
-        <form id="chat-form">
-            <label for="systemPrompt">System Prompt:</label><br>
-            <textarea id="systemPrompt" rows="4" cols="50">You are a helpful assistant.</textarea><br><br>
-            <label for="userInputPrompt">Tin nhắn của bạn:</label><br>
-            <textarea id="userInputPrompt" rows="4" cols="50"></textarea><br><br>
-            <button type="submit">Gửi</button>
-        </form>
-        <div id="response"></div>
-    </div>
-    <script src="js/app.js"></script>
+  <!-- Tiêu đề chính của trang -->
+  <h1>Giao Diện Chat OpenAI</h1>
+
+  <!-- Phần nhập System Prompt -->
+  <div class="form-group">
+    <label for="systemPrompt">System Prompt:</label>
+    <!-- Ô nhập cho System Prompt -->
+    <textarea id="systemPrompt" rows="4" placeholder="Nhập system prompt..."></textarea>
+  </div>
+
+  <!-- Phần nhập User Input Prompt -->
+  <div class="form-group">
+    <label for="userInputPrompt">User Input Prompt:</label>
+    <!-- Ô nhập cho User Input Prompt -->
+    <textarea id="userInputPrompt" rows="4" placeholder="Nhập user input prompt..."></textarea>
+  </div>
+
+  <!-- Nút để gửi yêu cầu -->
+  <button id="submitBtn">Gửi</button>
+
+  <!-- Tiêu đề cho phần hiển thị phản hồi -->
+  <h2>Phản hồi:</h2>
+  <!-- Phần hiển thị phản hồi từ OpenAI -->
+  <div id="response"></div>
+
+  <!-- Liên kết tới tệp JavaScript chính -->
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
