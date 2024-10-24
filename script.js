@@ -2,7 +2,8 @@ import { videoTranscripts } from './videoTranscripts.js'; // Adjust the path as 
 import { baremScore } from './baremScore.js'; 
 
 initializeResultTable();
-let currentCriteria = '';
+let currentCriteria = ''; // Declare currentCriteria at the top
+
 document.getElementById('loadVideo').addEventListener('click', () => {
     const videoLink = document.getElementById('videoLink').value.trim(); // Get the input value and trim whitespace
     
@@ -42,17 +43,18 @@ function formatTranscript(transcript) {
     return lines.map(line => `<br>${line}`).join('');
 }
 
+// Function to add event listeners for criteria buttons
 function addCriteriaListeners(criteria, videoId) {
     const buttons = document.querySelectorAll('.criteria-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const criterionKey = button.getAttribute('data-criteria'); // Get the criterion key
-            currentCriteria = criterionKey
+            currentCriteria = criterionKey; // Set the current criteria
             const criterion = criteria[criterionKey]; // Get the corresponding criterion object
             if (criterion) {
                 highlightTranscript(criterion); // Highlight the transcript
                 displayCriteriaInfo(criterion, criterionKey); // Show score, reason, and description
-                displayCriteriaRecommendation(criterionKey, videoId);
+                displayCriteriaRecommendation(criterionKey, videoId); // Show recommendation score
             }
         });
     });
@@ -152,24 +154,45 @@ function displayResults(criteria, note, score) {
     
     // Find the row corresponding to the criteria
     const rows = resultTableBody.getElementsByTagName('tr');
+    let found = false; // Flag to check if criteria row is found
     for (let row of rows) {
         const criteriaCell = row.cells[0];
-        if (criteriaCell.textContent === criteria) {
+        if (criteriaCell.textContent === currentCriteria) {
             // Update the note and score for the corresponding criteria
             row.cells[1].textContent = note; // Set note text
             row.cells[2].textContent = score; // Set score text
+            found = true; // Set found flag to true
             break; // Exit the loop once found
         }
     }
+
+    // If the criteria row was not found, add a new row
+    if (!found) {
+        const newRow = document.createElement('tr');
+        const criteriaCell = document.createElement('td');
+        criteriaCell.textContent = criteria; // Set criteria text
+        newRow.appendChild(criteriaCell);
+
+        const noteCell = document.createElement('td');
+        noteCell.textContent = note; // Set note text
+        newRow.appendChild(noteCell);
+
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = score; // Set score text
+        newRow.appendChild(scoreCell);
+
+        // Append the new row to the table body
+        resultTableBody.appendChild(newRow);
+    }
+
+    // Show the table if it was hidden
+    document.getElementById('resultTable').style.display = 'table';
 }
 
 // Add event listener for the Save button
 document.getElementById('saveScoreButton').addEventListener('click', () => {
     const scoreInput = document.getElementById('scoreInput').value; // Get the score input value
     const noteInput = document.getElementById('noteInput').value; // Get the note input value
-
-    // Assuming you have a way to determine the current criteria (e.g., from a selected button)
-    const currentCriteria = "Warm-up"; // Replace with the actual criteria name as needed
 
     // Call the function to display results
     displayResults(currentCriteria, noteInput, scoreInput); // Update the result table
