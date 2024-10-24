@@ -1,0 +1,15 @@
+{
+    "name": "openai-backend",
+    "version": "1.0.0",
+    "description": "Backend API for OpenAI integration",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "axios": "^0.21.1",
+      "dotenv": "^10.0.0",
+      "express": "^4.17.1"
+    }
+  }
+  
