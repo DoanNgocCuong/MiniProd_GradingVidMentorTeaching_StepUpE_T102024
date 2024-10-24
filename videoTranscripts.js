@@ -152,118 +152,151 @@ export const videoTranscripts = [
         [00:13:47] Speaker 1: À, em hãy cho chị biết cái quán ruột, cái nhà hàng ruột mà em hay ăn xôi ở đấy và em cảm th…`,
 
         criteria: {
-        "Warm-up": {
-            "timestamp": {
-                "start": "00:00:00",
-                "end": "00:00:07"
+            "Warm-up": {
+                "timestamp": {
+                    "start": "00:00:00",
+                    "end": "00:00:16",
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": `\n<b>Mục đích (làm rõ ngắn gọn về bài trước): 7/10</b>
+Nhận xét ngắn: Người nói nhắc lại về việc mở rộng ý tưởng cho cuộc thi ẩm thực Việt Nam, điều này có kết nối với bài học trước. Tuy nhiên, việc giải thích chưa chi tiết và chủ yếu chỉ nhấn mạnh vào phần tổng kết hơn là việc nhớ lại đầy đủ kiến thức của bài học cũ.\n
+<b>Tạo hứng khởi: 6/10</b>
+Nhận xét ngắn: Phần warm-up bắt đầu với một không khí thân thiện và khơi gợi sự hứng thú bằng chủ đề ẩm thực gần gũi. Tuy nhiên, chưa có yếu tố rõ ràng để thúc đẩy sự sáng tạo hoặc động lực lớn hơn cho học viên.`
+                }
             },
-            "recommendationScore": {
-                "score": 7,
-                "reason": "The teacher opens with a review of the previous lesson, but could be more engaging for a better warm-up."
-            }
-        },
-        "Lead-in": {
-            "timestamp": {
-                "start": "00:00:07",
-                "end": "00:00:10"
+            "Lead-in": {
+                "timestamp": {
+                    "start": "00:02:02",
+                    "end": "00:03:28",
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": "\n<b>Dẫn dắt vào bài: 7/10</b>Chuyển tiếp từ bài cũ sang bài mới khá mượt, nhưng chưa đủ tạo hứng thú mạnh."
+                }
             },
-            "recommendationScore": {
-                "score": 8,
-                "reason": "The teacher leads into the new topic with a relevant example but could further clarify objectives."
-            }
-        },
-        "Teaching Vocab": {
-            "timestamp": {
-                "start": "00:00:10",
-                "end": "00:00:15"
+            "Teaching Vocab": {
+                "timestamp": {
+                    "start": "00:08:03",
+                    "end": "00:08:45"
+                },
+                "recommendationScore": {
+                    "score": "4/5",
+                    "reason": "\n<b>Đưa ra định nghĩa: 8/10</b> Người dạy gợi ý nghĩa từ và khuyến khích học viên tự tìm hiểu.\n<b>Luyện phát âm: 8.5/10</b> Tập trung vào phát âm chính xác và luyện tập kỹ.\n<b>Form của từ: 7.5/10</b> Elicit form tốt, học viên hiểu rõ cách dùng từ.\n<b>CCQ: 8/10</b> Sử dụng CCQs hiệu quả để kiểm tra sự hiểu biết của học viên.\n<b>Reaffirm: 8.5/10</b> Khẳng định và làm rõ lại từ sau khi qua các bước luyện tập."
+                }
             },
-            "recommendationScore": {
-                "score": 8,
-                "reason": "The teacher expands on ideas related to vocabulary (Vietnam Food Contest), encouraging students to understand and use new words."
-            }
-        },
-        "Pronunciation": {
-            "timestamp": {
-                "start": "00:00:07",
-                "end": "00:00:10"
+            "Pronunciation": {
+                "timestamp": {
+                    "start": "00:09:05",
+                    "end": "00:09:35"
+                },
+                "recommendationScore": {
+                    "score": "3.8/5",
+                    "reason": "\n<b>Perception: 7.5/10</b> Học viên nhận biết âm nhưng cần thêm ví dụ minh họa.\n<b>Pronunciation: 8/10</b> Phát âm chuẩn nhưng cần nhiều thời gian luyện tập hơn.\n<b>Predict: 7/10</b> Quy tắc phát âm còn thiếu sót.\n<b>Performance: 7.5/10</b> Học viên biểu diễn phát âm nhưng chưa thử thách cao.\n<b>Practice: 8/10</b> Thực hành đều đặn nhưng có thể tăng cường hơn.\n<b>Praise: 8/10</b> Khen ngợi hợp lý, tạo sự khích lệ cho học viên."
+                }
             },
-            "recommendationScore": {
-                "score": 7,
-                "reason": "The teacher models pronunciation but could benefit from more explicit correction or modeling."
-            }
-        },
-        "Grammar": {
-            "timestamp": null,
-            "recommendationScore": {
-                "score": null,
-                "reason": "No explicit grammar teaching observed."
-            }
-        },
-        "3Ps": {
-            "timestamp": {
-                "start": "00:00:00",
-                "end": "00:00:15"
+            "Grammar": {
+                "timestamp": {
+                    "start": "00:07:31",
+                    "end": "00:07:57"
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": "\n<b>Show examples: 8/10</b> Ví dụ minh họa tốt, dễ hiểu.\n<b>Thuật ngữ: 7.5/10</b> Thuật ngữ được giới thiệu nhưng chưa sâu sắc.\n<b>Cách dùng: 8/10</b> Cách dùng được minh họa rõ ràng qua ví dụ.\n<b>Cấu trúc: 7.5/10</b> Elicit structures tốt nhưng cần thêm ví dụ.\n<b>CCQ: 8/10</b> CCQs được sử dụng hợp lý, hiệu quả.\n<b>Recap: 7.5/10</b> Tổng kết lại cấu trúc ngữ pháp khá đầy đủ nhưng có thể chi tiết hơn."
+                }
             },
-            "recommendationScore": {
-                "score": 9,
-                "reason": "The lesson effectively moves from presenting a problem to expanding ideas, allowing for engagement in different stages."
-            }
-        },
-        "CorrectingMistakesRightWay": {
-            "timestamp": null,
-            "recommendationScore": {
-                "score": null,
-                "reason": "No observable error correction in this excerpt."
-            }
-        },
-        "CorrectingMistakesRightTime": {
-            "timestamp": null,
-            "recommendationScore": {
-                "score": null,
-                "reason": "No immediate feedback or error correction observed."
-            }
-        },
-        "BuildingConversations": {
-            "timestamp": {
-                "start": "00:00:10",
-                "end": "00:00:15"
+            "3Ps": {
+                "timestamp": {
+                    "start": "00:02:26",
+                    "end": "00:04:04"
+                },
+                "recommendationScore": {
+                    "score": "4/5",
+                    "reason": `\n<b>Present: 7/10</b>
+Nhận xét: Giáo viên bắt đầu hỏi về chi tiết món ăn và sự khác biệt về giá, giúp học viên mở rộng vốn từ và khái niệm mới liên quan đến việc mua hàng ở các địa điểm khác nhau.
+<b>Practice: 7/10</b>
+Nhận xét: Học viên được thực hành trả lời về sự khác biệt giữa giá cả ở quán ven đường và nhà hàng, nhưng thực hành chưa nhiều lần.
+<b>Produce: 6/10</b>
+Nhận xét: Học viên đã có cơ hội trả lời đầy đủ hơn và tự phát triển một số câu hỏi theo tình huống, nhưng vẫn cần thêm cơ hội để sáng tạo câu phức tạp hơn.`
+                }
             },
-            "recommendationScore": {
-                "score": 7,
-                "reason": "Some dialogue development occurs around the contest, but more depth could be added to encourage natural conversation."
-            }
-        },
-        "TeachingIdeaDevelopment": {
-            "timestamp": {
-                "start": "00:00:10",
-                "end": "00:00:15"
+            "CorrectingMistakesRightWay": {
+                "timestamp": {
+                    "start": "00:00:00",
+                    "end": "00:00:15"
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": `\n<b>Chỉ ra lỗi sai: 8/10</b>
+Nhận xét: Giáo viên chỉ ra lỗi sai khi học viên nói về giá cả ở quán ăn và nhà hàng, nhưng đã không nói rõ học viên nhầm lẫn ở điểm nào. Tuy nhiên, phần này khá gần gũi và học viên có thể dễ dàng hiểu được lỗi sai.
+<b>Cách sửa đúng: 7/10</b>
+Nhận xét: Giáo viên cung cấp cách sửa lỗi bằng cách giải thích sự khác biệt về giá giữa nhà hàng và quán ven đường, giúp học viên hiểu rõ vấn đề. Tuy nhiên, phần sửa vẫn chưa chi tiết và cụ thể về ngôn ngữ mà học viên sử dụng.
+<b>Luyện tập sửa sai: 6/10</b>
+Nhận xét: Học viên có cơ hội lặp lại câu trả lời, nhưng phần thực hành sửa lỗi vẫn chưa đủ nhiều lần để học viên ghi nhớ cách sửa đúng cách.`
+                }
             },
-            "recommendationScore": {
-                "score": 8,
-                "reason": "The teacher prompts idea expansion but could push for more complex thinking or deeper explanation."
-            }
-        },
-        "GivingFeedback": {
-            "timestamp": {
-                "start": "00:00:15",
-                "end": "00:00:15"
+            "CorrectingMistakesRightTime": {
+                "timestamp": {
+                    "start": "00:04:45",
+                    "end": "00:05:46"
+                },
+                "recommendationScore": {
+                    "score": "2.5/5",
+                    "reason": `\n<b>Hot correction: 5/10</b>
+Nhận xét: Giáo viên không sửa lỗi ngay lập tức khi học viên nói về món ăn và giá cả, khiến lỗi sai kéo dài trong cuộc hội thoại. Đây là phần đơn giản nên lẽ ra nên áp dụng hot correction để học viên điều chỉnh nhanh chóng.
+<b>Cold correction: 6/10</b>
+Nhận xét: Giáo viên sửa lỗi sau khi hội thoại kết thúc, nhưng không đưa ra hướng dẫn cụ thể. Việc chờ đợi sửa sau phần hội thoại làm giảm hiệu quả của việc sửa lỗi ngay lập tức, đặc biệt khi đó là lỗi dễ.`
+                }
             },
-            "recommendationScore": {
-                "score": 9,
-                "reason": "Feedback is provided, reinforcing student contributions, though it could be slightly more specific."
-            }
-        },
-        "Wrap-up": {
-            "timestamp": {
-                "start": "00:00:15",
-                "end": "00:00:15"
+            "BuildingConversations": {
+                "timestamp": {
+                    "start": "00:00:10",
+                    "end": "00:00:15"
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": `\n<b>Dẫn dắt tốt: 7/10</b>
+Nhận xét: Giáo viên tiếp tục dẫn dắt cuộc hội thoại bằng cách hỏi chi tiết về giá cả món ăn tại các địa điểm khác nhau (quán ăn ven đường và nhà hàng). Phần này liên quan đến bối cảnh thực tế nhưng có thể khai thác thêm thông tin từ học viên về sở thích ăn uống cá nhân của họ.
+<b>Câu hỏi chất lượng: 6/10</b>
+Nhận xét: Giáo viên đặt câu hỏi khá tốt về sự khác biệt giữa nhà hàng và quán ven đường, nhưng học viên chưa được khuyến khích mở rộng câu trả lời hoặc nói thêm về quan điểm cá nhân của mình.`
+                }
             },
-            "recommendationScore": {
-                "score": 9,
-                "reason": "Feedback is provided, reinforcing student contributions, though it could be slightly more specific."
+            "TeachingIdeaDevelopment": {
+                "timestamp": {
+                    "start": "00:03:41",
+                    "end": "00:04:12"
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": `\n<b>Follow-up questions: 7/10</b>
+Nhận xét: Giáo viên hỏi về giá cả món ăn ở các địa điểm khác nhau nhưng không theo dõi bằng câu hỏi cụ thể hơn để học viên phát triển thêm ý kiến. Có thể hỏi tiếp học viên về trải nghiệm của họ ở các nhà hàng hoặc quán ăn ven đường cụ thể.
+<b>Sửa lỗi sai ý gốc: 6/10</b>
+Nhận xét: Giáo viên đã chỉ ra sự khác biệt về giá cả, nhưng không phát triển câu trả lời của học viên để nâng cấp ý tưởng. Học viên có thể đã được khuyến khích để đưa ra ý kiến cá nhân sâu sắc hơn về sự khác biệt giữa nhà hàng và quán ăn ven đường.`
+                }
+            },
+            "Giving Feedback": {
+                "timestamp": {
+                    "start": "00:02:26",
+                    "end": "00:03:28"
+                },
+                "recommendationScore": {
+                    "score": "3.5/5",
+                    "reason": `\n<b>Phù hợp và tạo động lực: 7/10</b>
+Nhận xét: Giáo viên đã phản hồi tích cực khi học viên bắt đầu trả lời về món ăn và bối cảnh giao tiếp với bạn nước ngoài. Tuy nhiên, việc khen ngợi và tạo động lực vẫn ở mức cơ bản, có thể tăng cường thêm bằng cách khen ngợi chi tiết hơn về nỗ lực của học viên trong việc mô tả và trả lời câu hỏi.`
+                }
+            },
+            "Wrap-up": {
+                "timestamp": {
+                    "start": "00:24:00",
+                    "end": "00:24:30"
+                },
+                "recommendationScore": {
+                    "score": "4/5",
+                    "reason": `\n<b>Wrap-up: 8/10</b>
+            Nhận xét: Phần wrap-up giúp củng cố lại kiến thức đã học, cho học viên cơ hội xem lại các nội dung chính. Giáo viên khuyến khích học viên tương tác và phản hồi, đảm bảo rằng họ đã nắm bắt được bài học. Tuy nhiên, phần này có thể được cải thiện bằng cách thêm vào một số câu hỏi tổng kết để học viên chủ động ôn tập và khẳng định hiểu biết của mình về bài học.`
+                }
             }
         }
-    }
     },
     {
         videoId: "https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/preview",
@@ -289,7 +322,7 @@ export const videoTranscripts = [
                 },
                 "recommendationScore": {
                     "score": 8,
-                    "reason": "The teacher leads into the new topic with a relevant example but could further clarify objectives."
+                    "reason": "Chuyển tiếp từ bài cũ sang bài mới khá mượt, nhưng chưa đủ tạo hứng thú mạnh."
                 }
             },
             "Teaching Vocabulary": {
@@ -365,12 +398,13 @@ export const videoTranscripts = [
             },
             "Giving Feedback": {
                 "timestamp": {
-                    "start": "00:00:15",
-                    "end": "00:00:15"
+                    "start": "00:02:26",
+                    "end": "00:03:28"
                 },
                 "recommendationScore": {
-                    "score": 9,
-                    "reason": "Feedback is provided, reinforcing student contributions, though it could be slightly more specific."
+                    "score": "3.5/5",
+                    "reason": `\n<b>Phù hợp và tạo động lực: 7/10</b>
+Nhận xét: Giáo viên đã phản hồi tích cực khi học viên bắt đầu trả lời về món ăn và bối cảnh giao tiếp với bạn nước ngoài. Tuy nhiên, việc khen ngợi và tạo động lực vẫn ở mức cơ bản, có thể tăng cường thêm bằng cách khen ngợi chi tiết hơn về nỗ lực của học viên trong việc mô tả và trả lời câu hỏi.`
                 }
             },
             "Wrap-up": {

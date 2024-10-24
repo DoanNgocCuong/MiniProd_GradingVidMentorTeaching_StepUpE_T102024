@@ -239,7 +239,7 @@ function displayCriteriaRecommendation(criterionKey, videoId) {
             const recommendationScore = criterion.recommendationScore; // Get the recommendation score object
             if (recommendationScore) {
                 scoreElement.textContent = `Score: ${recommendationScore.score}`; // Update score
-                reasonElement.textContent = `Reason: ${recommendationScore.reason}`; // Update reason
+                reasonElement.innerHTML = `Reason: ${recommendationScore.reason.replace(/\n/g, '<br>')}`; // Update reason with line breaks        
             }
         } else {
             console.warn(`No criterion found for: ${currentCriteria}`);
