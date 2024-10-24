@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Video</title>
+</head>
+<body>
+
+  <button id="downloadBtn">Download Video</button>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const videoUrl = "https://v16m-default.akamaized.net/4d1f1ee0e135b1712dce869e2c06a35f/67191655/video/tos/maliva/tos-maliva-ve-0068c799-us/ooKm3gC0lQELJLrnB38DAmnyEJARineIQmbfV5/?a=0&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&ch=0&cr=0&dr=0&er=0&lr=all&net=0&cd=0%7C0%7C0%7C0&cv=1&br=1648&bt=824&cs=0&ds=6&ft=XE5bCqT0majPD12bFaCJ3wUOx5EcMeF%7EO5&mime_type=video_mp4&qs=0&rc=NDg8OWhpNjhmZ2Q4aTdpNEBpMzhlcmc6ZmZzbjMzaTczNEBfMGFhMzQtNS0xM2FiMl5fYSNxc2lwcjRnZ2dgLS1kMTJzcw%3D%3D&vvpl=1&l=2024102309291084F3DF6FCD6199058A61&btag=e00088000";
+
+      fetch(videoUrl)
+        .then(response => response.blob()) // Fetch the video as a Blob
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob); // Create a Blob URL
+          const a = document.createElement("a");
+          a.style.display = "none";
+          a.href = url;
+          a.download = "video.mp4"; // Set the download filename
+          document.body.appendChild(a);
+          a.click(); // Trigger the download
+          window.URL.revokeObjectURL(url); // Clean up the object URL
+        })
+        .catch(() => alert('Failed to download video.'));
+    });
+  </script>
+
+</body>
+</html>
