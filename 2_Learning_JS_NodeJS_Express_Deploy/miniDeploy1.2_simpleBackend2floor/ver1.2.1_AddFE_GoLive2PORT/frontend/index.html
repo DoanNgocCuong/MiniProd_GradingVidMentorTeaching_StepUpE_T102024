@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI API Demo</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Sử dụng OpenAI API</h1>
+        <label for="systemPrompt">System Prompt:</label><br>
+        <textarea id="systemPrompt" placeholder="Nhập nội dung system prompt..."></textarea><br><br>
+
+        <label for="userInputPrompt">User Input Prompt:</label><br>
+        <textarea id="userInputPrompt" placeholder="Nhập nội dung user input prompt..."></textarea><br><br>
+
+        <button onclick="callOpenAI()">Gửi yêu cầu</button>
+
+        <div class="response">
+            <h3>Kết quả từ OpenAI API:</h3>
+            <pre id="responseOutput">Đang chờ phản hồi...</pre>
+        </div>
+    </div>
+
+    <script src="connect_frontend_callBackend_app.js"></script> <!-- JS file -->
+</body>
+</html>

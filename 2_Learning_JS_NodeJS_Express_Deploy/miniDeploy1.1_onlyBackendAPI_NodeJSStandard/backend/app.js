@@ -11,7 +11,7 @@ app.use(express.json());  // Để đọc dữ liệu JSON từ body của reque
 app.use('/api', openAIRoutes);
 
 // Thiết lập cổng cho server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server đang chạy trên cổng ${PORT}`);
 });

@@ -8,7 +8,7 @@ async function callOpenAI() {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/openai', {
+        const response = await fetch('http://localhost:3001/api/openai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
