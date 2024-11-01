@@ -150,7 +150,7 @@ def process_audio_outputs(output1, output2, output_filename):
     return formatted_transcript
 
 
-def google_drive_files():
+def google_drive_files(folder_id):
     creds = None
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
@@ -167,8 +167,6 @@ def google_drive_files():
             pickle.dump(creds, token)
 
     service = build('drive', 'v3', credentials=creds)
-
-    folder_id = '1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z' 
 
     # Get folder metadata
     folder = service.files().get(fileId=folder_id, fields="name").execute()
@@ -308,7 +306,7 @@ def fetch_data(max_chars=10):
 if __name__ == '__main__':
     create_database()
 
-    google_drive_files()
+    google_drive_files("1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z")
 
     print("\n\n")
 
