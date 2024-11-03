@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What do you usually do when you go out with friends?",
+        "answer_structure": "I usually go out to __________ with my friends.",
+        "main phrase": "the cinema",
+        "optional phrase 1": "a restaurant",
+        "optional phrase 2": "the park",
+        "question-vi": "Bạn thường làm gì khi đi ra ngoài với bạn bè?",
+        "structure-vi": "Tôi thường đi ra ngoài __________ với bạn bè.",
+        "main phrase-vi": "rạp chiếu phim",
+        "optional phrase 1-vi": "nhà hàng",
+        "optional phrase 2-vi": "công viên"
+    },
+    {
+        "question": "How often do you go out on weekends?",
+        "answer_structure": "I go out __________ on weekends.",
+        "main phrase": "every Saturday",
+        "optional phrase 1": "sometimes",
+        "optional phrase 2": "once a month",
+        "question-vi": "Bạn thường đi ra ngoài bao nhiêu lần vào cuối tuần?",
+        "structure-vi": "Tôi đi ra ngoài __________ vào cuối tuần.",
+        "main phrase-vi": "mỗi thứ Bảy",
+        "optional phrase 1-vi": "thỉnh thoảng",
+        "optional phrase 2-vi": "một lần mỗi tháng"
+    }
+]

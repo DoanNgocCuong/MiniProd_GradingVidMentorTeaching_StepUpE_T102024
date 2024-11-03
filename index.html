@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video with Transcript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="video-input">
+      <input type="text" id="videoLink" placeholder="Paste your video link here" />
+      <button id="loadVideo">Load Video</button>
+    </div>
+
+    <div class="container-grade">
+      <div class="transcript">
+        <h2>Video Transcript</h2>
+        <div id="transcriptContent">No transcript available.</div>
+      </div>
+
+      <div class="scoring criteria">
+        <button class="criteria-button" data-criteria="Warm-up">Warm Up</button>
+        <button class="criteria-button" data-criteria="Lead-in">Lead In</button>
+        <button class="criteria-button" data-criteria="Teaching Vocab">Teaching Vocab</button>
+        <button class="criteria-button" data-criteria="Pronunciation">Pronunciation</button>
+        <button class="criteria-button" data-criteria="Grammar">Grammar</button>
+        <button class="criteria-button" data-criteria="3Ps">3Ps (Present, Practice, Produce)</button>
+        <button class="criteria-button" data-criteria="CorrectingMistakesRightWay">Correcting mistakes (the right
+          way)</button>
+        <button class="criteria-button" data-criteria="CorrectingMistakesRightTime">Correcting mistakes (at the right
+          time)</button>
+        <button class="criteria-button" data-criteria="BuildingConversations">Building conversations</button>
+        <button class="criteria-button" data-criteria="TeachingIdeaDevelopment">Teaching idea development</button>
+        <button class="criteria-button" data-criteria="GivingFeedback">Giving Feedback</button>
+        <button class="criteria-button" data-criteria="Wrap-up">Wrap-up</button>
+        <button class="criteria-button" data-criteria="BodyLanguage">Body Language and Facial Expressions</button>
+
+
+      </div>
+
+      <div class="video-player">
+        <!-- <iframe id="video" src="https://drive.google.com/file/d/1nns5f5M-dkmqai-8ldkC89mziFUfANpd/preview" allow="autoplay"></iframe> -->
+        <iframe id="video" src="" allow="autoplay"></iframe>
+
+        <!-- <iframe src="https://drive.google.com/file/d/1nns5f5M-dkmqai-8ldkC89mziFUfANpd/preview" allow="autoplay"></iframe> -->
+      </div>
+    </div>
+
+    <!-- New row for additional information -->
+
+    <div class="criteria-display">
+      <div class="criteria-info">
+        <h4>Recommendation Info</h4>
+        <p id="criteriaDescription">Description: N/A</p>
+        <table id="criteriaTable" style="width: 100%; margin-top: 10px; display: none;">
+          <thead>
+            <tr>
+              <th style="background-color: #f2a900; color: white;">1 - Kém</th>
+              <th style="background-color: #f2a900; color: white;">2 - Cần cải thiện</th>
+              <th style="background-color: #f2a900; color: white;">3 - Đạt yêu cầu</th>
+              <th style="background-color: #f2a900; color: white;">4 - Tốt</th>
+              <th style="background-color: #f2a900; color: white;">5 - Xuất sắc</th>
+            </tr>
+          </thead>
+          <tbody id="criteriaTableBody">
+            <!-- First row for descriptions -->
+            <tr id="descriptionRow">
+              <!-- Descriptions will be populated here -->
+            </tr>
+            <!-- Second row for evaluations -->
+            <tr id="evaluationRow">
+              <!-- Evaluations will be populated here -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="score-recommendation">
+        <h3>Selected Criteria</h3>
+        <p id="criteriaScore">Score: N/A</p>
+        <p id="criteriaReason">Reason: N/A</p>
+      </div>
+
+      <div class="score-note">
+        <h3>Score Note</h3>
+        <div class="note-input">
+          <label for="noteInput">Notes:</label>
+          <textarea id="noteInput" rows="4" placeholder="Add your notes here..."></textarea>
+        </div>
+
+        <div class="score-input">
+          <label for="scoreInput">Enter Score:</label>
+          <input type="number" id="scoreInput" placeholder="Enter score" min="0" max="10" />
+          <button id="saveScoreButton" class="btn-save">Save</button> <!-- Save button with class -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="result-display">
+        <table id="resultTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Note</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="resultTableBody">
+                <!-- Rows will be dynamically generated here -->
+            </tbody>
+        </table>
+    </div>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
