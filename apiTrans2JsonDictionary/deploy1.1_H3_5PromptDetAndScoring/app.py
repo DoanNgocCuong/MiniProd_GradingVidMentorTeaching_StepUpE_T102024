@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from typing import Dict
-from H3_Prompt1DetAndScoring import WarmUpLeadInWrapUpScoring
-from H3_Prompt2DetAndScoring import TeachingMethodsScoring
-from H3_Prompt3DetAndScoring import ThreePsScoring
+from H2_Prompt1DetAndScoring import WarmUpLeadInWrapUpScoring
+from H2_Prompt2DetAndScoring import TeachingMethodsScoring
+from H2_Prompt3DetAndScoring import ThreePsScoring
 from H3_Prompt4DetAndScoring import CorrectionMethodsScoring
 from H3_Prompt5DetAndScoring import ConversationAndFeedbackScoring
 

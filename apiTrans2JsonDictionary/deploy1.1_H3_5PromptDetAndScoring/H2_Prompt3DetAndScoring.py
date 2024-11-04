@@ -3,7 +3,6 @@ import yaml
 import json
 from typing import Dict, Optional, Any
 from funct_getOpenAIResponse import get_openai_response
-from funct_extendTranscriptionSegment import extend_transcription_segment
 from dotenv import load_dotenv
 
 class ThreePsScoring:

@@ -3,7 +3,7 @@ import yaml
 import json
 from typing import Dict, Optional, Any
 from funct_getOpenAIResponse import get_openai_response
-from funct_extendTranscriptionSegment import extend_transcription_segment
+# from funct_extendTranscriptionSegment import extend_transcription_segment
 from dotenv import load_dotenv
 
 class WarmUpLeadInWrapUp:
@@ -167,11 +167,22 @@ def append_results_to_file(new_results: Dict, filename: str = 'analysis_results.
     except Exception as e:
         print(f"Error handling results file: {e}")
         
+# Thêm SAMPLE_TRANSCRIPTION vào đầu file
+SAMPLE_TRANSCRIPTION = """
+[00:04:15] Mentee: Oh, good afternoon. 
+[00:04:32] Mentor: Hello. 
+[00:04:35] Mentor: Good afternoon. 
+"""
+
 def main():
     try:
-        # Load transcription
-        with open('transcription.txt', 'r', encoding='utf-8') as f:
-            transcription = f.read()
+        # Thay đổi phần load transcription
+        try:
+            with open('transcription.txt', 'r', encoding='utf-8') as f:
+                transcription = f.read()
+        except FileNotFoundError:
+            print("Warning: Using sample transcription as transcription.txt not found")
+            transcription = SAMPLE_TRANSCRIPTION
 
         # Analyze
         analyzer = WarmUpLeadInWrapUp(transcription)
@@ -186,8 +197,6 @@ def main():
         # Append results to file
         append_results_to_file(formatted_results)
         
-    except FileNotFoundError:
-        print(f"Error: Could not find transcription file")
     except Exception as e:
         print(f"Error during analysis: {str(e)}")
 
