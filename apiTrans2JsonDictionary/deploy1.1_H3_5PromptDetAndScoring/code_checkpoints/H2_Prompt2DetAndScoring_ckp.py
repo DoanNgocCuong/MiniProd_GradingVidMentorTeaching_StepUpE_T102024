@@ -1,13 +1,13 @@
+import os
+import yaml
 import json
-from base_analyzer import BaseAnalyzer
-from typing import Dict  # Thêm import này nếu bạn sử dụng Dict trong format_output
+from typing import Dict, Optional, Any
+from funct_getOpenAIResponse import get_openai_response
+from dotenv import load_dotenv
 
-
-
-
-class VocabPronGrammarAnalyzer(BaseAnalyzer):
-    UNIFIED_PROMPT = """
-You are a professional grader, an expert in evaluating the quality of English teaching. Evaluate the Mentor's teaching performance for the Mentee in the following areas: Vocabulary, Pronunciation, and Grammar.
+class WarmUpLeadInWrapUp:
+    # New unified prompt for vocabulary, pronunciation, and grammar evaluation
+    UNIFIED_PROMPT = """You are a professional grader, an expert in evaluating the quality of English teaching. Evaluate the Mentor's teaching performance for the Mentee in the following areas: Vocabulary, Pronunciation, and Grammar.
 
 Instructions:
 1. Detect timestamps for each section.
@@ -77,33 +77,87 @@ Instructions:
       }
     }
   }
-}
-    """  # Your existing prompt
+}"""
 
-    @staticmethod
-    def format_output(results: Dict) -> Dict:
-        return {
-            "criteria": {
-                "teachingVocab": results.get("criteria", {}).get("teachingVocab", {}),
-                "pronunciation": results.get("criteria", {}).get("pronunciation", {}),
-                "grammar": results.get("criteria", {}).get("grammar", {})
-            }
+    def __init__(self, transcription: str):
+        self.transcription = transcription
+        with open('config.yml', 'r', encoding='utf-8') as f:
+            self.config = yaml.safe_load(f)
+        self.extension_time = self.config['CONFIG'].get('DEFAULT_EXTENSION_TIME', 60)
+        load_dotenv()
+        self.api_key = os.getenv('OPENAI_API_KEY')
+
+    def analyze_transcription(self) -> Dict[str, Any]:
+        try:
+            response = get_openai_response(
+                system_prompt=self.UNIFIED_PROMPT,
+                user_input_prompt=self.transcription,
+                api_key=self.api_key
+            )
+            return json.loads(response) if isinstance(response, str) else response
+        except Exception as e:
+            print(f"Error in analysis: {e}")
+            return {}
+
+def format_output(results: Dict) -> Dict:
+    """Format the analysis results into the required structure."""
+    return {
+        "criteria": {
+            "teachingVocab": results.get("criteria", {}).get("teachingVocab", {}),
+            "pronunciation": results.get("criteria", {}).get("pronunciation", {}),
+            "grammar": results.get("criteria", {}).get("grammar", {})
         }
+    }
+
+def append_results_to_file(new_results: Dict, filename: str = 'analysis_results.json'):
+    """
+    Append new results to existing JSON file or create new one if doesn't exist.
+    
+    Args:
+        new_results (Dict): New analysis results to append
+        filename (str): Name of the JSON file to append to
+    """
+    try:
+        # Try to read existing file
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                
+            # Merge existing criteria with new criteria
+            if 'criteria' in existing_data and 'criteria' in new_results:
+                existing_data['criteria'].update(new_results['criteria'])
+            else:
+                existing_data.update(new_results)
+                
+        else:
+            # If file doesn't exist, use new results as initial data
+            existing_data = new_results
+            
+        # Write back the combined results
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+            
+    except Exception as e:
+        print(f"Error handling results file: {e}")
 
 def main():
     try:
+        # Load transcription
         with open('transcription.txt', 'r', encoding='utf-8') as f:
             transcription = f.read()
 
-        analyzer = VocabPronGrammarAnalyzer(transcription)
+        # Analyze
+        analyzer = WarmUpLeadInWrapUp(transcription)
         results = analyzer.analyze_transcription()
-        formatted_results = analyzer.format_output(results)
+        formatted_results = format_output(results)
         
+        # Print results
         print("Analysis Results:")
         print("================")
         print(json.dumps(formatted_results, indent=2, ensure_ascii=False))
         
-        analyzer.append_results_to_file(formatted_results)
+        # Append results to file
+        append_results_to_file(formatted_results)
         
     except FileNotFoundError:
         print(f"Error: Could not find transcription file")

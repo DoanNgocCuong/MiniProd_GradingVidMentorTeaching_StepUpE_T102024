@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from typing import Dict
-from H2_Prompt1DetAndScoring import WarmUpLeadInWrapUpScoring
-from H2_Prompt2DetAndScoring import TeachingMethodsScoring
+from H2_Prompt1DetAndScoring import WarmUpLeadInWrapUpAnalyzer
+from H2_Prompt2DetAndScoring import VocabPronGrammarAnalyzer
 from H2_Prompt3DetAndScoring import ThreePsScoring
-from H3_Prompt4DetAndScoring import CorrectionMethodsScoring
-from H3_Prompt5DetAndScoring import ConversationAndFeedbackScoring
+from H2_Prompt4DetAndScoring import CorrectionAnalyzer
+from H2_Prompt5DetAndScoring import ConversationAnalyzer
 
 app = Flask(__name__)
 
@@ -12,11 +12,11 @@ def run_analysis(transcription: str) -> Dict:
     """Run all analyses and combine results."""
     
     analyzers = [
-        WarmUpLeadInWrapUpScoring(transcription),
-        TeachingMethodsScoring(transcription),
+        WarmUpLeadInWrapUpAnalyzer(transcription),
+        VocabPronGrammarAnalyzer(transcription),
         ThreePsScoring(transcription),
-        CorrectionMethodsScoring(transcription),
-        ConversationAndFeedbackScoring(transcription)
+        CorrectionAnalyzer(transcription),
+        ConversationAnalyzer(transcription)
     ]
     
     combined_results = {"criteria": {}}

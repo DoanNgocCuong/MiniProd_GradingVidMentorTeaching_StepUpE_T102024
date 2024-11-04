@@ -3,31 +3,94 @@
     "warmUp": {
       "timestamp": {
         "start": "00:00:00",
-        "end": "00:01:12"
+        "end": "00:00:30"
       },
       "recommendationScore": {
-        "score": "3/5",
-        "reason": "<b>Tạo không khí thoải mái: 7/10</b> Nhận xét ngắn: Mặc dù có một khởi đầu tích cực nhưng không khí vẫn chưa hoàn toàn thoải mái khi chỉ có một vài câu hỏi đơn giản từ người nghe. <b>Khuyến khích tích cực: 6/10</b> Nhận xét ngắn: Mentor đã nhận xét tốt về kết quả bài kiểm tra, nhưng có thể cần nhấn mạnh thêm sự tiến bộ và khích lệ học viên. <b>Chuyển tiếp tự nhiên: 7/10</b> Nhận xét ngắn: Có sự chuyển tiếp từ việc chúc mừng đến nội dung chính, nhưng có thể mạch lạc hơn."
+        "score": "3/10",
+        "reason": "<b>Mục đích: 6/10</b> Nhận xét ngắn: Khởi động chỉ tạo ra một bầu không khí vừa phải, thiếu sự kết nối sâu sắc với bài học trước đó để tạo động lực cho người học.<b>Tạo hứng khởi: 5/10</b> Nhận xét ngắn: Một số phản hồi tích cực được đưa ra, nhưng cần nhiều cách tương tác hơn để khuyến khích sự tham gia từ học viên.<b>Tốc độ và chuyển tiếp: 5/10</b> Nhận xét ngắn: Tốc độ giao tiếp tương đối tự nhiên, nhưng chuyển tiếp giữa các ý tưởng còn chưa mượt mà."
       }
     },
     "leadIn": {
       "timestamp": {
-        "start": "00:01:12",
-        "end": "00:02:30"
+        "start": "00:00:30",
+        "end": "00:02:47"
       },
       "recommendationScore": {
-        "score": "4/5",
-        "reason": "<b>Giới thiệu rõ ràng: 8/10</b> Nhận xét ngắn: Mentor đã giới thiệu rõ ràng về nội dung bài học, tuy nhiên có thể thêm một vài chi tiết cụ thể để tạo kết nối tốt hơn. <b>Kích thích sự quan tâm: 7/10</b> Nhận xét ngắn: Mentor đã tạo được sự chú ý bằng cách dẫn dắt nội dung, nhưng cần thêm ví dụ hấp dẫn để tăng độ hứng thú. <b>Kết nối với kiến thức trước đó: 8/10</b> Nhận xét ngắn: Mentor đã yêu cầu học viên nhắc lại các câu hỏi trước đó, tạo kết nối giữa các buổi học."
+        "score": "3/10",
+        "reason": "<b>Dẫn dắt vào bài: 6/10</b> Nhận xét ngắn: Dẫn dắt chưa rõ ràng, việc kết nối đến nội dung bài học không đủ rõ ràng để người học nắm bắt mục tiêu bài học một cách tốt nhất.<b>Động lực và hứng thú: 5/10</b> Nhận xét ngắn: Không có nhiều yếu tố khuyến khích hoặc thú vị được sử dụng để tăng cường khả năng tham gia của học viên trong phần này.<b>Kết nối với kiến thức trước đó: 5/10</b> Nhận xét ngắn: Mặc dù có đề cập đến các câu hỏi trước đó, việc kết nối đến kiến thức trước đó chưa thực sự mạnh mẽ."
       }
     },
     "wrapUp": {
       "timestamp": {
-        "start": "00:02:30",
-        "end": "00:03:00"
+        "start": "00:02:47",
+        "end": "00:02:54"
+      },
+      "recommendationScore": {
+        "score": "2/10",
+        "reason": "<b>Khép lại: 4/10</b> Nhận xét: Không khép lại đúng cách, một kết luận chính thức cho buổi học là rất cần thiết, nhưng phần khép lại lại rất ngắn và không có nội dung rõ ràng."
+      }
+    },
+    "3Ps": {},
+    "teachingVocab": {
+      "timestamp": {
+        "start": "00:00:04",
+        "end": "00:02:54"
+      },
+      "recommendationScore": {
+        "score": "2/5",
+        "reason": "<b>Khó khăn trong việc tham gia: 4/10</b> Mặc dù có mặt tích cực để khuyến khích, nhưng có cảm giác rằng môi trường học tập không hoàn toàn thoải mái cho việc tham gia mở rộng từ vựng.\n<b>Giải thích từ vựng: 4/10</b> Không có nhiều giải thích cho các từ hoặc cụm từ cụ thể, làm hạn chế khả năng hiểu rõ ý nghĩa và cách sử dụng chúng trong bối cảnh.\n<b>Phản hồi và sửa lỗi: 2/10</b> Phản hồi về cách sử dụng từ chỉ vừa đủ, thiếu sự can thiệp kịp thời và hiệu quả trong việc chỉnh sửa từ vựng trong câu trả lời của học viên."
+      }
+    },
+    "pronunciation": {
+      "timestamp": {
+        "start": "00:00:04",
+        "end": "00:02:54"
       },
       "recommendationScore": {
         "score": "3/5",
-        "reason": "<b>Không khí thoải mái: 6/10</b> Nhận xét: Kết thúc chưa tạo được không khí thoải mái cho học viên, có thể làm cho học viên cảm thấy bị áp lực. <b>Phản hồi tích cực: 6/10</b> Nhận xét: Mentor đã nhận xét tích cực về sự tiến bộ nhưng cần có thêm bình luận cụ thể để khuyến khích học viên hơn nữa. <b>Chuyển tiếp tự nhiên: 7/10</b> Nhận xét ngắn: Có sự chuyển tiếp giữa các phần của bài học, nhưng chưa hoàn toàn mạch lạc."
+        "reason": "<b>Tạo không khí thoải mái: 5/10</b> Mặc dù có sự khuyến khích, nhưng không đủ để khiến học viên tự tin khi thực hành phát âm những từ khó.\n<b>Hướng dẫn phát âm: 4/10</b> Một số vấn đề về phát âm đã được chỉ ra, nhưng cần có sự sửa đổi rõ ràng và chi tiết hơn.\n<b>Phản hồi cho việc thực hành phát âm: 4/10</b> Phản hồi ở đây là tích cực, nhưng chưa đủ cụ thể để thúc đẩy học viên luyện tập nhiều hơn."
+      }
+    },
+    "grammar": {
+      "timestamp": {
+        "start": "00:00:04",
+        "end": "00:02:54"
+      },
+      "recommendationScore": {
+        "score": "3/5",
+        "reason": "<b>Khíu khích sáng tạo: 6/10</b> Môi trường để cùng nhau khám phá cấu trúc ngữ pháp còn hạn chế, ít có sự chủ động từ Mentor.\n<b>Giải thích và ví dụ ngữ pháp: 5/10</b> Một số khái niệm ngữ pháp được đề cập nhưng thiếu các ví dụ cụ thể để hỗ trợ học viên hiểu rõ hơn.\n<b>Phản hồi và sửa lỗi ngữ pháp: 4/10</b> Cần có phản hồi kịp thời và có cấu trúc hơn về cách sử dụng cấu trúc ngữ pháp trong trả lời của học viên."
+      }
+    },
+    "correctingMistakesRightWay": {},
+    "correctingMistakesRightTime": {},
+    "buildingConversations": {
+      "timestamp": {
+        "start": "00:00:00",
+        "end": "00:02:54"
+      },
+      "recommendationScore": {
+        "score": "3/5",
+        "reason": "<b>Dẫn dắt tốt: 6/10</b> Nhận xét: The mentor initiated the conversation but lacked depth in engagement.\n<b>Câu hỏi chất lượng: 5/10</b> Questions were often leading and not very open-ended."
+      }
+    },
+    "teachingIdeaDevelopment": {
+      "timestamp": {
+        "start": "00:01:24",
+        "end": "00:02:49"
+      },
+      "recommendationScore": {
+        "score": "4/5",
+        "reason": "<b>Follow-up questions: 7/10</b> Nhận xét: Some effective follow-up was present, but opportunities for deeper exploration were missed.\n<b>Sửa lỗi sai ý gốc: 8/10</b> Ideas were well-structured and built upon."
+      }
+    },
+    "givingFeedback": {
+      "timestamp": {
+        "start": "00:00:04",
+        "end": "00:00:15"
+      },
+      "recommendationScore": {
+        "score": "4/5",
+        "reason": "<b>Phù hợp và tạo động lực: 8/10</b> Nhận xét: Feedback was positive and encouraging, reinforcing good performance."
       }
     }
   }
