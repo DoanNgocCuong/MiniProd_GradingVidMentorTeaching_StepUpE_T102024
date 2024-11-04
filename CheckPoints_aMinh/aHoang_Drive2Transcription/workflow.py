@@ -90,11 +90,25 @@ def format_time(milliseconds):
 
 
 def process_audio(audio_path, language):
-    """Process an audio file and return the response as JSON."""
+    """
+    Process an audio file and return the response as JSON.
+
+    This function sends an audio file to a remote server for processing
+    and returns the server's response. It handles file existence checks,
+    HTTP requests, and potential errors.
+
+    Parameters:
+    audio_path (str): The file path of the audio file to be processed.
+    language (str): The language of the audio content for processing.
+
+    Returns:
+    dict or None: A dictionary containing the JSON response from the server
+                  if successful, or None if an error occurs during processing.
+    """
     if not os.path.exists(audio_path):
         logging.error(f"Audio file not found: {audio_path}")
         return None
-    
+
     with open(audio_path, 'rb') as audio_file:
         files = {'audio': audio_file}
         data = {
@@ -105,7 +119,7 @@ def process_audio(audio_path, language):
         try:
             response = requests.post(url, files=files, data=data)
             response.raise_for_status() 
-            
+
             output = response.json()
             logging.info("Processing completed successfully.")
             return output  
@@ -116,6 +130,7 @@ def process_audio(audio_path, language):
             # logging.error(f"JSON decoding error: {e}")
             pass
             return None
+
 
 
 def process_audio_outputs(output1, output2, output_filename):
@@ -289,11 +304,26 @@ def google_drive_files(folder_id):
 
 # View DB
 def fetch_data(max_chars=10):
+    """
+    Fetch and display data from the audio_data database table.
+
+    This function connects to the SQLite database, retrieves all rows from the audio_data table,
+    and prints a formatted summary of each row. The transcript field is truncated to a specified
+    maximum number of characters for brevity.
+
+    Parameters:
+    max_chars (int): The maximum number of characters to display for the transcript preview.
+                     If the transcript is longer, it will be truncated and ellipsis (...) will be added.
+                     Default is 10 characters.
+
+    Returns:
+    None: This function doesn't return any value, it prints the data to the console.
+    """
     conn = sqlite3.connect('audio_data.db')
     c = conn.cursor()
     c.execute('SELECT * FROM audio_data')
     rows = c.fetchall()
-    
+
     for row in rows:
         transcript_preview = row[5][:max_chars] 
         if len(row[5]) > max_chars:
@@ -301,6 +331,7 @@ def fetch_data(max_chars=10):
         print(f"ID: {row[0]}, FILE NAME VIDEO: {row[1]}, FILE NAME AUDIO: {row[2]}, URL VIDEO: {row[3]}, URL AUDIO: {row[4]}, TRANSCRIPT: {transcript_preview}")
 
     conn.close()
+
 
 
 if __name__ == '__main__':
