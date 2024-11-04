@@ -1,22 +1,37 @@
 import sqlite3
 
-def fetch_all_data():
-    # Kết nối đến cơ sở dữ liệu SQLite
-    conn = sqlite3.connect('audio_data.db')  # Thay thế bằng tên tệp cơ sở dữ liệu của bạn
-    cursor = conn.cursor()
+# View DB
+def fetch_data(max_chars=10):
+    """
+    Fetch and display data from the audio_data database table.
 
-    # Thực hiện câu lệnh SELECT để lấy toàn bộ dữ liệu
-    cursor.execute('SELECT * FROM audio_data')  # Thay thế bằng tên bảng của bạn
+    This function connects to the SQLite database, retrieves all rows from the audio_data table,
+    and prints a formatted summary of each row. The transcript field is truncated to a specified
+    maximum number of characters for brevity.
 
-    # Lấy tất cả các kết quả
-    rows = cursor.fetchall()
+    Parameters:
+    max_chars (int): The maximum number of characters to display for the transcript preview.
+                     If the transcript is longer, it will be truncated and ellipsis (...) will be added.
+                     Default is 10 characters.
 
-    # In ra các kết quả
+    Returns:
+    None: This function doesn't return any value, it prints the data to the console.
+    """
+    conn = sqlite3.connect('audio_data.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM audio_data')
+    rows = c.fetchall()
+
     for row in rows:
-        print(f"ID: {row[0]}, FILE NAME VIDEO: {row[1]}, FILE NAME AUDIO: {row[2]}, URL VIDEO: {row[3]}, URL AUDIO: {row[4]}, TRANSCRIPT: {row[5]}")
+        transcript_preview = row[5][:max_chars] 
+        if len(row[5]) > max_chars:
+            transcript_preview += '...'
+        print(f"ID: {row[0]}, FILE NAME VIDEO: {row[1]}, FILE NAME AUDIO: {row[2]}, URL VIDEO: {row[3]}, URL AUDIO: {row[4]}, TRANSCRIPT: {transcript_preview}")
 
-    # Đóng kết nối
     conn.close()
 
-# Gọi hàm để lấy và hiển thị dữ liệu
-fetch_all_data()
+
+
+if __name__ == '__main__':
+    # Fetch and display data
+    fetch_data()
