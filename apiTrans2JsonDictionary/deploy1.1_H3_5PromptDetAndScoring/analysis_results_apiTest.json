@@ -1,0 +1,107 @@
+{
+    "criteria": {
+        "3Ps": {
+            "Lead-In": {
+                "description": "The mentor introduces the topic of expanding ideas in answers and recalls the previous lesson, aligning the session's objectives.",
+                "timestamp": {
+                    "end": "00:00:30",
+                    "start": "00:00:04"
+                }
+            },
+            "Warm-Up": {
+                "description": "The mentor initiates the session by encouraging the mentee to study together and sets a positive tone for the learning.",
+                "timestamp": {
+                    "end": "00:00:04",
+                    "start": "00:00:00"
+                }
+            },
+            "Wrap-Up": {
+                "description": "The mentor summarizes the key points about answering questions and expanding ideas, clarifying when to stop based on fluency.",
+                "timestamp": {
+                    "end": "00:02:54",
+                    "start": "00:02:35"
+                }
+            }
+        },
+        "buildingConversations": {
+            "recommendationScore": {
+                "reason": "<b>Dẫn dắt chưa tốt: 5/10</b> Nhận xét: The mentor initiated the conversation but could have encouraged more participation from the mentee.\n<b>Câu hỏi cần cải thiện: 5/10</b> Questions were somewhat leading and could have been more open-ended to promote discussion.",
+                "score": "3/5"
+            },
+            "timestamp": {
+                "end": "00:02:54",
+                "start": "00:00:00"
+            }
+        },
+        "correctingMistakesRightTime": {
+            "recommendationScore": {
+                "reason": "<b>Hot correction: 8/10</b> Nhận xét: Immediate corrections were made efficiently during the discussion.\n<b>Cold correction: 7/10</b> There was a delay in addressing some mistakes, which could be improved.",
+                "score": "4/5"
+            },
+            "timestamp": {
+                "end": "00:02:54",
+                "start": "00:01:24"
+            }
+        },
+        "correctingMistakesRightWay": {
+            "recommendationScore": {
+                "reason": "<b>Chỉ ra lỗi sai: 5/10</b> Nhận xét: Errors were indicated, but some instances were overlooked.\n<b>Cách sửa đúng: 6/10</b> Suggested corrections were somewhat effective but lacked clarity in explanations.\n<b>Luyện tập sửa sai: 6/10</b> Opportunities for correction practice were provided but could be more interactive.",
+                "score": "3/5"
+            },
+            "timestamp": {
+                "end": "00:00:30",
+                "start": "00:00:04"
+            }
+        },
+        "givingFeedback": {
+            "recommendationScore": {
+                "reason": "<b>Phù hợp và tạo động lực: 8/10</b> Nhận xét: The feedback was appropriate and positively reinforced the mentee's efforts, helping to maintain motivation.",
+                "score": "4/5"
+            },
+            "timestamp": {
+                "end": "00:00:15",
+                "start": "00:00:04"
+            }
+        },
+        "grammar": {
+            "recommendationScore": {
+                "reason": "<b>Ví dụ cụ thể:</b> Ví dụ về cách sử dụng ngữ pháp đã được đưa ra, nhưng cần thêm nhiều ví dụ trong các ngữ cảnh khác nhau. <b>Thuật ngữ:</b> Giải thích thuật ngữ cần rõ ràng hơn để học viên có thể áp dụng ngay lập tức. <b>Cách dùng:</b> Cách sử dụng đã được biểu thị rõ ràng. <b>Cấu trúc:</b> Cấu trúc ngữ pháp đã được đề cập đến nhưng cần phải đầy đủ hơn. <b>CCQ:</b> Câu hỏi kiểm tra khái niệm có mặt nhưng cần được làm phong phú hơn. <b>Tổng hợp:</b> Tổng hợp đã được thực hiện nhưng chưa thật sự rõ ràng.",
+                "score": "4/5"
+            },
+            "timestamp": {
+                "end": "00:02:54",
+                "start": "00:00:30"
+            }
+        },
+        "pronunciation": {
+            "recommendationScore": {
+                "reason": "<b>Khả năng nhận biết: </b> Mentor đã chỉ ra vấn đề phát âm một cách hiệu quả. <b>Thực hành phát âm:</b> Thực hành đã diễn ra nhưng cần có cả các ví dụ cụ thể hơn. <b>Dự đoán:</b> Dự đoán về cách phát âm cần rõ ràng hơn để đảm bảo Mentee có thể hiểu cách phát âm đúng của từ được sử dụng. <b>Báo cáo: </b> Phản hồi về hiệu suất phát âm cơ bản đã có nhưng cần chi tiết hơn. <b>Khuyến khích thực hành:</b> Cơ hội thực hành có mặt nhưng cần được mở rộng hơn nữa. <b>Khen thưởng: </b> Phản hồi tích cực đã được cung cấp tốt.",
+                "score": "4/5"
+            },
+            "timestamp": {
+                "end": "00:02:54",
+                "start": "00:00:30"
+            }
+        },
+        "teachingIdeaDevelopment": {
+            "recommendationScore": {
+                "reason": "<b>Follow-up questions: 5/10</b> Nhận xét: There was a lack of effective follow-up questions to deepen understanding.\n<b>Sửa lỗi sai ý gốc: 6/10</b> The explanations were present but lacked clarity and could benefit from more examples.",
+                "score": "3/5"
+            },
+            "timestamp": {
+                "end": "00:02:54",
+                "start": "00:00:38"
+            }
+        },
+        "teachingVocab": {
+            "recommendationScore": {
+                "reason": "<b>Khung học tích cực:</b> Mentee được khuyến khích tham gia vào việc mở rộng ý tưởng cho câu trả lời, điều này tạo ra một bầu không khí thoải mái. Tuy nhiên, Mentor cần khuyến khích tích cực hơn. <b>Giải thích nghĩa từ vựng:</b> Mentor chưa cung cấp ví dụ cụ thể cho từ vựng hay cách sử dụng từ trong ngữ cảnh. <b>Phản hồi:</b> Phản hồi về cách sử dụng từ vựng chưa rõ ràng và chưa đủ chỉ dẫn cho Mentee để có thể cải thiện. <b>CCQ:</b> Câu hỏi kiểm tra khái niệm vẫn còn chưa đủ và rõ ràng. <b>Khẳng định lại:</b> Mặc dù đã có khẳng định lại ý kiến của Mentee, nhưng cần nhiều hơn để đảm bảo rằng ý tưởng được hiểu rõ.",
+                "score": "3/5"
+            },
+            "timestamp": {
+                "end": "00:02:47",
+                "start": "00:00:30"
+            }
+        }
+    }
+}

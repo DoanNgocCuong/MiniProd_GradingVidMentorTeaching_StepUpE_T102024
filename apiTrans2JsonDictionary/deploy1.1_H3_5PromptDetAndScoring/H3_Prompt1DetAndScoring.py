@@ -102,7 +102,7 @@ def main():
         print("Warning: Using sample transcription as transcription.txt not found")
         transcription = SAMPLE_TRANSCRIPTION
 
-    analyzer = WarmUpLeadInWrapUp(transcription)
+    analyzer = WarmUpLeadInWrapUpAnalyzer(transcription)
     results = analyzer.analyze_transcription()
     formatted_results = analyzer.format_output(results)
     

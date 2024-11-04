@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from typing import Dict
-from H2_Prompt1DetAndScoring import WarmUpLeadInWrapUpAnalyzer
-from H2_Prompt2DetAndScoring import VocabPronGrammarAnalyzer
-from H2_Prompt3DetAndScoring import ThreePsScoring
-from H2_Prompt4DetAndScoring import CorrectionAnalyzer
-from H2_Prompt5DetAndScoring import ConversationAnalyzer
+from H3_Prompt1DetAndScoring import WarmUpLeadInWrapUpAnalyzer
+from H3_Prompt2DetAndScoring import VocabPronGrammarAnalyzer
+from H3_Prompt3DetAndScoring import ThreePsScoring
+from H3_Prompt4DetAndScoring import CorrectionAnalyzer
+from H3_Prompt5DetAndScoring import ConversationAnalyzer
 
 app = Flask(__name__)
 
