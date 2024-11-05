@@ -27,7 +27,7 @@ try:
         print(f"ID: {row[0]}")
         print(f"Video URL: {row[1]}")
         print(f"Transcription: {row[2][:150]}...")  # Preview first 100 chars
-        print(f"Criteria: {row[3][:100]}...")       # Preview first 100 chars
+        print(f"Criteria: {row[3]}...")       # Preview first 100 chars
         print(f"Created at: {row[4]}")
 
 except sqlite3.OperationalError as e:

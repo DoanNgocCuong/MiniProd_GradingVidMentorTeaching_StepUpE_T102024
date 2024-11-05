@@ -35,7 +35,7 @@ document.getElementById('loadVideo').addEventListener('click', async () => {
     const fileId = videoLink.match(/\/d\/(.+?)\//)[1];
 
     try {
-        const response = await fetch(`http://localhost:5000/get_video_data?url=${videoLink}`);
+        const response = await fetch(`http://localhost:3000/get_video_data?url=${videoLink}`);
         const data = await response.json();
 
         if (response.ok) {

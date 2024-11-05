@@ -29,7 +29,7 @@ DB_PATH = os.path.join(CURRENT_DIR, 'database/video_database.db')
 
 @app.route('/get_video_data', methods=['GET'])
 def get_video_data():
-    video_url = request.args.get('url')
+    url_video = request.args.get('url')
     
     try:
         # Connect to database using the correct path
@@ -39,16 +39,16 @@ def get_video_data():
         print(f"Connected to database at: {DB_PATH}")  # Debug print
         
         cursor.execute('''
-            SELECT video_url, transcription, criteria
-            FROM video_transcripts 
-            WHERE video_url = ?
-        ''', (video_url,))
+            SELECT url_video, transcription, criteria
+            FROM videos 
+            WHERE url_video = ?
+        ''', (url_video,))
         
         result = cursor.fetchone()
         
         if result:
             return jsonify({
-                'video_url': result[0],
+                'url_video': result[0],
                 'transcript': result[1],
                 'criteria': result[2]
             })

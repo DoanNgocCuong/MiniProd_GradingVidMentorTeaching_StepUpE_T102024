@@ -158,6 +158,7 @@ class AudioProcessor:
         """Analyze transcript using the analyze API"""
         try:
             self.logger.info("Preparing to analyze transcript...")
+            self.logger.info(f"Transcript length: {len(transcript)}")
             
             # Format payload
             payload = {
@@ -178,12 +179,15 @@ class AudioProcessor:
                 timeout=60
             )
             
-            # Log response
+            # Enhanced error logging
             self.logger.info(f"Response status code: {response.status_code}")
-            self.logger.info(f"Response content: {response.text[:200]}...")
+            if response.status_code != 200:
+                self.logger.error(f"Error response: {response.text}")
+                return None
             
-            # Check response
-            response.raise_for_status()
+            # Log full response for debugging
+            self.logger.info(f"Full response content: {response.text}")
+            
             result = response.json()
             
             if 'criteria' in result:
@@ -194,7 +198,7 @@ class AudioProcessor:
                 self.logger.info("Successfully received criteria")
                 return criteria_str
             else:
-                self.logger.error("No criteria in response")
+                self.logger.error(f"No criteria in response. Full response: {result}")
                 return None
 
         except requests.exceptions.Timeout:
@@ -207,7 +211,7 @@ class AudioProcessor:
             self.logger.error(f"Failed to decode JSON response: {str(e)}")
             return None
         except Exception as e:
-            self.logger.error(f"Error analyzing transcript: {str(e)}")
+            self.logger.error(f"Error analyzing transcript: {str(e)}", exc_info=True)
             return None
 
 class VideoProcessor:
