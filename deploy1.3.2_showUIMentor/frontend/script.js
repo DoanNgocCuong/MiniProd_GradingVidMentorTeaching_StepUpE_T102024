@@ -1,3 +1,5 @@
+// frontend/scripts.js
+
 import { videoTranscripts } from './videoTranscripts.js'; // Adjust the path as necessary
 import { baremScore } from './baremScore.js'; 
 
@@ -33,7 +35,6 @@ document.getElementById('loadVideo').addEventListener('click', async () => {
     const fileId = videoLink.match(/\/d\/(.+?)\//)[1];
 
     try {
-        // Get data from our Flask server
         const response = await fetch(`http://localhost:5000/get_video_data?url=${videoLink}`);
         const data = await response.json();
 
@@ -41,15 +42,16 @@ document.getElementById('loadVideo').addEventListener('click', async () => {
             // Update video preview
             const previewLink = `https://drive.google.com/file/d/${fileId}/preview`;
             document.getElementById('video').src = previewLink;
-
+            
             // Update transcript
             updateTranscript(data.transcript);
             
-            // Add criteria listeners
-            const criteria = JSON.parse(data.criteria);  
+            // Parse criteria string to object and get inner criteria object
+            const criteriaObj = JSON.parse(data.criteria);
+            const criteria = criteriaObj.criteria;
+            
+            // Add event listeners
             addCriteriaListeners(criteria, fileId);
-        } else {
-            alert('Video not found or error occurred');
         }
     } catch (error) {
         console.error('Error:', error);
@@ -75,16 +77,22 @@ function formatTranscript(transcript) {
 
 // Function to add event listeners for criteria buttons
 function addCriteriaListeners(criteria, videoId) {
+    console.log("Criteria object:", criteria); // Debug log
+    
     const buttons = document.querySelectorAll('.criteria-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const criterionKey = button.getAttribute('data-criteria'); // Get the criterion key
-            currentCriteria = criterionKey; // Set the current criteria
-            const criterion = criteria[criterionKey]; // Get the corresponding criterion object
+            const criterionKey = button.getAttribute('data-criteria');
+            console.log("Clicked:", criterionKey); // Debug log
+            
+            currentCriteria = criterionKey;
+            const criterion = criteria[criterionKey];
+            console.log("Found criterion:", criterion); // Debug log
+            
             if (criterion) {
-                highlightTranscript(criterion); // Highlight the transcript
-                displayCriteriaInfo(criterion, criterionKey); // Show score, reason, and description
-                displayCriteriaRecommendation(criterionKey, videoId); // Show recommendation score
+                highlightTranscript(criterion);
+                displayCriteriaInfo(criterion, criterionKey);
+                displayCriteriaRecommendation(criterionKey, videoId);
             }
         });
     });
@@ -276,7 +284,7 @@ function initializeResultTable() {
 
 
 
-function displayCriteriaRecommendation(criterionKey, videoId) {
+async function displayCriteriaRecommendation(criterionKey, videoId) {
     const scoreElement = document.getElementById('criteriaScore');
     const reasonElement = document.getElementById('criteriaReason');
 
@@ -284,23 +292,24 @@ function displayCriteriaRecommendation(criterionKey, videoId) {
     scoreElement.textContent = 'Score: N/A';
     reasonElement.textContent = 'Reason: N/A';
 
-    // Find the video data by videoId
-    const videoData = videoTranscripts.find(video => video.videoId === videoId);
+    try {
+        // Get data from server again (or you could store it in a variable)
+        const response = await fetch(`http://localhost:5000/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
+        const data = await response.json();
 
-    if (videoData) {
-        // Get the selected criterion's recommendation score
-        const criterion = videoData.criteria[criterionKey]; // Use the currentCriteria to get the selected criterion
+        if (response.ok) {
+            const criteria = JSON.parse(data.criteria).criteria;
+            const criterion = criteria[criterionKey];
 
-        if (criterion) {
-            const recommendationScore = criterion.recommendationScore; // Get the recommendation score object
-            if (recommendationScore) {
-                scoreElement.textContent = `Score: ${recommendationScore.score}`; // Update score
-                reasonElement.innerHTML = `Reason: ${recommendationScore.reason.replace(/\n/g, '<br>')}`; // Update reason with line breaks        
+            if (criterion) {
+                const recommendationScore = criterion.recommendationScore;
+                if (recommendationScore) {
+                    scoreElement.textContent = `Score: ${recommendationScore.score}`;
+                    reasonElement.innerHTML = `Reason: ${recommendationScore.reason.replace(/\n/g, '<br>')}`;
+                }
             }
-        } else {
-            console.warn(`No criterion found for: ${currentCriteria}`);
         }
-    } else {
-        console.warn(`No video found with videoId: ${videoId}`);
+    } catch (error) {
+        console.error('Error:', error);
     }
 }

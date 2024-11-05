@@ -1,7 +1,12 @@
 import sqlite3
+import os
+
+# Get correct database path - điều này để file có thể chạy ở bất kỳ vị trí nào của cửa sổ project, chỉ cần 2 file này cùng thư mục
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__)) # 
+DB_PATH = os.path.join(CURRENT_DIR, 'video_database.db')
 
 # Kết nối đến database
-conn = sqlite3.connect('video_database.db')
+conn = sqlite3.connect(DB_PATH)
 cursor = conn.cursor()
 
 # Thực thi các câu lệnh SQL từ file trên

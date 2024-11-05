@@ -1,3 +1,5 @@
+// frontend/videoTranscripts.js
+
 export const videoTranscripts = [
     {
         videoId: "10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o",
