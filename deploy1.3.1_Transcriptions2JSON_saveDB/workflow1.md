@@ -3,3 +3,8 @@
 
 2. Về sau phần 1 có thể udpate thành UI hoặc gì đấy để mà đồng bộ. 
 3. Khi mà User Enter URL_video trên UI, thì chỉ cần âấy Transcriptions, Criteria từ database dựa vào URL_video
+
+
+
+
+

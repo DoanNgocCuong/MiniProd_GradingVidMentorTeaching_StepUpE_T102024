@@ -1,0 +1,389 @@
+2024-11-05 20:04:58,416 - INFO - "GET /?state=TfunYuSZRdaZT0SW9icMj3DtShUC8Y&code=4/0AVG7fiSQDcjEG4j1AjrUt8goOfGih-5guLfRIRk4HvAfWTB0J7JADDuw_P4IWv8mGc6DPw&scope=https://www.googleapis.com/auth/drive.metadata.readonly HTTP/1.1" 200 65
+2024-11-05 20:04:58,831 - INFO - file_cache is only supported with oauth2client<4.0.0
+2024-11-05 20:17:15,958 - INFO - file_cache is only supported with oauth2client<4.0.0
+2024-11-05 20:21:51,249 - ERROR - Error analyzing transcript: HTTPConnectionPool(host='localhost', port=25034): Read timed out. (read timeout=30)
+2024-11-05 20:26:26,235 - ERROR - Error analyzing transcript: HTTPConnectionPool(host='localhost', port=25034): Read timed out. (read timeout=30)
+2024-11-05 20:38:30,405 - ERROR - Main execution error: VideoProcessor() takes no arguments
+2024-11-05 20:40:15,559 - INFO - Database initialized
+2024-11-05 20:40:15,565 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 20:40:16,546 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 20:40:16,548 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 20:44:21,149 - INFO - Sending transcript to analyze API...
+2024-11-05 20:44:51,168 - ERROR - Error analyzing transcript: HTTPConnectionPool(host='localhost', port=25034): Read timed out. (read timeout=30)
+2024-11-05 20:44:51,170 - INFO - Inserted video: https://drive.google.com/file/d/1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE/view
+2024-11-05 20:44:51,175 - INFO - Saved video 0345100005 - 09_10 - B17.mp4 to database
+2024-11-05 20:48:55,334 - INFO - Sending transcript to analyze API...
+2024-11-05 20:49:25,367 - ERROR - Error analyzing transcript: HTTPConnectionPool(host='localhost', port=25034): Read timed out. (read timeout=30)
+2024-11-05 20:49:25,370 - INFO - Inserted video: https://drive.google.com/file/d/1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV/view
+2024-11-05 20:49:25,377 - INFO - Saved video 0973453282 - 09_10 - B6.mp4 to database
+2024-11-05 20:49:28,383 - INFO - 
+Processed Videos:
+2024-11-05 20:49:28,385 - INFO - 
+Video ID: 2
+2024-11-05 20:49:28,385 - INFO - URL: https://drive.google.com/file/d/1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV/view
+2024-11-05 20:49:28,386 - INFO - Transcription Preview: [00:00:00] Speaker 2: Take care. 
+[00:00:06] Speaker 2: All right, how do I say it? 
+[00:00:14] Spea...
+2024-11-05 20:49:28,386 - INFO - Criteria: Pending analysis
+2024-11-05 20:49:28,387 - INFO - Created at: 2024-11-05 13:49:25
+2024-11-05 20:49:28,387 - INFO - 
+Video ID: 1
+2024-11-05 20:49:28,388 - INFO - URL: https://drive.google.com/file/d/1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE/view
+2024-11-05 20:49:28,388 - INFO - Transcription Preview: [00:00:01] Speaker 2: Yes. 
+[00:00:01] Speaker 2: Okay. 
+[00:00:02] Speaker 2: And all right. 
+[00:0...
+2024-11-05 20:49:28,389 - INFO - Criteria: Pending analysis
+2024-11-05 20:49:28,389 - INFO - Created at: 2024-11-05 13:44:51
+2024-11-05 20:57:09,066 - INFO - Database initialized
+2024-11-05 20:57:09,072 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 20:57:10,190 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 20:57:10,190 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 20:57:10,585 - INFO - Skipping existing video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 20:57:10,585 - INFO - Skipping existing video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 20:57:10,586 - INFO - 
+Processed Videos:
+2024-11-05 20:57:10,586 - INFO - 
+Video ID: 2
+2024-11-05 20:57:10,587 - INFO - URL: https://drive.google.com/file/d/1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV/view
+2024-11-05 20:57:10,587 - INFO - Transcription Preview: [00:00:00] Speaker 2: Take care. 
+[00:00:06] Speaker 2: All right, how do I say it? 
+[00:00:14] Spea...
+2024-11-05 20:57:10,587 - INFO - Criteria: Pending analysis
+2024-11-05 20:57:10,587 - INFO - Created at: 2024-11-05 13:49:25
+2024-11-05 20:57:10,588 - INFO - 
+Video ID: 1
+2024-11-05 20:57:10,588 - INFO - URL: https://drive.google.com/file/d/1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE/view
+2024-11-05 20:57:10,588 - INFO - Transcription Preview: [00:00:01] Speaker 2: Yes. 
+[00:00:01] Speaker 2: Okay. 
+[00:00:02] Speaker 2: And all right. 
+[00:0...
+2024-11-05 20:57:10,589 - INFO - Criteria: Pending analysis
+2024-11-05 20:57:10,589 - INFO - Created at: 2024-11-05 13:44:51
+2024-11-05 20:57:49,800 - INFO - Database initialized
+2024-11-05 20:57:49,807 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 20:57:50,708 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 20:57:50,709 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:01:51,394 - INFO - Combined transcript format sample:
+[00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And all right. 
+[00:00:03] Mentor: So, and I think that maybe today we have a quite challenging lesson as...
+2024-11-05 21:01:51,396 - INFO - Preparing to analyze transcript...
+2024-11-05 21:01:51,396 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:01:51,397 - INFO - Transcript sample: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And a...
+2024-11-05 21:02:35,361 - INFO - Response status code: 200
+2024-11-05 21:02:35,362 - INFO - Response content: {"criteria":{"3Ps":{"recommendationScore":{"reason":"<b>Present: 8/10</b><br>Nh\u1eadn x\u00e9t: The presentation of ideas was clear and structured, providing a good introduction to the lesson topic.<...
+2024-11-05 21:02:35,363 - INFO - Successfully received criteria
+2024-11-05 21:02:35,364 - ERROR - Database error: Error binding parameter 3: type 'dict' is not supported
+2024-11-05 21:02:35,364 - INFO - Saved video 0345100005 - 09_10 - B17.mp4 to database
+2024-11-05 21:03:28,189 - INFO - Database initialized
+2024-11-05 21:03:28,515 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 21:03:29,541 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 21:03:29,541 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:03:29,541 - INFO - Getting videos from folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:03:29,897 - INFO - Found 2 videos
+2024-11-05 21:03:29,897 - INFO - 
+Processing video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:03:29,898 - INFO - Looking for audio files for video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:03:30,319 - INFO - Found 2 related audio files
+2024-11-05 21:03:30,320 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:03:30,335 - INFO - Found mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:03:30,335 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:03:30,335 - INFO - Found HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:03:30,335 - INFO - Processing HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:03:30,335 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:05:22,993 - INFO - Processing mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:05:22,994 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:07:32,668 - INFO - Combining transcriptions...
+2024-11-05 21:07:32,693 - INFO - Combined transcript format sample:
+[00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And all right. 
+[00:00:03] Mentor: So, and I think that maybe today we have a quite challenging lesson as...
+2024-11-05 21:07:32,694 - INFO - Getting criteria...
+2024-11-05 21:07:32,695 - INFO - Preparing to analyze transcript...
+2024-11-05 21:07:32,695 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:07:32,696 - INFO - Transcript sample: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And a...
+2024-11-05 21:08:15,498 - INFO - Response status code: 200
+2024-11-05 21:08:15,498 - INFO - Response content: {"criteria":{"3Ps":{"recommendationScore":{"reason":"<b>Present: 8/10</b> Nh\u1eadn x\u00e9t: Presentation of ideas was clear and structured. <b>Practice: 7/10</b> Nh\u1eadn x\u00e9t: Practice opportu...
+2024-11-05 21:08:15,499 - INFO - Successfully received criteria
+2024-11-05 21:08:15,499 - INFO - Saving to database...
+2024-11-05 21:08:15,501 - ERROR - Database error: Error binding parameter 3: type 'dict' is not supported
+2024-11-05 21:08:15,501 - INFO - Cleaning up temporary files...
+2024-11-05 21:08:15,504 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:08:15,506 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:08:18,507 - INFO - 
+Processing video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 21:08:18,507 - INFO - Looking for audio files for video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 21:08:19,155 - INFO - Found 2 related audio files
+2024-11-05 21:08:19,155 - INFO - Checking audio file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:08:19,155 - INFO - Found mentor file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:08:19,155 - INFO - Checking audio file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:08:19,156 - INFO - Found HV file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:08:19,156 - INFO - Processing HV file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:08:19,156 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:10:07,620 - INFO - Processing mentor file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:10:07,621 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:12:18,815 - INFO - Combining transcriptions...
+2024-11-05 21:12:18,826 - INFO - Getting criteria...
+2024-11-05 21:12:18,827 - INFO - Preparing to analyze transcript...
+2024-11-05 21:12:18,827 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:12:18,828 - INFO - Transcript sample: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Ye...
+2024-11-05 21:13:03,928 - INFO - Response status code: 200
+2024-11-05 21:13:03,928 - INFO - Response content: {"criteria":{"buildingConversations":{"recommendationScore":{"reason":"<b>D\u1eabn d\u1eaft t\u1ed1t: 8/10</b> Nh\u1eadn x\u00e9t: The mentor effectively leads the conversation by using relevant quest...
+2024-11-05 21:13:03,929 - INFO - Successfully received criteria
+2024-11-05 21:13:03,930 - INFO - Saving to database...
+2024-11-05 21:13:03,931 - ERROR - Database error: Error binding parameter 3: type 'dict' is not supported
+2024-11-05 21:13:03,932 - INFO - Cleaning up temporary files...
+2024-11-05 21:13:03,933 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:13:03,936 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:13:06,937 - INFO - 
+Processed Videos:
+2024-11-05 21:15:56,179 - INFO - Database initialized
+2024-11-05 21:15:56,184 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 21:15:57,220 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 21:15:57,221 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:15:57,221 - INFO - Getting videos from folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:15:57,620 - INFO - Found 2 videos
+2024-11-05 21:15:57,620 - INFO - 
+Processing video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:15:57,621 - INFO - Looking for audio files for video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:15:58,054 - INFO - Found 2 related audio files
+2024-11-05 21:15:58,055 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:15:58,056 - INFO - Found mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:15:58,056 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:15:58,057 - INFO - Found HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:15:58,058 - INFO - Processing HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:15:58,059 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:17:50,237 - INFO - Processing mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:17:50,238 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:20:01,211 - INFO - Combining transcriptions...
+2024-11-05 21:20:01,220 - INFO - Combined transcript format sample:
+[00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And all right. 
+[00:00:03] Mentor: So, and I think that maybe today we have a quite challenging lesson as...
+2024-11-05 21:20:01,220 - INFO - Getting criteria...
+2024-11-05 21:20:01,234 - INFO - Preparing to analyze transcript...
+2024-11-05 21:20:01,234 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:20:01,234 - INFO - Transcript sample: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And a...
+2024-11-05 21:20:47,946 - INFO - Response status code: 200
+2024-11-05 21:20:47,948 - INFO - Response content: {"criteria":{"3Ps":{"recommendationScore":{"reason":"<b>Present: 8/10</b><br>Nh\u1eadn x\u00e9t: Presentation of ideas was clear and structured.<br><b>Practice: 7/10</b><br>Nh\u1eadn x\u00e9t: Practic...
+2024-11-05 21:20:47,951 - INFO - Successfully received criteria
+2024-11-05 21:20:47,953 - INFO - Saving to database...
+2024-11-05 21:20:47,955 - ERROR - Database error: Error binding parameter 3: type 'dict' is not supported
+2024-11-05 21:20:47,957 - INFO - Cleaning up temporary files...
+2024-11-05 21:20:47,966 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:20:47,974 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:28:03,570 - INFO - Database initialized
+2024-11-05 21:28:03,578 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-05 21:28:04,876 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-05 21:28:04,877 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:28:04,879 - INFO - Getting videos from folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-05 21:28:05,390 - INFO - Found 2 videos
+2024-11-05 21:28:05,390 - INFO - 
+Processing video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:28:05,390 - INFO - Looking for audio files for video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:28:05,871 - INFO - Found 2 related audio files
+2024-11-05 21:28:05,872 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:28:05,873 - INFO - Found mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:28:05,873 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:28:05,874 - INFO - Found HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:28:05,874 - INFO - Processing HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-05 21:28:05,875 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:29:56,054 - INFO - Processing mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-05 21:29:56,056 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:32:03,478 - INFO - Combining transcriptions...
+2024-11-05 21:32:03,486 - INFO - Combined transcript format sample:
+[00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And all right. 
+[00:00:03] Mentor: So, and I think that maybe today we have a quite challenging lesson as...
+2024-11-05 21:32:03,488 - INFO - Getting criteria...
+2024-11-05 21:32:03,488 - INFO - Preparing to analyze transcript...
+2024-11-05 21:32:03,488 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:32:03,488 - INFO - Transcript sample: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And a...
+2024-11-05 21:33:03,499 - ERROR - Request timed out
+2024-11-05 21:33:03,499 - INFO - Saving to database...
+2024-11-05 21:33:03,509 - INFO - Inserted video: https://drive.google.com/file/d/1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE/view
+2024-11-05 21:33:03,517 - INFO - Successfully processed video: 0345100005 - 09_10 - B17.mp4
+2024-11-05 21:33:03,517 - INFO - Cleaning up temporary files...
+2024-11-05 21:33:03,530 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:33:03,530 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-05 21:33:06,542 - INFO - 
+Processing video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 21:33:06,568 - INFO - Looking for audio files for video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 21:33:07,460 - INFO - Found 2 related audio files
+2024-11-05 21:33:07,460 - INFO - Checking audio file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:33:07,460 - INFO - Found mentor file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:33:07,460 - INFO - Checking audio file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:33:07,460 - INFO - Found HV file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:33:07,460 - INFO - Processing HV file: 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-05 21:33:07,460 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:34:56,467 - INFO - Processing mentor file: 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-05 21:34:56,468 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:37:06,604 - INFO - Combining transcriptions...
+2024-11-05 21:37:06,609 - INFO - Combined transcript format sample:
+[00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Yes, okay. 
+[00:00:15] Mentor: Vậy thì sau cái buổi hôm đó mình về nhà mình có thời gian online hoặc l...
+2024-11-05 21:37:06,610 - INFO - Getting criteria...
+2024-11-05 21:37:06,611 - INFO - Preparing to analyze transcript...
+2024-11-05 21:37:06,611 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-05 21:37:06,611 - INFO - Transcript sample: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Ye...
+2024-11-05 21:38:04,927 - INFO - Response status code: 200
+2024-11-05 21:38:04,929 - INFO - Response content: {"criteria":{"3Ps":{"recommendationScore":{"reason":"<b>Present: 8/10</b> Nh\u1eadn x\u00e9t: Presentation of ideas was clear and structured. <b>Practice: 7/10</b> Nh\u1eadn x\u00e9t: Practice opportu...
+2024-11-05 21:38:04,933 - INFO - Successfully received criteria
+2024-11-05 21:38:04,935 - INFO - Saving to database...
+2024-11-05 21:38:05,004 - INFO - Inserted video: https://drive.google.com/file/d/1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV/view
+2024-11-05 21:38:05,012 - INFO - Successfully processed video: 0973453282 - 09_10 - B6.mp4
+2024-11-05 21:38:05,020 - INFO - Cleaning up temporary files...
+2024-11-05 21:38:05,021 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:38:05,037 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV.wav
+2024-11-05 21:38:08,043 - INFO - 
+Processed Videos:
+2024-11-05 21:38:08,045 - INFO - 
+Video ID: 2
+2024-11-05 21:38:08,045 - INFO - URL: https://drive.google.com/file/d/1WI4SYsEF0mlJh5sNQV8wfst7IFPBYVGV/view
+2024-11-05 21:38:08,045 - INFO - Transcription Preview: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Ye...
+2024-11-05 21:38:08,045 - INFO - Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b> Nhận xét: Presentation of ideas was clear and structured. <b>Practice: 7/10</b> Nhận xét: Practice opportunities were provided but could be more interactive. <b>Produce: 7/10</b> Nhận xét: Production tasks were present but could be more challenging.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:15:14",
+      "start": "00:00:20"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt tốt: 8/10</b> Nhận xét: The mentor effectively directed the flow of conversation.\n<b>Câu hỏi chất lượng: 7/10</b> Questions were mostly relevant but could be more varied.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:57",
+      "start": "00:02:49"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Hot correction: 8/10</b> Nhận xét: Immediate corrections were made effectively.\n<b>Cold correction: 7/10</b> Delayed corrections were also present but could be more frequent.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:54",
+      "start": "00:10:40"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b> Nhận xét: Mistakes were pointed out effectively.\n<b>Cách sửa đúng: 7/10</b> Correction methods were appropriate but could be more varied.\n<b>Luyện tập sửa sai: 7/10</b> Practice for correcting mistakes was present but could be more structured.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:49",
+      "start": "00:10:34"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b> Feedback was constructive and encouraging, boosting the mentee's confidence.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:58",
+      "start": "00:09:56"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Show examples: 8/10</b> Ví dụ về cách sử dụng ngữ pháp được cung cấp rõ ràng.\n<b>Thuật ngữ: 7/10</b> Thuật ngữ đã được giải thích nhưng có thể rõ hơn.\n<b>Cách dùng: 8/10</b> Cách sử dụng đã được minh họa tốt.\n<b>Cấu trúc: 7/10</b> Cấu trúc được đề cập nhưng có thể chi tiết hơn.\n<b>CCQ: 6/10</b> CCQs có sự xuất hiện nhưng cần sự đa dạng nhiều hơn.\n<b>Recap: 8/10</b> Một phần tóm tắt được cung cấp một cách hiệu quả.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:23:30",
+      "start": "00:23:09"
+    }
+  },
+  "leadIn": {
+    "description": "Engagement through conversation about Vietnamese cuisine and preparing the mentee for the practice part.",
+    "end": "00:02:40",
+    "start": "00:00:24"
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Perception: 8/10</b> Mentor đã chỉ ra hiệu quả các vấn đề về phát âm.\n<b>Pronunciation: 7/10</b> Phát âm được thực hành, nhưng cần sự chú ý nhiều hơn đến các điểm cụ thể để cải thiện.\n<b>Predict: 6/10</b> Các dự đoán về phát âm chưa rõ ràng.\n<b>Performance: 7/10</b> Phản hồi về hiệu suất được đưa ra, nhưng có thể chi tiết hơn.\n<b>Practice: 7/10</b> Cơ hội thực hành tồn tại nhưng có thể mở rộng thêm.\n<b>Praise: 8/10</b> Sự củng cố tích cực được thực hiện hiệu quả.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:15:05",
+      "start": "00:14:26"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Follow-up questions: 8/10</b> Comments and follow-up questions encouraged deeper exploration.\n<b>Cải thiện kết thúc ý: 7/10</b> Idea expansion was good but could have included clearer examples.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:13:07",
+      "start": "00:12:49"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Đưa ra định nghĩa: 6/10</b> Mentor đã cung cấp định nghĩa của 'enjoy the scenery', nhưng nhiều ví dụ hơn có thể giúp tăng cường hiểu biết của mentee.\n<b>Luyện phát âm: 7/10</b> Phát âm được đề cập, nhưng có thể nhấn mạnh hơn nữa.\n<b>Form của từ: 5/10</b> Chưa thảo luận rõ về hình thức của từ mới.\n<b>CCQ: 4/10</b> Câu hỏi kiểm tra khái niệm (CCQs) tương đối ít.\n<b>Reaffirm: 6/10</b> Việc nhắc lại được thực hiện nhưng có thể có cấu trúc rõ hơn.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:18:12",
+      "start": "00:18:02"
+    }
+  },
+  "warmUp": {
+    "description": "Introduction to the topic of ordering food at a restaurant.",
+    "end": "00:00:24",
+    "start": "00:00:20"
+  },
+  "wrapUp": {
+    "description": "Summarization of key points learned, feedback on performance, and setting homework expectations.",
+    "end": "00:29:09",
+    "start": "00:15:14"
+  }
+}
+2024-11-05 21:38:08,045 - INFO - Created at: 2024-11-05 14:38:04
+2024-11-05 21:38:08,061 - INFO - 
+Video ID: 1
+2024-11-05 21:38:08,061 - INFO - URL: https://drive.google.com/file/d/1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE/view
+2024-11-05 21:38:08,061 - INFO - Transcription Preview: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And a...
+2024-11-05 21:38:08,061 - INFO - Criteria: Pending analysis
+2024-11-05 21:38:08,061 - INFO - Created at: 2024-11-05 14:33:03

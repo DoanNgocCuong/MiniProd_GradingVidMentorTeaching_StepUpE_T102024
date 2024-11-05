@@ -9,7 +9,9 @@ def get_openai_response(
     system_prompt: str, 
     user_input_prompt: str, 
     api_key: str,
-    model: str = 'gpt-4o-mini'
+    model: str = 'gpt-4o-mini', 
+    max_tokens: int = 1000,        # Thêm max_tokens
+    temperature: float = 0.7       # Thêm temperature để control randomness
 ) -> str:
     """
     Hàm để gửi yêu cầu tới OpenAI API và trả về phản hồi.
