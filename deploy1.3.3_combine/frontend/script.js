@@ -46,12 +46,11 @@ document.getElementById('loadVideo').addEventListener('click', async () => {
             // Update transcript
             updateTranscript(data.transcript);
             
-            // Parse criteria string to object and get inner criteria object
+            // Parse criteria string to object
             const criteriaObj = JSON.parse(data.criteria);
-            const criteria = criteriaObj.criteria;
             
-            // Add event listeners
-            addCriteriaListeners(criteria, fileId);
+            // Add event listeners - pass the criteria object directly
+            addCriteriaListeners(criteriaObj, fileId);
         }
     } catch (error) {
         console.error('Error:', error);
@@ -76,8 +75,8 @@ function formatTranscript(transcript) {
 }
 
 // Function to add event listeners for criteria buttons
-function addCriteriaListeners(criteria, videoId) {
-    console.log("Criteria object:", criteria); // Debug log
+function addCriteriaListeners(criteriaObj, videoId) {
+    console.log("Criteria object:", criteriaObj); // Debug log
     
     const buttons = document.querySelectorAll('.criteria-button');
     buttons.forEach(button => {
@@ -86,7 +85,7 @@ function addCriteriaListeners(criteria, videoId) {
             console.log("Clicked:", criterionKey); // Debug log
             
             currentCriteria = criterionKey;
-            const criterion = criteria[criterionKey];
+            const criterion = criteriaObj[criterionKey];
             console.log("Found criterion:", criterion); // Debug log
             
             if (criterion) {
@@ -288,28 +287,25 @@ async function displayCriteriaRecommendation(criterionKey, videoId) {
     const scoreElement = document.getElementById('criteriaScore');
     const reasonElement = document.getElementById('criteriaReason');
 
-    // Clear previous recommendations
-    scoreElement.textContent = 'Score: N/A';
-    reasonElement.textContent = 'Reason: N/A';
-
     try {
-        // Get data from server again (or you could store it in a variable)
-        const response = await fetch(`http://localhost:5000/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
+        const response = await fetch(`http://localhost:3000/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
         const data = await response.json();
 
         if (response.ok) {
-            const criteria = JSON.parse(data.criteria).criteria;
-            const criterion = criteria[criterionKey];
+            const criteriaObj = JSON.parse(data.criteria);
+            const criterion = criteriaObj[criterionKey];
 
-            if (criterion) {
-                const recommendationScore = criterion.recommendationScore;
-                if (recommendationScore) {
-                    scoreElement.textContent = `Score: ${recommendationScore.score}`;
-                    reasonElement.innerHTML = `Reason: ${recommendationScore.reason.replace(/\n/g, '<br>')}`;
-                }
+            if (criterion && criterion.recommendationScore) {
+                scoreElement.textContent = `Score: ${criterion.recommendationScore.score}`;
+                reasonElement.innerHTML = `Reason: ${criterion.recommendationScore.reason}`;
+            } else {
+                scoreElement.textContent = 'Score: N/A';
+                reasonElement.textContent = 'Reason: N/A';
             }
         }
     } catch (error) {
         console.error('Error:', error);
+        scoreElement.textContent = 'Score: Error';
+        reasonElement.textContent = 'Reason: Error loading data';
     }
 }

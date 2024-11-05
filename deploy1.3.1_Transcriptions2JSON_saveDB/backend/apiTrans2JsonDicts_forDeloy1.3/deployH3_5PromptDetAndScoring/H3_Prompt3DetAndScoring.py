@@ -8,7 +8,7 @@ class ThreePsScoring(BaseAnalyzer):
     UNIFIED_PROMPT = """
 
 You are a professional grader, an expert in evaluating the quality of English teaching. From the teaching part from the Mentor teaching part to the Mentee
-Instructions: Detect Warm-Up, Lead-In, Wrap-Up of Mentor teaching part. 
+Instructions: Detect 3Ps (Presentation, Practice, Production) of Mentor teaching part. 
 Response: JSON output (not include ```JSON)
 
 {
@@ -23,7 +23,7 @@ Response: JSON output (not include ```JSON)
         "reason": "<b>Present: 8/10</b>\nNhận xét: Presentation of ideas was clear and structured.\n<b>Practice: 7/10</b>\nNhận xét: Practice opportunities were provided but could be more interactive.\n<b>Produce: 7/10</b>\nNhận xét: Production tasks were present but could be more challenging."
       }
     }
-}     
+}   
     """  # Your existing prompt
 
     @staticmethod

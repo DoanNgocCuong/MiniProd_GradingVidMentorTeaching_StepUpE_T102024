@@ -44,9 +44,6 @@ Instructions:
 
 Example: 
 
-
-
-
 {
   "criteria": {
     "warmUp": {
