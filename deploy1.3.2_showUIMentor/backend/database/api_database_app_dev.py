@@ -64,4 +64,4 @@ def get_video_data():
 if __name__ == '__main__':
     print(f"Starting server...")
     print(f"Database location: {DB_PATH}")
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=3000)

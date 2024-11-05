@@ -1,20 +1,20 @@
-# Sử dụng hình ảnh Node.js chính thức từ Docker Hub
+# Use official Node.js image from Docker Hub
 FROM node:14
 
-# Tạo thư mục làm việc trong container
+# Set working directory in container
 WORKDIR /app
 
-# Sao chép file package.json và package-lock.json vào container
+# Copy package files
 COPY package*.json ./
 
-# Cài đặt các dependencies
+# Install dependencies
 RUN npm install
 
-# Sao chép tất cả các tệp còn lại vào container
+# Copy all remaining files
 COPY . .
 
-# Mở cổng ứng dụng
-EXPOSE 3000
+# Expose application port
+EXPOSE 5000
 
-# Lệnh để chạy ứng dụng
+# Command to run the application
 CMD ["npm", "start"]
