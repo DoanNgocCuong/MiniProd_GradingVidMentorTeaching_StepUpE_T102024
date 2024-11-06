@@ -7,4 +7,5 @@
 # Dependencies
 node_modules/
 
-.zip
+*.zip
+.gait/custom-merge-driver.sh
