@@ -170,7 +170,11 @@ function displayResults(criteria, note, score) {
 }
 
 // Update save button event listener
-document.getElementById('saveScoreButton').addEventListener('click', async () => {
+document.getElementById('saveScoreButton').addEventListener('click', async (event) => {
+    // Prevent any default behavior
+    event.preventDefault();
+    event.stopPropagation();
+    
     const scoreInput = document.getElementById('scoreInput').value;
     const noteInput = document.getElementById('noteInput').value;
     
@@ -198,7 +202,7 @@ document.getElementById('saveScoreButton').addEventListener('click', async () =>
         });
 
         if (response.ok) {
-            // Update UI
+            // Update UI without page refresh
             displayResults(currentCriteria, noteInput, scoreInput);
             
             // Clear inputs
@@ -214,6 +218,9 @@ document.getElementById('saveScoreButton').addEventListener('click', async () =>
         console.error('Error saving score:', error);
         showNotification('warning', 'Failed to save score. Please try again.');
     }
+    
+    // Prevent any form submission
+    return false;
 });
 
 // Utility functions for notifications

@@ -300,11 +300,9 @@ body {
     cursor: pointer;
   }
 
-  /* Ngăn chặn các hành vi mặc định của form */
-  form * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  /* Prevent any form default behaviors */
+  form button[type="button"]:focus {
+    outline: none;
   }
 
   button#saveScoreButton {
@@ -433,4 +431,22 @@ body {
 .notification-content .btn-save {
   width: auto;
   padding: 5px 20px;
+}
+
+/* Prevent any form default behaviors */
+form button[type="button"]:focus {
+  outline: none;
+}
+
+.score-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Ensure the save button doesn't trigger form submission */
+.btn-save {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
