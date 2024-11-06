@@ -1,5 +1,8 @@
-.venv
-.db
-.pickle
+# Virtual environment
+.venv/
 
+# Environment variables
 .env
+
+# Dependencies
+node_modules/
