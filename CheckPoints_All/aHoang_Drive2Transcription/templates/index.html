@@ -48,6 +48,12 @@
         <button type="submit">Insert Data</button>
     </form>
 
+    <h2>Fetch Data By URL</h2>
+    <form id="fetchByUrlForm">
+        <input type="text" name="url" placeholder="Enter Video or Audio URL" required>
+        <button type="submit">Fetch Data by URL</button>
+    </form>
+
     <div id="results"></div>
 
     <script>
@@ -119,6 +125,15 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+
+        // Handle Fetch By URL Form Submission
+        document.getElementById('fetchByUrlForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const url = this.url.value;
+            const response = await fetch(`/fetch_data_by_url?url=${url}`);
             const result = await response.json();
             document.getElementById('results').innerText = JSON.stringify(result, null, 2);
         };
