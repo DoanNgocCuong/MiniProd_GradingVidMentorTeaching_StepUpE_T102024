@@ -1,0 +1,1294 @@
+{
+  "panelChats": [],
+  "inlineChats": [],
+  "schemaVersion": "1.0",
+  "deletedChats": {
+    "deletedMessageIDs": [],
+    "deletedPanelChatIDs": []
+  },
+  "kv_store": {
+    "unique_matched_lines_count": 0,
+    "total_repo_line_count": 420883,
+    "best_prompt_response": null,
+    "file_statistics": [
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/Cuong_Voc/readIDVideo_Trans.py",
+        "total_lines": 85,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/Cuong_Voc/workflow_Cuong copy.py",
+        "total_lines": 255,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/Cuong_Voc/workflow_Cuong.py",
+        "total_lines": 289,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/README.md",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/Utils1_Drive2Trans.md",
+        "total_lines": 194,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/Utils2_IdeaSolution.md",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/app.py",
+        "total_lines": 97,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data.db",
+        "total_lines": 1067,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Audio/0345100005 - 09_10 - B17 - HV.m4a",
+        "total_lines": 68146,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Audio/0345100005 - 09_10 - B17 - mentor.m4a",
+        "total_lines": 67537,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Audio/0973453282 - 09_10 - B6 - HV.m4a",
+        "total_lines": 67281,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Audio/0973453282 - 09_10 - B6 - mentor.m4a",
+        "total_lines": 74467,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Transcript/0345100005 - 09_10 - B17 - .txt",
+        "total_lines": 561,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/audio_data/18/Transcript/0973453282 - 09_10 - B6 - .txt",
+        "total_lines": 438,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/credentials.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/credentials.json.example",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/readSQLite.py",
+        "total_lines": 38,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/requirements.txt",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/templates/index.html",
+        "total_lines": 143,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/token.pickle",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aHoang_Drive2Transcription/workflow.py",
+        "total_lines": 377,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/downvideo.html",
+        "total_lines": 34,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/index.html",
+        "total_lines": 126,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/script.js",
+        "total_lines": 274,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/styles.css",
+        "total_lines": 270,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/test.html",
+        "total_lines": 47,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/test.json",
+        "total_lines": 26,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/aMinh_ver0/videoTranscripts.js",
+        "total_lines": 607,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/.clasp.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/appsscript.json",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/config.js",
+        "total_lines": 105,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/funct_extendTranscriptionSegment.js",
+        "total_lines": 98,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/funct_getOpenAIResponse.js",
+        "total_lines": 54,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/miniRunDetectSugScoringWarmLeadWrap.js",
+        "total_lines": 47,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/miniRunDetectWarmLeadWrap.js",
+        "total_lines": 9,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/miniRunExtendWarmUp.js",
+        "total_lines": 40,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/miniRunSugScoringWarmLeadWrap.js",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/runAllBackendAndCopyToOutput.js",
+        "total_lines": 63,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/runDetectAll.js",
+        "total_lines": 40,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/runExtendAll.js",
+        "total_lines": 72,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/runSugScoringAll.js",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/testExtendTranscriptionSegment.js",
+        "total_lines": 208,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/testExtendWarmUp.js",
+        "total_lines": 40,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/testOpenAIResponse.js",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/testReadSheetRunOpenAIResponseToWriteSheet.js",
+        "total_lines": 14,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_code/utilsReadWriteData.js",
+        "total_lines": 84,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/AppsScript_for_PromptingTasks.ipynb",
+        "total_lines": 362,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/Intro_GoogleAppsScripts.md",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/LINKSHEET.md",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/READFUNCTION.md",
+        "total_lines": 218,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "CheckPoints_All/deploy1.1_AppsScript_PreprocessingTools/README.md",
+        "total_lines": 59,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/deploy2.ipynb",
+        "total_lines": 378,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/index.html",
+        "total_lines": 126,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/package.json",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/script.js",
+        "total_lines": 277,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/server.js",
+        "total_lines": 37,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/styles.css",
+        "total_lines": 270,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/utils/FullTranscription.md",
+        "total_lines": 1004,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.2_JavaScripts_aMinhAndCuong/videoTranscripts.js",
+        "total_lines": 850,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/Drive2Trans.md",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/Note1_FromTrans_aHoang_GetCriticical.ipynb",
+        "total_lines": 229,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/api.md",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/.dockerignore",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/.ipynb",
+        "total_lines": 45,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Dockerfile",
+        "total_lines": 15,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Dockerfile copy",
+        "total_lines": 15,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt1DetAndScoring.py",
+        "total_lines": 113,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt2DetAndScoring.py",
+        "total_lines": 114,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt3DetAndScoring.py",
+        "total_lines": 58,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt4DetAndScoring.py",
+        "total_lines": 65,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt5DetAndScoring.py",
+        "total_lines": 76,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md",
+        "total_lines": 155,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun2.md",
+        "total_lines": 88,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Version.md",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H2_Prompt1DetAndScoring.cpython-312.pyc",
+        "total_lines": 96,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H2_Prompt2DetAndScoring.cpython-312.pyc",
+        "total_lines": 85,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H2_Prompt3DetAndScoring.cpython-312.pyc",
+        "total_lines": 36,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H2_Prompt4DetAndScoring.cpython-312.pyc",
+        "total_lines": 39,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H2_Prompt5DetAndScoring.cpython-312.pyc",
+        "total_lines": 50,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt1DetAndScoring.cpython-311.pyc",
+        "total_lines": 109,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt1DetAndScoring.cpython-312.pyc",
+        "total_lines": 96,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt2DetAndScoring.cpython-311.pyc",
+        "total_lines": 95,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt2DetAndScoring.cpython-312.pyc",
+        "total_lines": 85,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt3DetAndScoring.cpython-311.pyc",
+        "total_lines": 46,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt3DetAndScoring.cpython-312.pyc",
+        "total_lines": 36,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt4DetAndScoring.cpython-311.pyc",
+        "total_lines": 49,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt4DetAndScoring.cpython-312.pyc",
+        "total_lines": 39,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt5DetAndScoring.cpython-311.pyc",
+        "total_lines": 60,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/H3_Prompt5DetAndScoring.cpython-312.pyc",
+        "total_lines": 50,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/base_analyzer.cpython-311.pyc",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/base_analyzer.cpython-312.pyc",
+        "total_lines": 17,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/funct_extendTranscriptionSegment.cpython-312.pyc",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/funct_getOpenAIResponse.cpython-311.pyc",
+        "total_lines": 50,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/__pycache__/funct_getOpenAIResponse.cpython-312.pyc",
+        "total_lines": 46,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/analysis_results.json",
+        "total_lines": 97,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/analysis_results_apiTest.json",
+        "total_lines": 107,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/apiPacking_Docker.ipynb",
+        "total_lines": 419,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/api_app_dev.py",
+        "total_lines": 55,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/api_app_prod.py",
+        "total_lines": 55,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/api_app_test.py",
+        "total_lines": 39,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/base_analyzer.py",
+        "total_lines": 56,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/H1_only1Prompt_DetectScoringAll.py",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/H2_Prompt1DetAndScoring_ckp.py",
+        "total_lines": 203,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/H2_Prompt2DetAndScoring_ckp.py",
+        "total_lines": 168,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/H2_Prompt3DetAndScoring_ckp.py",
+        "total_lines": 111,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/H3_DetectExtendScoring.py",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/funct_extendTranscriptionSegment.js",
+        "total_lines": 98,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/code_checkpoints/funct_getOpenAIResponse.js",
+        "total_lines": 54,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/config.yml",
+        "total_lines": 119,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/docs_api.md",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/funct_getOpenAIResponse.py",
+        "total_lines": 104,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/requirements.txt",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/transcription.txt",
+        "total_lines": 36,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/docs_api.md",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/create_db.py",
+        "total_lines": 87,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/create_db_readDBTest.py",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/credentials.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/main_extractIDAndTrans_updateCriteria.py",
+        "total_lines": 92,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/readme_workflow2.md",
+        "total_lines": 177,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/token.pickle",
+        "total_lines": 4,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/update_db.py",
+        "total_lines": 52,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/workflow1.md",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/.ipynb",
+        "total_lines": 761,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/.md",
+        "total_lines": 79,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/Dockerfile",
+        "total_lines": 21,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/.ipynb",
+        "total_lines": 173,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/api.md",
+        "total_lines": 12,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/api_database_app_dev.py",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/api_database_app_prod.py",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/bUG.MD",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/get_trans_criteria_fromURL.py",
+        "total_lines": 58,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/readDBTest.py",
+        "total_lines": 32,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/database/video_database.db",
+        "total_lines": 59,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/backend/requirements.txt",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/docker-compose.yml",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/docker_packing.ipynb",
+        "total_lines": 149,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/index.html",
+        "total_lines": 121,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/package.json",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/script.js",
+        "total_lines": 315,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/server.js",
+        "total_lines": 37,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/styles.css",
+        "total_lines": 270,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/frontend/videoTranscripts.js",
+        "total_lines": 852,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/requirements.txt",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.2_showUIMentor/structure.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/Dockerfile",
+        "total_lines": 21,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/React.ipynb",
+        "total_lines": 575,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/create_db_readDBTest.py",
+        "total_lines": 47,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/Dockerfile",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/HowBuild_README.md",
+        "total_lines": 169,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/package.json",
+        "total_lines": 34,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/postcss.config.js",
+        "total_lines": 6,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/public/index.html",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/App.js",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/components/VideoScoring.js",
+        "total_lines": 145,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/components/VideoScoring_sample.js",
+        "total_lines": 124,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/components/ui/button.js",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/components/ui/input.js",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/index.css",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/src/index.js",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/ui_react/tailwind.config.js",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/api_backend.md",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/api_database_app_prod.py",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/ckp_api/api.md",
+        "total_lines": 12,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/ckp_api/api_database_app_prod_CKP1.py",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/ckp_api/api_database_app_prod_CKP2.py",
+        "total_lines": 67,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/ckp_api/get_trans_criteria_fromURL.py",
+        "total_lines": 58,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/ckp_api/readDBTest.py",
+        "total_lines": 32,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/Note2_FullVideoAudio2Trans2Critierial.ipynb",
+        "total_lines": 1617,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/Note3_refactorCode.ipynb",
+        "total_lines": 813,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/api.md",
+        "total_lines": 13,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/create_db_readDBTest.py",
+        "total_lines": 38,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/credentials.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/deploy_workflow3_updateCredentialsAccess.ipynb",
+        "total_lines": 616,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/link_folder_test.md",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/logs/app.log",
+        "total_lines": 3626,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/readme_workflow2.md",
+        "total_lines": 177,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/temp_files/hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav",
+        "total_lines": 68146,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/temp_files/hv_1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD.wav",
+        "total_lines": 36998,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/token.pickle",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/utils/create_db.py",
+        "total_lines": 87,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/utils/create_db_readDBTest.py",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/utils/update_db.py",
+        "total_lines": 52,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/versionControl.md",
+        "total_lines": 10,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/video_database.db",
+        "total_lines": 6956,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/video_database_1.db",
+        "total_lines": 1278,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/workflow3_fullquyen.py",
+        "total_lines": 568,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/workflow3_testing.py",
+        "total_lines": 496,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/workflow_ckp/workflow1.py",
+        "total_lines": 392,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/database/workflow_ckp/workflow2.py",
+        "total_lines": 405,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/requirements.txt",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/docker-compose.yml",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/index.html",
+        "total_lines": 121,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/package.json",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/script.js",
+        "total_lines": 311,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/script_update.ipynb",
+        "total_lines": 182,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/server.js",
+        "total_lines": 37,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/styles.css",
+        "total_lines": 270,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/frontend/videoTranscripts.js",
+        "total_lines": 852,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/requirements.txt",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.3_combine/structure.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      }
+    ]
+  }
+}
