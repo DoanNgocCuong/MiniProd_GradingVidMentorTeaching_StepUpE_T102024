@@ -27,9 +27,31 @@
         <button type="submit">Process Folder</button>
     </form>
 
+    <h2>Insert Video/Audio Data</h2>
+    <form id="videoAudioForm">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="text" name="file_name_video" placeholder="File Name Video" required>
+        <input type="text" name="url_video" placeholder="URL Video" required>
+        <input type="text" name="file_name_audio" placeholder="File Name Audio" required>
+        <input type="text" name="url_audio" placeholder="URL Audio" required>
+        <button type="submit">Insert Video/Audio Data</button>
+    </form>
+
+    <h2>Insert Data</h2>
+    <form id="insertDataForm">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="text" name="file_name_video" placeholder="File Name Video" required>
+        <input type="text" name="file_name_audio" placeholder="File Name Audio" required>
+        <input type="text" name="url_video" placeholder="URL Video" required>
+        <input type="text" name="url_audio" placeholder="URL Audio" required>
+        <textarea name="transcript" placeholder="Transcript" required></textarea>
+        <button type="submit">Insert Data</button>
+    </form>
+
     <div id="results"></div>
 
     <script>
+        // Handle Audio Form Submission
         document.getElementById('audioForm').onsubmit = async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -41,6 +63,7 @@
             document.getElementById('results').innerText = JSON.stringify(result, null, 2);
         };
 
+        // Handle Fetch Data Form Submission
         document.getElementById('fetchForm').onsubmit = async function(e) {
             e.preventDefault();
             const maxChars = this.max_chars.value;
@@ -49,12 +72,52 @@
             document.getElementById('results').innerText = JSON.stringify(result, null, 2);
         };
 
+        // Handle Google Drive Form Submission
         document.getElementById('driveForm').onsubmit = async function(e) {
             e.preventDefault();
             const folderId = this.folder_id.value;
             const response = await fetch('/google_drive', {
                 method: 'POST',
                 body: new URLSearchParams({ folder_id: folderId })
+            });
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+
+        // Handle Insert Video/Audio Data Form Submission
+        document.getElementById('videoAudioForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const data = {
+                id: this.id.value,
+                file_name_video: this.file_name_video.value,
+                url_video: this.url_video.value,
+                file_name_audio: this.file_name_audio.value,
+                url_audio: this.url_audio.value
+            };
+            const response = await fetch('/insert_video_audio_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+
+        // Handle Insert Data Form Submission
+        document.getElementById('insertDataForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const data = {
+                id: this.id.value,
+                file_name_video: this.file_name_video.value,
+                file_name_audio: this.file_name_audio.value,
+                url_video: this.url_video.value,
+                url_audio: this.url_audio.value,
+                transcript: this.transcript.value
+            };
+            const response = await fetch('/insert_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
             });
             const result = await response.json();
             document.getElementById('results').innerText = JSON.stringify(result, null, 2);
