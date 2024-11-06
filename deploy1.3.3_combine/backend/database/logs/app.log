@@ -1291,3 +1291,725 @@ Video ID: 1
   }
 }
 2024-11-05 23:18:07,810 - INFO - Created at: 2024-11-05 16:13:17
+2024-11-06 14:31:20,431 - INFO - Database initialized
+2024-11-06 14:31:20,944 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 14:31:22,579 - ERROR - Could not find both Audio and Video folders
+2024-11-06 14:31:22,579 - INFO - 
+Processed Videos:
+2024-11-06 14:33:32,652 - INFO - Database initialized
+2024-11-06 14:33:32,665 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 14:33:33,806 - ERROR - Could not find both Audio and Video folders
+2024-11-06 14:33:33,807 - INFO - 
+Processed Videos:
+2024-11-06 14:33:42,909 - INFO - Database initialized
+2024-11-06 14:33:42,919 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-06 14:33:44,071 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-06 14:33:44,071 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-06 14:33:44,071 - INFO - Getting videos from folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-06 14:33:44,498 - INFO - Found 2 videos
+2024-11-06 14:33:44,498 - INFO - 
+Processing video: 0345100005 - 09_10 - B17.mp4
+2024-11-06 14:33:44,565 - INFO - Looking for audio files for video: 0345100005 - 09_10 - B17.mp4
+2024-11-06 14:33:44,982 - INFO - Found 2 related audio files
+2024-11-06 14:33:44,983 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-06 14:33:44,983 - INFO - Found mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-06 14:33:44,983 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 14:33:44,984 - INFO - Found HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 14:33:44,985 - INFO - Processing HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 14:33:44,985 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-06 14:33:59,860 - INFO - Database initialized
+2024-11-06 14:33:59,875 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 14:34:01,059 - ERROR - Could not find both Audio and Video folders
+2024-11-06 14:34:01,060 - INFO - 
+Processed Videos:
+2024-11-06 16:20:54,554 - INFO - Database initialized
+2024-11-06 16:20:55,010 - INFO - 
+=== Testing Problem Folder ===
+2024-11-06 16:20:55,011 - INFO - 
+=== Starting Folder Processing ===
+2024-11-06 16:20:55,011 - INFO - 
+=== Starting Folder Debug for ID: 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg ===
+2024-11-06 16:20:56,655 - ERROR - Cannot access folder: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files/15ik6vWdz1IcbPmsPfr4p-DdszkB484yg?fields=id%2C+name%2C+mimeType%2C+owners%2C+permissions&alt=json returned "File not found: 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg.". Details: "[{'message': 'File not found: 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg.', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]">
+2024-11-06 16:20:56,655 - ERROR - Failed to access folder - stopping processing
+2024-11-06 16:20:56,656 - INFO - 
+=== Testing Working Folder ===
+2024-11-06 16:20:56,656 - INFO - 
+=== Starting Folder Processing ===
+2024-11-06 16:20:56,656 - INFO - 
+=== Starting Folder Debug for ID: 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z ===
+2024-11-06 16:20:57,020 - INFO - Folder details:
+2024-11-06 16:20:57,020 - INFO - - Name: 18
+2024-11-06 16:20:57,021 - INFO - - Type: application/vnd.google-apps.folder
+2024-11-06 16:20:57,021 - INFO - - Owner: toxuanhoang2805@gmail.com
+2024-11-06 16:20:57,396 - INFO - 
+Found 3 items in folder:
+2024-11-06 16:20:57,396 - INFO - 
+Folders found:
+2024-11-06 16:20:57,396 - INFO - - Audio (ID: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl)
+2024-11-06 16:20:57,876 - INFO -   Contains 4 items
+2024-11-06 16:20:57,876 - INFO -     > 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-06 16:20:57,876 - INFO -     > 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 16:20:57,876 - INFO -     > 0973453282 - 09_10 - B6 - mentor.m4a
+2024-11-06 16:20:57,876 - INFO -     > 0973453282 - 09_10 - B6 - HV.m4a
+2024-11-06 16:20:57,877 - INFO - - Video (ID: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP)
+2024-11-06 16:20:58,221 - INFO -   Contains 2 items
+2024-11-06 16:20:58,221 - INFO -     > 0345100005 - 09_10 - B17.mp4
+2024-11-06 16:20:58,221 - INFO -     > 0973453282 - 09_10 - B6.mp4
+2024-11-06 16:20:58,222 - INFO - 
+Files found:
+2024-11-06 16:20:58,222 - INFO - - demo.mp4
+2024-11-06 16:20:58,222 - INFO - Looking for Audio and Video folders in 1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z
+2024-11-06 16:20:58,633 - INFO - Found Audio folder: 1toZNe0bWvgXK5AXjm9uJnL8iDSkcmJjl
+2024-11-06 16:20:58,634 - INFO - Found Video folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-06 16:20:58,634 - INFO - Getting videos from folder: 12OTFQ6EHWnfJtfFa8gNaaMzinxsz8eRP
+2024-11-06 16:20:59,103 - INFO - Found 2 videos
+2024-11-06 16:20:59,103 - INFO - 
+Processing video: 0345100005 - 09_10 - B17.mp4
+2024-11-06 16:20:59,104 - INFO - Looking for audio files for video: 0345100005 - 09_10 - B17.mp4
+2024-11-06 16:20:59,480 - INFO - Found 2 related audio files
+2024-11-06 16:20:59,480 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-06 16:20:59,481 - INFO - Found mentor file: 0345100005 - 09_10 - B17 - mentor.m4a
+2024-11-06 16:20:59,481 - INFO - Checking audio file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 16:20:59,481 - INFO - Found HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 16:20:59,482 - INFO - Processing HV file: 0345100005 - 09_10 - B17 - HV.m4a
+2024-11-06 16:20:59,482 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav
+2024-11-06 16:26:42,141 - INFO - Database initialized
+2024-11-06 16:26:49,914 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:26:51,287 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:26:51,287 - INFO - 
+Processed Videos:
+2024-11-06 16:33:51,585 - INFO - Database initialized
+2024-11-06 16:33:51,590 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:33:52,718 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:33:52,719 - INFO - 
+Processed Videos:
+2024-11-06 16:39:42,944 - INFO - Database initialized
+2024-11-06 16:39:51,655 - INFO - Successfully accessed folder: Test
+2024-11-06 16:39:51,656 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:39:52,493 - INFO - Found 2 folders:
+2024-11-06 16:39:52,494 - INFO - - Found folder: Audio
+2024-11-06 16:39:52,494 - INFO - Found Audio folder: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-06 16:39:52,495 - INFO - - Found folder: Video
+2024-11-06 16:39:52,495 - INFO - Found Video folder: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 16:39:52,496 - INFO - Getting videos from folder: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 16:39:52,872 - INFO - Found 0 videos
+2024-11-06 16:39:52,872 - INFO - 
+Processed Videos:
+2024-11-06 16:47:49,590 - INFO - Database initialized
+2024-11-06 16:47:49,597 - ERROR - Main execution error: 'VideoProcessor' object has no attribute 'process_folder'
+2024-11-06 16:48:16,444 - INFO - Database initialized
+2024-11-06 16:48:16,450 - ERROR - Main execution error: 'VideoProcessor' object has no attribute 'process_folder'
+2024-11-06 16:49:02,388 - INFO - Database initialized
+2024-11-06 16:49:02,395 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:49:03,444 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:49:03,445 - INFO - 
+Processed Videos:
+2024-11-06 16:49:11,558 - INFO - Database initialized
+2024-11-06 16:49:11,564 - ERROR - Main execution error: 'VideoProcessor' object has no attribute 'process_folder'
+2024-11-06 16:50:54,531 - INFO - Database initialized
+2024-11-06 16:50:55,686 - INFO - Successfully accessed folder: Test
+2024-11-06 16:50:55,686 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:50:56,087 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:50:56,088 - INFO - 
+Processed Videos:
+2024-11-06 16:51:59,552 - INFO - Database initialized
+2024-11-06 16:52:00,815 - INFO - Successfully accessed folder: Test
+2024-11-06 16:52:00,815 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:52:01,224 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:52:01,225 - INFO - 
+Processed Videos:
+2024-11-06 16:52:10,152 - INFO - Database initialized
+2024-11-06 16:52:17,585 - INFO - Successfully accessed folder: Test
+2024-11-06 16:52:17,585 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:52:17,972 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:52:17,972 - INFO - 
+Processed Videos:
+2024-11-06 16:52:23,193 - INFO - Database initialized
+2024-11-06 16:52:24,462 - INFO - Successfully accessed folder: Test
+2024-11-06 16:52:24,462 - INFO - Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:52:25,056 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:52:25,056 - INFO - 
+Processed Videos:
+2024-11-06 16:54:20,703 - INFO - Database initialized
+2024-11-06 16:54:21,864 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 16:54:22,530 - INFO - Successfully accessed folder: Test
+2024-11-06 16:54:22,530 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:54:22,531 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:54:23,159 - INFO - Accessed folder: Test (application/vnd.google-apps.folder)
+2024-11-06 16:54:23,515 - ERROR - Error listing folder contents: <HttpError 403 when requesting https://www.googleapis.com/drive/v3/files?q=%2715ik6vWdz1IcbPmsPfr4p-DdszkB484yg%27+in+parents&fields=files%28id%2C+name%2C+mimeType%29&supportsAllDrives=true&includeItemsFromAllDrives=true&pageSize=100&corpora=allDrives&driveId=0APGe4r_eQ0QeUk9PVA&alt=json returned "The driveId parameter must be specified if and only if corpora is set to drive.". Details: "[{'message': 'The driveId parameter must be specified if and only if corpora is set to drive.', 'domain': 'global', 'reason': 'teamDriveIdRequiresTeamDriveCorpora'}]">
+2024-11-06 16:54:23,516 - ERROR - Audio folder not found
+2024-11-06 16:54:23,516 - ERROR - Video folder not found
+2024-11-06 16:54:23,517 - ERROR - Could not find both Audio and Video folders
+2024-11-06 16:54:23,518 - INFO - 
+Processed Videos:
+2024-11-06 16:56:44,850 - INFO - Database initialized
+2024-11-06 16:56:44,855 - ERROR - Main execution error: 'VideoProcessor' object has no attribute 'process_folder'
+2024-11-06 16:56:49,756 - INFO - Database initialized
+2024-11-06 16:56:49,762 - ERROR - Main execution error: 'VideoProcessor' object has no attribute 'process_folder'
+2024-11-06 16:58:22,943 - INFO - Database initialized
+2024-11-06 16:58:24,351 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 16:58:25,064 - INFO - Successfully accessed folder: Test
+2024-11-06 16:58:25,065 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:58:25,065 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 16:58:25,681 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 16:58:25,682 - INFO - Using Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 16:58:26,454 - INFO - Found 2 items:
+2024-11-06 16:58:26,455 - INFO - - Audio (application/vnd.google-apps.folder) ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-06 16:58:26,456 - INFO - - Video (application/vnd.google-apps.folder) ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 16:58:26,456 - INFO - Found Audio folder: Audio (ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB)
+2024-11-06 16:58:26,456 - INFO - Found Video folder: Video (ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC)
+2024-11-06 16:58:26,457 - INFO - 
+Listing files in Video folder:
+2024-11-06 16:58:27,103 - INFO - Found 10 videos:
+2024-11-06 16:58:27,103 - INFO - - Video: Bản sao của 0973453282 - 09/10 - B6 (ID: 10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o)
+2024-11-06 16:58:27,103 - INFO - - Video: Bản sao của 0383521988 - 08/10 - B28 (ID: 1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs)
+2024-11-06 16:58:27,104 - INFO - - Video: Bản sao của 0912338926 - 09/10 - B10 (ID: 1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD)
+2024-11-06 16:58:27,105 - INFO - - Video: Bản sao của 0398678257 - 09/10 - B2 (ID: 1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_)
+2024-11-06 16:58:27,105 - INFO - - Video: Bản sao của 0961797200 - 09/10 - B13 (ID: 1x31CUa503coR26Tl-DIgMxiJaJmAWPmF)
+2024-11-06 16:58:27,105 - INFO - - Video: Bản sao của 0989741503 - 10/10 - B12 (ID: 172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2)
+2024-11-06 16:58:27,106 - INFO - - Video: Bản sao của 0377642151 - 09/10 - B16 (ID: 1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl)
+2024-11-06 16:58:27,106 - INFO - - Video: Bản sao của 0949911296 - 09/10 - B16 (ID: 1oovK9faTksePgr5RF5H_UegY9VA1800D)
+2024-11-06 16:58:27,106 - INFO - - Video: Bản sao của 0898347747 - 10/10 - B5 (ID: 1qetq0udB096mOpue8XyHtaUUYudB0k_Y)
+2024-11-06 16:58:27,106 - INFO - - Video: Bản sao của 0345100005 - 09/10 - B17 (ID: 1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL)
+2024-11-06 16:58:27,107 - INFO - 
+Listing files in Audio folder:
+2024-11-06 16:58:27,804 - INFO - Found 20 audio files:
+2024-11-06 16:58:27,804 - INFO - - Audio: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-06 16:58:27,805 - INFO - - Audio: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-06 16:58:27,806 - INFO - - Audio:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 16:58:27,807 - INFO - - Audio:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 16:58:27,808 - INFO - - Audio: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-06 16:58:27,809 - INFO - - Audio: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-06 16:58:27,810 - INFO - - Audio: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-06 16:58:27,811 - INFO - - Audio: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-06 16:58:27,812 - INFO - - Audio: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-06 16:58:27,813 - INFO - - Audio: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-06 16:58:27,814 - INFO - - Audio: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-06 16:58:27,815 - INFO - - Audio: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-06 16:58:27,816 - INFO - - Audio: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-06 16:58:27,817 - INFO - - Audio: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-06 16:58:27,818 - INFO - - Audio: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 16:58:27,819 - INFO - - Audio: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 16:58:27,819 - INFO - - Audio: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-06 16:58:27,820 - INFO - - Audio: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-06 16:58:27,821 - INFO - - Audio: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-06 16:58:27,822 - INFO - - Audio: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-06 16:58:27,822 - INFO - 
+Processing video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 16:58:27,824 - INFO - Looking for audio files for video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 16:58:27,824 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,825 - ERROR - Missing audio files for video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 16:58:27,826 - INFO - 
+Processing video: Bản sao của 0383521988 - 08/10 - B28
+2024-11-06 16:58:27,827 - INFO - Looking for audio files for video: Bản sao của 0383521988 - 08/10 - B28
+2024-11-06 16:58:27,828 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,828 - ERROR - Missing audio files for video: Bản sao của 0383521988 - 08/10 - B28
+2024-11-06 16:58:27,829 - INFO - 
+Processing video: Bản sao của 0912338926 - 09/10 - B10
+2024-11-06 16:58:27,830 - INFO - Looking for audio files for video: Bản sao của 0912338926 - 09/10 - B10
+2024-11-06 16:58:27,830 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,830 - ERROR - Missing audio files for video: Bản sao của 0912338926 - 09/10 - B10
+2024-11-06 16:58:27,831 - INFO - 
+Processing video: Bản sao của 0398678257 - 09/10 - B2
+2024-11-06 16:58:27,832 - INFO - Looking for audio files for video: Bản sao của 0398678257 - 09/10 - B2
+2024-11-06 16:58:27,832 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,832 - ERROR - Missing audio files for video: Bản sao của 0398678257 - 09/10 - B2
+2024-11-06 16:58:27,833 - INFO - 
+Processing video: Bản sao của 0961797200 - 09/10 - B13
+2024-11-06 16:58:27,834 - INFO - Looking for audio files for video: Bản sao của 0961797200 - 09/10 - B13
+2024-11-06 16:58:27,834 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,834 - ERROR - Missing audio files for video: Bản sao của 0961797200 - 09/10 - B13
+2024-11-06 16:58:27,835 - INFO - 
+Processing video: Bản sao của 0989741503 - 10/10 - B12
+2024-11-06 16:58:27,835 - INFO - Looking for audio files for video: Bản sao của 0989741503 - 10/10 - B12
+2024-11-06 16:58:27,836 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,836 - ERROR - Missing audio files for video: Bản sao của 0989741503 - 10/10 - B12
+2024-11-06 16:58:27,837 - INFO - 
+Processing video: Bản sao của 0377642151 - 09/10 - B16
+2024-11-06 16:58:27,838 - INFO - Looking for audio files for video: Bản sao của 0377642151 - 09/10 - B16
+2024-11-06 16:58:27,838 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,838 - ERROR - Missing audio files for video: Bản sao của 0377642151 - 09/10 - B16
+2024-11-06 16:58:27,838 - INFO - 
+Processing video: Bản sao của 0949911296 - 09/10 - B16
+2024-11-06 16:58:27,839 - INFO - Looking for audio files for video: Bản sao của 0949911296 - 09/10 - B16
+2024-11-06 16:58:27,839 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,839 - ERROR - Missing audio files for video: Bản sao của 0949911296 - 09/10 - B16
+2024-11-06 16:58:27,840 - INFO - 
+Processing video: Bản sao của 0898347747 - 10/10 - B5
+2024-11-06 16:58:27,841 - INFO - Looking for audio files for video: Bản sao của 0898347747 - 10/10 - B5
+2024-11-06 16:58:27,841 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,841 - ERROR - Missing audio files for video: Bản sao của 0898347747 - 10/10 - B5
+2024-11-06 16:58:27,842 - INFO - 
+Processing video: Bản sao của 0345100005 - 09/10 - B17
+2024-11-06 16:58:27,842 - INFO - Looking for audio files for video: Bản sao của 0345100005 - 09/10 - B17
+2024-11-06 16:58:27,843 - INFO - Found 0 related audio files:
+2024-11-06 16:58:27,843 - ERROR - Missing audio files for video: Bản sao của 0345100005 - 09/10 - B17
+2024-11-06 16:58:27,844 - INFO - 
+Processed Videos:
+2024-11-06 17:09:36,395 - INFO - Database initialized
+2024-11-06 17:09:37,783 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:09:38,521 - INFO - Successfully accessed folder: Test
+2024-11-06 17:09:38,522 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:09:38,522 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:09:39,180 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:09:39,181 - INFO - Using Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:09:39,951 - INFO - Found 2 items:
+2024-11-06 17:09:39,952 - INFO - - Audio (application/vnd.google-apps.folder) ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-06 17:09:39,953 - INFO - - Video (application/vnd.google-apps.folder) ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 17:09:39,954 - INFO - Found Audio folder: Audio (ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB)
+2024-11-06 17:09:39,954 - INFO - Found Video folder: Video (ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC)
+2024-11-06 17:09:39,955 - INFO - 
+Listing files in Video folder:
+2024-11-06 17:09:40,573 - INFO - Found 10 videos:
+2024-11-06 17:09:40,573 - INFO - - Video: Bản sao của 0973453282 - 09/10 - B6 (ID: 10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o)
+2024-11-06 17:09:40,573 - INFO - - Video: Bản sao của 0383521988 - 08/10 - B28 (ID: 1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs)
+2024-11-06 17:09:40,574 - INFO - - Video: Bản sao của 0912338926 - 09/10 - B10 (ID: 1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD)
+2024-11-06 17:09:40,574 - INFO - - Video: Bản sao của 0398678257 - 09/10 - B2 (ID: 1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_)
+2024-11-06 17:09:40,575 - INFO - - Video: Bản sao của 0961797200 - 09/10 - B13 (ID: 1x31CUa503coR26Tl-DIgMxiJaJmAWPmF)
+2024-11-06 17:09:40,575 - INFO - - Video: Bản sao của 0989741503 - 10/10 - B12 (ID: 172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2)
+2024-11-06 17:09:40,576 - INFO - - Video: Bản sao của 0377642151 - 09/10 - B16 (ID: 1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl)
+2024-11-06 17:09:40,576 - INFO - - Video: Bản sao của 0949911296 - 09/10 - B16 (ID: 1oovK9faTksePgr5RF5H_UegY9VA1800D)
+2024-11-06 17:09:40,576 - INFO - - Video: Bản sao của 0898347747 - 10/10 - B5 (ID: 1qetq0udB096mOpue8XyHtaUUYudB0k_Y)
+2024-11-06 17:09:40,577 - INFO - - Video: Bản sao của 0345100005 - 09/10 - B17 (ID: 1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL)
+2024-11-06 17:09:40,577 - INFO - 
+Listing files in Audio folder:
+2024-11-06 17:09:41,255 - INFO - Found 20 audio files:
+2024-11-06 17:09:41,256 - INFO - - Audio: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-06 17:09:41,256 - INFO - - Audio: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-06 17:09:41,257 - INFO - - Audio:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:09:41,257 - INFO - - Audio:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:09:41,258 - INFO - - Audio: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-06 17:09:41,258 - INFO - - Audio: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-06 17:09:41,259 - INFO - - Audio: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-06 17:09:41,260 - INFO - - Audio: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-06 17:09:41,260 - INFO - - Audio: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-06 17:09:41,260 - INFO - - Audio: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-06 17:09:41,260 - INFO - - Audio: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-06 17:09:41,261 - INFO - - Audio: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-06 17:09:41,261 - INFO - - Audio: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-06 17:09:41,261 - INFO - - Audio: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-06 17:09:41,262 - INFO - - Audio: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 17:09:41,262 - INFO - - Audio: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 17:09:41,263 - INFO - - Audio: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-06 17:09:41,264 - INFO - - Audio: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-06 17:09:41,264 - INFO - - Audio: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-06 17:09:41,264 - INFO - - Audio: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-06 17:09:41,265 - INFO - 
+Processing video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 17:09:41,265 - INFO - Looking for audio files for video: 0973453282 - 09/10 - B6
+2024-11-06 17:09:41,266 - INFO - Found 2 related audio files:
+2024-11-06 17:09:41,266 - INFO - - Related audio:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:09:41,266 - INFO - - Related audio:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:09:41,266 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:09:41,266 - INFO - Found HV file:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:09:41,266 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:09:41,266 - INFO - Found mentor file:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:09:41,267 - INFO - Processing HV file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:09:41,267 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:09:42,768 - ERROR - Error processing video Bản sao của 0973453282 - 09/10 - B6: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:42,771 - INFO - 
+Processing video: Bản sao của 0383521988 - 08/10 - B28
+2024-11-06 17:09:42,771 - INFO - Looking for audio files for video: 0383521988 - 08/10 - B28
+2024-11-06 17:09:42,772 - INFO - Found 2 related audio files:
+2024-11-06 17:09:42,772 - INFO - - Related audio: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:09:42,772 - INFO - - Related audio: 0383521988 - 08/10 - B28 - mentor
+2024-11-06 17:09:42,773 - INFO - Checking audio file: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:09:42,773 - INFO - Found HV file: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 17:09:42,774 - INFO - Checking audio file: 0383521988 - 08/10 - B28 - mentor
+2024-11-06 17:09:42,774 - INFO - Found mentor file: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 17:09:42,774 - INFO - Processing HV file: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:09:42,775 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs.wav
+2024-11-06 17:09:44,090 - ERROR - Error processing video Bản sao của 0383521988 - 08/10 - B28: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:44,092 - INFO - 
+Processing video: Bản sao của 0912338926 - 09/10 - B10
+2024-11-06 17:09:44,093 - INFO - Looking for audio files for video: 0912338926 - 09/10 - B10
+2024-11-06 17:09:44,093 - INFO - Found 2 related audio files:
+2024-11-06 17:09:44,094 - INFO - - Related audio: 0912338926 - 09/10 - B10 - HV 
+2024-11-06 17:09:44,094 - INFO - - Related audio: 0912338926 - 09/10 - B10 - mentor
+2024-11-06 17:09:44,094 - INFO - Checking audio file: 0912338926 - 09/10 - B10 - HV 
+2024-11-06 17:09:44,095 - INFO - Found HV file: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-06 17:09:44,095 - INFO - Checking audio file: 0912338926 - 09/10 - B10 - mentor
+2024-11-06 17:09:44,095 - INFO - Found mentor file: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-06 17:09:44,096 - INFO - Processing HV file: 0912338926 - 09/10 - B10 - HV 
+2024-11-06 17:09:44,096 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD.wav
+2024-11-06 17:09:45,337 - ERROR - Error processing video Bản sao của 0912338926 - 09/10 - B10: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1rT133T6DszOplmv7lEphllOrwoja90ZJ
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:45,339 - INFO - 
+Processing video: Bản sao của 0398678257 - 09/10 - B2
+2024-11-06 17:09:45,340 - INFO - Looking for audio files for video: 0398678257 - 09/10 - B2
+2024-11-06 17:09:45,340 - INFO - Found 2 related audio files:
+2024-11-06 17:09:45,340 - INFO - - Related audio: 0398678257 - 09/10 - B2 - HV
+2024-11-06 17:09:45,340 - INFO - - Related audio: 0398678257 - 09/10 - B2 - mentor
+2024-11-06 17:09:45,341 - INFO - Checking audio file: 0398678257 - 09/10 - B2 - HV
+2024-11-06 17:09:45,341 - INFO - Found HV file: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-06 17:09:45,341 - INFO - Checking audio file: 0398678257 - 09/10 - B2 - mentor
+2024-11-06 17:09:45,342 - INFO - Found mentor file: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-06 17:09:45,342 - INFO - Processing HV file: 0398678257 - 09/10 - B2 - HV
+2024-11-06 17:09:45,342 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_.wav
+2024-11-06 17:09:46,605 - ERROR - Error processing video Bản sao của 0398678257 - 09/10 - B2: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=13ewGK2df7txDseH0FZLHLUr-dVZca8qf
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:46,606 - INFO - 
+Processing video: Bản sao của 0961797200 - 09/10 - B13
+2024-11-06 17:09:46,607 - INFO - Looking for audio files for video: 0961797200 - 09/10 - B13
+2024-11-06 17:09:46,607 - INFO - Found 2 related audio files:
+2024-11-06 17:09:46,607 - INFO - - Related audio: 0961797200 - 09/10 - B13 - HV
+2024-11-06 17:09:46,607 - INFO - - Related audio: 0961797200 - 09/10 - B13 - mentor
+2024-11-06 17:09:46,608 - INFO - Checking audio file: 0961797200 - 09/10 - B13 - HV
+2024-11-06 17:09:46,608 - INFO - Found HV file: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-06 17:09:46,609 - INFO - Checking audio file: 0961797200 - 09/10 - B13 - mentor
+2024-11-06 17:09:46,609 - INFO - Found mentor file: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-06 17:09:46,609 - INFO - Processing HV file: 0961797200 - 09/10 - B13 - HV
+2024-11-06 17:09:46,610 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1x31CUa503coR26Tl-DIgMxiJaJmAWPmF.wav
+2024-11-06 17:09:47,904 - ERROR - Error processing video Bản sao của 0961797200 - 09/10 - B13: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1M123jZviCneKy-AxJWn__LpbXkkBc03v
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:47,905 - INFO - 
+Processing video: Bản sao của 0989741503 - 10/10 - B12
+2024-11-06 17:09:47,906 - INFO - Looking for audio files for video: 0989741503 - 10/10 - B12
+2024-11-06 17:09:47,906 - INFO - Found 2 related audio files:
+2024-11-06 17:09:47,907 - INFO - - Related audio: 0989741503 - 10/10 - B12 - HV
+2024-11-06 17:09:47,907 - INFO - - Related audio: 0989741503 - 10/10 - B12 - mentor
+2024-11-06 17:09:47,907 - INFO - Checking audio file: 0989741503 - 10/10 - B12 - HV
+2024-11-06 17:09:47,908 - INFO - Found HV file: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-06 17:09:47,908 - INFO - Checking audio file: 0989741503 - 10/10 - B12 - mentor
+2024-11-06 17:09:47,908 - INFO - Found mentor file: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-06 17:09:47,909 - INFO - Processing HV file: 0989741503 - 10/10 - B12 - HV
+2024-11-06 17:09:47,910 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2.wav
+2024-11-06 17:09:49,150 - ERROR - Error processing video Bản sao của 0989741503 - 10/10 - B12: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:49,152 - INFO - 
+Processing video: Bản sao của 0377642151 - 09/10 - B16
+2024-11-06 17:09:49,153 - INFO - Looking for audio files for video: 0377642151 - 09/10 - B16
+2024-11-06 17:09:49,153 - INFO - Found 2 related audio files:
+2024-11-06 17:09:49,154 - INFO - - Related audio: 0377642151 - 09/10 - B16 - HV
+2024-11-06 17:09:49,154 - INFO - - Related audio: 0377642151 - 09/10 - B16 - mentor
+2024-11-06 17:09:49,155 - INFO - Checking audio file: 0377642151 - 09/10 - B16 - HV
+2024-11-06 17:09:49,155 - INFO - Found HV file: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-06 17:09:49,155 - INFO - Checking audio file: 0377642151 - 09/10 - B16 - mentor
+2024-11-06 17:09:49,156 - INFO - Found mentor file: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-06 17:09:49,156 - INFO - Processing HV file: 0377642151 - 09/10 - B16 - HV
+2024-11-06 17:09:49,156 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl.wav
+2024-11-06 17:09:50,546 - ERROR - Error processing video Bản sao của 0377642151 - 09/10 - B16: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:50,548 - INFO - 
+Processing video: Bản sao của 0949911296 - 09/10 - B16
+2024-11-06 17:09:50,549 - INFO - Looking for audio files for video: 0949911296 - 09/10 - B16
+2024-11-06 17:09:50,550 - INFO - Found 2 related audio files:
+2024-11-06 17:09:50,550 - INFO - - Related audio: 0949911296 - 09/10 - B16 - HV
+2024-11-06 17:09:50,550 - INFO - - Related audio: 0949911296 - 09/10 - B16 - mentor
+2024-11-06 17:09:50,551 - INFO - Checking audio file: 0949911296 - 09/10 - B16 - HV
+2024-11-06 17:09:50,551 - INFO - Found HV file: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-06 17:09:50,552 - INFO - Checking audio file: 0949911296 - 09/10 - B16 - mentor
+2024-11-06 17:09:50,552 - INFO - Found mentor file: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-06 17:09:50,553 - INFO - Processing HV file: 0949911296 - 09/10 - B16 - HV
+2024-11-06 17:09:50,553 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1oovK9faTksePgr5RF5H_UegY9VA1800D.wav
+2024-11-06 17:09:52,016 - ERROR - Error processing video Bản sao của 0949911296 - 09/10 - B16: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1igaxu7SjVXLl743SJ_isXJRIloulOHFc
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:52,018 - INFO - 
+Processing video: Bản sao của 0898347747 - 10/10 - B5
+2024-11-06 17:09:52,019 - INFO - Looking for audio files for video: 0898347747 - 10/10 - B5
+2024-11-06 17:09:52,019 - INFO - Found 2 related audio files:
+2024-11-06 17:09:52,020 - INFO - - Related audio: 0898347747 - 10/10 - B5 - HV
+2024-11-06 17:09:52,020 - INFO - - Related audio: 0898347747 - 10/10 - B5 - mentor
+2024-11-06 17:09:52,020 - INFO - Checking audio file: 0898347747 - 10/10 - B5 - HV
+2024-11-06 17:09:52,021 - INFO - Found HV file: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-06 17:09:52,021 - INFO - Checking audio file: 0898347747 - 10/10 - B5 - mentor
+2024-11-06 17:09:52,021 - INFO - Found mentor file: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-06 17:09:52,022 - INFO - Processing HV file: 0898347747 - 10/10 - B5 - HV
+2024-11-06 17:09:52,022 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1qetq0udB096mOpue8XyHtaUUYudB0k_Y.wav
+2024-11-06 17:09:53,327 - ERROR - Error processing video Bản sao của 0898347747 - 10/10 - B5: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:53,330 - INFO - 
+Processing video: Bản sao của 0345100005 - 09/10 - B17
+2024-11-06 17:09:53,331 - INFO - Looking for audio files for video: 0345100005 - 09/10 - B17
+2024-11-06 17:09:53,331 - INFO - Found 2 related audio files:
+2024-11-06 17:09:53,331 - INFO - - Related audio: 0345100005 - 09/10 - B17 - HV
+2024-11-06 17:09:53,332 - INFO - - Related audio: 0345100005 - 09/10 - B17 - mentor
+2024-11-06 17:09:53,332 - INFO - Checking audio file: 0345100005 - 09/10 - B17 - HV
+2024-11-06 17:09:53,332 - INFO - Found HV file: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-06 17:09:53,333 - INFO - Checking audio file: 0345100005 - 09/10 - B17 - mentor
+2024-11-06 17:09:53,333 - INFO - Found mentor file: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-06 17:09:53,334 - INFO - Processing HV file: 0345100005 - 09/10 - B17 - HV
+2024-11-06 17:09:53,334 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL.wav
+2024-11-06 17:09:54,651 - ERROR - Error processing video Bản sao của 0345100005 - 09/10 - B17: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr
+
+but Gdown can't. Please check connections and permissions.
+2024-11-06 17:09:54,653 - INFO - 
+Processed Videos:
+2024-11-06 17:11:51,335 - INFO - Database initialized
+2024-11-06 17:11:52,773 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:11:53,421 - INFO - Successfully accessed folder: Test
+2024-11-06 17:11:53,421 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:11:53,421 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:11:54,213 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:11:54,213 - INFO - Using Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:11:54,836 - INFO - Found 2 items:
+2024-11-06 17:11:54,836 - INFO - - Audio (application/vnd.google-apps.folder) ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-06 17:11:54,837 - INFO - - Video (application/vnd.google-apps.folder) ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 17:11:54,837 - INFO - Found Audio folder: Audio (ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB)
+2024-11-06 17:11:54,838 - INFO - Found Video folder: Video (ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC)
+2024-11-06 17:11:54,838 - INFO - 
+Listing files in Video folder:
+2024-11-06 17:11:55,442 - INFO - Found 10 videos:
+2024-11-06 17:11:55,442 - INFO - - Video: Bản sao của 0973453282 - 09/10 - B6 (ID: 10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o)
+2024-11-06 17:11:55,442 - INFO - - Video: Bản sao của 0383521988 - 08/10 - B28 (ID: 1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs)
+2024-11-06 17:11:55,443 - INFO - - Video: Bản sao của 0912338926 - 09/10 - B10 (ID: 1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD)
+2024-11-06 17:11:55,443 - INFO - - Video: Bản sao của 0398678257 - 09/10 - B2 (ID: 1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_)
+2024-11-06 17:11:55,443 - INFO - - Video: Bản sao của 0961797200 - 09/10 - B13 (ID: 1x31CUa503coR26Tl-DIgMxiJaJmAWPmF)
+2024-11-06 17:11:55,444 - INFO - - Video: Bản sao của 0989741503 - 10/10 - B12 (ID: 172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2)
+2024-11-06 17:11:55,444 - INFO - - Video: Bản sao của 0377642151 - 09/10 - B16 (ID: 1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl)
+2024-11-06 17:11:55,445 - INFO - - Video: Bản sao của 0949911296 - 09/10 - B16 (ID: 1oovK9faTksePgr5RF5H_UegY9VA1800D)
+2024-11-06 17:11:55,445 - INFO - - Video: Bản sao của 0898347747 - 10/10 - B5 (ID: 1qetq0udB096mOpue8XyHtaUUYudB0k_Y)
+2024-11-06 17:11:55,445 - INFO - - Video: Bản sao của 0345100005 - 09/10 - B17 (ID: 1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL)
+2024-11-06 17:11:55,445 - INFO - 
+Listing files in Audio folder:
+2024-11-06 17:11:56,047 - INFO - Found 20 audio files:
+2024-11-06 17:11:56,048 - INFO - - Audio: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-06 17:11:56,048 - INFO - - Audio: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-06 17:11:56,049 - INFO - - Audio:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:11:56,049 - INFO - - Audio:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:11:56,049 - INFO - - Audio: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-06 17:11:56,050 - INFO - - Audio: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-06 17:11:56,051 - INFO - - Audio: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-06 17:11:56,051 - INFO - - Audio: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-06 17:11:56,052 - INFO - - Audio: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-06 17:11:56,052 - INFO - - Audio: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-06 17:11:56,053 - INFO - - Audio: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-06 17:11:56,053 - INFO - - Audio: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-06 17:11:56,053 - INFO - - Audio: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-06 17:11:56,054 - INFO - - Audio: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-06 17:11:56,054 - INFO - - Audio: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 17:11:56,055 - INFO - - Audio: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 17:11:56,056 - INFO - - Audio: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-06 17:11:56,056 - INFO - - Audio: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-06 17:11:56,057 - INFO - - Audio: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-06 17:11:56,057 - INFO - - Audio: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-06 17:11:56,057 - INFO - 
+Processing video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 17:11:56,059 - INFO - Looking for audio files for video: 0973453282 - 09/10 - B6
+2024-11-06 17:11:56,059 - INFO - Found 2 related audio files:
+2024-11-06 17:11:56,060 - INFO - - Related audio:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:11:56,060 - INFO - - Related audio:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:11:56,060 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:11:56,061 - INFO - Found HV file:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:11:56,061 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:11:56,061 - INFO - Found mentor file:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:11:56,062 - INFO - Processing HV file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:11:56,062 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:12:01,245 - INFO - Download 100%
+2024-11-06 17:13:41,434 - INFO - Processing mentor file:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:13:41,435 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:13:46,672 - INFO - Download 100%
+2024-11-06 17:15:47,995 - INFO - Combining transcriptions...
+2024-11-06 17:15:48,016 - INFO - Combined transcript format sample:
+[00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Yes, okay. 
+[00:00:15] Mentor: Vậy thì sau cái buổi hôm đó mình về nhà mình có thời gian online hoặc l...
+2024-11-06 17:15:48,017 - INFO - Getting criteria...
+2024-11-06 17:15:48,017 - INFO - Preparing to analyze transcript...
+2024-11-06 17:15:48,018 - INFO - Transcript length: 25863
+2024-11-06 17:15:48,018 - INFO - Sending request to: http://localhost:25034/analyze
+2024-11-06 17:15:48,018 - INFO - Transcript sample: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Ye...
+2024-11-06 17:18:05,228 - INFO - Database initialized
+2024-11-06 17:18:06,462 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:18:07,051 - INFO - Successfully accessed folder: Test
+2024-11-06 17:18:07,051 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:18:07,052 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-06 17:18:07,714 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:18:07,715 - INFO - Using Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-06 17:18:08,469 - INFO - Found 2 items:
+2024-11-06 17:18:08,470 - INFO - - Audio (application/vnd.google-apps.folder) ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-06 17:18:08,470 - INFO - - Video (application/vnd.google-apps.folder) ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-06 17:18:08,470 - INFO - Found Audio folder: Audio (ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB)
+2024-11-06 17:18:08,470 - INFO - Found Video folder: Video (ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC)
+2024-11-06 17:18:08,470 - INFO - 
+Listing files in Video folder:
+2024-11-06 17:18:09,012 - INFO - Found 10 videos:
+2024-11-06 17:18:09,012 - INFO - - Video: Bản sao của 0973453282 - 09/10 - B6 (ID: 10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o)
+2024-11-06 17:18:09,013 - INFO - - Video: Bản sao của 0383521988 - 08/10 - B28 (ID: 1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs)
+2024-11-06 17:18:09,013 - INFO - - Video: Bản sao của 0912338926 - 09/10 - B10 (ID: 1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD)
+2024-11-06 17:18:09,014 - INFO - - Video: Bản sao của 0398678257 - 09/10 - B2 (ID: 1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_)
+2024-11-06 17:18:09,014 - INFO - - Video: Bản sao của 0961797200 - 09/10 - B13 (ID: 1x31CUa503coR26Tl-DIgMxiJaJmAWPmF)
+2024-11-06 17:18:09,014 - INFO - - Video: Bản sao của 0989741503 - 10/10 - B12 (ID: 172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2)
+2024-11-06 17:18:09,015 - INFO - - Video: Bản sao của 0377642151 - 09/10 - B16 (ID: 1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl)
+2024-11-06 17:18:09,015 - INFO - - Video: Bản sao của 0949911296 - 09/10 - B16 (ID: 1oovK9faTksePgr5RF5H_UegY9VA1800D)
+2024-11-06 17:18:09,015 - INFO - - Video: Bản sao của 0898347747 - 10/10 - B5 (ID: 1qetq0udB096mOpue8XyHtaUUYudB0k_Y)
+2024-11-06 17:18:09,016 - INFO - - Video: Bản sao của 0345100005 - 09/10 - B17 (ID: 1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL)
+2024-11-06 17:18:09,016 - INFO - 
+Listing files in Audio folder:
+2024-11-06 17:18:09,717 - INFO - Found 20 audio files:
+2024-11-06 17:18:09,718 - INFO - - Audio: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-06 17:18:09,720 - INFO - - Audio: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-06 17:18:09,720 - INFO - - Audio:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:18:09,721 - INFO - - Audio:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:18:09,721 - INFO - - Audio: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-06 17:18:09,722 - INFO - - Audio: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-06 17:18:09,722 - INFO - - Audio: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-06 17:18:09,722 - INFO - - Audio: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-06 17:18:09,722 - INFO - - Audio: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-06 17:18:09,723 - INFO - - Audio: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-06 17:18:09,723 - INFO - - Audio: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-06 17:18:09,723 - INFO - - Audio: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-06 17:18:09,724 - INFO - - Audio: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-06 17:18:09,724 - INFO - - Audio: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-06 17:18:09,725 - INFO - - Audio: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 17:18:09,725 - INFO - - Audio: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 17:18:09,725 - INFO - - Audio: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-06 17:18:09,725 - INFO - - Audio: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-06 17:18:09,726 - INFO - - Audio: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-06 17:18:09,726 - INFO - - Audio: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-06 17:18:09,726 - INFO - 
+Processing video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 17:18:09,727 - INFO - Looking for audio files for video: 0973453282 - 09/10 - B6
+2024-11-06 17:18:09,727 - INFO - Found 2 related audio files:
+2024-11-06 17:18:09,728 - INFO - - Related audio:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:18:09,728 - INFO - - Related audio:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:18:09,728 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:18:09,728 - INFO - Found HV file:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-06 17:18:09,729 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:18:09,729 - INFO - Found mentor file:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-06 17:18:09,729 - INFO - Processing HV file:  0973453282 - 09/10 - B6 - HV
+2024-11-06 17:18:09,730 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:18:12,033 - INFO - Download 100%
+2024-11-06 17:19:54,976 - INFO - Processing mentor file:  0973453282 - 09/10 - B6 - mentor
+2024-11-06 17:19:54,976 - INFO - Downloading mentor file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:19:57,701 - INFO - Download 100%
+2024-11-06 17:22:03,414 - INFO - Combining transcriptions...
+2024-11-06 17:22:03,428 - INFO - Combined transcript format sample:
+[00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Yes, okay. 
+[00:00:15] Mentor: Vậy thì sau cái buổi hôm đó mình về nhà mình có thời gian online hoặc l...
+2024-11-06 17:22:03,429 - INFO - Getting criteria...
+2024-11-06 17:22:03,429 - INFO - Preparing to analyze transcript...
+2024-11-06 17:22:03,430 - INFO - Transcript length: 25863
+2024-11-06 17:22:03,430 - INFO - Sending request to: http://103.253.20.13:25034/analyze
+2024-11-06 17:22:03,431 - INFO - Transcript sample: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Ye...
+2024-11-06 17:22:42,633 - INFO - Response status code: 200
+2024-11-06 17:22:42,633 - INFO - Full response content: {"criteria":{"3Ps":{"Lead-In":{"comments":"The mentor introduced the topic of Vietnamese cuisine and set the stage for a conversation exercise, allowing the mentee to prepare to speak about personal experiences.","timestamp":{"end":"00:02:42","start":"00:02:20"}},"Warm-Up":{"comments":"The mentor effectively engaged the mentee by discussing the upcoming lesson and inquiring about the mentee's comfort and understanding of the material, establishing a welcoming atmosphere.","timestamp":{"end":"00:02:20","start":"00:00:20"}},"Wrap-Up":{"comments":"The mentor summarized the lesson, provided feedback, and assigned homework, ensuring the mentee knows what to focus on before the next session, reinforcing learning.","timestamp":{"end":"00:29:09","start":"00:28:01"}},"recommendationScore":{"reason":"<b>Present: 8/10</b> Nh\u1eadn x\u00e9t: Presentation of ideas was clear and structured. <b>Practice: 7/10</b> Nh\u1eadn x\u00e9t: Practice opportunities were provided but could be more interactive. <b>Produce: 7/10</b> Nh\u1eadn x\u00e9t: Production tasks were present but could be more challenging.","score":"4/5"}},"buildingConversations":{"recommendationScore":{"reason":"<b>Good leading: 8/10</b> Nh\u1eadn x\u00e9t: The mentor initiated the conversation effectively and kept it engaging.\n<b>Quality of questions: 7/10</b> Questions were mostly open-ended but could invite more elaboration.","score":"4/5"},"timestamp":{"end":"00:02:14","start":"00:01:48"}},"correctingMistakesRightTime":{"recommendationScore":{"reason":"<b>Hot correction: 8/10</b> Nh\u1eadn x\u00e9t: Immediate corrections were made effectively.\n<b>Cold correction: 7/10</b> Delayed corrections were also present but could be more frequent.","score":"4/5"},"timestamp":{"end":"00:10:54","start":"00:10:40"}},"correctingMistakesRightWay":{"recommendationScore":{"reason":"<b>Ch\u1ec9 ra l\u1ed7i sai: 8/10</b> Nh\u1eadn x\u00e9t: Mistakes were pointed out effectively.\n<b>C\u00e1ch s\u1eeda \u0111\u00fang: 7/10</b> Correction methods were appropriate but could be more varied.\n<b>Luy\u1ec7n t\u1eadp s\u1eeda sai: 7/10</b> Practice for correcting mistakes was present but could be more structured.","score":"4/5"},"timestamp":{"end":"00:10:49","start":"00:10:34"}},"givingFeedback":{"recommendationScore":{"reason":"<b>Motivational and relevant: 8/10</b> Nh\u1eadn x\u00e9t: The feedback was relevant and aimed to motivate the mentee.","score":"4/5"},"timestamp":{"end":"00:10:25","start":"00:09:56"}},"grammar":{"recommendationScore":{"reason":"<b>V\u00ed d\u1ee5 ng\u1eef ph\u00e1p: 8/10</b> V\u00ed d\u1ee5 v\u1ec1 c\u00e1ch s\u1eed d\u1ee5ng ng\u1eef ph\u00e1p \u0111\u00e3 \u0111\u01b0\u1ee3c cung c\u1ea5p.\n<b>Gi\u1ea3i th\u00edch thu\u1eadt ng\u1eef: 7/10</b> Thu\u1eadt ng\u1eef ng\u1eef ph\u00e1p \u0111\u00e3 \u0111\u01b0\u1ee3c gi\u1ea3i th\u00edch nh\u01b0ng c\u00f3 th\u1ec3 ph\u00f9 h\u1ee3p h\u01a1n.\n<b>C\u00e1ch d\u00f9ng: 8/10</b> S\u1eed d\u1ee5ng ng\u1eef ph\u00e1p \u0111\u00e3 \u0111\u01b0\u1ee3c th\u1ec3 hi\u1ec7n t\u1ed1t.\n<b>C\u1ea5u tr\u00fac: 7/10</b> C\u1ea5u tr\u00fac ng\u1eef ph\u00e1p \u0111\u01b0\u1ee3c \u0111\u1ec1 c\u1eadp nh\u01b0ng c\u1ea7n chi ti\u1ebft h\u01a1n.\n<b>CCQ: 6/10</b> CCQ \u0111\u00e3 c\u00f3 nh\u01b0ng c\u1ea7n s\u00f4i \u0111\u1ed9ng v\u00e0 \u0111a d\u1ea1ng h\u01a1n.\n<b>T\u00f3m t\u1eaft: 8/10</b> M\u1ed9t t\u00f3m t\u1eaft hi\u1ec7u qu\u1ea3 \u0111\u00e3 \u0111\u01b0\u1ee3c th\u1ef1c hi\u1ec7n.","score":"4/5"},"timestamp":{"end":"00:23:30","start":"00:23:09"}},"leadIn":{"recommendationScore":{"reason":"<b>Gi\u1edbi thi\u1ec7u r\u00f5 r\u00e0ng v\u00e0 k\u1ebft n\u1ed1i v\u1edbi n\u1ed9i dung b\u00e0i h\u1ecdc: 3/4</b> Nh\u1eadn x\u00e9t: Mentor \u0111\u00e3 k\u1ebft n\u1ed1i t\u1ed1t v\u1edbi n\u1ed9i dung b\u00e0i h\u1ecdc v\u1ec1 g\u1ecdi m\u00f3n nh\u01b0ng c\u1ea7n cung c\u1ea5p th\u00eam m\u1ed9t s\u1ed1 th\u00f4ng tin \u0111\u1ec3 nghe tr\u1edf n\u00ean \u0111\u1ea7y \u0111\u1ee7 h\u01a1n. <b>\u0110\u1ed9ng l\u1ef1c v\u00e0 h\u1ee9ng th\u00fa: 2/3</b> Nh\u1eadn x\u00e9t: Mentor l\u00e0m cho ph\u1ea7n d\u1eabn d\u1eaft th\u00fa v\u1ecb nh\u01b0ng ch\u01b0a truy\u1ec1n \u0111\u1ea1t \u0111\u1ee7 s\u1ef1 h\u1ee9ng th\u00fa m\u1ea1nh m\u1ebd cho Mentee. <b>K\u1ebft n\u1ed1i v\u1edbi ki\u1ebfn th\u1ee9c tr\u01b0\u1edbc \u0111\u00f3 c\u1ee7a Mentee: 2/3</b> Nh\u1eadn x\u00e9t: Mentor \u0111\u00e3 c\u1ed1 g\u1eafng k\u1ebft n\u1ed1i \u0111\u1ebfn ki\u1ebfn th\u1ee9c tr\u01b0\u1edbc \u0111\u00f3 nh\u01b0ng c\u00f3 th\u1ec3 l\u00e0m cho vi\u1ec7c li\u00ean k\u1ebft n\u00e0y r\u00f5 r\u00e0ng h\u01a1n.","score":"7/10"},"timestamp":{"end":"00:03:20","start":"00:02:13"}},"pronunciation":{"recommendationScore":{"reason":"<b>Ph\u00e1t hi\u1ec7n l\u1ed7i: 8/10</b> Mentor \u0111\u00e3 ch\u1ec9 ra hi\u1ec7u qu\u1ea3 c\u00e1c v\u1ea5n \u0111\u1ec1 v\u1ec1 ph\u00e1t \u00e2m.\n<b>H\u01b0\u1edbng d\u1eabn ph\u00e1t \u00e2m: 7/10</b> Ph\u00e1t \u00e2m \u0111\u01b0\u1ee3c th\u1ef1c h\u00e0nh nh\u01b0ng c\u1ea7n t\u1eadp trung nhi\u1ec1u h\u01a1n.\n<b>C\u00e1ch \u0111\u1eb7t c\u00e2u h\u1ecfi: 6/10</b> \u0110\u1eb7t c\u00e2u h\u1ecfi v\u1ec1 ph\u00e1t \u00e2m v\u1eabn ch\u01b0a r\u00f5 r\u00e0ng.\n<b>Ph\u1ea3n h\u1ed3i: 7/10</b> Ph\u1ea3n h\u1ed3i v\u1ec1 c\u00e1ch ph\u00e1t \u00e2m \u0111\u00e3 \u0111\u01b0\u1ee3c \u0111\u01b0a ra nh\u01b0ng c\u1ea7n chi ti\u1ebft h\u01a1n.\n<b>Khuy\u1ebfn kh\u00edch: 7/10</b> C\u00e1c c\u01a1 h\u1ed9i th\u1ef1c h\u00e0nh \u0111\u01b0\u1ee3c t\u1ea1o ra nh\u01b0ng c\u1ea7n \u0111\u01b0\u1ee3c m\u1edf r\u1ed9ng.\n<b>Khen th\u01b0\u1edfng: 8/10</b> S\u1ef1 khuy\u1ebfn kh\u00edch t\u00edch c\u1ef1c \u0111\u00e3 \u0111\u01b0\u1ee3c \u0111\u01b0a ra hi\u1ec7u qu\u1ea3.","score":"4/5"},"timestamp":{"end":"00:15:05","start":"00:14:26"}},"teachingIdeaDevelopment":{"recommendationScore":{"reason":"<b>Follow-up questions: 8/10</b> Nh\u1eadn x\u00e9t: The mentor asked good follow-up questions that encouraged deeper responses.\n<b>Constructive feedback: 7/10</b> Corrections were made, but additional constructive ideas would enhance learning.","score":"4/5"},"timestamp":{"end":"00:13:11","start":"00:12:45"}},"teachingVocab":{"recommendationScore":{"reason":"<b>\u0110\u01b0a ra \u0111\u1ecbnh ngh\u0129a: 6/10</b> \u0110\u1ecbnh ngh\u0129a v\u1ec1 c\u1ee5m 'enjoy the scenery' \u0111\u00e3 \u0111\u01b0\u1ee3c \u0111\u01b0a ra, nh\u01b0ng c\u1ea7n nhi\u1ec1u v\u00ed d\u1ee5 h\u01a1n \u0111\u1ec3 l\u00e0m r\u00f5 ngh\u0129a.\n<b>H\u01b0\u1edbng d\u1eabn s\u1eed d\u1ee5ng t\u1eeb: 7/10</b> Ph\u00e1t \u00e2m c\u1ee7a t\u1eeb \u0111\u00e3 \u0111\u01b0\u1ee3c \u0111\u1ec1 c\u1eadp nh\u01b0ng c\u00f3 th\u1ec3 nh\u1ea5n m\u1ea1nh h\u01a1n.\n<b>Feedback: 5/10</b> Ph\u1ea3n h\u1ed3i v\u00e0 s\u1eeda l\u1ed7i v\u1ec1 vi\u1ec7c s\u1eed d\u1ee5ng t\u1eeb c\u00f2n ch\u01b0a r\u00f5 r\u00e0ng.\n<b>CCQ: 4/10</b> C\u00e2u h\u1ecfi ki\u1ec3m tra kh\u00e1i ni\u1ec7m (CCQ) c\u00f2n \u00edt.\n<b>Khuy\u1ebfn kh\u00edch s\u1eed d\u1ee5ng: 6/10</b> \u0110\u00e3 c\u00f3 s\u1ef1 khuy\u1ebfn kh\u00edch nh\u01b0ng c\u1ea7n c\u00f3 c\u1ea5u tr\u00fac r\u00f5 r\u00e0ng h\u01a1n.","score":"3/5"},"timestamp":{"end":"00:18:11","start":"00:18:02"}},"warmUp":{"recommendationScore":{"reason":"<b>T\u1ea1o kh\u00f4ng kh\u00ed tho\u1ea3i m\u00e1i v\u00e0 khuy\u1ebfn kh\u00edch tham gia: 4/4</b> Nh\u1eadn x\u00e9t: Mentor \u0111\u00e3 t\u1ea1o \u0111\u01b0\u1ee3c b\u1ea7u kh\u00f4ng kh\u00ed th\u00e2n thi\u1ec7n v\u00e0 tho\u1ea3i m\u00e1i, gi\u00fap Mentee d\u1ec5 d\u00e0ng tham gia v\u00e0o qu\u00e1 tr\u00ecnh h\u1ecdc. <b>Ph\u1ea3n h\u1ed3i t\u00edch c\u1ef1c v\u00e0 khuy\u1ebfn kh\u00edch: 2/3</b> Nh\u1eadn x\u00e9t: Mentor h\u01a1i thi\u1ebfu m\u1ed9t s\u1ed1 ph\u1ea3n h\u1ed3i c\u1ee5 th\u1ec3 v\u00e0 khuy\u1ebfn kh\u00edch trong qu\u00e1 tr\u00ecnh t\u01b0\u01a1ng t\u00e1c ban \u0111\u1ea7u, tuy nhi\u00ean v\u1eabn c\u00f4ng nh\u1eadn n\u1ed7 l\u1ef1c c\u1ee7a Mentee. <b>T\u1ed1c \u0111\u1ed9 ph\u00f9 h\u1ee3p v\u00e0 chuy\u1ec3n ti\u1ebfp t\u1ef1 nhi\u00ean: 2/3</b> Nh\u1eadn x\u00e9t: M\u1eb7c d\u00f9 chuy\u1ec3n ti\u1ebfp t\u1ef1 nhi\u00ean nh\u01b0ng c\u00f2n m\u1ed9t ch\u00fat thi\u1ebfu m\u1ea1ch l\u1ea1c trong truy\u1ec7n h\u00ecnh th\u1ee9c, c\u1ea7n c\u1ea3i thi\u1ec7n \u0111\u1ec3 t\u1ed1t h\u01a1n.","score":"8/10"},"timestamp":{"end":"00:02:13","start":"00:00:00"}},"wrapUp":{"recommendationScore":{"reason":"<b>M\u00f4i tr\u01b0\u1eddng tho\u1ea3i m\u00e1i v\u00e0 s\u1ef1 tham gia: 4/4</b> Nh\u1eadn x\u00e9t: Mentor \u0111\u00e3 t\u1ea1o m\u00f4i tr\u01b0\u1eddng th\u00e2n thi\u1ec7n v\u00e0 khuy\u1ebfn kh\u00edch Mentee tham gia v\u00e0o ph\u1ea7n wrap-up m\u1ed9t c\u00e1ch t\u1ef1 nhi\u00ean. <b>Ph\u1ea3n h\u1ed3i t\u00edch c\u1ef1c v\u00e0 khuy\u1ebfn kh\u00edch: 2/3</b> Nh\u1eadn x\u00e9t: Mentor \u0111\u00e3 cung c\u1ea5p ph\u1ea3n h\u1ed3i nh\u01b0ng c\u00f3 th\u1ec3 x\u00e1c nh\u1eadn m\u1ed9t c\u00e1ch c\u1ee5 th\u1ec3 h\u01a1n m\u1ed9t s\u1ed1 \u0111i\u1ec3m c\u1ea7n c\u1ea3i thi\u1ec7n. <b>T\u1ed1c \u0111\u1ed9 ph\u00f9 h\u1ee3p v\u00e0 chuy\u1ec3n ti\u1ebfp t\u1ef1 nhi\u00ean: 2/3</b> Nh\u1eadn x\u00e9t: S\u1ef1 chuy\u1ec3n ti\u1ebfp c\u00f3 ph\u1ea7n m\u01b0\u1ee3t m\u00e0 nh\u01b0ng c\u00f3 th\u1ec3 \u0111\u01b0\u1ee3c c\u1ea3i thi\u1ec7n \u0111\u1ec3 k\u1ebft th\u00fac phi\u00ean h\u1ecdc m\u1ed9t c\u00e1ch h\u1ee3p l\u00fd h\u01a1n.","score":"8/10"},"timestamp":{"end":"00:29:06","start":"00:29:00"}}}}
+
+2024-11-06 17:22:42,646 - INFO - Successfully received criteria
+2024-11-06 17:22:42,647 - INFO - Saving to database...
+2024-11-06 17:22:42,650 - INFO - Inserted video: https://drive.google.com/file/d/10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o/view
+2024-11-06 17:22:42,655 - INFO - Successfully processed video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-06 17:22:42,655 - INFO - Cleaning up temporary files...
+2024-11-06 17:22:42,657 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:22:42,660 - INFO - Removed temporary file: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\mentor_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-06 17:22:45,662 - INFO - 
+Processing video: Bản sao của 0383521988 - 08/10 - B28
+2024-11-06 17:22:45,666 - INFO - Looking for audio files for video: 0383521988 - 08/10 - B28
+2024-11-06 17:22:45,666 - INFO - Found 2 related audio files:
+2024-11-06 17:22:45,668 - INFO - - Related audio: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:22:45,669 - INFO - - Related audio: 0383521988 - 08/10 - B28 - mentor
+2024-11-06 17:22:45,669 - INFO - Checking audio file: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:22:45,670 - INFO - Found HV file: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-06 17:22:45,671 - INFO - Checking audio file: 0383521988 - 08/10 - B28 - mentor
+2024-11-06 17:22:45,672 - INFO - Found mentor file: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-06 17:22:45,673 - INFO - Processing HV file: 0383521988 - 08/10 - B28 - HV
+2024-11-06 17:22:45,673 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.3_combine\backend\database\temp_files\hv_1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs.wav
+2024-11-06 17:22:52,542 - INFO - Download 100%
