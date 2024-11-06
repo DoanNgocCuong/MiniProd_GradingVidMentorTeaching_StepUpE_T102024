@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Processing App</title>
+</head>
+<body>
+    <h1>Audio Processing App</h1>
+
+    <h2>Upload Audio</h2>
+    <form id="audioForm">
+        <input type="file" name="audio" required>
+        <input type="text" name="language" placeholder="Language (default: en)">
+        <button type="submit">Process Audio</button>
+    </form>
+
+    <h2>Fetch Data</h2>
+    <form id="fetchForm">
+        <input type="number" name="max_chars" placeholder="Max Characters" value="10">
+        <button type="submit">Fetch Data</button>
+    </form>
+
+    <h2>Process Google Drive Files</h2>
+    <form id="driveForm">
+        <input type="text" name="folder_id" placeholder="Google Drive Folder ID" required>
+        <button type="submit">Process Folder</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('audioForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/process_audio', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('fetchForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const maxChars = this.max_chars.value;
+            const response = await fetch(`/fetch_data?max_chars=${maxChars}`);
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('driveForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const folderId = this.folder_id.value;
+            const response = await fetch('/google_drive', {
+                method: 'POST',
+                body: new URLSearchParams({ folder_id: folderId })
+            });
+            const result = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(result, null, 2);
+        };
+    </script>
+</body>
+</html>
