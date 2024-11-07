@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the application
-CMD ["python", "api_database_app_dev.py"]
+CMD ["python", "api_database3apiGhiDe.py"]

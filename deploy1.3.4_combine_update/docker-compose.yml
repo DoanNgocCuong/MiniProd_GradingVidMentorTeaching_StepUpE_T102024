@@ -7,12 +7,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend:/app
+      - ./backend/database:/app/database
     ports:
       - "25035:3000"
     environment:
       - FLASK_ENV=development
-    depends_on:
-      - db
 
   frontend:
     build:
@@ -22,8 +21,3 @@ services:
       - ./frontend:/app
     ports:
       - "25036:5000"
-
-  db:
-    image: sqlite3
-    volumes:
-      - ./backend/database:/data
