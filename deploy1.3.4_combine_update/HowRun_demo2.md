@@ -33,3 +33,10 @@ npm start
 
 =======================
 
+
+
+Run docker: 
+1.
+```bash
+docker-compose up --build
+```

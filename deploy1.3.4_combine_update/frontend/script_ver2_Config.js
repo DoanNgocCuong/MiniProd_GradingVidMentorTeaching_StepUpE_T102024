@@ -1,5 +1,6 @@
 import { videoTranscripts } from './videoTranscripts.js';
 import { baremScore } from './baremScore.js'; 
+import config from './config.js';
 
 initializeResultTable();
 let currentCriteria = '';
@@ -16,7 +17,7 @@ document.getElementById('loadVideo').addEventListener('click', async () => {
         }
         const fileId = fileIdMatch[1];
 
-        const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(videoLink)}`, {
+        const response = await fetch(`${config.API_URL}/get_video_data?url=${encodeURIComponent(videoLink)}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -201,7 +202,7 @@ document.getElementById('saveScoreButton').addEventListener('click', async (even
     };
 
     try {
-        const response = await fetch('http://localhost:25035/save_score', {
+        const response = await fetch(`${config.API_URL}/save_score`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -216,6 +217,9 @@ document.getElementById('saveScoreButton').addEventListener('click', async (even
             // Clear inputs
             document.getElementById('scoreInput').value = '';
             document.getElementById('noteInput').value = '';
+            
+            // Show success notification
+            showNotification('success');
         } else {
             throw new Error('Failed to save score');
         }
@@ -287,7 +291,7 @@ function initializeResultTable() {
 async function loadSavedScores(videoUrl) {
     try {
         const encodedUrl = encodeURIComponent(videoUrl);
-        const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodedUrl}`);
+        const response = await fetch(`${config.API_URL}/get_scores?url_video=${encodedUrl}`);
         const scores = await response.json();
         
         if (Array.isArray(scores)) {
@@ -308,7 +312,7 @@ async function displayCriteriaRecommendation(criterionKey, videoId) {
     const reasonElement = document.getElementById('criteriaReason');
 
     try {
-        const response = await fetch(`http://localhost:25035/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
+        const response = await fetch(`${config.API_URL}/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
         const data = await response.json();
 
         if (response.ok) {
