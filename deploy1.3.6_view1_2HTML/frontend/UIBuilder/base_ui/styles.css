@@ -96,10 +96,13 @@ body {
 }
 
 .video-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
 }
 
 .video-item:hover {
@@ -108,41 +111,25 @@ body {
 
 .video-info {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
 }
 
 .video-title {
-    font-weight: bold;
-    font-size: 1.1em;
+    min-width: 256px;
+    font-size: 14px;
 }
 
-.video-url {
-    color: blue;
-    text-decoration: underline;
+.video-date,
+.video-mentor {
+    min-width: 128px;
+    font-size: 14px;
 }
 
-.criteria-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.criteria-item {
-    background: #f5f5f5;
-    padding: 8px;
-    border-radius: 4px;
-}
-
-.criteria-name {
-    font-weight: bold;
-}
-
-.criteria-score, .criteria-note {
-    display: block;
-    margin-top: 4px;
-    font-size: 0.9em;
+.video-score {
+    min-width: 96px;
+    font-size: 14px;
 }
 
 .video-actions {
@@ -162,53 +149,4 @@ body {
 .action-btn:hover {
     background-color: #f3f4f6;
     color: #374151;
-}
-
-.table-container {
-    margin-top: 20px;
-    overflow-x: auto;
-}
-
-.video-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
-
-.video-table th,
-.video-table td {
-    padding: 12px 16px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.video-table th {
-    background: #f5f5f5;
-    font-weight: 600;
-    color: #333;
-}
-
-.video-row:hover {
-    background: #f8f8f8;
-}
-
-.video-title a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-.video-title a:hover {
-    text-decoration: underline;
-}
-
-.action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
-}
-
-.action-btn:hover {
-    background: #f0f0f0;
 }

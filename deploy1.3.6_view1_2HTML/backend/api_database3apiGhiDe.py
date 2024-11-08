@@ -58,7 +58,7 @@ def get_video_data():
         cursor = conn.cursor()
         
         cursor.execute('''
-            SELECT url_video, transcription, criteria
+            SELECT url_video, name_video, transcription, criteria
             FROM videos 
             WHERE url_video = ?
         ''', (url_video,))
@@ -68,8 +68,9 @@ def get_video_data():
         if result:
             return jsonify({
                 'url_video': result[0],
-                'transcript': result[1],
-                'criteria': result[2]
+                'name_video': result[1],
+                'transcript': result[2],
+                'criteria': result[3]
             })
         
         return jsonify({'error': 'Video not found'}), 404
@@ -181,6 +182,36 @@ def get_scores():
 
     except Exception as e:
         print(f"Error fetching scores: {e}")
+        return jsonify({'error': str(e)}), 500
+    finally:
+        conn.close()
+
+# Add new route to get list of videos
+@app.route('/get_videos', methods=['GET'])
+def get_videos():
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT url_video, name_video, transcription, criteria
+            FROM videos
+            ORDER BY name_video
+        ''')
+        
+        rows = cursor.fetchall()
+        
+        videos = [{
+            'url_video': row[0],
+            'name_video': row[1],
+            'transcript': row[2],
+            'criteria': row[3]
+        } for row in rows]
+        
+        return jsonify(videos)
+
+    except Exception as e:
+        print(f"Error fetching videos: {e}")
         return jsonify({'error': str(e)}), 500
     finally:
         conn.close()
