@@ -212,3 +212,39 @@ body {
 .action-btn:hover {
     background: #f0f0f0;
 }
+
+.video-table td[colspan] {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading td[colspan] {
+    background: #f5f5f5;
+}
+
+.error td[colspan] {
+    background: #fff0f0;
+    color: #d32f2f;
+}
+
+.nav-buttons {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    background-color: #f2a900;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background-color: #d99700;
+}

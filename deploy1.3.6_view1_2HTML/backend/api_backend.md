@@ -105,3 +105,31 @@ curl --location 'http://localhost:3000/get_scores?url_video=https%3A%2F%2Fdrive.
         "url_video": "https://drive.google.com/file/d/10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o/view"
     }
 ]
+
+
+
+## 4. GET TOÀN BỘ VIDEO 
+I'll show you how to test the `/get_videos` endpoint using cURL, along with example input and output.
+
+**cURL Command:**
+```bash
+curl -X GET http://localhost:3000/get_videos
+```
+
+**Expected Output:**
+```json
+[
+    {
+        "url_video": "https://drive.google.com/file/d/xxx1",
+        "name_video": "Demo Video 1",
+        "transcript": "This is the transcript for video 1",
+        "criteria": "Criteria 1, Criteria 2, Criteria 3"
+    },
+    {
+        "url_video": "https://drive.google.com/file/d/xxx2",
+        "name_video": "Demo Video 2",
+        "transcript": "This is the transcript for video 2",
+        "criteria": "Criteria 1, Criteria 4, Criteria 5"
+    }
+]
+```

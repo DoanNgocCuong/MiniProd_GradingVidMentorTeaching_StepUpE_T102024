@@ -4,7 +4,7 @@ let videos = [];
 // Function to fetch scores from API
 async function fetchScores(urlVideo) {
     try {
-        const response = await fetch(`http://localhost:3000/get_scores?url_video=${encodeURIComponent(urlVideo)}`);
+        const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodeURIComponent(urlVideo)}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -16,7 +16,7 @@ async function fetchScores(urlVideo) {
 // Add new function to fetch video data
 async function fetchVideoData(urlVideo) {
     try {
-        const response = await fetch(`http://localhost:3000/get_video_data?url=${encodeURIComponent(urlVideo)}`);
+        const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(urlVideo)}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -80,9 +80,9 @@ function renderVideos() {
     const filteredVideos = filterVideos();
     
     videoList.innerHTML = filteredVideos.map(video => `
-        <tr class="video-row">
+        <tr class="video-row" data-url="${encodeURIComponent(video.url_video)}">
             <td class="video-title">
-                <a href="${video.url_video}" target="_blank">${video.title}</a>
+                <span>${video.title}</span>
             </td>
             <td>${formatDate(video.timestamp)}</td>
             <td>Mentor Name</td>
@@ -93,6 +93,29 @@ function renderVideos() {
             </td>
         </tr>
     `).join('');
+
+    // Update click handler
+    document.querySelectorAll('.video-row').forEach(row => {
+        row.addEventListener('click', async () => {
+            const videoUrl = decodeURIComponent(row.dataset.url);
+            
+            try {
+                // Gọi API backend ở port 25035
+                const apiUrl = `http://localhost:25035/get_video_data?url=${encodeURIComponent(videoUrl)}`;
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                // Sau khi lấy được data từ backend, chuyển trang frontend với port 25035
+                window.location.href = `http://localhost:25035/index.html?video=${encodeURIComponent(videoUrl)}`;
+                
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
 
     lucide.createIcons();
 }
@@ -106,7 +129,7 @@ function formatDate(timestamp) {
 // Update the fetchVideos function to get all videos
 async function fetchVideos() {
     try {
-        const response = await fetch('http://localhost:3000/get_videos');
+        const response = await fetch('http://localhost:25035/get_videos');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -146,6 +169,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.error('Error updating filters:', error);
                 }
             });
+        });
+
+        // Add at the top with other event listeners
+        document.getElementById('backToScoring').addEventListener('click', () => {
+            window.location.href = '../index.html';
         });
     } catch (error) {
         console.error('Error initializing app:', error);
