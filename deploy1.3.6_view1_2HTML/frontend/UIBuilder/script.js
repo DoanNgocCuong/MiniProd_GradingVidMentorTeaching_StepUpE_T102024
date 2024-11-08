@@ -100,17 +100,8 @@ function renderVideos() {
             const videoUrl = decodeURIComponent(row.dataset.url);
             
             try {
-                // Gọi API backend ở port 25035
-                const apiUrl = `http://localhost:25035/get_video_data?url=${encodeURIComponent(videoUrl)}`;
-                const response = await fetch(apiUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                // Sau khi lấy được data từ backend, chuyển trang frontend với port 25035
-                window.location.href = `http://localhost:25035/index.html?video=${encodeURIComponent(videoUrl)}`;
-                
+                // Chuyển sang trang chấm điểm với video URL là parameter
+                window.location.href = `../index.html?video=${encodeURIComponent(videoUrl)}`;
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -137,7 +128,6 @@ async function fetchVideos() {
         return [];
     }
 }
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', async function() {
     try {
@@ -173,7 +163,11 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Add at the top with other event listeners
         document.getElementById('backToScoring').addEventListener('click', () => {
-            window.location.href = '../index.html';
+            try {
+                window.location.href = '../index.html';
+            } catch (error) {
+                console.error('Navigation error:', error);
+            }
         });
     } catch (error) {
         console.error('Error initializing app:', error);
