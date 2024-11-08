@@ -931,9 +931,11 @@
             "file_paths": [
               "deploy1.3.4_combine_update/frontend/index.html",
               "deploy1.3.4_combine_update/frontend/script.js",
-              "deploy1.3.4_combine_update/frontend/script copy.js"
+              "deploy1.3.4_combine_update/frontend/script copy.js",
+              "deploy1.2_JavaScripts_aMinhAndCuong/index.html"
             ],
             "file_path_dict": {
+              "0": "deploy1.2_JavaScripts_aMinhAndCuong/index.html",
               "1": "deploy1.3.4_combine_update/frontend/script.js",
               "2": "deploy1.3.4_combine_update/frontend/script copy.js"
             }
@@ -1664,9 +1666,11 @@
           "kv_store": {
             "file_paths": [
               "deploy1.3.4_combine_update/frontend/index.html",
-              "deploy1.3.4_combine_update/frontend/script.js"
+              "deploy1.3.4_combine_update/frontend/script.js",
+              "deploy1.2_JavaScripts_aMinhAndCuong/index.html"
             ],
             "file_path_dict": {
+              "0": "deploy1.2_JavaScripts_aMinhAndCuong/index.html",
               "1": "deploy1.3.4_combine_update/frontend/script.js"
             }
           }
@@ -1738,9 +1742,11 @@
           "kv_store": {
             "file_paths": [
               "deploy1.3.4_combine_update/frontend/index.html",
-              "deploy1.3.4_combine_update/frontend/script.js"
+              "deploy1.3.4_combine_update/frontend/script.js",
+              "deploy1.2_JavaScripts_aMinhAndCuong/index.html"
             ],
             "file_path_dict": {
+              "0": "deploy1.2_JavaScripts_aMinhAndCuong/index.html",
               "1": "deploy1.3.4_combine_update/frontend/script.js"
             }
           }
@@ -2708,6 +2714,38 @@
               "deploy1.3.4_combine_update/frontend/script.js"
             ]
           }
+        },
+        {
+          "id": "77b2d458-d621-49a4-8032-18a65ab6e758",
+          "messageText": "Sao từ đang click được \"Load Video\" thành không click được",
+          "responseText": "Để sửa lỗi không click được vào nút \"Load Video\", bạn cần kiểm tra một số điều sau trong mã của bạn. Dưới đây là một số nguyên nhân phổ biến và cách khắc phục:\n\n1. **Kiểm tra ID của nút**: Đảm bảo rằng ID của nút \"Load Video\" trong HTML là chính xác và khớp với mã JavaScript. Ví dụ, nếu bạn có:\n   ```html\n   <button id=\"loadVideo\">Load Video</button>\n   ```\n\n2. **Kiểm tra sự kiện lắng nghe**: Đảm bảo rằng đoạn mã lắng nghe sự kiện click được thực thi sau khi DOM đã được tải hoàn toàn. Bạn có thể sử dụng `DOMContentLoaded` để đảm bảo điều này:\n   ```javascript\n   document.addEventListener('DOMContentLoaded', () => {\n       document.getElementById('loadVideo').addEventListener('click', async () => {\n           // ... existing code ...\n       });\n   });\n   ```\n\n3. **Kiểm tra CSS**: Đảm bảo rằng không có CSS nào làm cho nút \"Load Video\" không thể click được, chẳng hạn như `pointer-events: none;` hoặc `display: none;`.\n\n4. **Kiểm tra console**: Mở console trong trình duyệt (F12) và kiểm tra xem có lỗi nào không. Nếu có lỗi, nó có thể ngăn chặn mã JavaScript chạy đúng cách.\n\nNếu bạn đã kiểm tra tất cả các điều trên mà vẫn không click được, hãy cung cấp thêm thông tin về mã HTML của nút \"Load Video\" để tôi có thể giúp bạn tốt hơn.",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-07T02:09:14.306Z",
+          "context": [],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.2_JavaScripts_aMinhAndCuong/index.html"
+            ]
+          }
+        },
+        {
+          "id": "6d90d54c-0543-4080-bcb4-e8ad3c87dd3a",
+          "messageText": "check config xem vào chưa?? @config.js",
+          "responseText": "",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-07T02:09:14.306Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "473c105f-9cb4-4c3a-be59-f5f8ee2b3977",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.4_combine_update\\frontend\\config.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.4_combine_update\\frontend\\config.js",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {}
         }
       ],
       "kv_store": {}
@@ -3007,8 +3045,8 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 1474,
-    "total_repo_line_count": 612333,
+    "unique_matched_lines_count": 1964,
+    "total_repo_line_count": 613428,
     "best_prompt_response": {
       "prompt": "Viết 1 file ghi thêm 1 records vào bảng evaluations \n\ngồm các thông tin như này \n\n        url_video: currentVideoUrl,\n        criteria: currentCriteria,\n        score: parseInt(scoreInput),\n        note: noteInput,\n        timestamp: new Date().toISOString()",
       "response": "I'll help you create a Python script to insert a record into the evaluations table. Based on the database schema shown in the code snippets, here's the implementation:\n\n```python:deploy1.3.4_combine_update/backend/database/utils/insert_evaluation.py\nimport sqlite3\nimport os\nfrom datetime import datetime\n\ndef insert_evaluation(url_video, criteria, score, note):\n    # Get database path\n    current_dir = os.path.dirname(os.path.abspath(__file__))\n    db_path = os.path.join(current_dir, 'video_database.db')\n\n    # Connect to database\n    conn = sqlite3.connect(db_path)\n    cursor = conn.cursor()\n\n    try:\n        # Create evaluations table if it doesn't exist\n        cursor.execute('''\n            CREATE TABLE IF NOT EXISTS evaluations (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                video_url TEXT,\n                criteria TEXT,\n                score INTEGER,\n                note TEXT,\n                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n            )\n        ''')\n\n        # Insert evaluation record\n        cursor.execute('''\n            INSERT INTO evaluations (video_url, criteria, score, note, created_at)\n            VALUES (?, ?, ?, ?, ?)\n        ''', (url_video, criteria, score, note, datetime.now().isoformat()))\n\n        # Commit the changes\n        conn.commit()\n        print(\"Evaluation record inserted successfully!\")\n\n        # Verify the insertion\n        cursor.execute('''\n            SELECT * FROM evaluations \n            WHERE video_url = ? \n            AND criteria = ? \n            ORDER BY created_at DESC \n            LIMIT 1\n        ''', (url_video, criteria))\n        \n        record = cursor.fetchone()\n        if record:\n            print(\"\\nInserted record:\")\n            print(f\"ID: {record[0]}\")\n            print(f\"Video URL: {record[1]}\")\n            print(f\"Criteria: {record[2]}\")\n            print(f\"Score: {record[3]}\")\n            print(f\"Note: {record[4]}\")\n            print(f\"Timestamp: {record[5]}\")\n\n    except sqlite3.Error as e:\n        print(f\"Database error: {e}\")\n        conn.rollback()\n    except Exception as e:\n        print(f\"Unexpected error: {e}\")\n        conn.rollback()\n    finally:\n        conn.close()\n\nif __name__ == \"__main__\":\n    # Example usage\n    test_data = {\n        \"url_video\": \"https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/view\",\n        \"criteria\": \"Clarity\",\n        \"score\": 4,\n        \"note\": \"Clear and concise presentation\"\n    }\n    \n    insert_evaluation(\n        test_data[\"url_video\"],\n        test_data[\"criteria\"],\n        test_data[\"score\"],\n        test_data[\"note\"]\n    )\n```\n\nThis script:\n\n1. Creates the evaluations table if it doesn't exist\n2. Inserts a new evaluation record with the provided data\n3. Uses proper error handling and database connection management\n4. Verifies and displays the inserted record\n5. Includes an example usage with test data\n\nYou can run this script directly to test it, or import and use the `insert_evaluation` function in other parts of your application.\n\nThe table structure matches your frontend data structure, with:\n- video_url (from currentVideoUrl)\n- criteria (from currentCriteria)\n- score (from scoreInput)\n- note (from noteInput)\n- created_at (from timestamp)",
@@ -3157,8 +3195,8 @@
       {
         "file": "CheckPoints_All/aMinh_ver0/index.html",
         "total_lines": 126,
-        "ai_generated_lines": 26,
-        "ai_generated_percentage": 20.634920634920633
+        "ai_generated_lines": 27,
+        "ai_generated_percentage": 21.428571428571427
       },
       {
         "file": "CheckPoints_All/aMinh_ver0/script.js",
@@ -3355,8 +3393,8 @@
       {
         "file": "deploy1.2_JavaScripts_aMinhAndCuong/index.html",
         "total_lines": 126,
-        "ai_generated_lines": 27,
-        "ai_generated_percentage": 21.428571428571427
+        "ai_generated_lines": 28,
+        "ai_generated_percentage": 22.22222222222222
       },
       {
         "file": "deploy1.2_JavaScripts_aMinhAndCuong/package.json",
@@ -3889,8 +3927,8 @@
       {
         "file": "deploy1.3.2_showUIMentor/frontend/index.html",
         "total_lines": 121,
-        "ai_generated_lines": 27,
-        "ai_generated_percentage": 22.31404958677686
+        "ai_generated_lines": 28,
+        "ai_generated_percentage": 23.140495867768596
       },
       {
         "file": "deploy1.3.2_showUIMentor/frontend/package.json",
@@ -4243,8 +4281,8 @@
       {
         "file": "deploy1.3.3_combine/frontend/index.html",
         "total_lines": 121,
-        "ai_generated_lines": 27,
-        "ai_generated_percentage": 22.31404958677686
+        "ai_generated_lines": 28,
+        "ai_generated_percentage": 23.140495867768596
       },
       {
         "file": "deploy1.3.3_combine/frontend/package.json",
@@ -4296,7 +4334,13 @@
       },
       {
         "file": "deploy1.3.4_combine_update/HowRun_demo2.md",
-        "total_lines": 36,
+        "total_lines": 42,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 2.380952380952381
+      },
+      {
+        "file": "deploy1.3.4_combine_update/Note_build_docker-compose.ipynb",
+        "total_lines": 483,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -4307,16 +4351,16 @@
         "ai_generated_percentage": 61.904761904761905
       },
       {
-        "file": "deploy1.3.4_combine_update/backend/UIBuilder/React.ipynb",
-        "total_lines": 575,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/api_ckp/api_database_app_prod_2api.py",
         "total_lines": 129,
         "ai_generated_lines": 81,
         "ai_generated_percentage": 62.7906976744186
+      },
+      {
+        "file": "deploy1.3.4_combine_update/backend/UIBuilder/api_ckp/api_database_app_prod_3api_writeAdd.py",
+        "total_lines": 146,
+        "ai_generated_lines": 90,
+        "ai_generated_percentage": 61.64383561643836
       },
       {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/create_db_readDBTest.py",
@@ -4409,6 +4453,12 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "deploy1.3.4_combine_update/backend/api_database3apiGhiDe.py",
+        "total_lines": 189,
+        "ai_generated_lines": 103,
+        "ai_generated_percentage": 54.4973544973545
+      },
+      {
         "file": "deploy1.3.4_combine_update/backend/database/Note2_FullVideoAudio2Trans2Critierial.ipynb",
         "total_lines": 1617,
         "ai_generated_lines": 0,
@@ -4435,6 +4485,12 @@
       {
         "file": "deploy1.3.4_combine_update/backend/database/credentials.json",
         "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.4_combine_update/backend/database/database_description.md",
+        "total_lines": 7,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -4497,6 +4553,12 @@
         "total_lines": 31,
         "ai_generated_lines": 5,
         "ai_generated_percentage": 16.129032258064516
+      },
+      {
+        "file": "deploy1.3.4_combine_update/backend/database/utils/delete_table.py",
+        "total_lines": 28,
+        "ai_generated_lines": 17,
+        "ai_generated_percentage": 60.71428571428571
       },
       {
         "file": "deploy1.3.4_combine_update/backend/database/utils/updateNameVideo_baseOnURL_v1.py",
@@ -4607,16 +4669,28 @@
         "ai_generated_percentage": 0
       },
       {
+        "file": "deploy1.3.4_combine_update/frontend/Note3_DriveAccess.ipynb",
+        "total_lines": 136,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "deploy1.3.4_combine_update/frontend/baremScore.js",
         "total_lines": 118,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
+        "file": "deploy1.3.4_combine_update/frontend/config.js",
+        "total_lines": 10,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 30
+      },
+      {
         "file": "deploy1.3.4_combine_update/frontend/index.html",
         "total_lines": 129,
-        "ai_generated_lines": 38,
-        "ai_generated_percentage": 29.457364341085274
+        "ai_generated_lines": 39,
+        "ai_generated_percentage": 30.23255813953488
       },
       {
         "file": "deploy1.3.4_combine_update/frontend/package.json",
@@ -4626,6 +4700,18 @@
       },
       {
         "file": "deploy1.3.4_combine_update/frontend/script.js",
+        "total_lines": 331,
+        "ai_generated_lines": 132,
+        "ai_generated_percentage": 39.87915407854985
+      },
+      {
+        "file": "deploy1.3.4_combine_update/frontend/script_ver1_noConfig.js",
+        "total_lines": 334,
+        "ai_generated_lines": 139,
+        "ai_generated_percentage": 41.61676646706587
+      },
+      {
+        "file": "deploy1.3.4_combine_update/frontend/script_ver2_Config.js",
         "total_lines": 335,
         "ai_generated_lines": 138,
         "ai_generated_percentage": 41.19402985074627

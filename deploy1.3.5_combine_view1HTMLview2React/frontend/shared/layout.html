@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: #333;
+            z-index: 1000;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .content-frame {
+            margin-top: 60px;
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="/scoring">Scoring Results</a>
+            <a href="/grading">Video Scoring</a>
+        </div>
+    </div>
+    <iframe id="content" class="content-frame"></iframe>
+    <script>
+        const path = window.location.pathname;
+        const iframe = document.getElementById('content');
+        if (path.startsWith('/scoring')) {
+            iframe.src = '/scoring';
+        } else if (path.startsWith('/grading')) {
+            iframe.src = '/grading';
+        } else {
+            iframe.src = '/scoring';
+        }
+    </script>
+</body>
+</html>
