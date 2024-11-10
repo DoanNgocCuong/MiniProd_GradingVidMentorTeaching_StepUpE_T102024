@@ -2443,9 +2443,11 @@
           ],
           "kv_store": {
             "file_paths": [
-              "deploy1.3.4_combine_update/HowRun_demo2.md"
+              "deploy1.3.4_combine_update/HowRun_demo2.md",
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md"
             ],
             "file_path_dict": {
+              "1": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md",
               "2": "deploy1.3.4_combine_update/HowRun_demo2.md"
             }
           }
@@ -2749,6 +2751,363 @@
         }
       ],
       "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "",
+      "id": "5821f000-0cda-42a5-adf2-153197d16597",
+      "parent_id": null,
+      "created_on": "2024-11-10T16:57:15.027Z",
+      "messages": [
+        {
+          "id": "335ee541-8c80-481d-8882-a45e4feeec32",
+          "messageText": "Check xem setup với max_tokens là gì, \n\nTemperature?, respónese format đúng chưa \n\ncurl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"You are a professional grader, an expert in evaluating the quality of English teaching. Your task is to evaluate the Mentor'\\''s teaching performance based on the 3Ps method: Presentation, Practice, and Production.\\n\\nInstructions:\\n- Highlight a timestamp range within 10 minutes that best represents the mentor'\\''s teaching effectiveness.\\n\\n**Response JSON (without ```JSON)**\\n\\n**Example:**\\n\\n{\\n  \\\"criteria\\\": {\\n    \\\"3Ps\\\": {\\n      \\\"timestamp\\\": {\\n        \\\"start\\\": \\\"00:9:25\\\",\\n        \\\"end\\\": \\\"00:10:43\\\"\\n      },\\n      \\\"recommendationScore\\\": {\\n        \\\"score\\\": \\\"4/5\\\",\\n        \\\"reason\\\": \\\"<b>Present: 8/10</b>\\\\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\\\\n<b>Practice: 7/10</b>\\\\nNhận xét: Cơ hội thực hành được cung cấp nhưng có thể bổ sung thêm tính tương tác để nâng cao trải nghiệm học tập.\\\\n<b>Produce: 7/10</b>\\\\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức.\\\"\\n      }\\n    }\\n  }\\n}\\n\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"transcriptions\"\n        }\n      ]\n    }\n  ],\n  \"temperature\": 0,\n  \"max_tokens\": 2048,\n  \"response_format\": {\n    \"type\": \"json_object\"\n  }\n}'",
+          "responseText": "Let me help you check the configuration parameters in your code:\n\n1. **max_tokens**: Currently set to 1000\n- This is a reasonable default value but might be too low for complex responses\n- For the example CURL request you showed, it's set to 2048\n- Consider increasing it to match your CURL request if you need longer responses\n\n2. **temperature**: Currently set to 0\n- This matches your CURL request\n- 0 is ideal for consistent, deterministic responses\n- Good choice for evaluation/scoring tasks\n\n3. **response_format**: Your configuration looks correct\n```python:funct_getOpenAIResponse.py\n# ... existing code ...\n    payload = {\n        'model': model,\n        'messages': [\n            {'role': 'system', 'content': system_prompt},\n            {'role': 'user', 'content': user_input_prompt}\n        ], \n        \"temperature\": temperature,\n        \"max_tokens\": max_tokens,\n        \"response_format\": {\n            \"type\": \"json_object\"\n        }\n    }\n# ... existing code ...\n```\n\nSuggested updates:\n1. Increase max_tokens to 2048 to match your CURL request:\n```python:funct_getOpenAIResponse.py\ndef get_openai_response(\n    system_prompt: str, \n    user_input_prompt: str, \n    api",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-10T16:57:15.027Z",
+          "context": [
+            {
+              "context_type": "selection",
+              "key": "3011b849-0595-4d52-ac06-ac2e909c25e2",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\funct_getOpenAIResponse.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\funct_getOpenAIResponse.py",
+                "range": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 109,
+                  "endColumn": 29
+                },
+                "text": "import requests\r\nimport logging\r\nfrom typing import Optional\r\nimport json\r\n\r\n\r\n\r\ndef get_openai_response(\r\n    system_prompt: str, \r\n    user_input_prompt: str, \r\n    api_key: str,\r\n    model: str = 'gpt-4o-mini', \r\n    max_tokens: int = 1000,        # Thêm max_tokens\r\n    temperature: float = 0       # Thêm temperature để control randomness\r\n) -> str:\r\n    \"\"\"\r\n    Hàm để gửi yêu cầu tới OpenAI API và trả về phản hồi.\r\n\r\n    Args:\r\n        system_prompt (str): Nội dung system prompt\r\n        user_input_prompt (str): Nội dung user input prompt\r\n        api_key (str): API key của bạn\r\n        model (str, optional): Model GPT để sử dụng. Defaults to 'gpt-4o-mini'\r\n\r\n    Returns:\r\n        str: Phản hồi từ mô hình OpenAI\r\n\r\n    Raises:\r\n        ValueError: Khi system prompt hoặc user input prompt rỗng\r\n        Exception: Khi có lỗi trong quá trình gọi API\r\n    \"\"\"\r\n    # Kiểm tra input\r\n    if not system_prompt or not user_input_prompt:\r\n        raise ValueError('System prompt và user input prompt không được rỗng.')\r\n\r\n    url = 'https://api.openai.com/v1/chat/completions'\r\n\r\n    # Chuẩn bị payload\r\n    payload = {\r\n        'model': model,\r\n        'messages': [\r\n            {'role': 'system', 'content': system_prompt},\r\n            {'role': 'user', 'content': user_input_prompt}\r\n        ], \r\n        \"temperature\": temperature,\r\n        \"max_tokens\": max_tokens,\r\n        \"response_format\": {\r\n            \"type\": \"json_object\"\r\n        }\r\n    }\r\n\r\n    # Chuẩn bị headers\r\n    headers = {\r\n        'Authorization': f'Bearer {api_key}',\r\n        'Content-Type': 'application/json'\r\n    }\r\n\r\n    try:\r\n        # Gửi request\r\n        response = requests.post(\r\n            url=url,\r\n            headers=headers,\r\n            json=payload  # requests sẽ tự động chuyển dict thành JSON\r\n        )\r\n\r\n        # Kiểm tra status code\r\n        if response.status_code != 200:\r\n            error_msg = f'Yêu cầu API thất bại với trạng thái {response.status_code}: {response.text}'\r\n            logging.error(error_msg)\r\n            raise Exception(error_msg)\r\n\r\n        # Parse response\r\n        result = response.json()['choices'][0]['message']['content']\r\n        \r\n        logging.info(f'Phản hồi từ OpenAI: {result}')\r\n        return result\r\n\r\n    except requests.exceptions.RequestException as e:\r\n        error_msg = f'Lỗi kết nối trong quá trình gọi API: {str(e)}'\r\n        logging.error(error_msg)\r\n        raise\r\n\r\n    except (KeyError, json.JSONDecodeError) as e:\r\n        error_msg = f'Lỗi xử lý phản hồi từ API: {str(e)}'\r\n        logging.error(error_msg)\r\n        raise\r\n\r\n    except Exception as e:\r\n        error_msg = f'Lỗi không xác định trong quá trình gọi API: {str(e)}'\r\n        logging.error(error_msg)\r\n        raise\r\n\r\n# Cấu hình logging cơ bản\r\nlogging.basicConfig(\r\n    level=logging.INFO,\r\n    format='%(asctime)s - %(levelname)s - %(message)s'\r\n)\r\n\r\n# Ví dụ sử dụng:\r\nif __name__ == \"__main__\":\r\n    try:\r\n        response = get_openai_response(\r\n            system_prompt=\"You are a helpful assistant.\",\r\n            user_input_prompt=\"What is the capital of France?\",\r\n            api_key=\"your-api-key-here\"\r\n        )\r\n        print(f\"Response: {response}\")\r\n    except Exception as e:\r\n        print(f\"Error: {e}\")"
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "b4675ce9-6987-4316-adea-e796fb2a979f",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\funct_getOpenAIResponse.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\funct_getOpenAIResponse.py",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/funct_getOpenAIResponse.py"
+            ]
+          }
+        }
+      ],
+      "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "Hướng dẫn đóng gói dự án lên GitHub",
+      "id": "95628c57-3d58-4a37-853a-fa779336ad9d",
+      "parent_id": null,
+      "created_on": "2024-11-05T03:56:33.454Z",
+      "messages": [
+        {
+          "id": "c5c8e22c-f5f3-4387-aeff-6641d7d32a1b",
+          "messageText": "Làm sao để đóng gói @deployH3_5PromptDetAndScoring  lên github HUB, \n\nKhi chạy truyền vào .env",
+          "responseText": "Để đóng gói dự án `@deployH3_5PromptDetAndScoring` lên GitHub, bạn có thể làm theo các bước sau:\n\n### Bước 1: Tạo file `.env`\nTrước tiên, bạn cần tạo một file `.env` trong thư mục gốc của dự án. File này sẽ chứa các biến môi trường mà ứng dụng của bạn cần. Ví dụ:\n\n```\nOPENAI_API_KEY=your_api_key_here\n```\n\n### Bước 2: Tạo file `.gitignore`\nTạo một file `.gitignore` để loại trừ file `.env` khỏi việc đẩy lên GitHub. Nội dung của file `.gitignore` có thể như sau:\n\n```\n.env\n__pycache__/\n*.pyc\n*.pyo\n*.pyd\n*.db\n*.sqlite3\n```\n\n### Bước 3: Khởi tạo Git\nNếu bạn chưa khởi tạo Git trong thư mục dự án, hãy mở terminal và chạy:\n\n```\ngit init\n```\n\n### Bước 4: Thêm file vào Git\nThêm tất cả các file vào Git:\n\n```\ngit add .\n```\n\n### Bước 5: Commit các thay đổi\nCommit các thay đổi với một thông điệp mô tả:\n\n```\ngit commit -m \"Initial commit\"\n```\n\n### Bước 6: Tạo repository trên GitHub\nTruy cập vào GitHub và tạo một repository mới. Sau khi tạo xong, bạn sẽ thấy một URL cho repository đó.\n\n### Bước 7: Kết nối repository địa phương với GitHub\nSử dụng lệnh sau để kết nối repository địa phương với repository trên GitHub:\n\n```\ngit remote add origin https://github.com/username/repository_name.git\n```\n\nThay `username` và `repository_name` bằng tên người dùng và tên repository của bạn.\n\n### Bước 8: Đẩy mã lên GitHub\nCuối cùng, đẩy mã lên GitHub:\n\n```\ngit push -u origin master\n```\n\n### Bước 9: Kiểm tra trên GitHub\nTruy cập vào repository của bạn trên GitHub để kiểm tra xem mã đã được đẩy lên thành công hay chưa.\n\n### Lưu ý\n- Đảm bảo rằng bạn đã cài đặt Git trên máy tính của mình.\n- Nếu bạn sử dụng một nhánh khác ngoài `master`, hãy thay thế `master` bằng tên nhánh của bạn trong lệnh `git push`.\n\nBây giờ bạn đã hoàn tất việc đóng gói và đẩy dự án lên GitHub!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-05T03:56:33.454Z",
+          "context": [
+            {
+              "context_type": "folder",
+              "key": "6ef13b03-a79b-460b-b198-5a78ae4ce83f",
+              "value": {
+                "human_readable": "/deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring",
+                "relativePath": "/deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring"
+              }
+            }
+          ],
+          "kv_store": {}
+        },
+        {
+          "id": "d6cf316d-026c-491c-8a2a-5a0c7f4d7175",
+          "messageText": "à ko, ý là Docker HUB cơ",
+          "responseText": "Để đóng gói dự án `@deployH3_5PromptDetAndScoring` lên Docker Hub, bạn có thể làm theo các bước sau:\n\n### Bước 1: Tạo file `Dockerfile`\nTạo một file có tên `Dockerfile` trong thư mục gốc của dự án. Nội dung của file này có thể như sau:\n\n```dockerfile\n# Sử dụng image Python chính thức\nFROM python:3.9-slim\n\n# Thiết lập thư mục làm việc\nWORKDIR /app\n\n# Sao chép file requirements.txt và cài đặt các thư viện cần thiết\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Sao chép toàn bộ mã nguồn vào container\nCOPY . .\n\n# Chạy ứng dụng\nCMD [\"python\", \"deployH3_5PromptDetAndScoring/api_app.py\"]\n```\n\n### Bước 2: Tạo file `.dockerignore`\nTạo một file có tên `.dockerignore` để loại trừ các file không cần thiết khỏi image Docker. Nội dung có thể như sau:\n\n```\n__pycache__/\n*.pyc\n*.pyo\n*.pyd\n*.db\n*.sqlite3\n.env\n```\n\n### Bước 3: Xây dựng image Docker\nMở terminal và điều hướng đến thư mục chứa file `Dockerfile`. Chạy lệnh sau để xây dựng image Docker:\n\n```\ndocker build -t your_dockerhub_username/deployH3_5PromptDetAndScoring .\n```\n\nThay `your_dockerhub_username` bằng tên người dùng Docker Hub của bạn.\n\n### Bước 4: Đăng nhập vào Docker Hub\nNếu bạn chưa đăng nhập vào Docker Hub, hãy chạy lệnh sau và nhập thông tin đăng nhập của bạn:\n\n```\ndocker login\n```\n\n### Bước 5: Đẩy image lên Docker Hub\nSau khi xây dựng thành công image, bạn có thể đẩy nó lên Docker Hub bằng lệnh sau:\n\n```\ndocker push your_dockerhub_username/deployH3_5PromptDetAndScoring\n```\n\n### Bước 6: Kiểm tra trên Docker Hub\nTruy cập vào Docker Hub và kiểm tra xem image của bạn đã được đẩy lên thành công hay chưa.\n\n### Lưu ý\n- Đảm bảo rằng bạn đã cài đặt Docker trên máy tính của mình.\n- Nếu bạn muốn chạy container từ image đã tạo, bạn có thể sử dụng lệnh sau:\n\n```\ndocker run -p 5000:5000 your_dockerhub_username/deployH3_5PromptDetAndScoring\n```\n\nBây giờ bạn đã hoàn tất việc đóng gói và đẩy dự án lên Docker Hub!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-05T03:56:33.454Z",
+          "context": [],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun2.md",
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowUpdateDockerHUB.md"
+            ],
+            "file_path_dict": {
+              "0": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowUpdateDockerHUB.md"
+            }
+          }
+        },
+        {
+          "id": "a1fec05c-ea80-4abd-a853-c06c207aba55",
+          "messageText": "docker run -p 5000:5000 your_dockerhub_username/deployH3_5PromptDetAndScoring\n\n\nkhi bạn run với container từ image đã tạo thì có cần truyền .env ko nhỉ, có chứ nhỉ",
+          "responseText": "Khi bạn chạy container từ image đã tạo, nếu ứng dụng của bạn cần sử dụng các biến môi trường từ file `.env`, bạn cần phải truyền các biến này vào container. Có một số cách để làm điều này:\n\n### Cách 1: Sử dụng `--env-file`\nBạn có thể sử dụng tùy chọn `--env-file` để chỉ định file `.env` khi chạy container. Ví dụ:\n\n```bash\ndocker run --env-file .env -p 5000:5000 your_dockerhub_username/deployH3_5PromptDetAndScoring\n```\n\n### Cách 2: Truyền từng biến môi trường\nNếu bạn không muốn sử dụng file `.env`, bạn có thể truyền từng biến môi trường bằng cách sử dụng tùy chọn `-e`. Ví dụ:\n\n```bash\ndocker run -e OPENAI_API_KEY=your_api_key -p 5000:5000 your_dockerhub_username/deployH3_5PromptDetAndScoring\n```\n\n### Cách 3: Sử dụng Docker Compose\nNếu bạn sử dụng Docker Compose, bạn có thể chỉ định file `.env` trong file `docker-compose.yml`. Ví dụ:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    image: your_dockerhub_username/deployH3_5PromptDetAndScoring\n    ports:\n      - \"5000:5000\"\n    env_file:\n      - .env\n```\n\n### Kết luận\nNếu ứng dụng của bạn cần các biến môi trường từ file `.env`, bạn cần phải truyền chúng vào container khi chạy.",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-05T03:56:33.454Z",
+          "context": [],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+              "1": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+              "2": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md"
+            },
+            "file_paths": [
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md",
+              "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb"
+            ]
+          }
+        },
+        {
+          "id": "e659d475-dfda-4eaa-b703-d51fa0e62534",
+          "messageText": "docker compose này là tự tạo sau khi kéo code từ HUB xuống hay cũng đẩy lên Docker HUB",
+          "responseText": "Docker Compose là một công cụ để định nghĩa và chạy các ứng dụng Docker đa container. Bạn có thể tạo file `docker-compose.yml` để cấu hình các dịch vụ, mạng và volume cho ứng dụng của bạn. \n\n### Tạo file `docker-compose.yml`\n\nSau khi bạn kéo code từ Docker Hub xuống, bạn có thể tự tạo file `docker-compose.yml` trong thư mục gốc của dự án. Dưới đây là một ví dụ về nội dung của file `docker-compose.yml`:\n\n```yaml\nversion: '3.8'\n\nservices:\n  app:\n    image: your_dockerhub_username/deployH3_5PromptDetAndScoring\n    build:\n      context: .\n      dockerfile: Dockerfile\n    ports:\n      - \"5000:5000\"\n    env_file:\n      - .env\n```\n\n### Đẩy lên Docker Hub\n\nKhi bạn đã tạo file `docker-compose.yml`, bạn có thể đẩy image của mình lên Docker Hub bằng cách sử dụng lệnh sau:\n\n```bash\ndocker-compose build\ndocker-compose push\n```\n\n### Kết luận\n\n- **Tạo file `docker-compose.yml`**: Bạn tự tạo file này sau khi kéo code từ Docker Hub xuống.\n- **Đẩy lên Docker Hub**: Bạn có thể đẩy image của mình lên Docker Hub bằng cách sử dụng Docker Compose.\n\nNếu bạn đã có một ứng dụng Docker và muốn sử dụng Docker Compose để quản lý nó, bạn cần tạo file `docker-compose.yml` và cấu hình các dịch vụ cần thiết.",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-05T03:56:33.454Z",
+          "context": [],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb"
+            },
+            "file_paths": [
+              "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb"
+            ]
+          }
+        }
+      ],
+      "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "",
+      "id": "4a38a9e0-212f-4366-9743-bef616c18011",
+      "parent_id": null,
+      "created_on": "2024-11-10T17:06:18.734Z",
+      "messages": [
+        {
+          "id": "7788fc63-8b15-46c5-8d44-70b7d97728d4",
+          "messageText": "docker build -t doanngoccuong/deployh3_5promptdetandscoring .\n\n-t là gì",
+          "responseText": "Let me explain the `-t` flag in the Docker build command:\n\n### The `-t` Flag Explained\n\nThe `-t` flag stands for \"tag\". It allows you to give your Docker image a name and optionally a tag in the format `name:tag`. \n\n#### Format:\n```bash\ndocker build -t <username>/<repository_name>[:tag] .\n```\n\nIn your case:\n```bash\ndocker build -t doanngoccuong/deployh3_5promptdetandscoring .\n```\n\n#### Components:\n- `doanngoccuong`: Your Docker Hub username\n- `deployh3",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-10T17:06:18.734Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "4ff3fc98-d368-4d5f-9fe5-8504b367e61c",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowUpdateDockerHUB.md"
+            ],
+            "file_path_dict": {
+              "1": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowUpdateDockerHUB.md"
+            }
+          }
+        },
+        {
+          "id": "fa9081cc-9cee-484f-ab0d-774fa77fbc85",
+          "messageText": "Bug",
+          "responseText": "The warning is about the `CMD` instruction in your Dockerfile. Let's fix it by using JSON format for the `CMD` instruction.\n\n### The Fix\n\nIn your Dockerfile, change from:\n````dockerfile\nCMD python api_app.py\n````\n\nTo the JSON array format:\n````dockerfile:Dockerfile\n# ... existing code ...\nCMD [\"python\", \"api_app.py\"]\n# ... existing code ...\n````\n\n### Why This Fix Works\n\n1. **JSON Array Format**: Using `[\"python\", \"api_app.py\"]` instead of `python api_app.py` ensures:\n   - Proper signal handling\n   - Better process management\n   - More predictable behavior across different OS environments\n\n2. **Signal Handling**: The JSON format ensures that your container can properly handle OS signals (like SIGTERM for graceful shutdowns)\n\n### Full Example\nHere's how your complete Dockerfile should look:\n\n````dockerfile:Dockerfile\nFROM python:3.9-slim\n\nWORKDIR /app\n\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\nCOPY . .\n\nCMD [\"python\", \"api_app.py\"]\n````\n\nAfter making this change, rebuild your image and the warning should disappear:\n````bash\ndocker build -t doanngoccuong/deployh3_5promptdetandscoring .\n````",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-10T17:06:50.264Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "df35a542-cfba-40c6-aa68-ae29385cb770",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.1_Transcriptions2JSON_saveDB\\backend\\apiTrans2JsonDicts_forDeloy1.3\\deployH3_5PromptDetAndScoring\\apiPacking_Docker.ipynb",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowUpdateDockerHUB.md"
+            ]
+          }
+        }
+      ],
+      "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "Debugging Video Processing Issues",
+      "id": "9977bdbf-445c-467a-8c2f-3cd0d7c6f9f5",
+      "parent_id": null,
+      "created_on": "2024-11-06T10:17:22.874Z",
+      "messages": [
+        {
+          "id": "98988b98-92d8-49f8-be4b-e9b97c551dfa",
+          "messageText": "Fix bug",
+          "responseText": "To help you fix the bug, I need more details about the specific issue you're encountering. However, I can provide a general approach to debugging and fixing common issues in your code. \n\nHere’s a simplified version of your code with comments indicating where you might want to check for bugs or make improvements:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\n# ... existing imports ...\n\nclass VideoProcessor:\n    # ... existing methods ...\n\n    def process_folder(self, folder_id: str):\n        \"\"\"Process a shared folder\"\"\"\n        try:\n            # ... existing code ...\n            \n            # List files in Video folder\n            self.logger.info(f\"\\nListing files in Video folder:\")\n            videos = self.drive_service.files().list(\n                q=f\"'{video_folder}' in parents\",\n                fields=\"files(id, name, mimeType)\",\n                supportsAllDrives=True,\n                includeItemsFromAllDrives=True\n            ).execute().get('files', [])\n            \n            # Check if videos are found\n            if not videos:\n                self.logger.error(\"No videos found in the folder.\")\n                return\n            \n            # ... existing code ...\n\n            # Process each video\n            for video in videos:\n                # ... existing code ...\n                \n                # Check if already processed\n                if self.db.url_exists(video_url):\n                    self.logger.info(f\"Skipping existing video: {video['name']}\")\n                    continue\n\n                # ... existing code ...\n\n                # Find HV and mentor files\n                hv_file = None\n                mentor_file = None\n                for file in matching_audio:\n                    # ... existing code ...\n\n                if not (hv_file and mentor_file):\n                    self.logger.error(f\"Missing audio files for video: {video['name']}\")\n                    continue\n\n                try:\n                    # ... existing code ...\n                    \n                    if hv_result and mentor_result:\n                        # ... existing code ...\n                    else:\n                        self.logger.error(\"Failed to process audio files.\")\n                        continue\n\n                except Exception as e:\n                    self.logger.error(f\"Error processing video {video['name']}: {str(e)}\")\n                    continue\n\n            # ... existing code ...\n\n        except Exception as e:\n            self.logger.error(f\"Error in main processing: {str(e)}\")\n\n# ... existing main function ...\n```\n\n### Key Changes and Checks:\n1. **Check for Empty Video List**: Added a check to see if any videos are found in the folder. If not, it logs an error and exits the function.\n2. **Error Handling for Audio Processing**: Added a check to ensure that both `hv_result` and `mentor_result` are valid before proceeding. If either fails, it logs an error.\n3. **General Logging**: Ensure that all potential failure points are logged for easier debugging.\n\nIf you provide more specific details about the bug, I can give you a more targeted solution.",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-06T10:17:22.874Z",
+          "context": [
+            {
+              "context_type": "selection",
+              "key": "6d2ceeaf-2fa0-41a9-a78d-3765680c4100",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "range": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 534,
+                  "endColumn": 11
+                },
+                "text": "import os\r\nimport pickle\r\nimport json\r\nimport logging\r\nimport time\r\nfrom typing import Optional, Dict, Tuple\r\nimport requests\r\nimport gdown\r\nfrom google.auth.transport.requests import Request\r\nfrom google.oauth2.credentials import Credentials\r\nfrom google_auth_oauthlib.flow import InstalledAppFlow\r\nfrom googleapiclient.discovery import build\r\nimport sqlite3\r\nimport re\r\n\r\nclass Config:\r\n    \"\"\"Configuration settings\"\"\"\r\n    BASE_DIR = os.path.dirname(os.path.abspath(__file__))\r\n    TRANSCRIBE_API_URL = 'http://103.253.20.13:25029/role_assign'\r\n    ANALYZE_API_URL = 'http://localhost:25034/analyze'\r\n    SECRET_KEY = 'codedongian'\r\n    # SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']\r\n    CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials.json')\r\n    TOKEN_PATH = os.path.join(BASE_DIR, 'token.pickle')\r\n    DATABASE_PATH = os.path.join(BASE_DIR, 'video_database.db')\r\n    TEMP_DIR = os.path.join(BASE_DIR, 'temp_files')\r\n    LOG_DIR = os.path.join(BASE_DIR, 'logs')\r\n    \r\n    SCOPES = [\r\n        'https://www.googleapis.com/auth/drive',  # Full access\r\n        'https://www.googleapis.com/auth/drive.file',  # Access to files created/opened by the app\r\n        'https://www.googleapis.com/auth/drive.readonly'  # Read-only access to files\r\n    ]    \r\n\r\nclass DatabaseManager:\r\n    def __init__(self, db_path: str, logger: logging.Logger):\r\n        self.db_path = db_path\r\n        self.logger = logger\r\n        os.makedirs(os.path.dirname(db_path), exist_ok=True)\r\n        self.create_database()\r\n\r\n    def create_database(self):\r\n        with sqlite3.connect(self.db_path) as conn:\r\n            conn.execute('''\r\n                CREATE TABLE IF NOT EXISTS videos (\r\n                    id INTEGER PRIMARY KEY,\r\n                    url_video TEXT NOT NULL UNIQUE,\r\n                    transcription TEXT,\r\n                    criteria TEXT,\r\n                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\r\n                )\r\n            ''')\r\n            self.logger.info(\"Database initialized\")\r\n\r\n    def url_exists(self, url_video: str) -> bool:\r\n        try:\r\n            with sqlite3.connect(self.db_path) as conn:\r\n                cursor = conn.execute('SELECT COUNT(*) FROM videos WHERE url_video = ?', \r\n                                    (url_video,))\r\n                return cursor.fetchone()[0] > 0\r\n        except sqlite3.Error as e:\r\n            self.logger.error(f\"Database error checking URL: {e}\")\r\n            return False\r\n\r\n    def insert_video(self, url_video: str, transcription: str, criteria: str = None) -> bool:\r\n        try:\r\n            with sqlite3.connect(self.db_path) as conn:\r\n                conn.execute('''\r\n                    INSERT INTO videos (url_video, transcription, criteria)\r\n                    VALUES (?, ?, ?)\r\n                ''', (url_video, transcription, criteria or 'Pending analysis'))\r\n                self.logger.info(f\"Inserted video: {url_video}\")\r\n                return True\r\n        except sqlite3.IntegrityError:\r\n            self.logger.info(f\"Video URL already exists: {url_video}\")\r\n            return False\r\n        except sqlite3.Error as e:\r\n            self.logger.error(f\"Database error: {e}\")\r\n            return False\r\n\r\nclass AudioProcessor:\r\n    def __init__(self, config: Config, logger: logging.Logger):\r\n        self.config = config\r\n        self.logger = logger\r\n        os.makedirs(config.TEMP_DIR, exist_ok=True)\r\n\r\n    def process_audio(self, audio_path: str, language: str = 'en') -> Optional[Dict]:\r\n        if not os.path.exists(audio_path):\r\n            self.logger.error(f\"Audio file not found: {audio_path}\")\r\n            return None\r\n\r\n        with open(audio_path, 'rb') as audio_file:\r\n            try:\r\n                response = requests.post(\r\n                    self.config.TRANSCRIBE_API_URL,\r\n                    files={'audio': audio_file},\r\n                    data={\r\n                        'secret_key': self.config.SECRET_KEY,\r\n                        'language': language\r\n                    }\r\n                )\r\n                response.raise_for_status()\r\n                return response.json()\r\n            except Exception as e:\r\n                self.logger.error(f\"Error processing audio: {e}\")\r\n                return None\r\n\r\n    def combine_transcriptions(self, hv_output: Dict, mentor_output: Dict) -> str:\r\n        \"\"\"Combine and format transcriptions from HV and mentor\"\"\"\r\n        try:\r\n            # Extract data\r\n            hv_data = self.extract_dicts(hv_output['output'])\r\n            mentor_data = self.extract_dicts(mentor_output['output'])\r\n\r\n            # Format with Mentee/Mentor instead of Speaker 1/2\r\n            formatted = []\r\n            for item in hv_data:\r\n                time = self.format_time(item['start_time'])\r\n                formatted.append(f\"[{time}] Mentee: {item['text']}\")\r\n            \r\n            for item in mentor_data:\r\n                time = self.format_time(item['start_time'])\r\n                formatted.append(f\"[{time}] Mentor: {item['text']}\")\r\n\r\n            # Sort by time\r\n            # Extract time from string for sorting\r\n            def get_time(s):\r\n                return int(s[1:3])*3600 + int(s[4:6])*60 + int(s[7:9])\r\n            \r\n            formatted.sort(key=get_time)\r\n            \r\n            # Join with newlines\r\n            transcript = '\\n'.join(formatted)\r\n            \r\n            # Log for debugging\r\n            self.logger.info(f\"Combined transcript format sample:\\n{transcript[:200]}...\")\r\n            \r\n            return transcript\r\n\r\n        except Exception as e:\r\n            self.logger.error(f\"Error combining transcriptions: {e}\")\r\n            return \"\"\r\n\r\n    def extract_dicts(self, s: str) -> list:\r\n        pattern = r\"\\{[^{}]*\\}\"\r\n        matches = re.findall(pattern, s)\r\n        result = []\r\n        for match in matches:\r\n            try:\r\n                match = match.replace(\"'\", '\"')\r\n                d = json.loads(match)\r\n                result.append(d)\r\n            except json.JSONDecodeError:\r\n                pass\r\n        return result\r\n\r\n    def format_time(self, milliseconds: int) -> str:\r\n        seconds = milliseconds // 1000\r\n        minutes = seconds // 60\r\n        hours = minutes // 60\r\n        return f\"{hours:02d}:{minutes%60:02d}:{seconds%60:02d}\"\r\n\r\n    def analyze_transcript(self, transcript: str) -> Optional[str]:\r\n        \"\"\"Analyze transcript using the analyze API\"\"\"\r\n        try:\r\n            self.logger.info(\"Preparing to analyze transcript...\")\r\n            self.logger.info(f\"Transcript length: {len(transcript)}\")\r\n            \r\n            # Format payload\r\n            payload = {\r\n                \"transcription\": transcript\r\n            }\r\n            \r\n            # Log request details for debugging\r\n            self.logger.info(f\"Sending request to: {self.config.ANALYZE_API_URL}\")\r\n            self.logger.info(f\"Transcript sample: {transcript[:100]}...\")\r\n            \r\n            # Make request\r\n            response = requests.post(\r\n                self.config.ANALYZE_API_URL,\r\n                headers={\r\n                    'Content-Type': 'application/json'\r\n                },\r\n                json=payload,\r\n                timeout=60\r\n            )\r\n            \r\n            # Enhanced error logging\r\n            self.logger.info(f\"Response status code: {response.status_code}\")\r\n            if response.status_code != 200:\r\n                self.logger.error(f\"Error response: {response.text}\")\r\n                return None\r\n            \r\n            # Log full response for debugging\r\n            self.logger.info(f\"Full response content: {response.text}\")\r\n            \r\n            result = response.json()\r\n            \r\n            if 'criteria' in result:\r\n                # Convert dictionary thành JSON string trước khi return\r\n                criteria_str = json.dumps(result['criteria'], \r\n                                        ensure_ascii=False, \r\n                                        indent=2)\r\n                self.logger.info(\"Successfully received criteria\")\r\n                return criteria_str\r\n            else:\r\n                self.logger.error(f\"No criteria in response. Full response: {result}\")\r\n                return None\r\n\r\n        except requests.exceptions.Timeout:\r\n            self.logger.error(\"Request timed out\")\r\n            return None\r\n        except requests.exceptions.RequestException as e:\r\n            self.logger.error(f\"Request failed: {str(e)}\")\r\n            return None\r\n        except json.JSONDecodeError as e:\r\n            self.logger.error(f\"Failed to decode JSON response: {str(e)}\")\r\n            return None\r\n        except Exception as e:\r\n            self.logger.error(f\"Error analyzing transcript: {str(e)}\", exc_info=True)\r\n            return None\r\n\r\nclass VideoProcessor:\r\n    def __init__(self, config: Config, logger: logging.Logger):\r\n        self.config = config\r\n        self.logger = logger\r\n        self.db = DatabaseManager(config.DATABASE_PATH, logger)\r\n        self.audio_processor = AudioProcessor(config, logger)\r\n        self.drive_service = self._authenticate_google_drive()\r\n\r\n    def _authenticate_google_drive(self):\r\n        creds = None\r\n        if os.path.exists(self.config.TOKEN_PATH):\r\n            with open(self.config.TOKEN_PATH, 'rb') as token:\r\n                creds = pickle.load(token)\r\n\r\n        if not creds or not creds.valid:\r\n            if creds and creds.expired and creds.refresh_token:\r\n                creds.refresh(Request())\r\n            else:\r\n                flow = InstalledAppFlow.from_client_secrets_file(\r\n                    self.config.CREDENTIALS_PATH, self.config.SCOPES)\r\n                creds = flow.run_local_server(port=0)\r\n            with open(self.config.TOKEN_PATH, 'wb') as token:\r\n                pickle.dump(creds, token)\r\n\r\n        return build('drive', 'v3', credentials=creds)\r\n\r\n    def list_folder_contents(self, folder_id: str) -> list:\r\n        \"\"\"List all contents of a folder with detailed logging\"\"\"\r\n        try:\r\n            self.logger.info(f\"\\nListing contents of folder {folder_id}\")\r\n            \r\n            # Get drive ID\r\n            drive_id = self.get_drive_id(folder_id)\r\n            self.logger.info(f\"Using Drive ID: {drive_id}\")\r\n            \r\n            # Now list contents\r\n            query = f\"'{folder_id}' in parents\"\r\n            \r\n            # Set up parameters based on whether it's a shared drive or not\r\n            params = {\r\n                'q': query,\r\n                'fields': \"files(id, name, mimeType)\",\r\n                'supportsAllDrives': True,\r\n                'includeItemsFromAllDrives': True,\r\n                'pageSize': 100\r\n            }\r\n            \r\n            # Add drive-specific parameters only if we have a drive ID\r\n            if drive_id:\r\n                params.update({\r\n                    'corpora': 'drive',\r\n                    'driveId': drive_id\r\n                })\r\n                \r\n            # Execute the query\r\n            results = self.drive_service.files().list(**params).execute()\r\n            \r\n            files = results.get('files', [])\r\n            self.logger.info(f\"Found {len(files)} items:\")\r\n            for file in files:\r\n                self.logger.info(f\"- {file['name']} ({file['mimeType']}) ID: {file['id']}\")\r\n            \r\n            return files\r\n            \r\n        except Exception as e:\r\n            self.logger.error(f\"Error listing folder contents: {str(e)}\")\r\n            return []\r\n\r\n    def get_drive_id(self, folder_id: str) -> Optional[str]:\r\n        \"\"\"Get the Drive ID for a shared folder\"\"\"\r\n        try:\r\n            file = self.drive_service.files().get(\r\n                fileId=folder_id,\r\n                fields=\"driveId\",\r\n                supportsAllDrives=True\r\n            ).execute()\r\n            drive_id = file.get('driveId')\r\n            if drive_id:\r\n                self.logger.info(f\"Found Drive ID: {drive_id}\")\r\n            else:\r\n                self.logger.info(\"This is not a shared drive folder\")\r\n            return drive_id\r\n        except Exception as e:\r\n            self.logger.error(f\"Error getting Drive ID: {str(e)}\")\r\n            return None\r\n\r\n    def find_folders(self, folder_id: str) -> Tuple[Optional[str], Optional[str]]:\r\n        \"\"\"Find Audio and Video folders in shared folders\"\"\"\r\n        self.logger.info(f\"\\nLooking for Audio and Video folders in {folder_id}\")\r\n        \r\n        # First list all contents\r\n        files = self.list_folder_contents(folder_id)\r\n        \r\n        audio_folder = None\r\n        video_folder = None\r\n        \r\n        # Look for folders (case-insensitive)\r\n        for item in files:\r\n            if item['mimeType'] == 'application/vnd.google-apps.folder':\r\n                name = item['name'].lower()\r\n                if 'audio' in name:\r\n                    audio_folder = item['id']\r\n                    self.logger.info(f\"Found Audio folder: {item['name']} (ID: {audio_folder})\")\r\n                elif 'video' in name:\r\n                    video_folder = item['id']\r\n                    self.logger.info(f\"Found Video folder: {item['name']} (ID: {video_folder})\")\r\n        \r\n        # Log results\r\n        if not audio_folder:\r\n            self.logger.error(\"Audio folder not found\")\r\n        if not video_folder:\r\n            self.logger.error(\"Video folder not found\")\r\n            \r\n        return audio_folder, video_folder\r\n        def process_folder(self, folder_id: str):\r\n            \"\"\"Process a shared folder\"\"\"\r\n            try:\r\n                # First get drive ID\r\n                drive_id = self.get_drive_id(folder_id)\r\n                if not drive_id:\r\n                    self.logger.error(\"Could not get Drive ID\")\r\n                    return\r\n\r\n                # Try to access the folder\r\n                try:\r\n                    folder = self.drive_service.files().get(\r\n                        fileId=folder_id,\r\n                        fields=\"name,mimeType\",\r\n                        supportsAllDrives=True\r\n                    ).execute()\r\n                    self.logger.info(f\"Successfully accessed folder: {folder.get('name')}\")\r\n                except Exception as e:\r\n                    self.logger.error(f\"Cannot access folder: {str(e)}\")\r\n                    return\r\n\r\n                # Find Audio and Video folders\r\n                audio_folder, video_folder = self.find_folders(folder_id)\r\n                if not audio_folder or not video_folder:\r\n                    self.logger.error(\"Could not find both Audio and Video folders\")\r\n                    return\r\n\r\n                # Rest of the processing code remains the same...\r\n\r\n                # List files in Video folder\r\n                self.logger.info(f\"\\nListing files in Video folder:\")\r\n                videos = self.drive_service.files().list(\r\n                    q=f\"'{video_folder}' in parents\",\r\n                    fields=\"files(id, name, mimeType)\",\r\n                    supportsAllDrives=True,\r\n                    includeItemsFromAllDrives=True\r\n                ).execute().get('files', [])\r\n                \r\n                self.logger.info(f\"Found {len(videos)} videos:\")\r\n                for video in videos:\r\n                    self.logger.info(f\"- Video: {video['name']} (ID: {video['id']})\")\r\n\r\n                # List files in Audio folder\r\n                self.logger.info(f\"\\nListing files in Audio folder:\")\r\n                audio_files = self.drive_service.files().list(\r\n                    q=f\"'{audio_folder}' in parents\",\r\n                    fields=\"files(id, name, mimeType)\",\r\n                    supportsAllDrives=True,\r\n                    includeItemsFromAllDrives=True\r\n                ).execute().get('files', [])\r\n                \r\n                self.logger.info(f\"Found {len(audio_files)} audio files:\")\r\n                for audio in audio_files:\r\n                    self.logger.info(f\"- Audio: {audio['name']} (ID: {audio['id']})\")\r\n\r\n                # Process each video\r\n                for video in videos:\r\n                    self.logger.info(f\"\\nProcessing video: {video['name']}\")\r\n                    video_url = f\"https://drive.google.com/file/d/{video['id']}/view\"\r\n                    \r\n                    # Check if already processed\r\n                    if self.db.url_exists(video_url):\r\n                        self.logger.info(f\"Skipping existing video: {video['name']}\")\r\n                        continue\r\n\r\n                    # Find corresponding audio files\r\n                    self.logger.info(f\"Looking for audio files for video: {video['name']}\")\r\n                    base_name = os.path.splitext(video['name'])[0]\r\n                    \r\n                    # List all matching audio files\r\n                    matching_audio = [\r\n                        f for f in audio_files \r\n                        if base_name in f['name']\r\n                    ]\r\n                    \r\n                    self.logger.info(f\"Found {len(matching_audio)} related audio files:\")\r\n                    for audio in matching_audio:\r\n                        self.logger.info(f\"- Related audio: {audio['name']}\")\r\n\r\n                    # Find HV and mentor files\r\n                    hv_file = None\r\n                    mentor_file = None\r\n                    for file in matching_audio:\r\n                        self.logger.info(f\"Checking audio file: {file['name']}\")\r\n                        if 'HV' in file['name']:\r\n                            hv_file = file\r\n                            self.logger.info(f\"Found HV file: {file['name']} (ID: {file['id']})\")\r\n                        elif 'mentor' in file['name']:\r\n                            mentor_file = file\r\n                            self.logger.info(f\"Found mentor file: {file['name']} (ID: {file['id']})\")\r\n\r\n                    if not (hv_file and mentor_file):\r\n                        self.logger.error(f\"Missing audio files for video: {video['name']}\")\r\n                        continue\r\n\r\n                    try:\r\n                        # Download and process HV file\r\n                        self.logger.info(f\"Processing HV file: {hv_file['name']}\")\r\n                        hv_path = os.path.join(self.config.TEMP_DIR, f\"hv_{video['id']}.wav\")\r\n                        self.logger.info(f\"Downloading HV file to: {hv_path}\")\r\n                        gdown.download(\r\n                            f\"https://drive.google.com/uc?id={hv_file['id']}\", \r\n                            hv_path, \r\n                            quiet=False,\r\n                            use_cookies=False  # Add this if gdown has issues\r\n                        )\r\n                        hv_result = self.audio_processor.process_audio(hv_path)\r\n\r\n                        # Download and process mentor file\r\n                        self.logger.info(f\"Processing mentor file: {mentor_file['name']}\")\r\n                        mentor_path = os.path.join(self.config.TEMP_DIR, f\"mentor_{video['id']}.wav\")\r\n                        self.logger.info(f\"Downloading mentor file to: {mentor_path}\")\r\n                        gdown.download(\r\n                            f\"https://drive.google.com/uc?id={mentor_file['id']}\", \r\n                            mentor_path, \r\n                            quiet=False,\r\n                            use_cookies=False  # Add this if gdown has issues\r\n                        )\r\n                        mentor_result = self.audio_processor.process_audio(mentor_path)\r\n\r\n                        if hv_result and mentor_result:\r\n                            self.logger.info(\"Combining transcriptions...\")\r\n                            transcript = self.audio_processor.combine_transcriptions(\r\n                                hv_result, mentor_result)\r\n                            \r\n                            self.logger.info(\"Getting criteria...\")\r\n                            criteria = self.audio_processor.analyze_transcript(transcript)\r\n\r\n                            # Save to database\r\n                            self.logger.info(\"Saving to database...\")\r\n                            if self.db.insert_video(video_url, transcript, criteria):\r\n                                self.logger.info(f\"Successfully processed video: {video['name']}\")\r\n\r\n                        # Cleanup\r\n                        self.logger.info(\"Cleaning up temporary files...\")\r\n                        for path in [hv_path, mentor_path]:\r\n                            if os.path.exists(path):\r\n                                os.remove(path)\r\n                                self.logger.info(f\"Removed temporary file: {path}\")\r\n\r\n                    except Exception as e:\r\n                        self.logger.error(f\"Error processing video {video['name']}: {str(e)}\")\r\n                        continue\r\n\r\n                    time.sleep(3)  # Add delay between processing videos\r\n\r\n            except Exception as e:\r\n                self.logger.error(f\"Error in main processing: {str(e)}\")\r\n\r\n\r\ndef main():\r\n    # Initialize config\r\n    config = Config()\r\n    \r\n    # Setup logging\r\n    os.makedirs(config.LOG_DIR, exist_ok=True)\r\n    logger = logging.getLogger(__name__)\r\n    logger.setLevel(logging.INFO)\r\n    \r\n    if not logger.handlers:\r\n        if not logger.handlers:\r\n            fh = logging.FileHandler(os.path.join(config.LOG_DIR, 'app.log'), \r\n                                encoding='utf-8')\r\n        fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))\r\n        logger.addHandler(fh)\r\n        \r\n        ch = logging.StreamHandler()\r\n        ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))\r\n        logger.addHandler(ch)\r\n    \r\n    try:\r\n        processor = VideoProcessor(config, logger)\r\n        folder_id = \"15ik6vWdz1IcbPmsPfr4p-DdszkB484yg\"\r\n        processor.process_folder(folder_id)\r\n        \r\n        # Display results\r\n        logger.info(\"\\nProcessed Videos:\")\r\n        with sqlite3.connect(config.DATABASE_PATH) as conn:\r\n            cursor = conn.execute('''\r\n                SELECT id, url_video, \r\n                       substr(transcription, 1, 100) as transcription_preview, \r\n                       criteria, created_at \r\n                FROM videos\r\n                ORDER BY created_at DESC\r\n            ''')\r\n            for row in cursor.fetchall():\r\n                logger.info(f\"\\nVideo ID: {row[0]}\")\r\n                logger.info(f\"URL: {row[1]}\")\r\n                logger.info(f\"Transcription Preview: {row[2]}...\")\r\n                logger.info(f\"Criteria: {row[3]}\")\r\n                logger.info(f\"Created at: {row[4]}\")\r\n                \r\n    except Exception as e:\r\n        logger.error(f\"Main execution error: {e}\")\r\n        raise\r\n\r\nif __name__ == '__main__':\r\n    main()"
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "39007b72-01a5-4e2c-beab-6612b3869654",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            ]
+          }
+        },
+        {
+          "id": "33229562-94d1-4d9c-a373-f8d9df529772",
+          "messageText": "Folder Video đang có tên có chữ \"Bản sao của\" \nbạn xoá cụm \"Bạn sao của\" đi nhá. Xong mới tìm ở trong thư mục Audio",
+          "responseText": "To remove the phrase \"Bản sao của\" from the video names before searching for related audio files, you can modify the `process_folder` method in the `VideoProcessor` class. Here’s the updated code snippet that highlights the necessary changes:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\n# ... existing methods ...\n\nclass VideoProcessor:\n    # ... existing methods ...\n\n    def process_folder(self, folder_id: str):\n        \"\"\"Process a shared folder\"\"\"\n        try:\n            # ... existing code ...\n\n            # Process each video\n            for video in videos:\n                self.logger.info(f\"\\nProcessing video: {video['name']}\")\n                \n                # Remove \"Bản sao của\" from the video name\n                video_name_cleaned = video['name'].replace(\"Bản sao của \", \"\")\n                video_url = f\"https://drive.google.com/file/d/{video['id']}/view\"\n                \n                # Check if already processed\n                if self.db.url_exists(video_url):\n                    self.logger.info(f\"Skipping existing video: {video['name']}\")\n                    continue\n\n                # Find corresponding audio files\n                self.logger.info(f\"Looking for audio files for video: {video_name_cleaned}\")\n                base_name = os.path.splitext(video_name_cleaned)[0]  # Use cleaned name\n                \n                # List all matching audio files\n                matching_audio = [\n                    f for f in audio_files \n                    if base_name in f['name']\n                ]\n                \n                self.logger.info(f\"Found {len(matching_audio)} related audio files:\")\n                for audio in matching_audio:\n                    self.logger.info(f\"- Related audio: {audio['name']}\")\n\n                # ... existing code ...\n\n        except Exception as e:\n            self.logger.error(f\"Error in main processing: {str(e)}\")\n\n# ... existing main function ...\n```\n\n### Explanation of Changes:\n1. **Cleaning Video Name**: The line `video_name_cleaned = video['name'].replace(\"Bản sao của \", \"\")` removes the phrase \"Bản sao của\" from the video name.\n2. **Using Cleaned Name**: The cleaned name is then used to search for related audio files, ensuring that the search matches the actual names of the audio files.\n\nThis change should help in finding the correct audio files associated with the videos. If you have any further questions or need additional modifications, feel free to ask!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-06T10:17:22.874Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "cb7aedcf-cc65-4486-a5f1-af8b2fafb649",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow3_fullquyen.py",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            },
+            "file_paths": [
+              "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            ]
+          }
+        },
+        {
+          "id": "f68bd721-2a7f-41e7-8517-77d1b0ee8288",
+          "messageText": "Lại gì nữa đây",
+          "responseText": "Lỗi này xảy ra vì gdown không thể tải file từ Google Drive do vấn đề về quyền truy cập. Chúng ta cần thay đổi cách tải file bằng cách sử dụng Google Drive API trực tiếp thay vì gdown. Đây là cách sửa:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\nclass VideoProcessor:\n    # ... existing methods ...\n\n    def download_file(self, file_id: str, destination: str) -> bool:\n        \"\"\"Download a file from Google Drive using Drive API\"\"\"\n        try:\n            request = self.drive_service.files().get_media(\n                fileId=file_id,\n                supportsAllDrives=True\n            )\n            \n            with open(destination, 'wb') as f:\n                downloader = MediaIoBaseDownload(f, request)\n                done = False\n                while done is False:\n                    status, done = downloader.next_chunk()\n                    if status:\n                        self.logger.info(f\"Download {int(status.progress() * 100)}%\")\n            return True\n        except Exception as e:\n            self.logger.error(f\"Error downloading file: {str(e)}\")\n            return False\n\n    def process_folder(self, folder_id: str):\n        \"\"\"Process a shared folder\"\"\"\n        try:\n            # ... existing code until audio file processing ...\n\n            for video in videos:\n                # ... existing code until downloading files ...\n\n                try:\n                    # Download and process HV file\n                    self.logger.info(f\"Processing HV file: {hv_file['name']}\")\n                    hv_path = os.path.join(self.config.TEMP_DIR, f\"hv_{video['id']}.wav\")\n                    self.logger.info(f\"Downloading HV file to: {hv_path}\")\n                    \n                    # Use new download method instead of gdown\n                    if not self.download_file(hv_file['id'], hv_path):\n                        raise Exception(f\"Failed to download HV file: {hv_file['name']}\")\n                    \n                    hv_result = self.audio_processor.process_audio(hv_path)\n\n                    # Download and process mentor file\n                    self.logger.info(f\"Processing mentor file: {mentor_file['name']}\")\n                    mentor_path = os.path.join(self.config.TEMP_DIR, f\"mentor_{video['id']}.wav\")\n                    self.logger.info(f\"Downloading mentor file to: {mentor_path}\")\n                    \n                    # Use new download method instead of gdown\n                    if not self.download_file(mentor_file['id'], mentor_path):\n                        raise Exception(f\"Failed to download mentor file: {mentor_file['name']}\")\n                    \n                    mentor_result = self.audio_processor.process_audio(mentor_path)\n\n                    # ... rest of the processing code ...\n\n                except Exception as e:\n                    self.logger.error(f\"Error processing video {video['name']}: {str(e)}\")\n                    continue\n\n                # ... rest of the code ...\n\n```\n\nĐồng thời, thêm import cần thiết ở đầu file:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\nfrom googleapiclient.http import MediaIoBaseDownload\n```\n\n### Những thay đổi chính:\n\n1. Thêm phương thức `download_file` mới sử dụng Google Drive API trực tiếp\n2. Thay thế gdown.download bằng phương thức download_file mới\n3. Thêm xử lý lỗi chi tiết hơn\n4. Sử dụng supportsAllDrives=True để hỗ trợ Shared Drive\n\nPhương pháp này sẽ:\n- Sử dụng xác thực OAuth đã có\n- Hoạt động với các file trong Shared Drive\n- Không bị giới hạn bởi quyền truy cập công khai\n- Có thể theo dõi tiến trình tải xuống\n\nHãy thử chạy lại code sau khi áp dụng những thay đổi này. Nó sẽ giải quyết vấn đề không thể tải file từ Google Drive.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-06T10:17:22.874Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "563523c8-7a26-4fab-9f14-775315550884",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow_ckp\\workflow1.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow_ckp\\workflow1.py",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            },
+            "file_paths": [
+              "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            ]
+          }
+        },
+        {
+          "id": "a21e0e67-233e-4ccb-97d6-7f2a11fb2cdd",
+          "messageText": "cách tìm kiếm 2 audio xong down về rồi sao nữa, ..???",
+          "responseText": "Sau khi tìm và tải 2 file audio về, quy trình xử lý sẽ như sau:\n\n1. Xử lý audio để lấy transcription\n2. Kết hợp transcription từ cả 2 file\n3. Phân tích transcription để lấy criteria\n4. Lưu kết quả vào database\n\nĐây là code chi tiết cho quy trình:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\ndef process_folder(self, folder_id: str):\n    try:\n        # ... existing code for finding and downloading files ...\n\n        for video in videos:\n            try:\n                # ... code for finding and downloading audio files ...\n                \n                # 1. Process both audio files to get transcriptions\n                self.logger.info(\"Processing audio files for transcription...\")\n                \n                # Process HV audio\n                hv_result = self.audio_processor.process_audio(hv_path)\n                if not hv_result:\n                    raise Exception(\"Failed to process HV audio file\")\n                self.logger.info(\"Successfully processed HV audio\")\n                \n                # Process mentor audio\n                mentor_result = self.audio_processor.process_audio(mentor_path)\n                if not mentor_result:\n                    raise Exception(\"Failed to process mentor audio file\")\n                self.logger.info(\"Successfully processed mentor audio\")\n\n                # 2. Combine transcriptions\n                self.logger.info(\"Combining transcriptions...\")\n                transcript = self.audio_processor.combine_transcriptions(\n                    hv_result, \n                    mentor_result\n                )\n                if not transcript:\n                    raise Exception(\"Failed to combine transcriptions\")\n                self.logger.info(\"Successfully combined transcriptions\")\n                \n                # Log sample of combined transcript\n                self.logger.info(f\"Combined transcript sample: {transcript[:200]}...\")\n\n                # 3. Analyze combined transcript\n                self.logger.info(\"Analyzing transcript...\")\n                criteria = self.audio_processor.analyze_transcript(transcript)\n                if not criteria:\n                    raise Exception(\"Failed to analyze transcript\")\n                self.logger.info(\"Successfully analyzed transcript\")\n                \n                # Log sample of criteria\n                self.logger.info(f\"Criteria sample: {criteria[:200]}...\")\n\n                # 4. Save to database\n                video_url = f\"https://drive.google.com/file/d/{video['id']}/view\"\n                self.logger.info(f\"Saving results to database for video: {video['name']}\")\n                \n                if self.db.insert_video(video_url, transcript, criteria):\n                    self.logger.info(f\"Successfully processed and saved video: {video['name']}\")\n                else:\n                    raise Exception(\"Failed to save to database\")\n\n                # Cleanup temporary files\n                self.logger.info(\"Cleaning up temporary files...\")\n                for path in [hv_path, mentor_path]:\n                    if os.path.exists(path):\n                        os.remove(path)\n                        self.logger.info(f\"Removed temporary file: {path}\")\n\n            except Exception as e:\n                self.logger.error(f\"Error processing video {video['name']}: {str(e)}\")\n                # Clean up any temporary files if they exist\n                for path in [hv_path, mentor_path]:\n                    if os.path.exists(path):\n                        os.remove(path)\n                continue\n\n            # Add a small delay between processing videos\n            time.sleep(3)\n\n    except Exception as e:\n        self.logger.error(f\"Error in main processing: {str(e)}\")\n```\n\n### Giải thích chi tiết quy trình:\n\n1. **Xử lý Audio Files**:\n   - Gửi từng file audio đến API transcribe\n   - API sẽ trả về text từ audio\n   - Kiểm tra kết quả từ cả 2 file\n\n2. **Kết hợp Transcriptions**:\n   - Lấy text từ cả file HV và mentor\n   - Kết hợp thành một transcript hoàn chỉnh\n   - Sắp xếp theo thời gian\n   - Format với nhãn \"Mentee\" và \"Mentor\"\n\n3. **Phân tích Transcript**:\n   - Gửi transcript đã kết hợp đến API analyze\n   - API sẽ phân tích và trả về criteria\n   - Kiểm tra kết quả phân tích\n\n4. **Lưu trữ Kết quả**:\n   - Lưu URL video, transcript và criteria vào database\n   - Xử lý lỗi nếu có\n   - Dọn dẹp file tạm\n\n5. **Xử lý Lỗi và Cleanup**:\n   - Log mọi bước xử lý\n   - Xử lý các trường hợp lỗi\n   - Đảm bảo dọn dẹp file tạm ngay cả khi có lỗi\n\nMỗi bước đều có logging chi tiết để dễ dàng debug nếu có vấn đề xảy ra. Nếu bất kỳ bước nào thất bại, quy trình sẽ skip video đó và chuyển sang video tiếp theo.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-06T10:17:22.874Z",
+          "context": [],
+          "kv_store": {}
+        },
+        {
+          "id": "e0ea478b-0134-4537-a25b-c37dfbc6a200",
+          "messageText": "giả sử có 4 video, sau khi xong 2 video thì đã xoá luôn 2 video đi chưa.???\nHay phải xong hết 4 video ??",
+          "responseText": "Theo code hiện tại, mỗi video được xử lý độc lập và các file tạm thời sẽ được xóa ngay sau khi xử lý xong video đó, không cần đợi tất cả video xử lý xong. Tuy nhiên, chúng ta nên thêm một số kiểm tra để đảm bảo việc này hoạt động chính xác. Đây là code được cải tiến:\n\n```python:deploy1.3.3_combine/backend/database/workflow3_fullquyen.py\ndef process_folder(self, folder_id: str):\n    try:\n        # ... existing code for finding folders and listing videos ...\n\n        total_videos = len(videos)\n        processed_count = 0\n        \n        self.logger.info(f\"\\nStarting to process {total_videos} videos\")\n        \n        for video in videos:\n            hv_path = None\n            mentor_path = None\n            \n            try:\n                processed_count += 1\n                self.logger.info(f\"\\nProcessing video {processed_count}/{total_videos}: {video['name']}\")\n                \n                # ... code for finding audio files ...\n                \n                # Create temporary file paths\n                hv_path = os.path.join(self.config.TEMP_DIR, f\"hv_{video['id']}.wav\")\n                mentor_path = os.path.join(self.config.TEMP_DIR, f\"mentor_{video['id']}.wav\")\n                \n                # Download and process files\n                if not self.download_file(hv_file['id'], hv_path):\n                    raise Exception(\"Failed to download HV file\")\n                \n                if not self.download_file(mentor_file['id'], mentor_path):\n                    raise Exception(\"Failed to download mentor file\")\n                \n                # Process audio files\n                hv_result = self.audio_processor.process_audio(hv_path)\n                mentor_result = self.audio_processor.process_audio(mentor_path)\n                \n                if hv_result and mentor_result:\n                    # Combine and analyze\n                    transcript = self.audio_processor.combine_transcriptions(\n                        hv_result, mentor_result)\n                    criteria = self.audio_processor.analyze_transcript(transcript)\n                    \n                    # Save to database\n                    video_url = f\"https://drive.google.com/file/d/{video['i",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-06T10:17:22.874Z",
+          "context": [],
+          "kv_store": {}
+        }
+      ],
+      "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "Vấn đề với đầu ra video không thành công",
+      "id": "e6ff231c-a0c4-4d07-852e-e3a02e09af1c",
+      "parent_id": null,
+      "created_on": "2024-11-05T15:59:13.663Z",
+      "messages": [
+        {
+          "id": "c8977aaa-a426-45f1-951b-351177f515fe",
+          "messageText": "Với cùng code này, mà sao output video 1 lại fail, output video 2 thì không\n-------------",
+          "responseText": "Let me analyze the outputs and explain why one video succeeded while the other failed.\n\nLooking at the logs:\n\n**Video 2 (Successful)**:\n- Has complete transcription\n- Has detailed criteria analysis\n- Shows proper processing through all stages\n\n**Video 1 (Failed)**:\n- Has minimal transcription\n- Shows \"Pending analysis\" for criteria\n- Appears to have not completed full processing\n\nThe most likely reasons for this difference are:\n\n1. **API Response Issues**: The analyze API endpoint might have failed for Video 1 but succeeded for Video 2. Let's add more error handling and logging in the `analyze_transcript` method:\n\n```python:deploy1.3.3_combine/backend/database/workflow2.py\ndef analyze_transcript(self, transcript: str) -> Optional[str]:\n    \"\"\"Analyze transcript using the analyze API\"\"\"\n    try:\n        self.logger.info(\"Preparing to analyze transcript...\")\n        self.logger.info(f\"Transcript length: {len(transcript)}\")  # Add this\n        \n        # Format payload\n        payload = {\n            \"transcription\": transcript\n        }\n        \n        # Make request\n        response = requests.post(\n            self.config.ANALYZE_API_URL,\n            headers={\n                'Content-Type': 'application/json'\n            },\n            json=payload,\n            timeout=60\n        )\n        \n        # Enhanced error logging\n        self.logger.info(f\"Response status code: {response.status_code}\")\n        if response.status_code != 200:\n            self.logger.error(f\"Error response: {response.text}\")\n            return None\n            \n        # Log full response for debugging\n        self.logger.info(f\"Full response content: {response.text}\")\n        \n        result = response.json()\n        \n        if 'criteria' in result:\n            criteria_str = json.dumps(result['criteria'], \n                                    ensure_ascii=False, \n                                    indent=2)\n            self.logger.info(\"Successfully received criteria\")\n            return criteria_str\n        else:\n            self.logger.error(f\"No criteria in response. Full response: {result}\")\n            return None\n\n    except Exception as e:\n        self.logger.error(f\"Error analyzing transcript: {str(e)}\", exc_info=True)  # Add exc_info\n        return None\n```\n\n2. **Transcription Quality**: The transcription for Video 1 might be too short or malformed. Let's add validation in the `combine_transcriptions` method:\n\n```python:deploy1.3.3_combine/backend/database/workflow2.py\ndef combine_transcriptions(self, hv_output: Dict, mentor_output: Dict) -> str:\n    \"\"\"Combine and format transcriptions from HV and mentor\"\"\"\n    try:\n        # Log input data\n        self.logger.info(f\"HV output: {hv_output}\")\n        self.logger.info(f\"Mentor output: {mentor_output}\")\n        \n        # Extract data\n        hv_data = self.extract_dicts(hv_output['output'])\n        mentor_data = self.extract_dicts(mentor_output['output'])\n        \n        # Validate extracted data\n        self.logger.info(f\"Extracted HV entries: {len(hv_data)}\")\n        self.logger.info(f\"Extracted Mentor entries: {len(mentor_data)}\")\n        \n        if not hv_data and not mentor_data:\n            self.logger.error(\"No valid transcription data extracted\")\n            return \"\"\n\n        # Rest of the method remains the same...\n```\n\n3. **Audio Processing Issues**: The audio files for Video 1 might have processing problems. Add validation in `process_audio`:\n\n```python:deploy1.3.3_combine/backend/database/workflow2.py\ndef process_audio(self, audio_path: str, language: str = 'en') -> Optional[Dict]:\n    if not os.path.exists(audio_path):\n        self.logger.error(f\"Audio file not found: {audio_path}\")\n        return None\n\n    # Log file size\n    file_size = os.path.getsize(audio_path)\n    self.logger.info(f\"Processing audio file: {audio_path} (size: {file_size} bytes)\")\n\n    with open(audio_path, 'rb') as audio_file:\n        try:\n            response = requests.post(\n                self.config.TRANSCRIBE_API_URL,\n                files={'audio': audio_file},\n                data={\n                    'secret_key': self.config.SECRET_KEY,\n                    'language': language\n                }\n            )\n            \n            # Log response details\n            self.logger.info(f\"Transcription API response status: {response.status_code}\")\n            self.logger.info(f\"Transcription API response: {response.text[:200]}...\")\n            \n            response.raise_for_status()\n            result = response.json()\n            \n            # Validate response structure\n            if 'output' not in result:\n                self.logger.error(f\"Invalid API response format: {result}\")\n                return None\n                \n            return result\n            \n        except Exception as e:\n            self.logger.error(f\"Error processing audio: {str(e)}\", exc_info=True)\n            return None\n```\n\nThese changes will help identify exactly where the processing fails for Video 1. The enhanced logging will show:\n1. If the audio files are being processed correctly\n2. If the transcription data is being properly extracted\n3. If the analysis API is receiving valid data and responding appropriately\n\nAfter implementing these changes, run the process again and check the logs to identify the exact point of failure for Video 1.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-05T15:59:13.663Z",
+          "context": [
+            {
+              "context_type": "selection",
+              "key": "3760fcef-a0b2-448d-8f9c-9a1e85f5112e",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow2.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow2.py",
+                "range": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 401,
+                  "endColumn": 11
+                },
+                "text": "import os\r\nimport pickle\r\nimport json\r\nimport logging\r\nimport time\r\nfrom typing import Optional, Dict, Tuple\r\nimport requests\r\nimport gdown\r\nfrom google.auth.transport.requests import Request\r\nfrom google.oauth2.credentials import Credentials\r\nfrom google_auth_oauthlib.flow import InstalledAppFlow\r\nfrom googleapiclient.discovery import build\r\nimport sqlite3\r\nimport re\r\n\r\nclass Config:\r\n    \"\"\"Configuration settings\"\"\"\r\n    BASE_DIR = os.path.dirname(os.path.abspath(__file__))\r\n    TRANSCRIBE_API_URL = 'http://103.253.20.13:25029/role_assign'\r\n    ANALYZE_API_URL = 'http://localhost:25034/analyze'\r\n    SECRET_KEY = 'codedongian'\r\n    SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']\r\n    CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials.json')\r\n    TOKEN_PATH = os.path.join(BASE_DIR, 'token.pickle')\r\n    DATABASE_PATH = os.path.join(BASE_DIR, 'video_database.db')\r\n    TEMP_DIR = os.path.join(BASE_DIR, 'temp_files')\r\n    LOG_DIR = os.path.join(BASE_DIR, 'logs')\r\n\r\nclass DatabaseManager:\r\n    def __init__(self, db_path: str, logger: logging.Logger):\r\n        self.db_path = db_path\r\n        self.logger = logger\r\n        os.makedirs(os.path.dirname(db_path), exist_ok=True)\r\n        self.create_database()\r\n\r\n    def create_database(self):\r\n        with sqlite3.connect(self.db_path) as conn:\r\n            conn.execute('''\r\n                CREATE TABLE IF NOT EXISTS videos (\r\n                    id INTEGER PRIMARY KEY,\r\n                    url_video TEXT NOT NULL UNIQUE,\r\n                    transcription TEXT,\r\n                    criteria TEXT,\r\n                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\r\n                )\r\n            ''')\r\n            self.logger.info(\"Database initialized\")\r\n\r\n    def url_exists(self, url_video: str) -> bool:\r\n        try:\r\n            with sqlite3.connect(self.db_path) as conn:\r\n                cursor = conn.execute('SELECT COUNT(*) FROM videos WHERE url_video = ?', \r\n                                    (url_video,))\r\n                return cursor.fetchone()[0] > 0\r\n        except sqlite3.Error as e:\r\n            self.logger.error(f\"Database error checking URL: {e}\")\r\n            return False\r\n\r\n    def insert_video(self, url_video: str, transcription: str, criteria: str = None) -> bool:\r\n        try:\r\n            with sqlite3.connect(self.db_path) as conn:\r\n                conn.execute('''\r\n                    INSERT INTO videos (url_video, transcription, criteria)\r\n                    VALUES (?, ?, ?)\r\n                ''', (url_video, transcription, criteria or 'Pending analysis'))\r\n                self.logger.info(f\"Inserted video: {url_video}\")\r\n                return True\r\n        except sqlite3.IntegrityError:\r\n            self.logger.info(f\"Video URL already exists: {url_video}\")\r\n            return False\r\n        except sqlite3.Error as e:\r\n            self.logger.error(f\"Database error: {e}\")\r\n            return False\r\n\r\nclass AudioProcessor:\r\n    def __init__(self, config: Config, logger: logging.Logger):\r\n        self.config = config\r\n        self.logger = logger\r\n        os.makedirs(config.TEMP_DIR, exist_ok=True)\r\n\r\n    def process_audio(self, audio_path: str, language: str = 'en') -> Optional[Dict]:\r\n        if not os.path.exists(audio_path):\r\n            self.logger.error(f\"Audio file not found: {audio_path}\")\r\n            return None\r\n\r\n        with open(audio_path, 'rb') as audio_file:\r\n            try:\r\n                response = requests.post(\r\n                    self.config.TRANSCRIBE_API_URL,\r\n                    files={'audio': audio_file},\r\n                    data={\r\n                        'secret_key': self.config.SECRET_KEY,\r\n                        'language': language\r\n                    }\r\n                )\r\n                response.raise_for_status()\r\n                return response.json()\r\n            except Exception as e:\r\n                self.logger.error(f\"Error processing audio: {e}\")\r\n                return None\r\n\r\n    def combine_transcriptions(self, hv_output: Dict, mentor_output: Dict) -> str:\r\n        \"\"\"Combine and format transcriptions from HV and mentor\"\"\"\r\n        try:\r\n            # Extract data\r\n            hv_data = self.extract_dicts(hv_output['output'])\r\n            mentor_data = self.extract_dicts(mentor_output['output'])\r\n\r\n            # Format with Mentee/Mentor instead of Speaker 1/2\r\n            formatted = []\r\n            for item in hv_data:\r\n                time = self.format_time(item['start_time'])\r\n                formatted.append(f\"[{time}] Mentee: {item['text']}\")\r\n            \r\n            for item in mentor_data:\r\n                time = self.format_time(item['start_time'])\r\n                formatted.append(f\"[{time}] Mentor: {item['text']}\")\r\n\r\n            # Sort by time\r\n            # Extract time from string for sorting\r\n            def get_time(s):\r\n                return int(s[1:3])*3600 + int(s[4:6])*60 + int(s[7:9])\r\n            \r\n            formatted.sort(key=get_time)\r\n            \r\n            # Join with newlines\r\n            transcript = '\\n'.join(formatted)\r\n            \r\n            # Log for debugging\r\n            self.logger.info(f\"Combined transcript format sample:\\n{transcript[:200]}...\")\r\n            \r\n            return transcript\r\n\r\n        except Exception as e:\r\n            self.logger.error(f\"Error combining transcriptions: {e}\")\r\n            return \"\"\r\n\r\n    def extract_dicts(self, s: str) -> list:\r\n        pattern = r\"\\{[^{}]*\\}\"\r\n        matches = re.findall(pattern, s)\r\n        result = []\r\n        for match in matches:\r\n            try:\r\n                match = match.replace(\"'\", '\"')\r\n                d = json.loads(match)\r\n                result.append(d)\r\n            except json.JSONDecodeError:\r\n                pass\r\n        return result\r\n\r\n    def format_time(self, milliseconds: int) -> str:\r\n        seconds = milliseconds // 1000\r\n        minutes = seconds // 60\r\n        hours = minutes // 60\r\n        return f\"{hours:02d}:{minutes%60:02d}:{seconds%60:02d}\"\r\n\r\n    def analyze_transcript(self, transcript: str) -> Optional[str]:\r\n        \"\"\"Analyze transcript using the analyze API\"\"\"\r\n        try:\r\n            self.logger.info(\"Preparing to analyze transcript...\")\r\n            \r\n            # Format payload\r\n            payload = {\r\n                \"transcription\": transcript\r\n            }\r\n            \r\n            # Log request details for debugging\r\n            self.logger.info(f\"Sending request to: {self.config.ANALYZE_API_URL}\")\r\n            self.logger.info(f\"Transcript sample: {transcript[:100]}...\")\r\n            \r\n            # Make request\r\n            response = requests.post(\r\n                self.config.ANALYZE_API_URL,\r\n                headers={\r\n                    'Content-Type': 'application/json'\r\n                },\r\n                json=payload,\r\n                timeout=60\r\n            )\r\n            \r\n            # Log response\r\n            self.logger.info(f\"Response status code: {response.status_code}\")\r\n            self.logger.info(f\"Response content: {response.text[:200]}...\")\r\n            \r\n            # Check response\r\n            response.raise_for_status()\r\n            result = response.json()\r\n            \r\n            if 'criteria' in result:\r\n                # Convert dictionary thành JSON string trước khi return\r\n                criteria_str = json.dumps(result['criteria'], \r\n                                        ensure_ascii=False, \r\n                                        indent=2)\r\n                self.logger.info(\"Successfully received criteria\")\r\n                return criteria_str\r\n            else:\r\n                self.logger.error(\"No criteria in response\")\r\n                return None\r\n\r\n        except requests.exceptions.Timeout:\r\n            self.logger.error(\"Request timed out\")\r\n            return None\r\n        except requests.exceptions.RequestException as e:\r\n            self.logger.error(f\"Request failed: {str(e)}\")\r\n            return None\r\n        except json.JSONDecodeError as e:\r\n            self.logger.error(f\"Failed to decode JSON response: {str(e)}\")\r\n            return None\r\n        except Exception as e:\r\n            self.logger.error(f\"Error analyzing transcript: {str(e)}\")\r\n            return None\r\n\r\nclass VideoProcessor:\r\n    def __init__(self, config: Config, logger: logging.Logger):\r\n        self.config = config\r\n        self.logger = logger\r\n        self.db = DatabaseManager(config.DATABASE_PATH, logger)\r\n        self.audio_processor = AudioProcessor(config, logger)\r\n        self.drive_service = self._authenticate_google_drive()\r\n\r\n    def _authenticate_google_drive(self):\r\n        creds = None\r\n        if os.path.exists(self.config.TOKEN_PATH):\r\n            with open(self.config.TOKEN_PATH, 'rb') as token:\r\n                creds = pickle.load(token)\r\n\r\n        if not creds or not creds.valid:\r\n            if creds and creds.expired and creds.refresh_token:\r\n                creds.refresh(Request())\r\n            else:\r\n                flow = InstalledAppFlow.from_client_secrets_file(\r\n                    self.config.CREDENTIALS_PATH, self.config.SCOPES)\r\n                creds = flow.run_local_server(port=0)\r\n            with open(self.config.TOKEN_PATH, 'wb') as token:\r\n                pickle.dump(creds, token)\r\n\r\n        return build('drive', 'v3', credentials=creds)\r\n\r\n    def find_folders(self, folder_id: str) -> Tuple[Optional[str], Optional[str]]:\r\n        self.logger.info(f\"Looking for Audio and Video folders in {folder_id}\")\r\n        query = f\"'{folder_id}' in parents and mimeType = 'application/vnd.google-apps.folder'\"\r\n        results = self.drive_service.files().list(q=query, fields=\"files(id, name)\").execute()\r\n        \r\n        audio_folder = None\r\n        video_folder = None\r\n        \r\n        for item in results.get('files', []):\r\n            if item['name'] == 'Audio':\r\n                audio_folder = item['id']\r\n                self.logger.info(f\"Found Audio folder: {audio_folder}\")\r\n            elif item['name'] == 'Video':\r\n                video_folder = item['id']\r\n                self.logger.info(f\"Found Video folder: {video_folder}\")\r\n        \r\n        return audio_folder, video_folder\r\n\r\n    def process_folder(self, folder_id: str):\r\n        try:\r\n            # Find folders\r\n            audio_folder, video_folder = self.find_folders(folder_id)\r\n            if not audio_folder or not video_folder:\r\n                self.logger.error(\"Could not find both Audio and Video folders\")\r\n                return\r\n\r\n            # Get list of videos\r\n            self.logger.info(f\"Getting videos from folder: {video_folder}\")\r\n            videos = self.drive_service.files().list(\r\n                q=f\"'{video_folder}' in parents\",\r\n                fields=\"files(id, name)\"\r\n            ).execute().get('files', [])\r\n            self.logger.info(f\"Found {len(videos)} videos\")\r\n\r\n            # Process each video\r\n            for video in videos:\r\n                self.logger.info(f\"\\nProcessing video: {video['name']}\")\r\n                video_url = f\"https://drive.google.com/file/d/{video['id']}/view\"\r\n                \r\n                # Check if already processed\r\n                if self.db.url_exists(video_url):\r\n                    self.logger.info(f\"Skipping existing video: {video['name']}\")\r\n                    continue\r\n\r\n                # Find corresponding audio files\r\n                self.logger.info(f\"Looking for audio files for video: {video['name']}\")\r\n                base_name = os.path.splitext(video['name'])[0]\r\n                audio_files = self.drive_service.files().list(\r\n                    q=f\"'{audio_folder}' in parents and (name contains '{base_name}')\",\r\n                    fields=\"files(id, name)\"\r\n                ).execute().get('files', [])\r\n                self.logger.info(f\"Found {len(audio_files)} related audio files\")\r\n\r\n                # Find HV and mentor files\r\n                hv_file = None\r\n                mentor_file = None\r\n                for file in audio_files:\r\n                    self.logger.info(f\"Checking audio file: {file['name']}\")\r\n                    if 'HV' in file['name']:\r\n                        hv_file = file\r\n                        self.logger.info(f\"Found HV file: {file['name']}\")\r\n                    elif 'mentor' in file['name']:\r\n                        mentor_file = file\r\n                        self.logger.info(f\"Found mentor file: {file['name']}\")\r\n\r\n                if not (hv_file and mentor_file):\r\n                    self.logger.error(f\"Missing audio files for video: {video['name']}\")\r\n                    continue\r\n\r\n                try:\r\n                    # Download and process HV file\r\n                    self.logger.info(f\"Processing HV file: {hv_file['name']}\")\r\n                    hv_path = os.path.join(self.config.TEMP_DIR, f\"hv_{video['id']}.wav\")\r\n                    self.logger.info(f\"Downloading HV file to: {hv_path}\")\r\n                    gdown.download(f\"https://drive.google.com/uc?id={hv_file['id']}\", \r\n                                hv_path, quiet=False)\r\n                    hv_result = self.audio_processor.process_audio(hv_path)\r\n\r\n                    # Download and process mentor file\r\n                    self.logger.info(f\"Processing mentor file: {mentor_file['name']}\")\r\n                    mentor_path = os.path.join(self.config.TEMP_DIR, f\"mentor_{video['id']}.wav\")\r\n                    self.logger.info(f\"Downloading mentor file to: {mentor_path}\")\r\n                    gdown.download(f\"https://drive.google.com/uc?id={mentor_file['id']}\", \r\n                                mentor_path, quiet=False)\r\n                    mentor_result = self.audio_processor.process_audio(mentor_path)\r\n\r\n                    if hv_result and mentor_result:\r\n                        self.logger.info(\"Combining transcriptions...\")\r\n                        transcript = self.audio_processor.combine_transcriptions(\r\n                            hv_result, mentor_result)\r\n                        \r\n                        self.logger.info(\"Getting criteria...\")\r\n                        criteria = self.audio_processor.analyze_transcript(transcript)\r\n\r\n                        # Save to database\r\n                        self.logger.info(\"Saving to database...\")\r\n                        if self.db.insert_video(video_url, transcript, criteria):\r\n                            self.logger.info(f\"Successfully processed video: {video['name']}\")\r\n\r\n                    # Cleanup\r\n                    self.logger.info(\"Cleaning up temporary files...\")\r\n                    for path in [hv_path, mentor_path]:\r\n                        if os.path.exists(path):\r\n                            os.remove(path)\r\n                            self.logger.info(f\"Removed temporary file: {path}\")\r\n\r\n                except Exception as e:\r\n                    self.logger.error(f\"Error processing video {video['name']}: {str(e)}\")\r\n                    continue\r\n\r\n                time.sleep(3)\r\n\r\n        except Exception as e:\r\n            self.logger.error(f\"Error in main processing: {str(e)}\")\r\n\r\ndef main():\r\n    # Initialize config\r\n    config = Config()\r\n    \r\n    # Setup logging\r\n    os.makedirs(config.LOG_DIR, exist_ok=True)\r\n    logger = logging.getLogger(__name__)\r\n    logger.setLevel(logging.INFO)\r\n    \r\n    if not logger.handlers:\r\n        if not logger.handlers:\r\n            fh = logging.FileHandler(os.path.join(config.LOG_DIR, 'app.log'), \r\n                                encoding='utf-8')\r\n        fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))\r\n        logger.addHandler(fh)\r\n        \r\n        ch = logging.StreamHandler()\r\n        ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))\r\n        logger.addHandler(ch)\r\n    \r\n    try:\r\n        processor = VideoProcessor(config, logger)\r\n        folder_id = \"1_oVkhMaU4M1-ZIkb5sL4XSRE1LmZUn3z\"\r\n        processor.process_folder(folder_id)\r\n        \r\n        # Display results\r\n        logger.info(\"\\nProcessed Videos:\")\r\n        with sqlite3.connect(config.DATABASE_PATH) as conn:\r\n            cursor = conn.execute('''\r\n                SELECT id, url_video, \r\n                       substr(transcription, 1, 100) as transcription_preview, \r\n                       criteria, created_at \r\n                FROM videos\r\n                ORDER BY created_at DESC\r\n            ''')\r\n            for row in cursor.fetchall():\r\n                logger.info(f\"\\nVideo ID: {row[0]}\")\r\n                logger.info(f\"URL: {row[1]}\")\r\n                logger.info(f\"Transcription Preview: {row[2]}...\")\r\n                logger.info(f\"Criteria: {row[3]}\")\r\n                logger.info(f\"Created at: {row[4]}\")\r\n                \r\n    except Exception as e:\r\n        logger.error(f\"Main execution error: {e}\")\r\n        raise\r\n\r\nif __name__ == '__main__':\r\n    main()"
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "02cb7395-b212-4507-85bf-950a2f2a28db",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow2.py",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.3_combine\\backend\\database\\workflow2.py",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            ],
+            "file_path_dict": {
+              "2": "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py"
+            }
+          }
+        }
+      ],
+      "kv_store": {}
     }
   ],
   "inlineChats": [
@@ -3045,8 +3404,8 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 1964,
-    "total_repo_line_count": 613428,
+    "unique_matched_lines_count": 4161,
+    "total_repo_line_count": 1002442,
     "best_prompt_response": {
       "prompt": "Viết 1 file ghi thêm 1 records vào bảng evaluations \n\ngồm các thông tin như này \n\n        url_video: currentVideoUrl,\n        criteria: currentCriteria,\n        score: parseInt(scoreInput),\n        note: noteInput,\n        timestamp: new Date().toISOString()",
       "response": "I'll help you create a Python script to insert a record into the evaluations table. Based on the database schema shown in the code snippets, here's the implementation:\n\n```python:deploy1.3.4_combine_update/backend/database/utils/insert_evaluation.py\nimport sqlite3\nimport os\nfrom datetime import datetime\n\ndef insert_evaluation(url_video, criteria, score, note):\n    # Get database path\n    current_dir = os.path.dirname(os.path.abspath(__file__))\n    db_path = os.path.join(current_dir, 'video_database.db')\n\n    # Connect to database\n    conn = sqlite3.connect(db_path)\n    cursor = conn.cursor()\n\n    try:\n        # Create evaluations table if it doesn't exist\n        cursor.execute('''\n            CREATE TABLE IF NOT EXISTS evaluations (\n                id INTEGER PRIMARY KEY AUTOINCREMENT,\n                video_url TEXT,\n                criteria TEXT,\n                score INTEGER,\n                note TEXT,\n                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n            )\n        ''')\n\n        # Insert evaluation record\n        cursor.execute('''\n            INSERT INTO evaluations (video_url, criteria, score, note, created_at)\n            VALUES (?, ?, ?, ?, ?)\n        ''', (url_video, criteria, score, note, datetime.now().isoformat()))\n\n        # Commit the changes\n        conn.commit()\n        print(\"Evaluation record inserted successfully!\")\n\n        # Verify the insertion\n        cursor.execute('''\n            SELECT * FROM evaluations \n            WHERE video_url = ? \n            AND criteria = ? \n            ORDER BY created_at DESC \n            LIMIT 1\n        ''', (url_video, criteria))\n        \n        record = cursor.fetchone()\n        if record:\n            print(\"\\nInserted record:\")\n            print(f\"ID: {record[0]}\")\n            print(f\"Video URL: {record[1]}\")\n            print(f\"Criteria: {record[2]}\")\n            print(f\"Score: {record[3]}\")\n            print(f\"Note: {record[4]}\")\n            print(f\"Timestamp: {record[5]}\")\n\n    except sqlite3.Error as e:\n        print(f\"Database error: {e}\")\n        conn.rollback()\n    except Exception as e:\n        print(f\"Unexpected error: {e}\")\n        conn.rollback()\n    finally:\n        conn.close()\n\nif __name__ == \"__main__\":\n    # Example usage\n    test_data = {\n        \"url_video\": \"https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/view\",\n        \"criteria\": \"Clarity\",\n        \"score\": 4,\n        \"note\": \"Clear and concise presentation\"\n    }\n    \n    insert_evaluation(\n        test_data[\"url_video\"],\n        test_data[\"criteria\"],\n        test_data[\"score\"],\n        test_data[\"note\"]\n    )\n```\n\nThis script:\n\n1. Creates the evaluations table if it doesn't exist\n2. Inserts a new evaluation record with the provided data\n3. Uses proper error handling and database connection management\n4. Verifies and displays the inserted record\n5. Includes an example usage with test data\n\nYou can run this script directly to test it, or import and use the `insert_evaluation` function in other parts of your application.\n\nThe table structure matches your frontend data structure, with:\n- video_url (from currentVideoUrl)\n- criteria (from currentCriteria)\n- score (from scoreInput)\n- note (from noteInput)\n- created_at (from timestamp)",
@@ -3433,28 +3792,10 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/Drive2Trans.md",
-        "total_lines": 31,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/Note1_FromTrans_aHoang_GetCriticical.ipynb",
-        "total_lines": 229,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/api.md",
-        "total_lines": 4,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/.dockerignore",
         "total_lines": 7,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "ai_generated_lines": 7,
+        "ai_generated_percentage": 100
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/.ipynb",
@@ -3465,56 +3806,56 @@
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Dockerfile",
         "total_lines": 15,
-        "ai_generated_lines": 3,
-        "ai_generated_percentage": 20
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 66.66666666666666
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Dockerfile copy",
         "total_lines": 15,
-        "ai_generated_lines": 3,
-        "ai_generated_percentage": 20
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 66.66666666666666
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt1DetAndScoring.py",
-        "total_lines": 113,
+        "total_lines": 86,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt2DetAndScoring.py",
-        "total_lines": 114,
+        "total_lines": 90,
         "ai_generated_lines": 2,
-        "ai_generated_percentage": 1.7543859649122806
+        "ai_generated_percentage": 2.2222222222222223
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt3DetAndScoring.py",
-        "total_lines": 58,
+        "total_lines": 66,
         "ai_generated_lines": 2,
-        "ai_generated_percentage": 3.4482758620689653
+        "ai_generated_percentage": 3.0303030303030303
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt4DetAndScoring.py",
-        "total_lines": 65,
+        "total_lines": 75,
         "ai_generated_lines": 2,
-        "ai_generated_percentage": 3.076923076923077
+        "ai_generated_percentage": 2.666666666666667
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/H3_Prompt5DetAndScoring.py",
-        "total_lines": 76,
+        "total_lines": 86,
         "ai_generated_lines": 2,
-        "ai_generated_percentage": 2.631578947368421
+        "ai_generated_percentage": 2.3255813953488373
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun1.md",
         "total_lines": 155,
-        "ai_generated_lines": 2,
-        "ai_generated_percentage": 1.2903225806451613
+        "ai_generated_lines": 7,
+        "ai_generated_percentage": 4.516129032258064
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/HowRun2.md",
         "total_lines": 88,
-        "ai_generated_lines": 3,
-        "ai_generated_percentage": 3.4090909090909087
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 11.363636363636363
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/Version.md",
@@ -3740,9 +4081,9 @@
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/funct_getOpenAIResponse.py",
-        "total_lines": 104,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "total_lines": 109,
+        "ai_generated_lines": 12,
+        "ai_generated_percentage": 11.009174311926607
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/deployH3_5PromptDetAndScoring/requirements.txt",
@@ -3758,54 +4099,6 @@
       },
       {
         "file": "deploy1.3.1_Transcriptions2JSON_saveDB/backend/apiTrans2JsonDicts_forDeloy1.3/docs_api.md",
-        "total_lines": 11,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/create_db.py",
-        "total_lines": 87,
-        "ai_generated_lines": 5,
-        "ai_generated_percentage": 5.747126436781609
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/create_db_readDBTest.py",
-        "total_lines": 31,
-        "ai_generated_lines": 5,
-        "ai_generated_percentage": 16.129032258064516
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/credentials.json",
-        "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/main_extractIDAndTrans_updateCriteria.py",
-        "total_lines": 92,
-        "ai_generated_lines": 13,
-        "ai_generated_percentage": 14.130434782608695
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/readme_workflow2.md",
-        "total_lines": 177,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/token.pickle",
-        "total_lines": 4,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/update_db.py",
-        "total_lines": 52,
-        "ai_generated_lines": 2,
-        "ai_generated_percentage": 3.8461538461538463
-      },
-      {
-        "file": "deploy1.3.1_Transcriptions2JSON_saveDB/workflow1.md",
         "total_lines": 11,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
@@ -3983,6 +4276,12 @@
         "total_lines": 21,
         "ai_generated_lines": 14,
         "ai_generated_percentage": 66.66666666666666
+      },
+      {
+        "file": "deploy1.3.3_combine/backend/UIBuilder/HowRUN.md",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
       },
       {
         "file": "deploy1.3.3_combine/backend/UIBuilder/React.ipynb",
@@ -4351,6 +4650,18 @@
         "ai_generated_percentage": 61.904761904761905
       },
       {
+        "file": "deploy1.3.4_combine_update/backend/UIBuilder/HowRun.md",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.4_combine_update/backend/UIBuilder/Note1_React.ipynb",
+        "total_lines": 575,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/api_ckp/api_database_app_prod_2api.py",
         "total_lines": 129,
         "ai_generated_lines": 81,
@@ -4370,15 +4681,21 @@
       },
       {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/ui_react/Dockerfile",
-        "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "total_lines": 33,
+        "ai_generated_lines": 6,
+        "ai_generated_percentage": 18.181818181818183
       },
       {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/ui_react/HowBuild_README.md",
         "total_lines": 169,
         "ai_generated_lines": 1,
         "ai_generated_percentage": 0.591715976331361
+      },
+      {
+        "file": "deploy1.3.4_combine_update/backend/UIBuilder/ui_react/Note2_DockerBuild.ipynb",
+        "total_lines": 206,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
       },
       {
         "file": "deploy1.3.4_combine_update/backend/UIBuilder/ui_react/package.json",
@@ -4478,9 +4795,9 @@
       },
       {
         "file": "deploy1.3.4_combine_update/backend/database/create_db_readDBTest.py",
-        "total_lines": 38,
+        "total_lines": 49,
         "ai_generated_lines": 14,
-        "ai_generated_percentage": 36.84210526315789
+        "ai_generated_percentage": 28.57142857142857
       },
       {
         "file": "deploy1.3.4_combine_update/backend/database/credentials.json",
@@ -4743,6 +5060,984 @@
       {
         "file": "deploy1.3.4_combine_update/structure.md",
         "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/HowRun_demo2.md",
+        "total_lines": 42,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 2.380952380952381
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/Note2_view1view2.ipynb",
+        "total_lines": 53,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/Note3_DockerBuild.ipynb",
+        "total_lines": 482,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/Note_build_docker-compose.ipynb",
+        "total_lines": 483,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/Dockerfile",
+        "total_lines": 21,
+        "ai_generated_lines": 13,
+        "ai_generated_percentage": 61.904761904761905
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/api_backend.md",
+        "total_lines": 15,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/api_database3apiGhiDe.py",
+        "total_lines": 189,
+        "ai_generated_lines": 103,
+        "ai_generated_percentage": 54.4973544973545
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/Note2_FullVideoAudio2Trans2Critierial.ipynb",
+        "total_lines": 1617,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/Note3_refactorCode.ipynb",
+        "total_lines": 813,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/api.md",
+        "total_lines": 13,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/create_db_readDBTest.py",
+        "total_lines": 38,
+        "ai_generated_lines": 14,
+        "ai_generated_percentage": 36.84210526315789
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/credentials.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/database_description.md",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/deploy_workflow3_updateCredentialsAccess.ipynb",
+        "total_lines": 616,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/link_folder_test.md",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/logs/app.log",
+        "total_lines": 8324,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/readme_workflow2.md",
+        "total_lines": 177,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/temp_files/hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav",
+        "total_lines": 68146,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/temp_files/hv_1qetq0udB096mOpue8XyHtaUUYudB0k_Y.wav",
+        "total_lines": 89157,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/token.pickle",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/Hello..db",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/create_db.py",
+        "total_lines": 87,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 5.747126436781609
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/create_db_readDBTest.py",
+        "total_lines": 31,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 16.129032258064516
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/delete_table.py",
+        "total_lines": 28,
+        "ai_generated_lines": 17,
+        "ai_generated_percentage": 60.71428571428571
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/updateNameVideo_baseOnURL_v1.py",
+        "total_lines": 78,
+        "ai_generated_lines": 25,
+        "ai_generated_percentage": 32.05128205128205
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/updateNameVideo_baseOnURL_v2.py",
+        "total_lines": 89,
+        "ai_generated_lines": 40,
+        "ai_generated_percentage": 44.9438202247191
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/update_db.py",
+        "total_lines": 52,
+        "ai_generated_lines": 2,
+        "ai_generated_percentage": 3.8461538461538463
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/update_evaluationTable_database.py",
+        "total_lines": 79,
+        "ai_generated_lines": 64,
+        "ai_generated_percentage": 81.0126582278481
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/update_nameVideo_baseOnURL.ipynb",
+        "total_lines": 157,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/utils/video_database.db",
+        "total_lines": 12,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/versionControl.md",
+        "total_lines": 10,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/video_database.db",
+        "total_lines": 8283,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 0.06036460219727152
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/video_database_1.db",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/video_database_10videos.db",
+        "total_lines": 7547,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/video_database_2videos.db",
+        "total_lines": 1278,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/database/workflow3_fullquyen.py",
+        "total_lines": 568,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 0.528169014084507
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/backend/requirements.txt",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/docker-compose.yml",
+        "total_lines": 25,
+        "ai_generated_lines": 20,
+        "ai_generated_percentage": 80
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/Dockerfile",
+        "total_lines": 24,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/Dockerfile",
+        "total_lines": 33,
+        "ai_generated_lines": 6,
+        "ai_generated_percentage": 18.181818181818183
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/HowBuild_README.md",
+        "total_lines": 169,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 0.591715976331361
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/HowRun.md",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/Note1_React.ipynb",
+        "total_lines": 575,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/Note2_DockerBuild.ipynb",
+        "total_lines": 206,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/create_db_readDBTest.py",
+        "total_lines": 47,
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 21.27659574468085
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/package.json",
+        "total_lines": 36,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/postcss.config.js",
+        "total_lines": 6,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/public/index.html",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/App.js",
+        "total_lines": 15,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 6.666666666666667
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/components/Navigation.js",
+        "total_lines": 44,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/components/VideoScoring.js",
+        "total_lines": 145,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 2.7586206896551726
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/components/VideoScoring_sample.js",
+        "total_lines": 124,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 3.225806451612903
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/components/ui/button.js",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/components/ui/input.js",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/index.css",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/src/index.js",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewScoringResults/tailwind.config.js",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 14,
+        "ai_generated_percentage": 70
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/package.json",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/App.js",
+        "total_lines": 16,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 6.25
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/Note1_updateSave_ScoreAndNoteUser.ipynb",
+        "total_lines": 616,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/Note2_cssUpdate.ipynb",
+        "total_lines": 210,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/Note3_DriveAccess.ipynb",
+        "total_lines": 136,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/components/Navigation.js",
+        "total_lines": 44,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/config.js",
+        "total_lines": 10,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 30
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/index.html",
+        "total_lines": 129,
+        "ai_generated_lines": 39,
+        "ai_generated_percentage": 30.23255813953488
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/package.json",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/script.js",
+        "total_lines": 331,
+        "ai_generated_lines": 132,
+        "ai_generated_percentage": 39.87915407854985
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/script_ver1_noConfig.js",
+        "total_lines": 334,
+        "ai_generated_lines": 139,
+        "ai_generated_percentage": 41.61676646706587
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/script_ver2_Config.js",
+        "total_lines": 335,
+        "ai_generated_lines": 138,
+        "ai_generated_percentage": 41.19402985074627
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/server.js",
+        "total_lines": 37,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/styles.css",
+        "total_lines": 452,
+        "ai_generated_lines": 166,
+        "ai_generated_percentage": 36.72566371681416
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/ViewVideoScoringGrading/src/videoTranscripts.js",
+        "total_lines": 852,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/nginx.conf",
+        "total_lines": 27,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/shared/Navigation.js",
+        "total_lines": 45,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/frontend/shared/layout.html",
+        "total_lines": 51,
+        "ai_generated_lines": 6,
+        "ai_generated_percentage": 11.76470588235294
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/readme2_view1view2.md",
+        "total_lines": 15,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/requirements.txt",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.5_combine_view1HTMLview2React/structure.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/HowRun_demo2.md",
+        "total_lines": 42,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 2.380952380952381
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/Note_build_docker-compose.ipynb",
+        "total_lines": 483,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/Dockerfile",
+        "total_lines": 21,
+        "ai_generated_lines": 13,
+        "ai_generated_percentage": 61.904761904761905
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/Note1_api_backend.ipynb",
+        "total_lines": 221,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/api_backend.md",
+        "total_lines": 135,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 0.7407407407407408
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/api_database3apiGhiDe.py",
+        "total_lines": 220,
+        "ai_generated_lines": 106,
+        "ai_generated_percentage": 48.18181818181818
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/Note2_FullVideoAudio2Trans2Critierial.ipynb",
+        "total_lines": 1617,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/Note3_refactorCode.ipynb",
+        "total_lines": 813,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/api.md",
+        "total_lines": 13,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/create_db_readDBTest.py",
+        "total_lines": 38,
+        "ai_generated_lines": 14,
+        "ai_generated_percentage": 36.84210526315789
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/credentials.json",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/database_description.md",
+        "total_lines": 7,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/deploy_workflow3_updateCredentialsAccess.ipynb",
+        "total_lines": 616,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/link_folder_test.md",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/logs/app.log",
+        "total_lines": 8324,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/readme_workflow2.md",
+        "total_lines": 177,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/temp_files/hv_1MVfrM-a58A1PEsdZZ_2YxQ73xQ0MwsZE.wav",
+        "total_lines": 68146,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/temp_files/hv_1qetq0udB096mOpue8XyHtaUUYudB0k_Y.wav",
+        "total_lines": 89157,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/token.pickle",
+        "total_lines": 5,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/Hello..db",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/create_db.py",
+        "total_lines": 87,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 5.747126436781609
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/create_db_readDBTest.py",
+        "total_lines": 31,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 16.129032258064516
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/delete_table.py",
+        "total_lines": 28,
+        "ai_generated_lines": 17,
+        "ai_generated_percentage": 60.71428571428571
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/updateNameVideo_baseOnURL_v1.py",
+        "total_lines": 78,
+        "ai_generated_lines": 25,
+        "ai_generated_percentage": 32.05128205128205
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/updateNameVideo_baseOnURL_v2.py",
+        "total_lines": 89,
+        "ai_generated_lines": 40,
+        "ai_generated_percentage": 44.9438202247191
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/update_db.py",
+        "total_lines": 52,
+        "ai_generated_lines": 2,
+        "ai_generated_percentage": 3.8461538461538463
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/update_evaluationTable_database.py",
+        "total_lines": 79,
+        "ai_generated_lines": 64,
+        "ai_generated_percentage": 81.0126582278481
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/update_nameVideo_baseOnURL.ipynb",
+        "total_lines": 157,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/utils/video_database.db",
+        "total_lines": 12,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/versionControl.md",
+        "total_lines": 10,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/video_database.db",
+        "total_lines": 8283,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 0.06036460219727152
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/video_database_1.db",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/video_database_10videos.db",
+        "total_lines": 7547,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/video_database_2videos.db",
+        "total_lines": 1278,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/database/workflow3_fullquyen.py",
+        "total_lines": 568,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 0.528169014084507
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/backend/requirements.txt",
+        "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/docker-compose.yml",
+        "total_lines": 26,
+        "ai_generated_lines": 21,
+        "ai_generated_percentage": 80.76923076923077
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/Dockerfile",
+        "total_lines": 20,
+        "ai_generated_lines": 12,
+        "ai_generated_percentage": 60
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/HowRun_demo2.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/Note1_updateSave_ScoreAndNoteUser.ipynb",
+        "total_lines": 616,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/Note2_cssUpdate.ipynb",
+        "total_lines": 210,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/Note3_ConnectNavigation.ipynb",
+        "total_lines": 47,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/Note3_DriveAccess.ipynb",
+        "total_lines": 136,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/HowRun.md",
+        "total_lines": 31,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/Note1_React.ipynb",
+        "total_lines": 575,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/Note2_updateHTMLCSS_connectDatabase.ipynb",
+        "total_lines": 205,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/api_ckp/api_database_app_prod_2api.py",
+        "total_lines": 129,
+        "ai_generated_lines": 81,
+        "ai_generated_percentage": 62.7906976744186
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/api_ckp/api_database_app_prod_3api_writeAdd.py",
+        "total_lines": 146,
+        "ai_generated_lines": 90,
+        "ai_generated_percentage": 61.64383561643836
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/base_ui/base_ui/index.html",
+        "total_lines": 38,
+        "ai_generated_lines": 2,
+        "ai_generated_percentage": 5.263157894736842
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/base_ui/base_ui/script.js",
+        "total_lines": 129,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 3.10077519379845
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/base_ui/base_ui/styles.css",
+        "total_lines": 152,
+        "ai_generated_lines": 7,
+        "ai_generated_percentage": 4.605263157894736
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/create_db_readDBTest.py",
+        "total_lines": 47,
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 21.27659574468085
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/index.html",
+        "total_lines": 56,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 8.928571428571429
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/script.js",
+        "total_lines": 176,
+        "ai_generated_lines": 5,
+        "ai_generated_percentage": 2.840909090909091
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/styles.css",
+        "total_lines": 250,
+        "ai_generated_lines": 10,
+        "ai_generated_percentage": 4
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/Dockerfile",
+        "total_lines": 33,
+        "ai_generated_lines": 6,
+        "ai_generated_percentage": 18.181818181818183
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/HowBuild_README.md",
+        "total_lines": 169,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 0.591715976331361
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/Note2_DockerBuild.ipynb",
+        "total_lines": 206,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/package.json",
+        "total_lines": 34,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/postcss.config.js",
+        "total_lines": 6,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/public/index.html",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/App.js",
+        "total_lines": 11,
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 9.090909090909092
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/components/VideoScoring.js",
+        "total_lines": 145,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 2.7586206896551726
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/components/VideoScoring_sample.js",
+        "total_lines": 124,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 3.225806451612903
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/components/ui/button.js",
+        "total_lines": 29,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/components/ui/input.js",
+        "total_lines": 16,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/index.css",
+        "total_lines": 3,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/src/index.js",
+        "total_lines": 11,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/UIBuilder/ui_react/tailwind.config.js",
+        "total_lines": 25,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/baremScore.js",
+        "total_lines": 118,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/config.js",
+        "total_lines": 10,
+        "ai_generated_lines": 3,
+        "ai_generated_percentage": 30
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/index.html",
+        "total_lines": 135,
+        "ai_generated_lines": 38,
+        "ai_generated_percentage": 28.14814814814815
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/package.json",
+        "total_lines": 12,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/script.js",
+        "total_lines": 371,
+        "ai_generated_lines": 137,
+        "ai_generated_percentage": 36.92722371967655
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/script_ver1_noConfig.js",
+        "total_lines": 334,
+        "ai_generated_lines": 139,
+        "ai_generated_percentage": 41.61676646706587
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/script_ver2_Config.js",
+        "total_lines": 335,
+        "ai_generated_lines": 138,
+        "ai_generated_percentage": 41.19402985074627
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/server.js",
+        "total_lines": 48,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/styles.css",
+        "total_lines": 481,
+        "ai_generated_lines": 171,
+        "ai_generated_percentage": 35.550935550935556
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/frontend/videoTranscripts.js",
+        "total_lines": 852,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/requirements.txt",
+        "total_lines": 1,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "deploy1.3.6_view1_2HTML/structure.md",
+        "total_lines": 30,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "versionControl.md",
+        "total_lines": 16,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       }

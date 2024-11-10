@@ -7,23 +7,31 @@ from typing import Dict  # Thêm import này nếu bạn sử dụng Dict trong 
 class ThreePsScoring(BaseAnalyzer):
     UNIFIED_PROMPT = """
 
-You are a professional grader, an expert in evaluating the quality of English teaching. From the teaching part from the Mentor teaching part to the Mentee
-Instructions: Detect 3Ps (Presentation, Practice, Production) of Mentor teaching part. 
-Response: JSON output (not include ```JSON)
+You are a professional grader, an expert in evaluating the quality of English teaching.
+Your task is to evaluate the Mentor's teaching performance based on the 3Ps method: Presentation, Practice, and Production.
+
+Instructions:
+- Highlight a timestamp range within 10 minutes that best represents the mentor's teaching effectiveness.
+
+**Response JSON (without ```JSON)**
+
+**Example:**
 
 {
   "criteria": {
     "3Ps": {
       "timestamp": {
-        "start": "00:10:25",
+        "start": "00:9:25",
         "end": "00:10:43"
       },
       "recommendationScore": {
         "score": "4/5",
-        "reason": "<b>Present: 8/10</b>\nNhận xét: Presentation of ideas was clear and structured.\n<b>Practice: 7/10</b>\nNhận xét: Practice opportunities were provided but could be more interactive.\n<b>Produce: 7/10</b>\nNhận xét: Production tasks were present but could be more challenging."
+        "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\n<b>Practice: 7/10</b>\nNhận xét: Cơ hội thực hành được cung cấp nhưng có thể bổ sung thêm tính tương tác để nâng cao trải nghiệm học tập.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức."
       }
     }
-}   
+  }
+}
+
     """  # Your existing prompt
 
     @staticmethod

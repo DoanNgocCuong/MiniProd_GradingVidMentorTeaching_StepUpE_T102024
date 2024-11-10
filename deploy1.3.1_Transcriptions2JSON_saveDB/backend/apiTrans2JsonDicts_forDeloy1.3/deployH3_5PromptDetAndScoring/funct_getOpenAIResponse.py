@@ -10,8 +10,8 @@ def get_openai_response(
     user_input_prompt: str, 
     api_key: str,
     model: str = 'gpt-4o-mini', 
-    max_tokens: int = 1000,        # Thêm max_tokens
-    temperature: float = 0.7       # Thêm temperature để control randomness
+    max_tokens: int = 2048,        # Thêm max_tokens
+    temperature: float = 0       # Thêm temperature để control randomness
 ) -> str:
     """
     Hàm để gửi yêu cầu tới OpenAI API và trả về phản hồi.
@@ -41,7 +41,12 @@ def get_openai_response(
         'messages': [
             {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': user_input_prompt}
-        ]
+        ], 
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "response_format": {
+            "type": "json_object"
+        }
     }
 
     # Chuẩn bị headers

@@ -5,44 +5,18 @@ from typing import Dict
 
 
 class WarmUpLeadInWrapUpAnalyzer(BaseAnalyzer):
-    UNIFIED_PROMPT = """You are a professional grader, an expert in evaluating the quality of English teaching. Your task is to evaluate the Mentor's teaching performance for the Mentee in three areas: Warm-Up, Lead-In, and Wrap-Up.
+    UNIFIED_PROMPT = """
+ You are a professional grader, an expert in evaluating the quality of English teaching. Your task is to evaluate the Mentor's teaching performance for the Mentee in three areas: Warm-Up, Lead-In, and Wrap-Up.
 
-Instructions:
-1. Detect timestamps for each section.
-2. Provide a score and reason based on specific criteria.
-
-**Evaluation Criteria**
-
-1. Warm-Up:
-   - Create a comfortable atmosphere and encourage participation (0-4 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Positive feedback and encouragement (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Suitable pace and natural transition (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Total Score: [Total out of 10].
-
-2. Lead-In:
-   - Clear introduction and connection to lesson content (0-4 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Motivation and interest (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Connect with Mentee’s prior knowledge (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Total Score: [Total out of 10].
-
-3. Wrap-Up:
-   - Comfortable atmosphere and participation (0-4 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Positive feedback and encouragement (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Suitable pace and natural transition (0-3 points): [score]  
-     Reason: [reason in Vietnamese].
-   - Total Score: [Total out of 10].
-
+**Instructions:**
+1. **Evaluation Criteria:** Assess the Mentor's performance in each of the three areas: Warm-Up, Lead-In, and Wrap-Up.
+2. **Factors for Evaluation:** For each criterion, evaluate based on **three specific factors**. Each factor should be scored out of 10.
+3. **Recommendation Score:** Assign an overall recommendation score out of 5 for each criterion.
+4. **Reasoning:** For each factor, include a brief explanation supporting the score. Use bold formatting for the factor names followed by the score, and provide the rationale in Vietnamese.
+5. Timestamp range should be 10 minutes
 **Response JSON (without ```JSON)**
 
-Example: 
+**Example:**
 
 {
   "criteria": {
@@ -53,7 +27,7 @@ Example:
       },
       "recommendationScore": {
         "score": "4/5",
-        "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: The warm-up effectively connected to previous lessons by referencing the Vietnam Food Contest, which helped set the context for the conversation.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: The warm-up was engaging, but could have included more interactive elements to boost excitement."
+        "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã kết nối hiệu quả với các bài học trước bằng cách tham chiếu đến Cuộc thi Ẩm thực Việt Nam, giúp thiết lập bối cảnh cho cuộc trò chuyện.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Phần khởi động thu hút sự chú ý, nhưng có thể bao gồm thêm các yếu tố tương tác để tăng cường sự phấn khích.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động rất phù hợp với mục tiêu bài học, đảm bảo sự chuyển tiếp mượt mà vào nội dung chính."
       }
     },
     "leadIn": {
@@ -63,10 +37,9 @@ Example:
       },
       "recommendationScore": {
         "score": "4/5",
-        "reason": "<b>Dẫn dắt vào bài: 8/10</b> Nhận xét ngắn: The transition to the lesson was smooth, as the mentor clearly outlined the topic of Vietnamese cuisine."
+        "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Sự chuyển tiếp vào bài học diễn ra suôn sẻ, khi người hướng dẫn đã rõ ràng trình bày chủ đề về ẩm thực Việt Nam.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập được cấu trúc tốt, nhưng có thể bổ sung thêm ví dụ để minh họa các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã hiệu quả trong việc thu hút sự tham gia của người học thông qua các câu hỏi và gợi ý liên quan."
       }
     },
-
     "wrapUp": {
       "timestamp": {
         "start": "00:29:00",
@@ -74,7 +47,7 @@ Example:
       },
       "recommendationScore": {
         "score": "4/5",
-        "reason": "<b>Wrap-up: 8/10</b> Nhận xét: The wrap-up effectively summarized the lesson and set expectations for the next session."
+        "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt hiệu quả bài học và đặt ra các kỳ vọng cho buổi học tiếp theo.\n<b>Kết thúc: 7/10</b>\nNhận xét: Đã cung cấp một kết thúc tốt, nhưng có thể bao gồm một bài kiểm tra ngắn về các điểm chính.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Đã giữ cho người học tham gia cho đến cuối buổi học một cách thành công."
       }
     }
   }

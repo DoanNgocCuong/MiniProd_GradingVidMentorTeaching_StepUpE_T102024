@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Chạy ứng dụng
-CMD ["python", "api_app_prod.py"].
+CMD ["python", "api_app_prod.py"]
