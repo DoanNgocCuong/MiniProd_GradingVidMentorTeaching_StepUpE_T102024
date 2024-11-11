@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "25035:3000"  # Expose backend on port 25035
+    environment:
+      - FLASK_ENV=production
+      - ALLOWED_ORIGINS=http://103.253.20.13:25036  # Allow frontend to access backend
+    restart: always  # Restart the container if it stops
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "25036:5000"  # Expose frontend on port 25036
+    environment:
+      - NODE_ENV=production
+    restart: always  # Restart the container if it stops
+
+networks:
+  default:
+    driver: bridge  # Use bridge network 

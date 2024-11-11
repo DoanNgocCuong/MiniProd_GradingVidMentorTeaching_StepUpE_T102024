@@ -2,6 +2,23 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+// Add environment configuration
+const env = process.env.NODE_ENV || 'development';
+const config = {
+  development: {
+    port: 5000,
+    corsOrigin: 'http://localhost:25036'
+  },
+  production: {
+    port: 5000,
+    corsOrigin: 'http://103.253.20.13:25036'
+  }
+};
+
+// Use in your server setup
+const currentConfig = config[env];
+const port = process.env.PORT || currentConfig.port;
+
 const server = http.createServer((req, res) => {
   let filePath = '.' + req.url.split('?')[0];
   if (filePath === './') {
@@ -45,7 +62,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const port = process.env.PORT || 5000;
 server.listen(port, () => {
   console.log(`Server running at port ${port}`);
 });

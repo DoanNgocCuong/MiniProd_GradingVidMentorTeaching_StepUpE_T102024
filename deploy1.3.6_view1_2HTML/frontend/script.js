@@ -1,5 +1,9 @@
 import { videoTranscripts } from './videoTranscripts.js';
 import { baremScore } from './baremScore.js'; 
+import { getConfig } from './config.js';
+
+// Gọi API backend ở port 25035
+const config = getConfig();
 
 async function loadVideoFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,8 +17,8 @@ async function loadVideoFromUrl() {
         document.getElementById('videoLink').value = decodedUrl;
         
         try {
-            // Gọi API backend ở port 25035
-            const apiUrl = `http://localhost:25035/get_video_data?url=${encodeURIComponent(decodedUrl)}`;
+
+            const apiUrl = `${config.backendUrl}/get_video_data?url=${encodeURIComponent(decodedUrl)}`;
             console.log('API URL:', apiUrl);
             
             const response = await fetch(apiUrl);
@@ -51,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const fileId = fileIdMatch[1];
 
-            const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(videoLink)}`, {
+            // const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(videoLink)}`, {
+            const response = await fetch(`${config.backendUrl}/get_video_data?url=${encodeURIComponent(videoLink)}`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -285,7 +290,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:25035/save_score', {
+            const config = getConfig();
+            const response = await fetch(`${config.backendUrl}/save_score`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -371,7 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadSavedScores(videoUrl) {
         try {
             const encodedUrl = encodeURIComponent(videoUrl);
-            const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodedUrl}`);
+            // const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodedUrl}`);
+            const response = await fetch(`${config.backendUrl}/get_scores?url_video=${encodedUrl}`);
             const scores = await response.json();
             
             if (Array.isArray(scores)) {
@@ -392,7 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const reasonElement = document.getElementById('criteriaReason');
 
         try {
-            const response = await fetch(`http://localhost:25035/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
+            // const response = await fetch(`http://localhost:25035/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
+            const response = await fetch(`${config.backendUrl}/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);
             const data = await response.json();
 
             if (response.ok) {

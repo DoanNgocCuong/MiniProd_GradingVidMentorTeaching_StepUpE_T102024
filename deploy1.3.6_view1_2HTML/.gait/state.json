@@ -1439,8 +1439,16 @@
           "context": [],
           "kv_store": {
             "file_paths": [
-              "docker-compose.yml"
-            ]
+              "docker-compose.yml",
+              "frontend/Dockerfile",
+              "frontend/.dockerignore",
+              "docker-compose.prod.yml"
+            ],
+            "file_path_dict": {
+              "0": "frontend/Dockerfile",
+              "1": "frontend/.dockerignore",
+              "2": "docker-compose.prod.yml"
+            }
           }
         },
         {
@@ -1452,9 +1460,354 @@
           "context": [],
           "kv_store": {
             "file_paths": [
+              "docker-compose.yml",
+              "docker-compose.prod.yml"
+            ],
+            "file_path_dict": {
+              "3": "docker-compose.prod.yml"
+            }
+          }
+        }
+      ],
+      "kv_store": {}
+    },
+    {
+      "ai_editor": "cursor",
+      "customTitle": "Configuring Docker for Local and Production Environments",
+      "id": "2a0fd05f-edce-4203-a462-9db0f04b0d6d",
+      "parent_id": null,
+      "created_on": "2024-11-11T08:55:35.370Z",
+      "messages": [
+        {
+          "id": "3f54c391-475e-4485-8c65-143438a3ac2a",
+          "messageText": "@Dockerfile @Dockerfile @docker-compose.yml \n@script.js @script.js \n\nGiờ cần đẩy lên port 103.253.20.13 (thay cho hostlocal) \n\n(vẫn giữ lại hostlocal cho development)",
+          "responseText": "I'll help you modify the configuration to support both local development and production deployment. Here are the necessary changes:\n\n1. First, let's create a config file to manage environments:\n\n`````javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: 'http://localhost:25036',\n    backendUrl: 'http://localhost:25035',\n    liveDevelopment: 'http://127.0.0.1:5502/frontend'\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n\n// Determine environment based on hostname\nconst getEnvironment = () => {\n  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {\n    return 'development';\n  }\n  return 'production';\n};\n\nexport const getConfig = () => {\n  const env = getEnvironment();\n  return config[env];\n};\n`````\n\n2. Update the script.js to use the config:\n\n`````javascript:frontend/script.js\n// ... existing imports ...\nimport { getConfig } from './config.js';\n\n// Replace API calls with:\nconst config = getConfig();\n\n// Replace this line:\nconst apiUrl = `http://localhost:25035/get_video_data?url=${encodeURIComponent(decodedUrl)}`;\n\n// With this:\nconst apiUrl = `${config.backendUrl}/get_video_data?url=${encodeURIComponent(decodedUrl)}`;\n\n// Similarly update other fetch calls:\nconst response = await fetch(`${config.backendUrl}/save_score`, {\n  // ... rest of the fetch config\n});\n`````\n\n3. Update UIBuilder/script.js similarly:\n\n`````javascript:frontend/UIBuilder/script.js\nimport { getConfig } from '../config.js';\n\nconst config = getConfig();\n\n// Update fetch calls:\nasync function fetchScores(urlVideo) {\n    try {\n        const response = await fetch(`${config.backendUrl}/get_scores?url_video=${encodeURIComponent(urlVideo)}`);\n        // ... rest of the function\n    }\n}\n\n// Update other fetch calls similarly\n`````\n\n4. Update docker-compose.yml for production:\n\n`````yaml:docker-compose.prod.yml\nversion: '3.8'\n\nservices:\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    ports:\n      - \"25035:3000\"\n    environment:\n      - NODE_ENV=production\n      - ALLOWED_ORIGINS=http://103.253.20.13:25036\n\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    ports:\n      - \"25036:5000\"\n    environment:\n      - NODE_ENV=production\n`````\n\n5. Update the BASE_URL configuration:\n\n`````javascript:frontend/server.js\n// Add environment configuration\nconst env = process.env.NODE_ENV || 'development';\nconst config = {\n  development: {\n    port: 5000,\n    corsOrigin: 'http://localhost:25036'\n  },\n  production: {\n    port: 5000,\n    corsOrigin: 'http://103.253.20.13:25036'\n  }\n};\n\n// Use in your server setup\nconst currentConfig = config[env];\nconst port = process.env.PORT || currentConfig.port;\n`````\n\nTo deploy:\n\n1. For local development:\n```bash\ndocker-compose up\n```\n\n2. For production:\n```bash\ndocker-compose -f docker-compose.prod.yml up -d\n```\n\nThese changes will:\n- Support both local development and production environments\n- Automatically detect the environment based on the hostname\n- Use the correct URLs for API calls in each environment\n- Maintain separate configurations for development and production\n- Allow for easy deployment to your production server\n\nRemember to update your nginx or other reverse proxy configuration on the production server to properly route requests to these ports.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "b8d81517-b012-425d-8d80-941ed01208b4",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "isCurrentFile": true
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "76c62ef3-2de4-4e17-9a2a-85cebf11fe25",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "b3111a27-83a2-4458-8099-90c8a36369e4",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "7d429c0d-20b5-4d54-951e-5e1a327edc11",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\Dockerfile",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\Dockerfile",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "f268167d-c266-4e26-83d6-b591ae5aaa18",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\backend\\Dockerfile",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\backend\\Dockerfile",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "8b76989a-fd2b-4065-9ef6-72d089228d1c",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "frontend/config.js",
+              "3": "docker-compose.prod.yml",
+              "4": "frontend/server.js"
+            },
+            "file_paths": [
+              "frontend/config.js",
+              "docker-compose.prod.yml",
+              "frontend/server.js"
+            ]
+          }
+        },
+        {
+          "id": "1b1c7552-dfca-49a6-bc20-e98b24ab8fe0",
+          "messageText": "Uncaught SyntaxError: Cannot use import statement outside a module (at script.js:1:1)\n[NEW] Explain Console errors by using Copilot in Edge: click\n         \n         to explain an error. \n        Learn more\n        Don't show again\n6[Deprecation] -ms-high-contrast-adjust is in the process of being deprecated. Please see <URL> for tips on updating to the new Forced Colors Mode standard.\nindex.html:1  Unchecked runtime.lastError: Could not establish connection. Receiving end does not exist.\nt3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://localhost:25036/UIBuilder/index.html&size=32:1 \n        \n        \n        GET https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://localhost:25036/UIBuilder/index.html&size=32 404 (Not Found)\n\n\n\nBug : import { getConfig } from '../config.js';",
+          "responseText": "Let's fix the module import issue. The error occurs because we need to specify that we're using ES modules in our HTML files and JavaScript files.\n\n1. First, update your HTML files to specify module type:\n\n```html:frontend/index.html\n<!-- Add type=\"module\" to your script tags -->\n<script type=\"module\" src=\"script.js\"></script>\n```\n\n```html:frontend/UIBuilder/index.html\n<!-- Add type=\"module\" to your script tags -->\n<script type=\"module\" src=\"script.js\"></script>\n```\n\n2. Update the server.js to handle .js files with the correct MIME type:\n\n```javascript:frontend/server.js\nconst contentType = {\n    '.html': 'text/html',\n    '.js': 'application/javascript',  // Updated this line\n    '.mjs': 'application/javascript', // Added this line\n    '.css': 'text/css',\n    '.json': 'application/json',\n    '.png': 'image/png',\n    '.jpg': 'image/jpg',\n};\n```\n\n3. Make sure your config.js file is properly formatted:\n\n```javascript:frontend/config.js\n// Make sure to export as a module\nconst config = {\n    development: {\n        frontendUrl: 'http://localhost:25036',\n        backendUrl: 'http://localhost:25035',\n        liveDevelopment: 'http://127.0.0.1:5502/frontend'\n    },\n    production: {\n        frontendUrl: 'http://103.253.20.13:25036',\n        backendUrl: 'http://103.253.20.13:25035'\n    }\n};\n\nexport function getConfig() {\n    const env = window.location.hostname === 'localhost' || \n                window.location.hostname === '127.0.0.1' ? \n                'development' : 'production';\n    return config[env];\n}\n```\n\n4. Update your import statements to include the .js extension explicitly:\n\n```javascript:frontend/UIBuilder/script.js\nimport { getConfig } from '../config.js';  // Make sure to include .js\n```\n\n```javascript:frontend/script.js\nimport { getConfig } from './config.js';  // Make sure to include .js\n```\n\nThese changes should resolve the module import errors. The key points are:\n- Always use `type=\"module\"` in script tags when using ES modules\n- Include file extensions (.js) in import statements\n- Ensure proper MIME types are set in the server\n- Export functions/objects properly in the module files\n\nThe favicon 404 error is not critical and can be ignored, or you can add a favicon to your project if desired.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "82b81f52-2b6e-494a-acca-be2b245f6e34",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "2": "frontend/server.js",
+              "3": "frontend/config.js"
+            },
+            "file_paths": [
+              "frontend/config.js",
+              "frontend/server.js"
+            ]
+          }
+        },
+        {
+          "id": "15150914-521f-4132-b8f1-94ffa683b614",
+          "messageText": "script.js:80 \n Error: ReferenceError: config is not defined\n    at HTMLButtonElement.<anonymous> (script.js:56:45)\nscript.js:327 \n Uncaught (in promise) TypeError: Cannot set properties of null (setting 'textContent')\n    at showNotification (script.js:327:67)\n    at HTMLButtonElement.<anonymous> (script.js:81:13)\n\n\n\nBug \n\ndocument.addEventListener('DOMContentLoaded', () => {\n    loadVideoFromUrl();\n    initializeResultTable();\n    let currentCriteria = '';\n    let currentVideoUrl = '';\n\n    document.getElementById('loadVideo').addEventListener('click', async () => {\n        const videoLink = document.getElementById('videoLink').value.trim();\n        currentVideoUrl = videoLink;\n        \n        try {\n            const fileIdMatch = videoLink.match(/\\/d\\/(.+?)\\//);\n            if (!fileIdMatch) {\n                throw new Error('Invalid Google Drive URL format');\n            }\n            const fileId = fileIdMatch[1];\n\n            const response = await fetch(`${config.backendUrl}/get_video_data?url=${encodeURIComponent(videoLink)}`, {\n                headers: {\n                    'Accept': 'application/json',\n                    'Content-Type': 'application/json'\n                }\n            });\n\n            if (!response.ok) {\n                throw new Error(`HTTP error! status: ${response.status}`);\n            }\n\n            const data = await response.json();\n            \n            const previewLink = `https://drive.google.com/file/d/${fileId}/preview`;\n            const videoFrame = document.getElementById('video');\n            videoFrame.src = previewLink;\n            videoFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts');\n            \n            updateTranscript(data.transcript);\n            const criteriaObj = JSON.parse(data.criteria);\n            addCriteriaListeners(criteriaObj, fileId);\n            await loadSavedScores(currentVideoUrl);\n            \n        } catch (error) {\n            console.error('Error:', error);\n            showNotification('warning', `Error loading video data: ${error.message}`);\n        }\n    });\n\n    function updateTranscript(transcript) {\n        const transcriptContent = document.getElementById('transcriptContent');\n        const formattedTranscript = formatTranscript(transcript);\n        transcriptContent.innerHTML = formattedTranscript || 'No transcript available.';\n    }\n\n    function formatTranscript(transcript) {\n        const lines = transcript.split('\\n').map(line => line.trim()).filter(line => line.length > 0);\n        return lines.map(line => `<br>${line}`).join('');\n    }\n\n    function addCriteriaListeners(criteriaObj, videoId) {\n        console.log(\"Criteria object:\", criteriaObj);\n        \n        const buttons = document.querySelectorAll('.criteria-button');\n        buttons.forEach(button => {\n            button.addEventListener('click', () => {\n                const criterionKey = button.getAttribute('data-criteria');\n                console.log(\"Clicked:\", criterionKey);\n                \n                currentCriteria = criterionKey;\n                const criterion = criteriaObj[criterionKey];\n                console.log(\"Found criterion:\", criterion);\n                \n                if (criterion) {\n                    highlightTranscript(criterion);\n                    displayCriteriaInfo(criterion, criterionKey);\n                    displayCriteriaRecommendation(criterionKey, videoId);\n                }\n            });\n        });\n    }\n\n    function highlightTranscript(criterion) {\n        const transcriptContent = document.getElementById('transcriptContent');\n        \n        console.log('Highlighting details:', {\n            startTime: criterion.timestamp.start,\n            endTime: criterion.timestamp.end,\n            transcriptText: transcriptContent.innerHTML,\n            criterion: criterion\n        });\n        \n        // Remove old highlights\n        const existingHighlights = transcriptContent.querySelectorAll('.highlight');\n        existingHighlights.forEach(highlight => {\n            highlight.classList.remove('highlight');\n            highlight.outerHTML = highlight.innerHTML;\n        });\n    \n        const transcriptText = transcriptContent.innerHTML;\n        const start = criterion.timestamp.start;\n        const end = criterion.timestamp.end;\n        \n        // Convert timestamps to regex-safe format\n        const startRegex = start.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n        const endRegex = end.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n        \n        // Find all lines between start and end timestamps\n        const lines = transcriptText.split('<br>');\n        let isHighlighting = false;\n        const highlightedLines = lines.map(line => {\n            // Check if line contains timestamp\n            const timeMatch = line.match(/\\[(\\d{2}:\\d{2}:\\d{2})\\]/);\n            if (timeMatch) {\n                const timestamp = timeMatch[1];\n                \n                // Start highlighting when we reach start timestamp\n                if (timestamp >= startRegex) {\n                    isHighlighting = true;\n                }\n                \n                // Stop highlighting after end timestamp\n                if (timestamp > endRegex) {\n                    isHighlighting = false;\n                }\n            }\n            \n            // Wrap highlighted lines in div\n            if (isHighlighting && line.trim()) {\n                return `<div class=\"highlight\" data-criteria=\"${criterion.recommendationScore.reason}\">${line}</div>`;\n            }\n            \n            return line;\n        });\n        \n        // Update content\n        transcriptContent.innerHTML = highlightedLines.join('<br>');\n        \n        // Scroll to first highlighted element\n        const highlightedElement = transcriptContent.querySelector('.highlight');\n        if (highlightedElement) {\n            highlightedElement.scrollIntoView({ \n                behavior: 'smooth', \n                block: 'center' \n            });\n        } else {\n            console.warn('No matching timestamp found in transcript', {\n                start,\n                end,\n                transcriptLength: transcriptText.length\n            });\n        }\n    }\n\n    function displayCriteriaInfo(criterion, criterionKey) {\n        const criteriaTableBody = document.getElementById('criteriaTableBody');\n        const descriptionRow = document.getElementById('descriptionRow');\n        const evaluationRow = document.getElementById('evaluationRow');\n        \n        document.getElementById('selectedCriteriaTitle').textContent = `Selected Criteria: ${criterionKey}`;\n\n        descriptionRow.innerHTML = '';\n        evaluationRow.innerHTML = '';\n\n        const evaluationData = baremScore.evaluation[criterionKey];\n        if (evaluationData) {\n            for (let i = 1; i <= 5; i++) {\n                const cell = document.createElement('td');\n                cell.textContent = evaluationData[i.toString()];\n                evaluationRow.appendChild(cell);\n            }\n        } else {\n            console.warn(`No evaluation data found for: ${criterion.recommendationScore.reason}`);\n        }\n\n        document.getElementById('criteriaTable').style.display = 'table';\n    }\n\n    function handleScoreInput() {\n        const scoreInput = document.getElementById('scoreInput');\n        const noteInput = document.getElementById('noteInput');\n\n        scoreInput.addEventListener('change', () => {\n            console.log(`Score entered: ${scoreInput.value}`);\n        });\n\n        noteInput.addEventListener('input', () => {\n            console.log(`Notes entered: ${noteInput.value}`);\n        });\n    }\n\n    handleScoreInput();\n\n    function displayResults(criteria, note, score) {\n        const resultTableBody = document.getElementById('resultTableBody');\n        \n        const rows = resultTableBody.getElementsByTagName('tr');\n        let found = false;\n        \n        for (let row of rows) {\n            const criteriaCell = row.cells[0];\n            if (criteriaCell.textContent === criteria) {\n                row.cells[1].textContent = note;\n                row.cells[2].textContent = score;\n                found = true;\n                break;\n            }\n        }\n\n        if (!found) {\n            const newRow = document.createElement('tr');\n            \n            const criteriaCell = document.createElement('td');\n            criteriaCell.textContent = criteria;\n            newRow.appendChild(criteriaCell);\n\n            const noteCell = document.createElement('td');\n            noteCell.textContent = note;\n            newRow.appendChild(noteCell);\n\n            const scoreCell = document.createElement('td');\n            scoreCell.textContent = score;\n            newRow.appendChild(scoreCell);\n\n            resultTableBody.appendChild(newRow);\n        }\n\n        document.getElementById('resultTable').style.display = 'table';\n    }\n\n    // Update save button event listener\n    document.getElementById('saveScoreButton').addEventListener('click', async (event) => {\n        // Prevent any default behavior\n        event.preventDefault();\n        event.stopPropagation();\n        \n        const scoreInput = document.getElementById('scoreInput').value;\n        const noteInput = document.getElementById('noteInput').value;\n        \n        // Validation\n        if (!scoreInput || !currentCriteria || !currentVideoUrl) {\n            showNotification('warning', 'Please ensure all fields are filled and a video is loaded');\n            return;\n        }\n\n        const scoreData = {\n            url_video: currentVideoUrl,\n            criteria: currentCriteria,\n            score: parseInt(scoreInput),\n            note: noteInput,\n            timestamp: new Date().toISOString()\n        };\n\n        try {\n            const response = await fetch(`${config.backendUrl}/save_score`, {\n                method: 'POST',\n                headers: {\n                    'Content-Type': 'application/json',\n                },\n                body: JSON.stringify(scoreData)\n            });\n\n            if (response.ok) {\n                // Update UI without page refresh\n                displayResults(currentCriteria, noteInput, scoreInput);\n                \n                // Clear inputs\n                document.getElementById('scoreInput').value = '';\n                document.getElementById('noteInput').value = '';\n            } else {\n                throw new Error('Failed to save score');\n            }\n        } catch (error) {\n            console.error('Error saving score:', error);\n            showNotification('warning', 'Failed to save score. Please try again.');\n        }\n        \n        // Prevent any form submission\n        return false;\n    });\n\n    // Utility functions for notifications\n    function showNotification(type, message) {\n        const overlay = document.createElement('div');\n        overlay.className = 'modal-overlay';\n        document.body.appendChild(overlay);\n        overlay.style.display = 'block';\n\n        const notification = document.getElementById(type === 'success' ? 'saveNotification' : 'warningNotification');\n        \n        if (type === 'warning') {\n            document.getElementById('warningMessage').textContent = message;\n        }\n        \n        notification.style.display = 'block';\n\n        const closeNotification = () => {\n            notification.style.display = 'none';\n            overlay.style.display = 'none';\n            overlay.remove();\n        };\n\n        // Close on button click\n        notification.querySelector('button').onclick = closeNotification;\n        \n        // Close on overlay click\n        overlay.onclick = closeNotification;\n    }\n\n    function initializeResultTable() {\n        const resultTableBody = document.getElementById('resultTableBody');\n        resultTableBody.innerHTML = '';\n\n        const evaluationKeys = Object.keys(baremScore.evaluation);\n\n        evaluationKeys.forEach(key => {\n            const row = document.createElement('tr');\n\n            const criteriaCell = document.createElement('td');\n            criteriaCell.textContent = key;\n            row.appendChild(criteriaCell);\n\n            const noteCell = document.createElement('td');\n            noteCell.textContent = '';\n            row.appendChild(noteCell);\n\n            const scoreCell = document.createElement('td');\n            scoreCell.textContent = '';\n            row.appendChild(scoreCell);\n\n            resultTableBody.appendChild(row);\n        });\n\n        document.getElementById('resultTable').style.display = 'table';\n    }\n\n    // Update error handling in other functions\n    async function loadSavedScores(videoUrl) {\n        try {\n            const encodedUrl = encodeURIComponent(videoUrl);\n            const response = await fetch(`${config.backendUrl}/get_scores?url_video=${encodedUrl}`);\n            const scores = await response.json();\n            \n            if (Array.isArray(scores)) {\n                scores.forEach(score => {\n                    displayResults(score.criteria, score.note, score.score);\n                });\n            } else {\n                console.warn('Received scores is not an array:', scores);\n            }\n        } catch (error) {\n            console.error('Error loading saved scores:', error);\n            showNotification('warning', 'Error loading saved scores');\n        }\n    }\n\n    async function displayCriteriaRecommendation(criterionKey, videoId) {\n        const scoreElement = document.getElementById('criteriaScore');\n        const reasonElement = document.getElementById('criteriaReason');\n\n        try {\n            const response = await fetch(`${config.backendUrl}/get_video_data?url=https://drive.google.com/file/d/${videoId}/view`);\n            const data = await response.json();\n\n            if (response.ok) {\n                const criteriaObj = JSON.parse(data.criteria);\n                const criterion = criteriaObj[criterionKey];\n\n                if (criterion && criterion.recommendationScore) {\n                    scoreElement.textContent = `Score: ${criterion.recommendationScore.score}`;\n                    reasonElement.innerHTML = `Reason: ${criterion.recommendationScore.reason}`;\n                } else {\n                    scoreElement.textContent = 'Score: N/A';\n                    reasonElement.textContent = 'Reason: N/A';\n                }\n            }\n        } catch (error) {\n            console.error('Error:', error);\n            scoreElement.textContent = 'Score: Error';\n            reasonElement.textContent = 'Reason: Error loading data';\n        }\n    }\n});",
+          "responseText": "The errors are occurring because `config` is not defined and some DOM elements are not found. Let's fix these issues:\n\n1. First, add the config import and initialization at the top of the file:\n\n```javascript:frontend/script.js\nimport { getConfig } from './config.js';\n\n// Initialize config at the top level\nconst config = getConfig();\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    // ... rest of the code\n});\n```\n\n2. Add the notification elements to your HTML if they don't exist:\n\n```html:frontend/index.html\n<!-- Add these elements somewhere in your HTML body -->\n<div id=\"saveNotification\" class=\"notification\" style=\"display: none;\">\n    <p>Score saved successfully!</p>\n    <button>Close</button>\n</div>\n\n<div id=\"warningNotification\" class=\"notification\" style=\"display: none;\">\n    <p id=\"warningMessage\"></p>\n    <button>Close</button>\n</div>\n```\n\n3. Update the showNotification function to handle missing elements more gracefully:\n\n```javascript:frontend/script.js\nfunction showNotification(type, message) {\n    try {\n        const overlay = document.createElement('div');\n        overlay.className = 'modal-overlay';\n        document.body.appendChild(overlay);\n        overlay.style.display = 'block';\n\n        const notification = document.getElementById(type === 'success' ? 'saveNotification' : 'warningNotification');\n        if (!notification) {\n            console.error(`Notification element not found: ${type}`);\n            return;\n        }\n        \n        const warningMessage = document.getElementById('warningMessage');\n        if (type === 'warning' && warningMessage) {\n            warningMessage.textContent = message;\n        }\n        \n        notification.style.display = 'block';\n\n        const closeNotification = () => {\n            notification.style.display = 'none';\n            overlay.style.display = 'none';\n            overlay.remove();\n        };\n\n        // Close on button click\n        const closeButton = notification.querySelector('button');\n        if (closeButton) {\n            closeButton.onclick = closeNotification;\n        }\n        \n        // Close on overlay click\n        overlay.onclick = closeNotification;\n\n        // Auto-close after 5 seconds\n        setTimeout(closeNotification, 5000);\n    } catch (error) {\n        console.error('Error showing notification:', error);\n    }\n}\n```\n\n4. Add error handling for DOM element access:\n\n```javascript:frontend/script.js\ndocument.addEventListener('DOMContentLoaded', () => {\n    const loadVideoBtn = document.getElementById('loadVideo');\n    if (!loadVideoBtn) {\n        console.error('Load video button not found');\n        return;\n    }\n\n    loadVideoBtn.addEventListener('click', async () => {\n        const videoLinkInput = document.getElementById('videoLink');\n        if (!videoLinkInput) {\n            showNotification('warning', 'Video input element not found');\n            return;\n        }\n\n        const videoLink = videoLinkInput.value.trim();\n        // ... rest of the code\n    });\n\n    // ... rest of the event listeners\n});\n```\n\n5. Make sure baremScore is imported:\n\n```javascript:frontend/script.js\nimport { baremScore } from './baremScore.js';\n```\n\nThese changes will:\n- Properly initialize the config object\n- Add error handling for missing DOM elements\n- Add the required notification elements to the HTML\n- Make the notification system more robust\n- Ensure all required imports are present\n\nMake sure all the referenced HTML elements exist in your HTML file and that all the imported modules are available in the correct locations.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "84447e00-28f0-40e6-8b8f-d40ad594ce89",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {
+            "file_paths": [
+              "frontend/script.js",
+              "frontend/index.html"
+            ],
+            "file_path_dict": {
+              "1": "frontend/index.html"
+            }
+          }
+        },
+        {
+          "id": "27d98c21-0030-4986-a752-c21e64e0501b",
+          "messageText": "@docker-compose.yml @docker-compose.prod.yml \n\nMuốn run thử với @docker-compose.yml  trên development xong share cho đồng đội cùng mạng thì sao",
+          "responseText": "Để chạy trên development và share cho đồng đội cùng mạng, bạn cần thêm cấu hình network và sử dụng IP của máy host. Đây là cách cập nhật:\n\n```yaml:docker-compose.yml\nversion: '3.8'\n\nservices:\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    volumes:\n      - type: bind\n        source: ./backend\n        target: /app\n      - type: bind\n        source: ./backend/database\n        target: /app/database\n    ports:\n      - \"0.0.0.0:25035:3000\"  # Thêm 0.0.0.0 để bind với tất cả network interfaces\n    environment:\n      - FLASK_ENV=development\n      - ALLOWED_ORIGINS=http://0.0.0.0:25036  # Thêm CORS config\n    networks:\n      - app-network\n\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    volumes:\n      - type: bind\n        source: ./frontend\n        target: /app\n    ports:\n      - \"0.0.0.0:25036:5000\"  # Thêm 0.0.0.0 để bind với tất cả network interfaces\n    environment:\n      - NODE_ENV=development\n    networks:\n      - app-network\n\nnetworks:\n  app-network:\n    driver: bridge\n```\n\nĐể share cho đồng đội:\n\n1. Tìm IP của máy host:\n```bash\n# Trên Windows\nipconfig\n\n# Trên Linux/Mac\nifconfig\n```\n\n2. Chạy docker compose:\n```bash\ndocker-compose up --build\n```\n\n3. Đồng đội có thể truy cập qua:\n- Frontend: `http://<your-ip>:25036`\n- Backend: `http://<your-ip>:25035`\n\nVí dụ nếu IP máy bạn là 192.168.1.100:\n- Frontend: `http://192.168.1.100:25036`\n- Backend: `http://192.168.1.100:25035`\n\nLưu ý:\n- Đảm bảo firewall cho phép kết nối đến ports 25035 và 25036\n- Cập nhật config.js để hỗ trợ IP development:\n\n```javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25036' : `http://${window.location.hostname}:25036`,\n    backendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25035' : `http://${window.location.hostname}:25035`,\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n```\n\nVới cấu hình này:\n- Ứng dụng sẽ chạy trên development mode\n- Có thể truy cập từ các máy trong cùng mạng LAN\n- CORS được cấu hình đúng để frontend-backend giao tiếp được\n- Volumes vẫn được mount để hot-reload khi development",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "917c8efa-3a5c-44aa-a660-c596e1ae479b",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.prod.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.prod.yml",
+                "isCurrentFile": true
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "4cb7b822-d844-4c35-9af5-8426a5718c4c",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "docker-compose.yml",
+              "3": "frontend/config.js"
+            },
+            "file_paths": [
+              "frontend/config.js",
               "docker-compose.yml"
             ]
           }
+        },
+        {
+          "id": "28441cba-0c2f-4d42-84c7-0af65c08e84a",
+          "messageText": "Run ???",
+          "responseText": "Để chạy docker-compose.dev.yml, sử dụng lệnh sau:\n\n```bash\n# Build và chạy containers\ndocker-compose -f docker-compose.dev.yml up --build\n\n# Hoặc chạy ở chế độ detached (chạy ngầm)\ndocker-compose -f docker-compose.dev.yml up -d --build\n```\n\nMột số lệnh hữu ích khác:\n\n```bash\n# Xem logs\ndocker-compose -f docker-compose.dev.yml logs -f\n\n# Dừng containers\ndocker-compose -f docker-compose.dev.yml down\n\n# Xem status của các containers\ndocker-compose -f docker-compose.dev.yml ps\n\n# Restart một service cụ thể\ndocker-compose -f docker-compose.dev.yml restart backend\ndocker-compose -f docker-compose.dev.yml restart frontend\n```\n\nSau khi chạy thành công:\n1. Truy cập local:\n   - Frontend: `http://localhost:25036`\n   - Backend: `http://localhost:25035`\n\n2. Đồng đội cùng mạng LAN có thể truy cập qua IP của máy bạn:\n   - Frontend: `http://<your-ip>:25036`\n   - Backend: `http://<your-ip>:25035`\n\nNếu gặp lỗi:\n1. Kiểm tra ports có bị conflict không:\n```bash\n# Kiểm tra ports đang sử dụng\nnetstat -ano | findstr :25035\nnetstat -ano | findstr :25036\n```\n\n2. Kiểm tra logs:\n```bash\ndocker-compose -f docker-compose.dev.yml logs backend\ndocker-compose -f docker-compose.dev.yml logs frontend\n```\n\n3. Restart với clean state:\n```bash\ndocker-compose -f docker-compose.dev.yml down\ndocker system prune -f\ndocker-compose -f docker-compose.dev.yml up --build\n```",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "selection",
+              "key": "200d8d30-4427-497f-9198-dda93a2bcc78",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "range": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 40,
+                  "endColumn": 19
+                },
+                "text": "version: '3.8'\r\n\r\nservices:\r\n  backend:\r\n    build:\r\n      context: ./backend\r\n      dockerfile: Dockerfile\r\n    volumes:\r\n      - type: bind\r\n        source: ./backend\r\n        target: /app\r\n      - type: bind\r\n        source: ./backend/database\r\n        target: /app/database\r\n    ports:\r\n      - \"0.0.0.0:25035:3000\"  # Thêm 0.0.0.0 để bind với tất cả network interfaces\r\n    environment:\r\n      - FLASK_ENV=development\r\n      - ALLOWED_ORIGINS=http://0.0.0.0:25036  # Thêm CORS config\r\n    networks:\r\n      - app-network\r\n\r\n  frontend:\r\n    build:\r\n      context: ./frontend\r\n      dockerfile: Dockerfile\r\n    volumes:\r\n      - type: bind\r\n        source: ./frontend\r\n        target: /app\r\n    ports:\r\n      - \"0.0.0.0:25036:5000\"  # Thêm 0.0.0.0 để bind với tất cả network interfaces\r\n    environment:\r\n      - NODE_ENV=development\r\n    networks:\r\n      - app-network\r\n\r\nnetworks:\r\n  app-network:\r\n    driver: bridge"
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "a9773cc8-313b-4d0a-9f4f-01243a61556b",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {}
+        },
+        {
+          "id": "b0ff694e-7245-47a8-a815-a4cfc17ae384",
+          "messageText": "C:\\Users\\User>ipconfig\n\nWindows IP Configuration\n\n\nWireless LAN adapter Local Area Connection* 1:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nWireless LAN adapter Local Area Connection* 2:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nEthernet adapter outline-tap0:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nWireless LAN adapter Wi-Fi:\n\n   Connection-specific DNS Suffix  . :\n   Link-local IPv6 Address . . . . . : fe80::789a:f863:731b:82d0%21\n   IPv4 Address. . . . . . . . . . . : 192.168.22.80\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\n   Default Gateway . . . . . . . . . : 192.168.22.1\n\nEthernet adapter Bluetooth Network Connection:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nEthernet adapter vEthernet (WSL (Hyper-V firewall)):\n\n   Connection-specific DNS Suffix  . :\n   Link-local IPv6 Address . . . . . : fe80::3b36:972:afe0:6beb%39\n   IPv4 Address. . . . . . . . . . . : 172.28.16.1\n   Subnet Mask . . . . . . . . . . . : 255.255.240.0\n   Default Gateway . . . . . . . . . :\n\nC:\\Users\\User>ipconfig\n\nWindows IP Configuration\n\n\nWireless LAN adapter Local Area Connection* 1:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nWireless LAN adapter Local Area Connection* 2:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nEthernet adapter outline-tap0:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nWireless LAN adapter Wi-Fi:\n\n   Connection-specific DNS Suffix  . :\n   Link-local IPv6 Address . . . . . : fe80::789a:f863:731b:82d0%21\n   IPv4 Address. . . . . . . . . . . : 192.168.22.80\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\n   Default Gateway . . . . . . . . . : 192.168.22.1\n\nEthernet adapter Bluetooth Network Connection:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . :\n\nEthernet adapter vEthernet (WSL (Hyper-V firewall)):\n\n   Connection-specific DNS Suffix  . :\n   Link-local IPv6 Address . . . . . : fe80::3b36:972:afe0:6beb%39\n   IPv4 Address. . . . . . . . . . . : 172.28.16.1\n   Subnet Mask . . . . . . . . . . . : 255.255.240.0\n   Default Gateway . . . . . . . . . :\n\nC:\\Users\\User>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSao test trên máy tôi \n\nhttp://localhost:25036/index.html?video=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl%2Fview\n\nthì ngon mà \n\n@http://192.168.22.80:25036/ \n\nlại có vẻ ko lấy được phía backend , hình như backend chưa 0000 à hay sao ??? @Dockerfile @Dockerfile",
+          "responseText": "Vấn đề có thể do backend chưa được cấu hình để chấp nhận requests từ tất cả các IP. Cần cập nhật cả Dockerfile và code Python để cho phép điều này.\n\n1. Cập nhật backend Dockerfile:\n\n````dockerfile:backend/Dockerfile\n# Use official Python image from Docker Hub\nFROM python:3.9\n\n# Set working directory in container\nWORKDIR /app\n\n# Copy requirements file\nCOPY requirements.txt ./\n\n# Install dependencies\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copy all remaining files\nCOPY . .\n\n# Expose application port\nEXPOSE 3000\n\n# Command to run the application - Thêm host 0.0.0.0\nCMD [\"python\", \"-u\", \"api_database3apiGhiDe.py\", \"--host\", \"0.0.0.0\"]\n````\n\n2. Trong file Python (api_database3apiGhiDe.py), cần đảm bảo Flask app được cấu hình để lắng nghe trên tất cả interfaces:\n\n````python:backend/api_database3apiGhiDe.py\nfrom flask import Flask\nfrom flask_cors import CORS\n\napp = Flask(__name__)\nCORS(app, resources={\n    r\"/*\": {\n        \"origins\": [\"http://localhost:25036\", \"http://192.168.22.80:25036\"],\n        \"methods\": [\"GET\", \"POST\", \"OPTIONS\"],\n        \"allow_headers\": [\"Content-Type\"]\n    }\n})\n\n# ... rest of your code ...\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=3000, debug=True)\n````\n\n3. Cập nhật frontend config để sử dụng IP khi cần:\n\n````javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25036' : `http://${window.location.hostname}:25036`,\n    backendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25035' : `http://${window.location.hostname}:25035`,\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n\nexport function getConfig() {\n  const env = window.location.hostname === 'localhost' || \n              window.location.hostname === '192.168.22.80' ? \n              'development' : 'production';\n  return config[env];\n}\n````\n\n4. Sau đó restart lại containers:\n\n````bash\n# Dừng và xóa containers cũ\ndocker-compose -f docker-compose.dev.yml down\n\n# Xóa images để rebuild\ndocker system prune -f\n\n# Build và chạy lại\ndocker-compose -f docker-compose.dev.yml up --build\n````\n\n5. Kiểm tra logs để đảm bảo backend đang lắng nghe trên 0.0.0.0:\n\n````bash\ndocker-compose -f docker-compose.dev.yml logs backend\n````\n\nBạn nên thấy một dòng như:\n```\n* Running on http://0.0.0.0:3000\n```\n\nSau khi thực hiện các thay đổi này, cả localhost và IP 192.168.22.80 đều sẽ hoạt động. Đồng đội có thể truy cập:\n- Frontend: `http://192.168.22.80:25036`\n- Backend: `http://192.168.22.80:25035`",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "809fa70b-30d4-4797-ad9e-55b49ed6d8e4",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\note3_sharePort.ipynb",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\note3_sharePort.ipynb",
+                "isCurrentFile": true
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "7a737e51-85d3-4f09-9273-72b99c6f7298",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\backend\\Dockerfile",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\backend\\Dockerfile",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "7008c11e-44f5-41a8-abaa-99840c106ac6",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\Dockerfile",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\Dockerfile",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "backend/Dockerfile",
+              "2": "frontend/config.js"
+            },
+            "file_paths": [
+              "frontend/config.js",
+              "backend/Dockerfile"
+            ]
+          }
+        },
+        {
+          "id": "6850216f-93cd-4cb8-b16f-8f200484cadd",
+          "messageText": "t3.gstatic.com/favic…80:25036/&size=32:1 \r\n \r\n GET https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://192.168.22.80:25036/&size=32 404 (Not Found)\r\nImage\t\t\r\nZ8i\t@\tcontent.js:12\r\nVyi\t@\tcontent.js:12\r\nrja\t@\tcontent.js:12\r\nsja\t@\tcontent.js:12\r\niCe\t@\tcontent.js:12\r\nzyi\t@\tcontent.js:12\r\nkVr\t@\tcontent.js:5\r\nwVr\t@\tcontent.js:5\n\n\nCó vẻ backend chưa hoạt động nhỉ",
+          "responseText": "Có vẻ backend đã chạy trên 0.0.0.0 nhưng vẫn có thể có vấn đề với CORS hoặc cấu hình Flask. Hãy kiểm tra và cập nhật các điểm sau:\n\n1. Cập nhật CORS trong backend để chấp nhận tất cả origins trong development:\n\n`````python:backend/api_database3apiGhiDe.py\nfrom flask import Flask\nfrom flask_cors import CORS\n\napp = Flask(__name__)\n\n# Cấu hình CORS rộng rãi hơn cho development\nCORS(app, resources={\n    r\"/*\": {\n        \"origins\": [\n            \"http://localhost:25036\",\n            \"http://127.0.0.1:25036\",\n            \"http://0.0.0.0:25036\",\n            \"http://192.168.22.80:25036\",\n            # Thêm wildcard cho development\n            \"*\"\n        ],\n        \"methods\": [\"GET\", \"POST\", \"OPTIONS\"],\n        \"allow_headers\": [\"Content-Type\", \"Authorization\"],\n        \"supports_credentials\": True\n    }\n})\n\n# ... rest of your code ...\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=3000, debug=True, threaded=True)\n`````\n\n2. Cập nhật docker-compose.dev.yml để thêm các biến môi trường:\n\n`````yaml:docker-compose.dev.yml\nservices:\n  backend:\n    # ... other configs ...\n    environment:\n      - FLASK_ENV=development\n      - FLASK_DEBUG=1\n      - ALLOWED_ORIGINS=http://192.168.22.80:25036,http://localhost:25036\n      - HOST=0.0.0.0\n      - PORT=3000\n    command: python -u api_database3apiGhiDe.py --host 0.0.0.0 --port 3000\n`````\n\n3. Thêm error handling và logging trong backend:\n\n`````python:backend/api_database3apiGhiDe.py\nimport logging\n\n# Cấu hình logging\nlogging.basicConfig(level=logging.DEBUG)\nlogger = logging.getLogger(__name__)\n\n@app.before_request\ndef log_request_info():\n    logger.debug('Headers: %s', request.headers)\n    logger.debug('Body: %s', request.get_data())\n\n@app.after_request\ndef after_request(response):\n    response.headers.add('Access-Control-Allow-Origin', '*')\n    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')\n    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')\n    logger.debug('Response: %s', response.get_data())\n    return response\n\n# Thêm route test\n@app.route('/test', methods=['GET'])\ndef test():\n    return jsonify({\"status\": \"Backend is running\"}), 200\n`````\n\n4. Kiểm tra kết nối:\n\n```bash\n# Dừng containers hiện tại\ndocker-compose -f docker-compose.dev.yml down\n\n# Xóa cache\ndocker system prune -f\n\n# Build và chạy lại\ndocker-compose -f docker-compose.dev.yml up --build\n\n# Trong terminal khác, test backend\ncurl http://localhost:25035/test\ncurl http://192.168.22.80:25035/test\n```\n\n5. Kiểm tra logs chi tiết:\n\n```bash\n# Xem logs backend\ndocker-compose -f docker-compose.dev.yml logs backend -f\n\n# Xem logs frontend\ndocker-compose -f docker-compose.dev.yml logs frontend -f\n```\n\n6. Cập nhật frontend config để log rõ hơn:\n\n`````javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25036' : `http://${window.location.hostname}:25036`,\n    backendUrl: window.location.hostname === 'localhost' ? \n      'http://localhost:25035' : `http://${window.location.hostname}:25035`,\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n\nexport function getConfig() {\n  const env = window.location.hostname === 'localhost' || \n              window.location.hostname === '192.168.22.80' ? \n              'development' : 'production';\n  console.log('Current hostname:', window.location.hostname);\n  console.log('Selected environment:', env);\n  console.log('Using config:', config[env]);\n  return config[env];\n}\n`````\n\nSau khi áp dụng các thay đổi này, hãy kiểm tra:\n1. Backend có chạy và accept requests không\n2. CORS có được cấu hình đúng không\n3. Network requests trong browser dev tools\n4. Logs của cả frontend và backend\n\nNếu vẫn có vấn đề, hãy kiểm tra logs và network tab trong developer tools của browser để xem lỗi cụ thể là gì.",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "348ad1c0-551f-44a9-9487-3f1396cbb3ac",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\note3_sharePort.ipynb",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\note3_sharePort.ipynb",
+                "isCurrentFile": true
+              }
+            }
+          ],
+          "kv_store": {}
+        },
+        {
+          "id": "4dff0812-938c-4cf0-9582-2b0b295dd541",
+          "messageText": "@docker-compose.yml @docker-compose.dev.yml @docker-compose.prod.yml \n\nmuốn test 1 cách bình thường với docker-compose trước để xem",
+          "responseText": "Để test với docker-compose thông thường, hãy làm theo các bước sau:\n\n1. Đầu tiên, dừng tất cả containers hiện tại:\n```bash\n# Dừng tất cả containers đang chạy\ndocker-compose down\n```\n\n2. Xóa cache để đảm bảo build mới:\n```bash\ndocker system prune -f\n```\n\n3. Chạy với docker-compose.yml thông thường:\n```bash\ndocker-compose up --build\n```\n\n4. Kiểm tra logs để đảm bảo cả frontend và backend đều chạy:\n```bash\n# Trong terminal khác\ndocker-compose logs -f\n```\n\n5. Test các endpoints:\n- Local: \n  - Frontend: `http://localhost:25036`\n  - Backend: `http://localhost:25035`\n- IP máy (192.168.22.80):\n  - Frontend: `http://192.168.22.80:25036`\n  - Backend: `http://192.168.22.80:25035`\n\n6. Nếu cần debug, có thể kiểm tra từng service:\n```bash\n# Kiểm tra logs backend\ndocker-compose logs backend\n\n# Kiểm tra logs frontend\ndocker-compose logs frontend\n\n# Kiểm tra containers đang chạy\ndocker-compose ps\n```\n\n7. Nếu cần vào container để debug:\n```bash\n# Vào container backend\ndocker-compose exec backend sh\n\n# Vào container frontend\ndocker-compose exec frontend sh\n```\n\nNếu gặp vấn đề, có thể thử:\n1. Kiểm tra ports có đang được sử dụng không:\n```bash\nnetstat -ano | findstr :25035\nnetstat -ano | findstr :25036\n```\n\n2. Restart với clean state:\n```bash\ndocker-compose down\ndocker system prune -f\ndocker volume prune -f\ndocker-compose up --build\n```\n\n3. Kiểm tra network:\n```bash\ndocker network ls\ndocker network inspect deploy136_view1_2html_default\n```",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "f9a2fcf9-a523-493f-b7dc-cc9489c7e25b",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.yml",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "9dd78b3f-235e-4a35-8fae-4af2fef5bee2",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.dev.yml",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "7e7e099f-0db7-47b8-a580-ccc8b54ca624",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.prod.yml",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\docker-compose.prod.yml",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {}
+        },
+        {
+          "id": "4941ca90-3e89-481d-8863-e98ff87c86c5",
+          "messageText": "Check xem, sao sửa 1 hồi lại không click được vào cái View All Videos nữa rồi @script.js @script.js",
+          "responseText": "Vấn đề là đoạn code xử lý sự kiện click cho 'viewAllVideos' đang nằm ngoài DOMContentLoaded event listener. Hãy di chuyển nó vào trong:\n\n```javascript:frontend/script.js\ndocument.addEventListener('DOMContentLoaded', () => {\n    loadVideoFromUrl();\n    initializeResultTable();\n    let currentCriteria = '';\n    let currentVideoUrl = '';\n\n    // Thêm event listener cho View All Videos button vào đây\n    const viewAllVideosBtn = document.getElementById('viewAllVideos');\n    if (viewAllVideosBtn) {\n        viewAllVideosBtn.addEventListener('click', () => {\n            window.location.href = 'UIBuilder/index.html';\n        });\n    }\n\n    // ... rest of your existing code ...\n});\n\n// Xóa đoạn code này vì đã move vào trong DOMContentLoaded\n// document.getElementById('viewAllVideos').addEventListener('click', () => {\n//   window.location.href = 'UIBuilder/index.html';\n// });\n```\n\nLý do:\n1. Code nằm ngoài DOMContentLoaded có thể chạy trước khi element được tạo ra\n2. Thêm kiểm tra null để tránh lỗi nếu element không tồn tại\n3. Đảm bảo code chỉ chạy sau khi DOM đã load xong\n\nNếu vẫn không hoạt động, hãy kiểm tra:\n1. HTML có đúng ID không:\n```html\n<button id=\"viewAllVideos\">View All Videos</button>\n```\n\n2. Thêm console.log để debug:\n```javascript\ndocument.addEventListener('DOMContentLoaded', () => {\n    const viewAllVideosBtn = document.getElementById('viewAllVideos');\n    console.log('View All Videos button:', viewAllVideosBtn); // Check if element exists\n    \n    if (viewAllVideosBtn) {\n        viewAllVideosBtn.addEventListener('click', () => {\n            console.log('View All Videos clicked'); // Check if click event fires\n            window.location.href = 'UIBuilder/index.html';\n        });\n    } else {\n        console.warn('View All Videos button not found');\n    }\n    \n    // ... rest of your code ...\n});\n```",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T08:55:35.370Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "1dcee651-516c-4ece-81c2-47d5deca7c1b",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "f409480d-0d8e-4f86-ab34-7595f14fd05e",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {}
         }
       ],
       "kv_store": {}
@@ -1574,13 +1927,13 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 1560,
-    "total_repo_line_count": 699873,
+    "unique_matched_lines_count": 1423,
+    "total_repo_line_count": 699638,
     "best_prompt_response": {
-      "prompt": "Clicked: leadIn\nscript.js:109 Found criterion: {recommendationScore: {…}, timestamp: {…}}recommendationScore: {reason: '<b>Độ rõ ràng: 8/10</b>\\nNhận xét ngắn: Sự chuyển t…ười học thông qua các câu hỏi và gợi ý liên quan.', score: '4/5'}timestamp: end: \"00:02:07\"start: \"00:01:12\"[[Prototype]]: Object[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()\nscript.js:105 Clicked: warmUp\nscript.js:109 Found criterion: \n\n\n======\nPhần log trong Console đã khớp với Database. \n===\nVậy vấn đề ở việc từ scripts lên UI \nCheck @script.js \n\n======",
-      "response": "Tôi thấy vấn đề có thể nằm ở hàm `highlightTranscript`. Hãy phân tích và sửa đổi:\n\n```javascript:frontend/script.js\nfunction highlightTranscript(criterion) {\n    const transcriptContent = document.getElementById('transcriptContent');\n    \n    // Thêm logging chi tiết hơn\n    console.log('Highlighting details:', {\n        startTime: criterion.timestamp.start,\n        endTime: criterion.timestamp.end,\n        transcriptText: transcriptContent.innerHTML,\n        criterion: criterion\n    });\n    \n    // Xóa highlights cũ\n    const existingHighlights = transcriptContent.querySelectorAll('.highlight');\n    existingHighlights.forEach(highlight => {\n        highlight.classList.remove('highlight');\n        highlight.outerHTML = highlight.innerHTML;\n    });\n\n    const transcriptText = transcriptContent.innerHTML;\n    const start = criterion.timestamp.start;\n    const end = criterion.timestamp.end;\n    \n    // Sửa đổi regex để match chính xác hơn với timestamp\n    // Thêm escape cho các ký tự đặc biệt trong timestamp\n    const escapedStart = start.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n    const escapedEnd = end.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n    \n    // Sửa đổi regex pattern\n    const regex = new RegExp(`(${escapedStart}[\\\\s\\\\S]*?${escapedEnd})`, 'g');\n    \n    try {\n        // Log để debug regex matching\n        console.log('Regex matching:', {\n            pattern: regex.toString(),\n            matches: transcriptText.match(regex)\n        });\n        \n        // Thực hiện highlight\n        const highlightedTranscript = transcriptText.replace(\n            regex,\n            (match) => `<div class=\"highlight\" data-criteria=\"${criterion.recommendationScore.reason}\">${match}</div>`\n        );\n        \n        // Cập nhật nội dung\n        transcriptContent.innerHTML = highlightedTranscript;\n        \n        // Scroll đến phần được highlight\n        const highlightedElement = transcriptContent.querySelector('.highlight');\n        if (highlightedElement) {\n            highlightedElement.scrollIntoView({ \n                behavior: 'smooth', \n                block: 'center' \n            });\n        } else {\n            console.warn('No matching timestamp found in transcript', {\n                start,\n                end,\n                transcriptLength: transcriptText.length\n            });\n        }\n    } catch (error) {\n        console.error('Error in highlighting:', error, {\n            criterion,\n            transcriptLength: transcriptText.length\n        });\n    }\n}\n```\n\nCác thay đổi chính:\n\n1. **Xử lý Regex tốt hơn**:\n   - Escape các ký tự đặc biệt trong timestamp\n   - Sử dụng `[\\s\\S]*?` thay vì `.*?` để match cả newline\n   - Pattern mới sẽ match chính xác hơn với format timestamp\n\n2. **Logging chi tiết hơn**:\n   - Log đầy đủ thông tin về timestamp\n   - Log kết quả matching của regex\n   - Log chi tiết khi có lỗi\n\n3. **Xử lý HTML**:\n   - Sử dụng cách highlight an toàn hơn với HTML\n   - Giữ nguyên format HTML trong transcript\n\nĐể kiểm tra xem có đúng không:\n\n1. Mở Console trong Developer Tools\n2. Click vào các tiêu chí khác nhau\n3. Xem các log để kiểm tra:\n   - Timestamp từ database\n   - Kết quả matching của regex\n   - Phần text được highlight\n\nNếu vẫn có vấn đề, có thể cần kiểm tra:\n1. Format của transcript text\n2. Format của timestamp trong database\n3. Cách transcript được render lên UI",
-      "match_count": 60,
-      "file": "frontend/script.js"
+      "prompt": "UX là tên vid phải thành 1 cột như a vẽ ấy\nngta cần xem list video ở đây\nTạm thời chưa cần hiển thị điểm ở đây",
+      "response": "I'll help modify the UI to show videos in a table format with columns. Here are the changes:\n\n1. First, update the HTML structure:\n\n```html:frontend/UIBuilder/index.html\n// ... existing header and filters ...\n\n<div class=\"table-container\">\n    <table class=\"video-table\">\n        <thead>\n            <tr>\n                <th>Video Name</th>\n                <th>Teaching Date</th>\n                <th>Mentor</th>\n                <th>Actions</th>\n            </tr>\n        </thead>\n        <tbody id=\"videoList\">\n            <!-- Video rows will be inserted here by JavaScript -->\n        </tbody>\n    </table>\n</div>\n```\n\n2. Update the rendering logic in script.js:\n\n```javascript:frontend/UIBuilder/script.js\n// Modify the renderVideos function\nfunction renderVideos() {\n    const videoList = document.getElementById('videoList');\n    const filteredVideos = filterVideos();\n    \n    videoList.innerHTML = filteredVideos.map(video => `\n        <tr class=\"video-row\">\n            <td class=\"video-title\">\n                <a href=\"${video.url_video}\" target=\"_blank\">${video.title}</a>\n            </td>\n            <td>${formatDate(video.timestamp)}</td>\n            <td>Mentor Name</td>\n            <td>\n                <button class=\"action-btn\">\n                    <i data-lucide=\"more-horizontal\" style=\"width: 16px; height: 16px;\"></i>\n                </button>\n            </td>\n        </tr>\n    `).join('');\n\n    lucide.createIcons();\n}\n\n// Helper function to format date\nfunction formatDate(timestamp) {\n    if (!timestamp) return '-';\n    return new Date(timestamp).toLocaleDateString('vi-VN');\n}\n```\n\n3. Add the corresponding CSS:\n\n```css:frontend/UIBuilder/styles.css\n.table-container {\n    margin-top: 20px;\n    overflow-x: auto;\n}\n\n.video-table {\n    width: 100%;\n    border-collapse: collapse;\n    background: white;\n}\n\n.video-table th,\n.video-table td {\n    padding: 12px 16px;\n    text-align: left;\n    border-bottom: 1px solid #eee;\n}\n\n.video-table th {\n    background: #f5f5f5;\n    font-weight: 600;\n    color: #333;\n}\n\n.video-row:hover {\n    background: #f8f8f8;\n}\n\n.video-title a {\n    color: #2563eb;\n    text-decoration: none;\n}\n\n.video-title a:hover {\n    text-decoration: underline;\n}\n\n.action-btn {\n    background: none;\n    border: none;\n    cursor: pointer;\n    padding: 4px;\n    border-radius: 4px;\n}\n\n.action-btn:hover {\n    background: #f0f0f0;\n}\n```\n\nThis will create a clean table layout with:\n- Video name (clickable link)\n- Teaching date\n- Mentor name\n- Actions column\n\nThe scores and detailed criteria are hidden by default and could be shown in a modal or expanded row when clicking the action button.\n\nWould you like me to add any specific functionality to the action button or make any adjustments to the layout?",
+      "match_count": 48,
+      "file": "frontend/UIBuilder/styles.css"
     },
     "file_statistics": [
       {
@@ -1604,8 +1957,14 @@
       {
         "file": "backend/Dockerfile",
         "total_lines": 21,
-        "ai_generated_lines": 5,
-        "ai_generated_percentage": 23.809523809523807
+        "ai_generated_lines": 12,
+        "ai_generated_percentage": 57.14285714285714
+      },
+      {
+        "file": "backend/Dockerfile_base",
+        "total_lines": 21,
+        "ai_generated_lines": 12,
+        "ai_generated_percentage": 57.14285714285714
       },
       {
         "file": "backend/Note1_api_backend.ipynb",
@@ -1622,8 +1981,8 @@
       {
         "file": "backend/api_database3apiGhiDe.py",
         "total_lines": 220,
-        "ai_generated_lines": 50,
-        "ai_generated_percentage": 22.727272727272727
+        "ai_generated_lines": 56,
+        "ai_generated_percentage": 25.454545454545453
       },
       {
         "file": "backend/database/Note2_FullVideoAudio2Trans2Critierial.ipynb",
@@ -1849,7 +2208,7 @@
       },
       {
         "file": "backend/database/video_database.db",
-        "total_lines": 8305,
+        "total_lines": 8309,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1874,12 +2233,24 @@
       {
         "file": "backend/database/workflow3_fullquyen.py",
         "total_lines": 568,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "ai_generated_lines": 1,
+        "ai_generated_percentage": 0.17605633802816903
       },
       {
         "file": "backend/requirements.txt",
         "total_lines": 2,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "docker-compose.dev.yml",
+        "total_lines": 40,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "docker-compose.prod.yml",
+        "total_lines": 1,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },
@@ -1890,10 +2261,16 @@
         "ai_generated_percentage": 93.10344827586206
       },
       {
+        "file": "frontend/.dockerignore",
+        "total_lines": 4,
+        "ai_generated_lines": 4,
+        "ai_generated_percentage": 100
+      },
+      {
         "file": "frontend/Dockerfile",
         "total_lines": 23,
-        "ai_generated_lines": 15,
-        "ai_generated_percentage": 65.21739130434783
+        "ai_generated_lines": 16,
+        "ai_generated_percentage": 69.56521739130434
       },
       {
         "file": "frontend/HowRun_Frontend.md",
@@ -1952,14 +2329,14 @@
       {
         "file": "frontend/UIBuilder/api_ckp/api_database_app_prod_2api.py",
         "total_lines": 129,
-        "ai_generated_lines": 14,
-        "ai_generated_percentage": 10.852713178294573
+        "ai_generated_lines": 15,
+        "ai_generated_percentage": 11.627906976744185
       },
       {
         "file": "frontend/UIBuilder/api_ckp/api_database_app_prod_3api_writeAdd.py",
         "total_lines": 146,
-        "ai_generated_lines": 25,
-        "ai_generated_percentage": 17.123287671232877
+        "ai_generated_lines": 26,
+        "ai_generated_percentage": 17.80821917808219
       },
       {
         "file": "frontend/UIBuilder/base_ui/base_ui/index.html",
@@ -1993,9 +2370,9 @@
       },
       {
         "file": "frontend/UIBuilder/script.js",
-        "total_lines": 178,
-        "ai_generated_lines": 101,
-        "ai_generated_percentage": 56.74157303370787
+        "total_lines": 179,
+        "ai_generated_lines": 97,
+        "ai_generated_percentage": 54.18994413407822
       },
       {
         "file": "frontend/UIBuilder/styles.css",
@@ -2095,15 +2472,21 @@
       },
       {
         "file": "frontend/config.js",
-        "total_lines": 10,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "total_lines": 24,
+        "ai_generated_lines": 22,
+        "ai_generated_percentage": 91.66666666666666
+      },
+      {
+        "file": "frontend/d",
+        "total_lines": 66,
+        "ai_generated_lines": 30,
+        "ai_generated_percentage": 45.45454545454545
       },
       {
         "file": "frontend/index.html",
         "total_lines": 135,
-        "ai_generated_lines": 27,
-        "ai_generated_percentage": 20
+        "ai_generated_lines": 29,
+        "ai_generated_percentage": 21.48148148148148
       },
       {
         "file": "frontend/package.json",
@@ -2113,9 +2496,9 @@
       },
       {
         "file": "frontend/script.js",
-        "total_lines": 760,
-        "ai_generated_lines": 536,
-        "ai_generated_percentage": 70.52631578947368
+        "total_lines": 430,
+        "ai_generated_lines": 293,
+        "ai_generated_percentage": 68.13953488372093
       },
       {
         "file": "frontend/script_ver1_noConfig.js",
@@ -2131,9 +2514,9 @@
       },
       {
         "file": "frontend/server.js",
-        "total_lines": 44,
-        "ai_generated_lines": 37,
-        "ai_generated_percentage": 84.0909090909091
+        "total_lines": 67,
+        "ai_generated_lines": 60,
+        "ai_generated_percentage": 89.55223880597015
       },
       {
         "file": "frontend/styles.css",
@@ -2155,7 +2538,13 @@
       },
       {
         "file": "note3_runPORT_CONFIG.ipynb",
-        "total_lines": 446,
+        "total_lines": 316,
+        "ai_generated_lines": 0,
+        "ai_generated_percentage": 0
+      },
+      {
+        "file": "note4_fixBugConfig.ipynb",
+        "total_lines": 51,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       },

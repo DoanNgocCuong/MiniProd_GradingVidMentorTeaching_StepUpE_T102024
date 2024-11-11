@@ -1,10 +1,24 @@
 const config = {
-    API_URL: process.env.NODE_ENV === 'production'
-        ? 'http://103.253.20.13:25035'
-        : 'http://localhost:25035',
-    PORT: 25035
+  development: {
+    frontendUrl: 'http://localhost:25036',
+    backendUrl: 'http://localhost:25035',
+    liveDevelopment: 'http://127.0.0.1:5502/frontend'
+  },
+  production: {
+    frontendUrl: 'http://103.253.20.13:25036',
+    backendUrl: 'http://103.253.20.13:25035'
+  }
 };
 
-console.log('Current API_URL:', config.API_URL);
+// Determine environment based on hostname
+const getEnvironment = () => {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'development';
+  }
+  return 'production';
+};
 
-export default config;
+export const getConfig = () => {
+  const env = getEnvironment();
+  return config[env];
+};

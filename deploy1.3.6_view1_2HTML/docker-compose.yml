@@ -6,8 +6,12 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ./backend:/app
-      - ./backend/database:/app/database
+      - type: bind
+        source: ./backend
+        target: /app
+      - type: bind
+        source: ./backend/database
+        target: /app/database
     ports:
       - "25035:3000"
     environment:
@@ -18,6 +22,8 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/app
+      - type: bind
+        source: ./frontend
+        target: /app
     ports:
       - "25036:5000"

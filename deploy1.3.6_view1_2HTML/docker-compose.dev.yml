@@ -1,0 +1,40 @@
+# version: '3.8'
+
+# services:
+#   backend:
+#     build:
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - type: bind
+#         source: ./backend
+#         target: /app
+#       - type: bind
+#         source: ./backend/database
+#         target: /app/database
+#     ports:
+#       - "0.0.0.0:25035:3000"  # Thêm 0.0.0.0 để bind với tất cả network interfaces
+#     environment:
+#       - FLASK_ENV=development
+#       - ALLOWED_ORIGINS=http://0.0.0.0:25036  # Thêm CORS config
+#     networks:
+#       - app-network
+
+#   frontend:
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - type: bind
+#         source: ./frontend
+#         target: /app
+#     ports:
+#       - "0.0.0.0:25036:5000"  # Thêm 0.0.0.0 để bind với tất cả network interfaces
+#     environment:
+#       - NODE_ENV=development
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge

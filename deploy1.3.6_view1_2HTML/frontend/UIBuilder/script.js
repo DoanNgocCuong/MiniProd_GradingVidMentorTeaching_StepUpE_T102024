@@ -1,10 +1,15 @@
+import { getConfig } from '../config.js';
+
+const config = getConfig();
+
 // Replace the sample data with API calls
 let videos = [];
 
 // Function to fetch scores from API
 async function fetchScores(urlVideo) {
     try {
-        const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodeURIComponent(urlVideo)}`);
+        // const response = await fetch(`http://localhost:25035/get_scores?url_video=${encodeURIComponent(urlVideo)}`);
+        const response = await fetch(`${config.backendUrl}/get_scores?url_video=${encodeURIComponent(urlVideo)}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -16,7 +21,8 @@ async function fetchScores(urlVideo) {
 // Add new function to fetch video data
 async function fetchVideoData(urlVideo) {
     try {
-        const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(urlVideo)}`);
+        // const response = await fetch(`http://localhost:25035/get_video_data?url=${encodeURIComponent(urlVideo)}`);
+        const response = await fetch(`${config.backendUrl}/get_video_data?url=${encodeURIComponent(urlVideo)}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -120,7 +126,8 @@ function formatDate(timestamp) {
 // Update the fetchVideos function to get all videos
 async function fetchVideos() {
     try {
-        const response = await fetch('http://localhost:25035/get_videos');
+        // const response = await fetch('http://localhost:25035/get_videos');
+        const response = await fetch(`${config.backendUrl}/get_videos`);
         const data = await response.json();
         return data;
     } catch (error) {
