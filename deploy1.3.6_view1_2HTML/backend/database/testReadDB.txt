@@ -1,0 +1,29 @@
+Total records: 3
+
+Record details:
+
+==================================================
+ID: 1
+Video URL: https://drive.google.com/file/d/10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o/view
+Transcription: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Yes, okay. 
+[00:00:15] Mentor: Vậy thì sau cái buổi ...
+Criteria: Pending analysis...
+Created at: 2024-11-11 01:43:27
+
+==================================================
+ID: 2
+Video URL: https://drive.google.com/file/d/1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs/view
+Transcription: [00:00:02] Mentor: Okay, so here today we have lesson seven. 
+[00:00:04] Mentor: And with this lesson, we have two main parts. 
+[00:00:06] Mentor: Fir...
+Criteria: Pending analysis...
+Created at: 2024-11-11 01:48:06
+
+==================================================
+ID: 3
+Video URL: https://drive.google.com/file/d/1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD/view
+Transcription: [00:00:01] Mentor: Ok rồi, vậy thì trước hết lần dù sao thì trước khi mình vào bài mới mình cũng sẽ cần phải có phần conversation của bài cũ đã, được ...
+Criteria: Pending analysis...
+Created at: 2024-11-11 01:52:28

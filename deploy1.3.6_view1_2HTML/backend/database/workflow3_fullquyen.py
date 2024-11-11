@@ -22,7 +22,7 @@ class Config:
     """Configuration settings"""
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     TRANSCRIBE_API_URL = 'http://103.253.20.13:25029/role_assign'
-    ANALYZE_API_URL = 'http://103.253.20.13:25034/analyze'
+    ANALYZE_API_URL = 'http://localhost:25034/analyze'
     SECRET_KEY = 'codedongian'
     # SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
     CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials.json')

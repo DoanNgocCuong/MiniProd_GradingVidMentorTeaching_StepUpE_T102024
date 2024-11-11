@@ -18,17 +18,28 @@ try:
     cursor.execute('SELECT * FROM videos')   # tên bảng là videos đã tạo từ workflow.py
     rows = cursor.fetchall()
 
-    # Print results
+    # Print results and write to file
     print(f"\nTotal records: {len(rows)}")
     print("\nRecord details:")
     
-    for row in rows:
-        print("\n" + "="*50)
-        print(f"ID: {row[0]}")
-        print(f"Video URL: {row[1]}")
-        # print(f"Transcription: {row[2][:150]}...")  # Preview first 100 chars
-        # print(f"Criteria: {row[3]}...")       # Preview first 100 chars
-        # print(f"Created at: {row[4]}")
+    with open('testReadDB.txt', 'w', encoding='utf-8') as f:
+        f.write(f"Total records: {len(rows)}\n\nRecord details:\n")
+        for row in rows:
+            separator = "="*50
+            f.write(f"\n{separator}\n")
+            f.write(f"ID: {row[0]}\n")
+            f.write(f"Video URL: {row[1]}\n")
+            f.write(f"Transcription: {row[2][:150]}...\n")
+            f.write(f"Criteria: {row[3]}...\n")
+            f.write(f"Created at: {row[4]}\n")
+            
+            # Also print to console
+            print("\n" + separator)
+            print(f"ID: {row[0]}")
+            print(f"Video URL: {row[1]}")
+            print(f"Transcription: {row[2][:150]}")
+            print(f"Criteria: {row[3]}...")
+            print(f"Created at: {row[4]}")
 
 except sqlite3.OperationalError as e:
     print(f"Database error: {e}")

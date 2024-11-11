@@ -8321,3 +8321,66 @@ Video ID: 1
   }
 }
 2024-11-07 01:49:35,016 - INFO - Created at: 2024-11-06 10:22:42
+2024-11-11 08:33:07,251 - INFO - Database initialized
+2024-11-11 08:33:09,022 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-11 08:33:09,426 - INFO - Successfully accessed folder: Test
+2024-11-11 08:33:09,426 - INFO - 
+Looking for Audio and Video folders in 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-11 08:33:09,427 - INFO - 
+Listing contents of folder 15ik6vWdz1IcbPmsPfr4p-DdszkB484yg
+2024-11-11 08:33:10,088 - INFO - Found Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-11 08:33:10,089 - INFO - Using Drive ID: 0AOGN_AzWEki7Uk9PVA
+2024-11-11 08:33:10,773 - INFO - Found 2 items:
+2024-11-11 08:33:10,774 - INFO - - Audio (application/vnd.google-apps.folder) ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB
+2024-11-11 08:33:10,774 - INFO - - Video (application/vnd.google-apps.folder) ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC
+2024-11-11 08:33:10,774 - INFO - Found Audio folder: Audio (ID: 1Ofz3dMbLnrH3Ru0iVDPHFRVFd86f1_aB)
+2024-11-11 08:33:10,775 - INFO - Found Video folder: Video (ID: 1JC3ULemPIZ5wA7w5GX3Zvf7V9dM5FFfC)
+2024-11-11 08:33:10,775 - INFO - 
+Listing files in Video folder:
+2024-11-11 08:33:11,244 - INFO - Found 10 videos:
+2024-11-11 08:33:11,244 - INFO - - Video: Bản sao của 0973453282 - 09/10 - B6 (ID: 10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o)
+2024-11-11 08:33:11,245 - INFO - - Video: Bản sao của 0383521988 - 08/10 - B28 (ID: 1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs)
+2024-11-11 08:33:11,245 - INFO - - Video: Bản sao của 0912338926 - 09/10 - B10 (ID: 1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD)
+2024-11-11 08:33:11,245 - INFO - - Video: Bản sao của 0398678257 - 09/10 - B2 (ID: 1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_)
+2024-11-11 08:33:11,246 - INFO - - Video: Bản sao của 0961797200 - 09/10 - B13 (ID: 1x31CUa503coR26Tl-DIgMxiJaJmAWPmF)
+2024-11-11 08:33:11,246 - INFO - - Video: Bản sao của 0989741503 - 10/10 - B12 (ID: 172JnO5uHq-ijmanNhDqZJtQQFZ2H3QN2)
+2024-11-11 08:33:11,247 - INFO - - Video: Bản sao của 0377642151 - 09/10 - B16 (ID: 1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl)
+2024-11-11 08:33:11,247 - INFO - - Video: Bản sao của 0949911296 - 09/10 - B16 (ID: 1oovK9faTksePgr5RF5H_UegY9VA1800D)
+2024-11-11 08:33:11,248 - INFO - - Video: Bản sao của 0898347747 - 10/10 - B5 (ID: 1qetq0udB096mOpue8XyHtaUUYudB0k_Y)
+2024-11-11 08:33:11,248 - INFO - - Video: Bản sao của 0345100005 - 09/10 - B17 (ID: 1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL)
+2024-11-11 08:33:11,248 - INFO - 
+Listing files in Audio folder:
+2024-11-11 08:33:11,698 - INFO - Found 20 audio files:
+2024-11-11 08:33:11,698 - INFO - - Audio: 0989741503 - 10/10 - B12 - HV (ID: 19mBhUksVG1QPp9pC6P8Nm0-BE7PDQkuM)
+2024-11-11 08:33:11,699 - INFO - - Audio: 0989741503 - 10/10 - B12 - mentor (ID: 1mhsufl0Rabd3db2EunO9p8ySP7_4u9ep)
+2024-11-11 08:33:11,699 - INFO - - Audio:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-11 08:33:11,699 - INFO - - Audio:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-11 08:33:11,700 - INFO - - Audio: 0961797200 - 09/10 - B13 - HV (ID: 1M123jZviCneKy-AxJWn__LpbXkkBc03v)
+2024-11-11 08:33:11,700 - INFO - - Audio: 0961797200 - 09/10 - B13 - mentor (ID: 1iU07-hOZik-SkXd6mRoVN77YfBIVDgkr)
+2024-11-11 08:33:11,701 - INFO - - Audio: 0949911296 - 09/10 - B16 - HV (ID: 1igaxu7SjVXLl743SJ_isXJRIloulOHFc)
+2024-11-11 08:33:11,701 - INFO - - Audio: 0949911296 - 09/10 - B16 - mentor (ID: 1_NyxzzZ-jbX_LijWkatIiIBr06b2YgSU)
+2024-11-11 08:33:11,701 - INFO - - Audio: 0912338926 - 09/10 - B10 - HV  (ID: 1rT133T6DszOplmv7lEphllOrwoja90ZJ)
+2024-11-11 08:33:11,702 - INFO - - Audio: 0912338926 - 09/10 - B10 - mentor (ID: 1cBvZfe0DB-nBYst1eBikrw73t2pQNGE2)
+2024-11-11 08:33:11,702 - INFO - - Audio: 0898347747 - 10/10 - B5 - HV (ID: 1tqHJKDPPgoZFnsoSGGwRJtNlPzydTC35)
+2024-11-11 08:33:11,702 - INFO - - Audio: 0898347747 - 10/10 - B5 - mentor (ID: 1_xsyvRMr7fs_GH2hqbnyMz8mwJPjrJrc)
+2024-11-11 08:33:11,703 - INFO - - Audio: 0398678257 - 09/10 - B2 - HV (ID: 13ewGK2df7txDseH0FZLHLUr-dVZca8qf)
+2024-11-11 08:33:11,703 - INFO - - Audio: 0398678257 - 09/10 - B2 - mentor (ID: 1kiXY9AIodo3UtR1vms8GbnNlP5dK1Hhc)
+2024-11-11 08:33:11,704 - INFO - - Audio: 0383521988 - 08/10 - B28 - HV (ID: 1zPTHr4v8HvtPnbPrJM6SwlvWrGCdC4Sn)
+2024-11-11 08:33:11,704 - INFO - - Audio: 0383521988 - 08/10 - B28 - mentor (ID: 1lqPEqutsJp4tSIZtw30cWByf3MOF-nK_)
+2024-11-11 08:33:11,704 - INFO - - Audio: 0377642151 - 09/10 - B16 - HV (ID: 1zeLyo1LF5Kc0cFCYDAj37EXEzOKxrjbC)
+2024-11-11 08:33:11,704 - INFO - - Audio: 0345100005 - 09/10 - B17 - HV (ID: 1fEoRNgsHPgPvej8sLOIscBJuh10zeCOr)
+2024-11-11 08:33:11,704 - INFO - - Audio: 0345100005 - 09/10 - B17 - mentor (ID: 1qvxQjCd_2zFVZfduP4u27ZvayYZX3BFq)
+2024-11-11 08:33:11,705 - INFO - - Audio: 0377642151 - 09/10 - B16 - mentor (ID: 1LMS60MtFLfv-GFB1jaMkXABnipptY4FK)
+2024-11-11 08:33:11,705 - INFO - 
+Processing video: Bản sao của 0973453282 - 09/10 - B6
+2024-11-11 08:33:11,708 - INFO - Looking for audio files for video: 0973453282 - 09/10 - B6
+2024-11-11 08:33:11,708 - INFO - Found 2 related audio files:
+2024-11-11 08:33:11,708 - INFO - - Related audio:  0973453282 - 09/10 - B6 - HV
+2024-11-11 08:33:11,709 - INFO - - Related audio:  0973453282 - 09/10 - B6 - mentor
+2024-11-11 08:33:11,709 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - HV
+2024-11-11 08:33:11,710 - INFO - Found HV file:  0973453282 - 09/10 - B6 - HV (ID: 1iFjONWaTct3N6BnuVlFFpDThA-K3Xie-)
+2024-11-11 08:33:11,710 - INFO - Checking audio file:  0973453282 - 09/10 - B6 - mentor
+2024-11-11 08:33:11,710 - INFO - Found mentor file:  0973453282 - 09/10 - B6 - mentor (ID: 1fl8jwoeKLVXjGcFmO4QA26ScowYLKxnS)
+2024-11-11 08:33:11,711 - INFO - Processing HV file:  0973453282 - 09/10 - B6 - HV
+2024-11-11 08:33:11,711 - INFO - Downloading HV file to: d:\OneDrive - Hanoi University of Science and Technology\GIT\grading-video-mentor\deploy1.3.4_combine_update\backend\database\temp_files\hv_10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o.wav
+2024-11-11 08:33:18,592 - INFO - Download 100%
