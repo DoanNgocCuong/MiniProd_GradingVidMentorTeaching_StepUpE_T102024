@@ -25,8 +25,15 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (error, content) => {
     if (error) {
       if (error.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end('File not found');
+        fs.readFile(path.join(__dirname, 'index.html'), (err, content) => {
+          if (err) {
+            res.writeHead(404);
+            res.end('File not found');
+          } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(content, 'utf-8');
+          }
+        });
       } else {
         res.writeHead(500);
         res.end('Server error: ' + error.code);
@@ -40,5 +47,5 @@ const server = http.createServer((req, res) => {
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running at port ${port}`);
 });
