@@ -161,14 +161,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         });
 
-        // Add at the top with other event listeners
-        document.getElementById('backToScoring').addEventListener('click', () => {
-            try {
-                window.location.href = '../index.html';
-            } catch (error) {
-                console.error('Navigation error:', error);
-            }
-        });
+    // Add at the top with other event listeners
+    document.getElementById('backToScoring').addEventListener('click', () => {
+        window.location.href = '../index.html';
+    });
     } catch (error) {
         console.error('Error initializing app:', error);
     }

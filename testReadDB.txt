@@ -1,0 +1,1057 @@
+Total records: 9
+
+Record details:
+
+==================================================
+ID: 1
+Video URL: https://drive.google.com/file/d/10qe6DkNX6up7-oG69HRG3B4j1A-WiI_o/view
+Transcription: [00:00:00] Mentor: Take care. 
+[00:00:06] Mentor: All right, how do I say it? 
+[00:00:14] Mentor: Yes, okay. 
+[00:00:15] Mentor: Vậy thì sau cái buổi ...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rất rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt nội dung bài học về gọi món ở nhà hàng.\n<b>Practice: 7/10</b>\nNhận xét: Cơ hội thực hành được cung cấp thông qua các câu hỏi và phản hồi, nhưng có thể cải thiện thêm tính tương tác và khuyến khích người học tham gia nhiều hơn.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng cần tăng cường độ thách thức và khuyến khích người học sáng tạo hơn trong việc áp dụng kiến thức vào thực tế.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:00",
+      "start": "00:02:00"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và liên tục, tạo điều kiện cho người học tham gia tích cực.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Các câu hỏi chủ yếu là câu hỏi đóng, cần thêm nhiều câu hỏi mở để khuyến khích người học phát triển ý tưởng hơn.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích thích người học suy nghĩ, nhưng có thể cải thiện để tạo động lực thảo luận sôi nổi hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:29:09",
+      "start": "00:00:00"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:54",
+      "start": "00:10:40"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi chủ yếu là gợi ý, có thể cần thêm ví dụ cụ thể để người học dễ hiểu hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm thời gian để người học thực hành nhiều hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:35",
+      "start": "00:10:07"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho người học, giúp họ cảm thấy tự tin hơn.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp người học hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:29:09",
+      "start": "00:09:56"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích ngữ pháp: 8/10</b> Người hướng dẫn đã giải thích rõ ràng về cách sử dụng thì hiện tại hoàn thành. <b>Ví dụ minh họa: 7/10</b> Cung cấp ví dụ nhưng có thể thêm nhiều ngữ cảnh hơn. <b>Khuyến khích sử dụng: 8/10</b> Khuyến khích học viên sử dụng ngữ pháp trong các tình huống thực tế.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:23:30",
+      "start": "00:23:09"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Sự chuyển tiếp vào bài học diễn ra suôn sẻ, khi người hướng dẫn đã rõ ràng trình bày chủ đề về gọi món ở nhà hàng.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập được cấu trúc tốt, nhưng có thể bổ sung thêm ví dụ để minh họa các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã hiệu quả trong việc thu hút sự tham gia của người học thông qua các câu hỏi và gợi ý liên quan.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:07",
+      "start": "00:01:12"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Nhận thức: 6/10</b> Người hướng dẫn đã chỉ ra một số vấn đề phát âm nhưng chưa đủ chi tiết. <b>Thực hành phát âm: 5/10</b> Cần có nhiều thời gian hơn để luyện tập phát âm. <b>Khuyến khích: 7/10</b> Có sự khích lệ nhưng cần cụ thể hơn về cách cải thiện.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:14:42",
+      "start": "00:14:26"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học, giúp họ mở rộng câu trả lời.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:29:09",
+      "start": "00:10:00"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Đưa ra định nghĩa: 8/10</b> Người hướng dẫn đã cung cấp từ mới 'enjoy the scenery' và giải thích rõ ràng. <b>Ví dụ minh họa: 7/10</b> Có một ví dụ cụ thể nhưng có thể thêm nhiều ngữ cảnh hơn. <b>Khuyến khích sử dụng từ: 8/10</b> Khuyến khích học viên sử dụng từ mới trong nhiều tình huống khác nhau.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:18:11",
+      "start": "00:18:02"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã kết nối hiệu quả với các bài học trước bằng cách tham chiếu đến việc chuẩn bị bài mới, giúp thiết lập bối cảnh cho cuộc trò chuyện.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Phần khởi động thu hút sự chú ý, nhưng có thể bao gồm thêm các yếu tố tương tác để tăng cường sự phấn khích.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động rất phù hợp với mục tiêu bài học, đảm bảo sự chuyển tiếp mượt mà vào nội dung chính.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:12",
+      "start": "00:00:00"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt hiệu quả bài học và đặt ra các kỳ vọng cho buổi học tiếp theo.\n<b>Kết thúc: 7/10</b>\nNhận xét: Đã cung cấp một kết thúc tốt, nhưng có thể bao gồm một bài kiểm tra ngắn về các điểm chính để củng cố kiến thức.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Đã giữ cho người học tham gia cho đến cuối buổi học một cách thành công.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:29:09",
+      "start": "00:28:01"
+    }
+  }
+}...
+Created at: 2024-11-10 17:32:58
+
+==================================================
+ID: 2
+Video URL: https://drive.google.com/file/d/1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs/view
+Transcription: [00:00:02] Mentor: Okay, so here today we have lesson seven. 
+[00:00:04] Mentor: And with this lesson, we have two main parts. 
+[00:00:06] Mentor: Fir...
+Criteria: Pending analysis...
+Created at: 2024-11-10 17:38:21
+
+==================================================
+ID: 3
+Video URL: https://drive.google.com/file/d/1cTQEfu1ftdHcHA42oDt4EphgjMI2yStD/view
+Transcription: [00:00:01] Mentor: Ok rồi, vậy thì trước hết lần dù sao thì trước khi mình vào bài mới mình cũng sẽ cần phải có phần conversation của bài cũ đã, được ...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính. Người hướng dẫn đã khéo léo kết nối giữa bài học cũ và mới, tạo sự liên tục trong quá trình học.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp đầy đủ, với sự tương tác giữa mentor và mentee. Tuy nhiên, có thể cải thiện thêm bằng cách khuyến khích mentee nói nhiều hơn và đưa ra phản hồi cụ thể hơn.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức. Cần có thêm các hoạt động thực hành để mentee có thể áp dụng từ vựng và cấu trúc ngữ pháp đã học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:20",
+      "start": "00:00:39"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và liên tục, tạo điều kiện cho người học tham gia tích cực.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Các câu hỏi chủ yếu là câu hỏi đóng, cần thêm nhiều câu hỏi mở để khuyến khích người học phát triển ý tưởng hơn.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích thích người học suy nghĩ, nhưng có thể cải thiện để tạo động lực thảo luận sôi nổi hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:30",
+      "start": "00:00:01"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm và cải thiện.\n<b>Tần suất sửa lỗi: 8/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:21:57",
+      "start": "00:01:35"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận biết được vấn đề trong phát âm.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi chủ yếu tập trung vào phát âm, tuy nhiên có thể mở rộng thêm về ngữ pháp và từ vựng để toàn diện hơn.\n<b>Luyện tập sửa sai: 8/10</b>\nNhận xét: Có nhiều cơ hội để người học thực hành sửa lỗi, nhưng cần có thêm các bài tập thực hành để củng cố kiến thức.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:21:57",
+      "start": "00:01:35"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 9/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho người học, giúp họ cảm thấy tự tin hơn.\n<b>Đánh giá cụ thể: 9/10</b>\nNhận xét: Phản hồi cụ thể, đi sâu vào các chi tiết để giúp người học hiểu rõ hơn về cách cải thiện.\n<b>Kịp thời: 10/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong quá trình học.",
+      "score": "5/5"
+    },
+    "timestamp": {
+      "end": "00:32:30",
+      "start": "00:20:58"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích cấu trúc ngữ pháp: 8/10</b> Người hướng dẫn đã giải thích rõ ràng về cấu trúc ngữ pháp, nhưng có thể cung cấp thêm ví dụ minh họa. <b>Chỉnh sửa lỗi ngữ pháp: 7/10</b> Một số lỗi ngữ pháp của học viên đã được chỉ ra, nhưng cần thêm thời gian để thực hành. <b>Khuyến khích sử dụng ngữ pháp: 8/10</b> Học viên được khuyến khích sử dụng ngữ pháp trong câu, nhưng cần có thêm sự nhấn mạnh về cách áp dụng trong thực tế.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:03",
+      "start": "00:24:01"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Sự chuyển tiếp vào bài học diễn ra suôn sẻ, khi người hướng dẫn đã rõ ràng trình bày chủ đề về ẩm thực và các từ mới.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập được cấu trúc tốt, nhưng có thể bổ sung thêm ví dụ để minh họa các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã hiệu quả trong việc thu hút sự tham gia của người học thông qua các câu hỏi và gợi ý liên quan.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:59",
+      "start": "00:00:39"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi phát âm: 9/10</b> Người hướng dẫn đã chỉ ra nhiều lỗi phát âm và cách khắc phục hiệu quả. <b>Thực hành phát âm: 10/10</b> Học viên được thực hành phát âm nhiều lần, giúp cải thiện kỹ năng. <b>Khuyến khích và hỗ trợ: 10/10</b> Người hướng dẫn đã tạo ra một môi trường tích cực, khuyến khích học viên tự tin hơn khi phát âm.",
+      "score": "5/5"
+    },
+    "timestamp": {
+      "end": "00:21:19",
+      "start": "00:01:35"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học, giúp họ mở rộng suy nghĩ.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:20:57",
+      "start": "00:10:31"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích từ vựng: 8/10</b> Người hướng dẫn đã cung cấp nhiều từ vựng mới và giải thích rõ ràng, nhưng có thể thêm nhiều ví dụ thực tế hơn. <b>Khuyến khích sử dụng từ: 7/10</b> Học viên được khuyến khích sử dụng từ mới, nhưng cần có thêm sự nhấn mạnh về cách sử dụng trong ngữ cảnh. <b>Phát âm từ: 8/10</b> Hướng dẫn phát âm từ vựng rất chi tiết, nhưng có thể cải thiện thêm về cách phát âm một số từ khó.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:32:30",
+      "start": "00:00:01"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã kết nối tốt với bài học trước, giúp học viên ôn lại kiến thức cũ và chuẩn bị cho bài mới.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có tính tương tác, nhưng có thể thêm nhiều câu hỏi mở để khuyến khích học viên tham gia nhiều hơn.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động rất phù hợp với mục tiêu bài học, đảm bảo sự chuyển tiếp mượt mà vào nội dung chính.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:00:39",
+      "start": "00:00:01"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt hiệu quả bài học và nhấn mạnh các điểm chính cần nhớ cho học viên.\n<b>Kết thúc: 7/10</b>\nNhận xét: Đã cung cấp một kết thúc tốt, nhưng có thể bao gồm một bài kiểm tra ngắn về các điểm chính để củng cố kiến thức.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Đã giữ cho người học tham gia cho đến cuối buổi học một cách thành công.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:32:30",
+      "start": "00:31:56"
+    }
+  }
+}...
+Created at: 2024-11-10 17:43:14
+
+==================================================
+ID: 4
+Video URL: https://drive.google.com/file/d/1Bjc2DjRMKCg7-aTV7x4g8qGtBVcDxMT_/view
+Transcription: [00:00:00] Mentor: today. 
+[00:00:02] Mentee: Yes. 
+[00:00:07] Mentor: So are you busy with your work today? 
+[00:00:11] Mentor: Okay. 
+[00:00:12] Men...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính về IPA và tầm quan trọng của nó.\n<b>Practice: 7/10</b>\nNhận xét: Cơ hội thực hành được cung cấp nhưng có thể bổ sung thêm tính tương tác để nâng cao trải nghiệm học tập, như việc khuyến khích mentee tham gia nhiều hơn trong phần thực hành.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức, đặc biệt là trong việc phát âm và sử dụng IPA.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:21",
+      "start": "00:01:04"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và tạo không khí thoải mái cho người học.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Các câu hỏi chủ yếu là câu hỏi đóng, cần thêm câu hỏi mở để khuyến khích người học chia sẻ nhiều hơn.\n<b>Kết nối thông tin: 8/10</b>\nNhận xét: Người hướng dẫn đã kết nối tốt giữa các phần của bài học và thông tin cá nhân của người học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:31:54",
+      "start": "00:00:00"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm và cải thiện.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:19:23",
+      "start": "00:18:09"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi hiệu quả nhưng có thể cải thiện bằng cách cung cấp thêm ví dụ để người học dễ hình dung hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm thời gian để người học thực hành nhiều hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:19:23",
+      "start": "00:18:09"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho người học.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp người học hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:19:05"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Ví dụ minh họa: 8/10</b> Các ví dụ về ngữ pháp đã được cung cấp rõ ràng. <b>Giải thích thuật ngữ: 7/10</b> Một số thuật ngữ đã được giải thích nhưng có thể cần rõ ràng hơn. <b>Cách sử dụng: 8/10</b> Cách sử dụng ngữ pháp đã được trình bày tốt và dễ hiểu.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:23:30",
+      "start": "00:23:09"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng các mục tiêu của bài học, giúp Mentee hiểu được nội dung sẽ học.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập có cấu trúc tốt nhưng có thể cải thiện bằng cách thêm ví dụ cụ thể hơn để minh họa cho các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã khéo léo thu hút sự tham gia của Mentee thông qua các câu hỏi mở và gợi ý.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:11",
+      "start": "00:01:04"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Nhận thức: 8/10</b> Người hướng dẫn đã chỉ ra các vấn đề phát âm một cách hiệu quả. <b>Thực hành phát âm: 7/10</b> Học viên đã thực hành phát âm, nhưng cần thêm thời gian để cải thiện. <b>Khen ngợi: 8/10</b> Sự khích lệ tích cực đã được cung cấp, giúp học viên tự tin hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:15:05",
+      "start": "00:14:26"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:29:36",
+      "start": "00:01:04"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Đưa ra định nghĩa: 8/10</b> Người hướng dẫn đã cung cấp định nghĩa rõ ràng về IPA và tầm quan trọng của nó. <b>Ví dụ minh họa: 7/10</b> Một số ví dụ đã được đưa ra, nhưng có thể cần thêm để làm rõ hơn. <b>Khả năng sử dụng từ: 8/10</b> Học viên đã sử dụng từ vựng một cách chính xác trong ngữ cảnh.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:15",
+      "start": "00:01:04"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã tạo được sự kết nối với Mentee bằng cách hỏi về tình trạng công việc và cảm xúc của họ, giúp tạo bầu không khí thân thiện.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có sự tương tác, nhưng có thể thêm một số hoạt động thú vị hơn để tăng cường sự hứng thú cho Mentee.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các câu hỏi và nhận xét đều liên quan đến tình hình hiện tại của Mentee, giúp họ cảm thấy được quan tâm.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:04",
+      "start": "00:00:00"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt lại các điểm chính của bài học và nhấn mạnh tầm quan trọng của việc luyện tập.\n<b>Kết thúc: 7/10</b>\nNhận xét: Mặc dù đã có một kết thúc tốt, nhưng có thể thêm một bài kiểm tra ngắn để củng cố kiến thức cho Mentee.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Người hướng dẫn đã giữ cho Mentee tham gia và tập trung cho đến cuối buổi học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:31:54",
+      "start": "00:29:36"
+    }
+  }
+}...
+Created at: 2024-11-10 17:48:07
+
+==================================================
+ID: 5
+Video URL: https://drive.google.com/file/d/1x31CUa503coR26Tl-DIgMxiJaJmAWPmF/view
+Transcription: [00:00:00] Mentee: Okay. 
+[00:00:03] Mentor: Okay, you are fine, right? 
+[00:00:04] Mentor: Yes, and today is Wednesday, right? 
+[00:00:08] Mentor: So...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp với các câu hỏi và phản hồi tích cực từ người hướng dẫn, tạo điều kiện cho người học tham gia tích cực.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:43",
+      "start": "00:09:12"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và tạo không khí thoải mái cho người học.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Các câu hỏi mở được sử dụng nhưng có thể thêm nhiều câu hỏi khuyến khích người học chia sẻ nhiều hơn về bản thân.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích thích người học suy nghĩ, nhưng có thể cải thiện để tạo động lực thảo luận sôi nổi hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:00",
+      "start": "00:00:00"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:06:21",
+      "start": "00:06:10"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi hiệu quả nhưng có thể thêm ví dụ để người học dễ hiểu hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm nhiều tình huống thực tế để người học áp dụng.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:09:42",
+      "start": "00:09:30"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho người học.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp người học hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:00",
+      "start": "00:20:01"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích cấu trúc: 9/10</b> Các cấu trúc câu hỏi đã được giải thích rõ ràng và chi tiết. <b>Ví dụ minh họa: 9/10</b> Ví dụ về câu hỏi yes/no và WH đã được đưa ra đầy đủ. <b>Khuyến khích thực hành: 10/10</b> Người hướng dẫn đã khuyến khích mentee thực hành và áp dụng kiến thức.",
+      "score": "5/5"
+    },
+    "timestamp": {
+      "end": "00:20:21",
+      "start": "00:15:45"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng về nội dung bài học, giúp người học dễ dàng theo dõi.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Cấu trúc phần dẫn nhập hợp lý, nhưng có thể bổ sung thêm ví dụ cụ thể để minh họa cho các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã tạo ra sự hứng thú cho người học thông qua các câu hỏi và tương tác.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:47",
+      "start": "00:01:19"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Chú ý phát âm: 8/10</b> Người hướng dẫn đã chỉ ra các vấn đề phát âm cụ thể, nhưng cần thêm thời gian luyện tập. <b>Thực hành phát âm: 7/10</b> Mentee đã thực hành nhưng cần thêm sự tự tin. <b>Phản hồi tích cực: 9/10</b> Người hướng dẫn đã khuyến khích mentee rất tốt.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:06:21",
+      "start": "00:05:59"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:20:00",
+      "start": "00:10:01"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích từ vựng: 8/10</b> Các từ như 'upcoming' và 'suburb' đã được giải thích rõ ràng, nhưng có thể thêm ví dụ thực tế hơn. <b>Đưa ra ví dụ: 7/10</b> Ví dụ về cách sử dụng từ vựng trong câu chưa phong phú. <b>Khuyến khích sử dụng từ: 8/10</b> Người hướng dẫn đã khuyến khích mentee sử dụng từ vựng mới.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:39",
+      "start": "00:01:04"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 6/10</b>\nNhận xét ngắn: Phần khởi động chưa rõ ràng về mục tiêu bài học, cần có sự kết nối tốt hơn với nội dung chính.\n<b>Tạo hứng khởi: 5/10</b>\nNhận xét ngắn: Mặc dù có sự tương tác, nhưng phần khởi động thiếu sự sáng tạo và không đủ hấp dẫn để thu hút sự chú ý của người học.\n<b>Mức độ liên quan: 7/10</b>\nNhận xét ngắn: Một số câu hỏi liên quan đến thời gian và cảm xúc, nhưng cần có sự liên kết chặt chẽ hơn với bài học.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:01:19",
+      "start": "00:00:00"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt tốt nội dung bài học và nhấn mạnh các điểm quan trọng.\n<b>Kết thúc: 7/10</b>\nNhận xét: Kết thúc có phần tốt, nhưng có thể thêm một số câu hỏi để kiểm tra kiến thức của người học.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Người học vẫn giữ được sự chú ý cho đến cuối buổi học, điều này cho thấy sự thành công trong việc kết thúc.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:28",
+      "start": "00:29:10"
+    }
+  }
+}...
+Created at: 2024-11-10 17:52:54
+
+==================================================
+ID: 6
+Video URL: https://drive.google.com/file/d/1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl/view
+Transcription: [00:00:00] Mentor: Did you just study with me? 
+[00:00:02] Mentee: Yeah. 
+[00:00:03] Mentor: Yes, okay. 
+[00:00:04] Mentor: Because I have received th...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rất rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt cách mở rộng ý tưởng trong câu trả lời.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp đầy đủ, với sự hướng dẫn cụ thể và phản hồi kịp thời từ người hướng dẫn.\n<b>Produce: 6/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng cần thêm sự thách thức và khuyến khích người học áp dụng kiến thức vào thực tế hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:22",
+      "start": "00:02:53"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và liên tục, tạo điều kiện cho mentee tham gia tích cực.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Các câu hỏi mở được sử dụng nhưng có thể thêm nhiều câu hỏi khuyến khích hơn để phát triển cuộc thảo luận.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích thích tư duy của mentee, nhưng có thể cải thiện để tạo ra nhiều ý tưởng hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:11:45",
+      "start": "00:11:30"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi hợp lý, nhưng có thể cung cấp thêm ví dụ để người học dễ hiểu hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm thời gian để người học thực hành nhiều hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:04:42",
+      "start": "00:04:14"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho mentee.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp mentee hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ mentee điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích ngữ pháp: 8/10</b> Người hướng dẫn đã giải thích các cấu trúc ngữ pháp rõ ràng, nhưng có thể cần thêm ví dụ minh họa. <b>Chỉnh sửa lỗi ngữ pháp: 7/10</b> Người hướng dẫn đã chỉ ra một số lỗi ngữ pháp, nhưng cần nhấn mạnh hơn về cách sử dụng đúng. <b>Khuyến khích sử dụng ngữ pháp: 8/10</b> Mentee đã được khuyến khích sử dụng ngữ pháp đúng cách trong câu trả lời.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng về cách mở rộng ý tưởng trong câu trả lời, giúp người học dễ dàng hiểu được.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập có cấu trúc tốt nhưng có thể cải thiện bằng cách cung cấp thêm ví dụ cụ thể để minh họa cho các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã khéo léo thu hút sự chú ý của người học thông qua các câu hỏi và gợi ý liên quan.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:07",
+      "start": "00:01:12"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi phát âm: 8/10</b> Người hướng dẫn đã chỉ ra các lỗi phát âm cụ thể và hướng dẫn cách sửa, nhưng có thể cần thêm thời gian thực hành. <b>Thực hành phát âm: 7/10</b> Mentee đã được khuyến khích thực hành phát âm, nhưng cần có nhiều cơ hội hơn để luyện tập. <b>Phát âm rõ ràng: 8/10</b> Người hướng dẫn đã phát âm rõ ràng và dễ hiểu, giúp mentee dễ dàng theo dõi.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của mentee.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích mentee mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích từ vựng: 8/10</b> Người hướng dẫn đã cung cấp nhiều từ vựng mới và giải thích rõ ràng, nhưng có thể thêm ví dụ cụ thể hơn để minh họa. <b>Khuyến khích sử dụng từ: 7/10</b> Người hướng dẫn đã khuyến khích mentee sử dụng từ vựng mới, nhưng cần nhấn mạnh hơn về việc áp dụng trong ngữ cảnh. <b>Độ phong phú của từ vựng: 8/10</b> Đã giới thiệu nhiều từ vựng phong phú, nhưng có thể mở rộng thêm các từ đồng nghĩa và trái nghĩa.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:00:00"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã tạo ra một bối cảnh tốt cho buổi học bằng cách nhắc đến kết quả bài kiểm tra trước đó, giúp người học cảm thấy tự tin hơn.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có tính kết nối, nhưng có thể thêm một số câu hỏi mở để khuyến khích sự tham gia của người học nhiều hơn.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động khởi động rất phù hợp với nội dung bài học, tạo ra sự chuyển tiếp mượt mà vào phần chính.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:12",
+      "start": "00:00:00"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt lại các điểm chính của bài học và nhấn mạnh các kỳ vọng cho buổi học tiếp theo.\n<b>Kết thúc: 7/10</b>\nNhận xét: Mặc dù đã có một kết thúc tốt, nhưng có thể thêm một bài kiểm tra ngắn để củng cố kiến thức đã học.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Người học vẫn được giữ sự tham gia và hứng thú cho đến cuối buổi học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:27:34",
+      "start": "00:26:28"
+    }
+  }
+}...
+Created at: 2024-11-10 18:01:06
+
+==================================================
+ID: 7
+Video URL: https://drive.google.com/file/d/1oovK9faTksePgr5RF5H_UegY9VA1800D/view
+Transcription: [00:00:00] Mentee: She said that she was still in there, but she said that she was still in there. 
+[00:00:00] Mentor: Okay, so we have time to talk a...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp đầy đủ, với nhiều ví dụ và câu hỏi tương tác, tạo điều kiện cho người học tham gia tích cực.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:43",
+      "start": "00:01:11"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và liên tục, tạo điều kiện cho mentee tham gia tích cực.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Một số câu hỏi mở đã được sử dụng, nhưng có thể thêm nhiều câu hỏi hơn để khuyến khích mentee suy nghĩ sâu hơn.\n<b>Kết nối ý tưởng: 8/10</b>\nNhận xét: Người hướng dẫn đã kết nối các ý tưởng và khái niệm một cách mạch lạc, giúp mentee dễ dàng theo dõi.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng tần suất để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:14",
+      "start": "00:02:04"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng, giúp người học nhận biết và ghi nhớ lỗi.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi phù hợp, nhưng có thể đưa ra thêm ví dụ để tăng cường hiệu quả.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần cấu trúc rõ ràng hơn để hỗ trợ việc ghi nhớ lâu dài.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:30",
+      "start": "00:01:11"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho mentee, giúp họ cảm thấy tự tin hơn.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp mentee hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ mentee điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích ngữ pháp: 8/10</b> Các quy tắc ngữ pháp đã được giải thích rõ ràng, nhưng có thể cần thêm ví dụ để minh họa.<br><b>Thực hành ngữ pháp: 7/10</b> Mentee đã có cơ hội thực hành nhưng cần thêm sự hỗ trợ để sử dụng đúng ngữ pháp trong câu.<br><b>Phản hồi: 8/10</b> Người hướng dẫn đã cung cấp phản hồi tích cực và xây dựng cho mentee.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng về cách nói giờ, giúp người học dễ hiểu.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập có cấu trúc tốt, nhưng có thể bổ sung thêm ví dụ để minh họa các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã hiệu quả trong việc thu hút sự tham gia của người học thông qua các câu hỏi và gợi ý liên quan.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:07",
+      "start": "00:01:12"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Nhận thức phát âm: 6/10</b> Người hướng dẫn đã chỉ ra một số vấn đề phát âm nhưng chưa đủ chi tiết để giúp mentee cải thiện.<br><b>Thực hành phát âm: 5/10</b> Mentee đã thực hành nhưng cần thêm thời gian và sự chú ý vào các âm khó.<br><b>Khen ngợi và khích lệ: 7/10</b> Người hướng dẫn đã khuyến khích mentee nhưng cần nhiều hơn để tạo động lực.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của mentee, nhưng có thể cần thêm một số câu hỏi để khuyến khích sự sáng tạo hơn.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi, nhưng cần làm rõ hơn để mentee hiểu và ghi nhớ.\n<b>Phát triển ý tưởng: 8/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích mentee mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn nữa.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích từ vựng: 8/10</b> Người hướng dẫn đã cung cấp nhiều từ vựng liên quan đến thời gian và cách nói giờ, nhưng có thể thêm nhiều ví dụ hơn để làm rõ hơn.<br><b>Thực hành từ vựng: 7/10</b> Mentee đã có cơ hội thực hành nhưng cần thêm sự khuyến khích để sử dụng từ vựng mới.<br><b>Đưa ra ví dụ: 8/10</b> Các ví dụ về cách sử dụng từ vựng đã được đưa ra, nhưng có thể cần thêm nhiều ngữ cảnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:00:00"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã tạo ra một bối cảnh cho bài học về thời gian, giúp người học dễ dàng kết nối với nội dung.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có tính tương tác, nhưng có thể thêm nhiều câu hỏi mở để khuyến khích người học tham gia hơn.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động rất phù hợp với mục tiêu bài học, đảm bảo sự chuyển tiếp mượt mà vào nội dung chính.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:12",
+      "start": "00:00:00"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt hiệu quả bài học và nhấn mạnh các điểm chính cần nhớ.\n<b>Kết thúc: 7/10</b>\nNhận xét: Đã cung cấp một kết thúc tốt, nhưng có thể bao gồm một bài kiểm tra ngắn về các điểm chính để củng cố kiến thức.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Đã giữ cho người học tham gia cho đến cuối buổi học một cách thành công.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:33:11",
+      "start": "00:32:41"
+    }
+  }
+}...
+Created at: 2024-11-10 18:06:13
+
+==================================================
+ID: 8
+Video URL: https://drive.google.com/file/d/1qetq0udB096mOpue8XyHtaUUYudB0k_Y/view
+Transcription: [00:00:01] Mentee: 
+[00:00:35] Mentor: Mình chưa ôn tập lại bài, đúng không chị? 
+[00:00:41] Mentor: The homework. 
+[00:00:45] Mentor: Okay, yet, có t...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp với nhiều ví dụ và phản hồi, tạo điều kiện cho người học cải thiện kỹ năng phát âm.\n<b>Produce: 7/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:11:01",
+      "start": "00:10:14"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt cuộc trò chuyện: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và liên tục, tạo điều kiện cho mentee tham gia tích cực.\n<b>Câu hỏi mở: 7/10</b>\nNhận xét: Một số câu hỏi mở đã được sử dụng, nhưng có thể thêm nhiều câu hỏi khuyến khích hơn để phát triển cuộc trò chuyện.\n<b>Kết nối ý tưởng: 7/10</b>\nNhận xét: Người hướng dẫn đã kết nối các ý tưởng tốt, nhưng có thể cải thiện hơn nữa để tạo ra sự liên kết chặt chẽ hơn giữa các chủ đề.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:46",
+      "start": "00:00:01"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:44",
+      "start": "00:10:36"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề trong phát âm.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi hiệu quả nhưng có thể cần thêm ví dụ để người học dễ hình dung hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm thời gian để người học thực hành nhiều hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:04:39",
+      "start": "00:04:21"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phản hồi cụ thể: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất cụ thể và rõ ràng, giúp mentee nhận ra những điểm cần cải thiện.\n<b>Khuyến khích và tạo động lực: 7/10</b>\nNhận xét: Phản hồi có tính khuyến khích, nhưng có thể thêm nhiều lời động viên hơn để tạo động lực cho mentee.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ mentee điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:38:12",
+      "start": "00:30:41"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích ngữ pháp: 6/10</b> Người hướng dẫn đã giải thích một số cấu trúc ngữ pháp, nhưng cần rõ ràng hơn.<br><b>Chỉnh sửa câu: 7/10</b> Người hướng dẫn đã chỉ ra lỗi trong câu của mentee, nhưng cần thêm ví dụ để minh họa.<br><b>Khuyến khích sử dụng ngữ pháp: 6/10</b> Người hướng dẫn khuyến khích mentee sử dụng ngữ pháp đúng, nhưng cần thêm thời gian để mentee thực hành.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:15:55",
+      "start": "00:14:13"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng về các khái niệm trọng âm và âm cuối, giúp Mentee dễ hiểu.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Phần dẫn nhập có cấu trúc tốt nhưng có thể cải thiện bằng cách thêm ví dụ cụ thể hơn để minh họa cho các khái niệm.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã khéo léo thu hút sự tham gia của Mentee thông qua các câu hỏi và ví dụ thực tế.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:59",
+      "start": "00:01:34"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi phát âm: 8/10</b> Người hướng dẫn đã chỉ ra lỗi phát âm của mentee một cách rõ ràng và cụ thể.<br><b>Thực hành phát âm: 7/10</b> Mentee đã thực hành phát âm, nhưng cần thêm thời gian để cải thiện.<br><b>Khuyến khích: 8/10</b> Người hướng dẫn đã khuyến khích mentee phát âm đúng và cung cấp phản hồi tích cực.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:06:10",
+      "start": "00:04:10"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của mentee, khuyến khích họ suy nghĩ sâu hơn.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể làm rõ hơn để mentee hiểu và áp dụng tốt hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích mentee mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn nữa để tạo ra những ý tưởng phong phú hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:40",
+      "start": "00:10:47"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích từ vựng: 8/10</b> Người hướng dẫn đã giải thích từ 'yet' rõ ràng, nhưng có thể cung cấp thêm ví dụ để làm rõ hơn.<br><b>Đưa ra ví dụ: 7/10</b> Một số ví dụ đã được đưa ra, nhưng cần nhiều hơn để củng cố kiến thức.<br><b>Khuyến khích sử dụng từ: 8/10</b> Người hướng dẫn khuyến khích mentee sử dụng từ vựng mới, điều này rất tốt.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:34",
+      "start": "00:00:41"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã tạo ra một bối cảnh rõ ràng cho buổi học bằng cách nhắc lại bài học trước và kiểm tra sự chuẩn bị của Mentee.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có sự tương tác, nhưng có thể thêm một số câu hỏi thú vị hơn để tăng cường sự hứng thú.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các hoạt động khởi động rất phù hợp với nội dung bài học, giúp Mentee dễ dàng chuyển tiếp vào phần chính.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:01:34",
+      "start": "00:00:01"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt các nội dung chính của buổi học và nhấn mạnh các điểm cần ôn tập cho lần sau.\n<b>Kết thúc: 7/10</b>\nNhận xét: Kết thúc có thể mạnh mẽ hơn nếu có một bài kiểm tra ngắn hoặc câu hỏi để củng cố kiến thức đã học.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Người hướng dẫn đã giữ cho Mentee tham gia và tập trung cho đến cuối buổi học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:38:12",
+      "start": "00:36:48"
+    }
+  }
+}...
+Created at: 2024-11-10 18:11:37
+
+==================================================
+ID: 9
+Video URL: https://drive.google.com/file/d/1ZDgW_R-vKmz3_A59y9UeicWXvWt2hoEL/view
+Transcription: [00:00:01] Mentor: Yes. 
+[00:00:01] Mentor: Okay. 
+[00:00:02] Mentee: Yes. 
+[00:00:02] Mentor: And all right. 
+[00:00:03] Mentor: So, and I think that...
+Criteria: {
+  "3Ps": {
+    "recommendationScore": {
+      "reason": "<b>Present: 8/10</b>\nNhận xét: Phần trình bày của người hướng dẫn rõ ràng và có cấu trúc, giúp người học dễ dàng nắm bắt ý chính.\n<b>Practice: 8/10</b>\nNhận xét: Cơ hội thực hành được cung cấp tốt, với sự hướng dẫn cụ thể và phản hồi kịp thời từ người hướng dẫn.\n<b>Produce: 6/10</b>\nNhận xét: Các bài tập sản xuất có mặt nhưng có thể tăng mức độ thách thức để khuyến khích người học sáng tạo và áp dụng kiến thức.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:10:00",
+      "start": "00:04:00"
+    }
+  },
+  "buildingConversations": {
+    "recommendationScore": {
+      "reason": "<b>Dẫn dắt tốt: 8/10</b>\nNhận xét: Người hướng dẫn đã dẫn dắt cuộc trò chuyện một cách tự nhiên và tạo không khí thoải mái cho người học.\n<b>Câu hỏi chất lượng: 7/10</b>\nNhận xét: Câu hỏi chủ yếu là câu hỏi đóng, cần thêm câu hỏi mở để khuyến khích người học chia sẻ nhiều hơn.\n<b>Kích thích tư duy: 7/10</b>\nNhận xét: Cuộc trò chuyện đã kích thích người học suy nghĩ, nhưng có thể cải thiện để tạo động lực thảo luận sôi nổi hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:06",
+      "start": "00:00:01"
+    }
+  },
+  "correctingMistakesRightTime": {
+    "recommendationScore": {
+      "reason": "<b>Sửa lỗi ngay lập tức (Hot correction): 8/10</b>\nNhận xét: Việc sửa lỗi ngay lập tức đã được thực hiện hiệu quả, giúp người học nhận biết lỗi trong thời gian thực.\n<b>Sửa lỗi chậm trễ (Cold correction): 7/10</b>\nNhận xét: Có thực hiện sửa lỗi chậm trễ nhưng cần tăng cường để người học có thêm cơ hội suy ngẫm.\n<b>Tần suất sửa lỗi: 7/10</b>\nNhận xét: Việc sửa lỗi đã được thực hiện thường xuyên, nhưng có thể tăng cường để nâng cao trải nghiệm học tập.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:04:20",
+      "start": "00:04:10"
+    }
+  },
+  "correctingMistakesRightWay": {
+    "recommendationScore": {
+      "reason": "<b>Chỉ ra lỗi sai: 8/10</b>\nNhận xét: Người hướng dẫn đã chỉ ra lỗi sai một cách rõ ràng và cụ thể, giúp người học nhận thức được vấn đề.\n<b>Cách sửa đúng: 7/10</b>\nNhận xét: Phương pháp sửa lỗi phù hợp, nhưng có thể cung cấp thêm ví dụ để người học dễ hiểu hơn.\n<b>Luyện tập sửa sai: 7/10</b>\nNhận xét: Có thực hành sửa lỗi nhưng cần có thêm thời gian để người học thực hành nhiều hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:04:24",
+      "start": "00:04:07"
+    }
+  },
+  "givingFeedback": {
+    "recommendationScore": {
+      "reason": "<b>Phù hợp và tạo động lực: 8/10</b>\nNhận xét: Phản hồi được đưa ra rất phù hợp và tạo động lực cho người học.\n<b>Đánh giá cụ thể: 7/10</b>\nNhận xét: Phản hồi cụ thể, nhưng có thể đi sâu hơn vào các chi tiết để giúp người học hiểu rõ hơn.\n<b>Kịp thời: 8/10</b>\nNhận xét: Phản hồi được đưa ra kịp thời, hỗ trợ người học điều chỉnh ngay trong quá trình học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:26:49"
+    }
+  },
+  "grammar": {
+    "recommendationScore": {
+      "reason": "<b>Giải thích ngữ pháp: 6/10</b> Người hướng dẫn đã chỉ ra một số lỗi ngữ pháp, nhưng cần giải thích rõ hơn về cách sử dụng thì và cấu trúc câu.<br><b>Ví dụ minh họa: 5/10</b> Một số ví dụ về ngữ pháp chưa được cung cấp đầy đủ, cần có thêm ví dụ để mentee dễ hiểu hơn.<br><b>Chỉnh sửa lỗi: 7/10</b> Người hướng dẫn đã chỉ ra lỗi và giúp mentee sửa, nhưng cần có thêm thời gian để thực hành.",
+      "score": "3/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:00:01"
+    }
+  },
+  "leadIn": {
+    "recommendationScore": {
+      "reason": "<b>Độ rõ ràng: 8/10</b>\nNhận xét ngắn: Người hướng dẫn đã trình bày rõ ràng về cấu trúc bài học và các câu hỏi sẽ được thảo luận.\n<b>Cấu trúc: 7/10</b>\nNhận xét ngắn: Mặc dù phần dẫn nhập có cấu trúc tốt, nhưng có thể cần thêm ví dụ cụ thể để làm rõ hơn các điểm chính.\n<b>Tạo sự hứng thú: 9/10</b>\nNhận xét ngắn: Người hướng dẫn đã khéo léo thu hút sự chú ý của Mentee và tạo ra sự hứng thú cho phần thảo luận tiếp theo.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:03:09",
+      "start": "00:02:06"
+    }
+  },
+  "pronunciation": {
+    "recommendationScore": {
+      "reason": "<b>Phát âm rõ ràng: 8/10</b> Mentee đã cải thiện đáng kể về phát âm, nhưng vẫn cần chú ý đến một số âm cuối và ngữ điệu.<br><b>Thực hành phát âm: 7/10</b> Người hướng dẫn đã tạo cơ hội cho mentee thực hành phát âm, nhưng có thể cần nhiều hơn nữa để củng cố kỹ năng.<br><b>Phản hồi tích cực: 8/10</b> Người hướng dẫn đã cung cấp phản hồi tích cực, khuyến khích mentee tiếp tục cải thiện.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:00:01"
+    }
+  },
+  "teachingIdeaDevelopment": {
+    "recommendationScore": {
+      "reason": "<b>Câu hỏi theo dõi: 8/10</b>\nNhận xét: Các câu hỏi theo dõi được sử dụng hiệu quả để phát triển ý tưởng của người học.\n<b>Sửa lỗi sai ý gốc: 7/10</b>\nNhận xét: Có thực hiện việc sửa lỗi ý tưởng, nhưng có thể xây dựng theo hướng mang tính đóng góp nhiều hơn.\n<b>Phát triển ý tưởng: 7/10</b>\nNhận xét: Phần phát triển ý tưởng đã khuyến khích người học mở rộng suy nghĩ, tuy nhiên có thể đẩy mạnh hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:12:40",
+      "start": "00:04:00"
+    }
+  },
+  "teachingVocab": {
+    "recommendationScore": {
+      "reason": "<b>Đưa ra từ vựng mới: 8/10</b> Người hướng dẫn đã giới thiệu một số từ vựng mới và cách sử dụng chúng trong ngữ cảnh. Tuy nhiên, có thể cung cấp thêm nhiều ví dụ hơn để làm rõ nghĩa.<br><b>Khuyến khích sử dụng từ: 7/10</b> Người hướng dẫn đã khuyến khích mentee sử dụng từ vựng mới, nhưng có thể cần nhấn mạnh hơn về việc áp dụng từ vựng trong các tình huống thực tế.<br><b>Giải thích từ: 6/10</b> Một số từ vựng chưa được giải thích rõ ràng, cần có thêm sự chú ý để mentee hiểu rõ hơn.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:00:01"
+    }
+  },
+  "warmUp": {
+    "recommendationScore": {
+      "reason": "<b>Mục đích: 8/10</b>\nNhận xét ngắn: Phần khởi động đã tạo ra một bối cảnh tốt cho bài học bằng cách thảo luận về cảm xúc và trách nhiệm của Mentee trong công việc.\n<b>Tạo hứng khởi: 7/10</b>\nNhận xét ngắn: Mặc dù phần khởi động có tính kết nối, nhưng có thể thêm một số câu hỏi tương tác để tăng cường sự tham gia của Mentee.\n<b>Mức độ liên quan: 9/10</b>\nNhận xét ngắn: Các chủ đề được thảo luận rất phù hợp với nội dung bài học, giúp Mentee cảm thấy thoải mái và sẵn sàng cho phần tiếp theo.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:02:06",
+      "start": "00:00:01"
+    }
+  },
+  "wrapUp": {
+    "recommendationScore": {
+      "reason": "<b>Tóm tắt: 8/10</b>\nNhận xét: Phần kết thúc đã tóm tắt tốt các điểm chính của bài học và đưa ra phản hồi hữu ích cho Mentee.\n<b>Kết thúc: 7/10</b>\nNhận xét: Mặc dù phần kết thúc đã hoàn thành tốt, nhưng có thể thêm một số câu hỏi để kiểm tra sự hiểu biết của Mentee về nội dung đã học.\n<b>Giữ sự chú ý: 9/10</b>\nNhận xét: Người hướng dẫn đã giữ cho Mentee tham gia và tập trung cho đến cuối buổi học.",
+      "score": "4/5"
+    },
+    "timestamp": {
+      "end": "00:30:14",
+      "start": "00:26:58"
+    }
+  }
+}...
+Created at: 2024-11-10 18:16:25

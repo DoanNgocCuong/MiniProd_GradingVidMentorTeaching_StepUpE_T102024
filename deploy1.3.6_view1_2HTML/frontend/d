@@ -1,0 +1,66 @@
+// ... (giữ nguyên code phía trên)
+
+// Render video list
+function renderVideos() {
+    const videoList = document.getElementById('videoList');
+    const filteredVideos = filterVideos();
+    
+    videoList.innerHTML = filteredVideos.map(video => `
+        <tr class="video-row" data-url="${encodeURIComponent(video.url_video)}">
+            <td class="video-title">
+                <span>${video.title}</span>
+            </td>
+            <td>${formatDate(video.timestamp)}</td>
+            <td>Mentor Name</td>
+            <td>
+                <button class="action-btn">
+                    <i data-lucide="more-horizontal" style="width: 16px; height: 16px;"></i>
+                </button>
+            </td>
+        </tr>
+    `).join('');
+
+    // Update click handler với xử lý URL tốt hơn
+    document.querySelectorAll('.video-row').forEach(row => {
+        row.addEventListener('click', async () => {
+            try {
+                const videoUrl = decodeURIComponent(row.dataset.url);
+                
+                // Tạo URL mới với base URL động
+                const baseUrl = window.location.origin;
+                const redirectPath = baseUrl === 'http://127.0.0.1:5500' ? '../index.html' : '/index.html';
+                const redirectUrl = new URL(redirectPath, baseUrl);
+                
+                // Thêm parameter video
+                redirectUrl.searchParams.set('video', videoUrl);
+                
+                // Chuyển hướng
+                window.location.href = redirectUrl.toString();
+                
+            } catch (error) {
+                console.error('Error navigating to video:', error);
+                alert('Có lỗi khi mở video. Vui lòng thử lại.');
+            }
+        });
+    });
+
+    lucide.createIcons();
+}
+
+// ... (giữ nguyên code phía dưới)
+
+// Cập nhật event listener cho nút Back
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // ... (giữ nguyên code khác)
+
+        // Cập nhật event listener cho nút Back
+        document.getElementById('backToScoring').addEventListener('click', () => {
+            const baseUrl = window.location.origin;
+            const redirectPath = baseUrl === 'http://127.0.0.1:5500' ? '../index.html' : '/index.html';
+            window.location.href = redirectPath;
+        });
+    } catch (error) {
+        console.error('Error initializing app:', error);
+    }
+});

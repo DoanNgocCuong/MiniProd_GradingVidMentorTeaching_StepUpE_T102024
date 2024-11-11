@@ -1,0 +1,14 @@
+```bash
+@http://127.0.0.1:5500/    @http://127.0.0.1:5500/UIBuilder/index.html 
+@http://127.0.0.1:5500/index.html?video=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1Xj4nOZEf8-lWpub6AOSClmV81NOhkfRl%2Fview 
+
+
+http://localhost:25036/ 
+
+http://localhost:25036/UIBuilder/index.html
+
+http://localhost:25036/index.html?video=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs%2Fview
+
+Các link đều đang hoạt động, trừ link : http://localhost:25036/index.html?video=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1wU7VG6RoQSIT4Nx3nzre3c9kf8IP3vPs%2Fview
+
+Check @script.js 

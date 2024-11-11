@@ -13,8 +13,11 @@ RUN npm install
 # Copy all remaining files
 COPY . .
 
+# Đảm bảo các file có quyền thực thi
+RUN chmod +x /app/server.js
+
 # Expose application port
 EXPOSE 5000
 
-# Command to run the application
-CMD ["npm", "start"]
+# Sử dụng nodemon để auto-reload trong development
+CMD ["node", "server.js"]

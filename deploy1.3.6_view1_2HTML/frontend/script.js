@@ -80,10 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.getElementById('viewAllVideos').addEventListener('click', () => {
-        window.location.href = '/UIBuilder';
-    });
-
     function updateTranscript(transcript) {
         const transcriptContent = document.getElementById('transcriptContent');
         const formattedTranscript = formatTranscript(transcript);
@@ -417,4 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
             reasonElement.textContent = 'Reason: Error loading data';
         }
     }
+});
+
+// In frontend/index.html
+document.getElementById('viewAllVideos').addEventListener('click', () => {
+  window.location.href = 'UIBuilder/index.html';
 });

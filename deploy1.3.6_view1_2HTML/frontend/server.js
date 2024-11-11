@@ -3,9 +3,13 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  let filePath = '.' + req.url;
+  let filePath = '.' + req.url.split('?')[0];
   if (filePath === './') {
     filePath = './index.html';
+  }
+
+  if (filePath === './index.html' || filePath === './UIBuilder/index.html') {
+    filePath = path.join(__dirname, filePath);
   }
 
   const extname = String(path.extname(filePath)).toLowerCase();
@@ -13,6 +17,9 @@ const server = http.createServer((req, res) => {
     '.html': 'text/html',
     '.js': 'text/javascript',
     '.css': 'text/css',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpg',
   };
 
   fs.readFile(filePath, (error, content) => {
