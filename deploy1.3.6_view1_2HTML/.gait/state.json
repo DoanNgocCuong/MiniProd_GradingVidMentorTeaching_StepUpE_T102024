@@ -1544,12 +1544,14 @@
             "file_path_dict": {
               "0": "frontend/config.js",
               "3": "docker-compose.prod.yml",
-              "4": "frontend/server.js"
+              "4": "frontend/server.js",
+              "5": "HowRun1.md"
             },
             "file_paths": [
               "frontend/config.js",
               "docker-compose.prod.yml",
-              "frontend/server.js"
+              "frontend/server.js",
+              "HowRun1.md"
             ]
           }
         },
@@ -1808,6 +1810,90 @@
             }
           ],
           "kv_store": {}
+        },
+        {
+          "id": "7adf1aef-eb85-4c7f-bb3e-7cbee27c1695",
+          "messageText": "docker-compose up sẽ chạy ở local 25036\n\nCòn \nsẽ chạy ở đâu nhỉ ???",
+          "responseText": "Để chạy ở production (103.253.20.13), hãy tạo file docker-compose.prod.yml:\n\n```yaml:docker-compose.prod.yml\nversion: '3.8'\n\nservices:\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    ports:\n      - \"25035:3000\"\n    environment:\n      - FLASK_ENV=production\n      - ALLOWED_ORIGINS=http://103.253.20.13:25036\n    restart: always\n\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    ports:\n      - \"25036:5000\"\n    environment:\n      - NODE_ENV=production\n    restart: always\n\nnetworks:\n  default:\n    driver",
+          "model": "claude-3-5-sonnet-20241022",
+          "timestamp": "2024-11-11T10:03:22.738Z",
+          "context": [],
+          "kv_store": {}
+        },
+        {
+          "id": "a7d116d9-8789-409b-913e-74c2b66ee94d",
+          "messageText": "continue",
+          "responseText": "Certainly! Here’s the continuation and completion of the `docker-compose.prod.yml` file along with additional instructions for running it in a production environment.\n\n### Complete `docker-compose.prod.yml`\n\n```yaml\nversion: '3.8'\n\nservices:\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    ports:\n      - \"25035:3000\"  # Expose backend on port 25035\n    environment:\n      - FLASK_ENV=production\n      - ALLOWED_ORIGINS=http://103.253.20.13:25036  # Allow frontend to access backend\n    restart: always  # Restart the container if it stops\n\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    ports:\n      - \"25036:5000\"  # Expose frontend on port 25036\n    environment:\n      - NODE_ENV=production\n    restart: always  # Restart the container if it stops\n\nnetworks:\n  default:\n    driver: bridge  # Use bridge network\n```\n\n### Steps to Run in Production\n\n1. **Ensure Docker is Installed**: Make sure Docker and Docker Compose are installed on your production server.\n\n2. **Navigate to the Project Directory**: Open a terminal and navigate to the directory where your `docker-compose.prod.yml` file is located.\n\n3. **Build and Run the Containers**: Use the following command to build and run the containers in detached mode:\n   ```bash\n   docker-compose -f docker-compose.prod.yml up -d --build\n   ```\n\n4. **Check the Status of the Containers**: You can check if the containers are running properly with:\n   ```bash\n   docker-compose -f docker-compose.prod.yml ps\n   ```\n\n5. **View Logs**: To see the logs for both frontend and backend services, you can use:\n   ```bash\n   docker-compose -f docker-compose.prod.yml logs -f\n   ```\n\n6. **Access the Application**: \n   - Frontend: `http://103.253.20.13:25036`\n   - Backend: `http://103.253.20.13:25035`\n\n### Additional Notes\n\n- **Firewall Settings**: Ensure that your server's firewall allows traffic on ports 25035 and 25036.\n- **Production Considerations**: \n  - For production, consider using a reverse proxy (like Nginx) to handle SSL termination and serve static files.\n  - Monitor your application and set up logging for better observability.\n- **Environment Variables**: You may want to manage sensitive information (like API keys) using environment variables or a secrets management tool.\n\n### Troubleshooting\n\n- If you encounter issues, check the logs for errors:\n  ```bash\n  docker-compose -f docker-compose.prod.yml logs backend\n  docker-compose -f docker-compose.prod.yml logs frontend\n  ```\n\n- If the containers are not starting, you can stop and remove them with:\n  ```bash\n  docker-compose -f docker-compose.prod.yml down\n  ```\n\n- Then, try to rebuild and start again:\n  ```bash\n  docker-compose -f docker-compose.prod.yml up -d --build\n  ```\n\nThis setup should allow you to run your application in a production environment effectively. If you have any further questions or need additional assistance, feel free to ask!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-11T10:03:22.738Z",
+          "context": [],
+          "kv_store": {
+            "file_paths": [
+              "docker-compose.prod.yml"
+            ]
+          }
+        },
+        {
+          "id": "4f4c6ef6-785d-47ec-b4c2-43100f332ad0",
+          "messageText": "Giờ muốn deploy lên server công ty với  URL 103.253.20.13\nhoặc deploy lên 192.168.22.80 (ip local) thì sao ??",
+          "responseText": "Để deploy ứng dụng lên server công ty với URL `103.253.20.13` hoặc trên IP local `192.168.22.80`, bạn có thể làm theo các bước sau:\n\n### 1. Chuẩn Bị Server\n\n- **Cài Đặt Docker và Docker Compose**: Đảm bảo rằng Docker và Docker Compose đã được cài đặt trên server của bạn. Bạn có thể tham khảo tài liệu chính thức để cài đặt:\n  - [Cài đặt Docker](https://docs.docker.com/get-docker/)\n  - [Cài đặt Docker Compose](https://docs.docker.com/compose/install/)\n\n### 2. Tạo File `docker-compose.prod.yml`\n\nNếu bạn chưa có file `docker-compose.prod.yml`, hãy tạo nó với nội dung như sau:\n\n```yaml\nversion: '3.8'\n\nservices:\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    ports:\n      - \"25035:3000\"  # Expose backend on port 25035\n    environment:\n      - FLASK_ENV=production\n      - ALLOWED_ORIGINS=http://103.253.20.13:25036,http://192.168.22.80:25036  # Allow frontend to access backend\n    restart: always  # Restart the container if it stops\n\n  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    ports:\n      - \"25036:5000\"  # Expose frontend on port 25036\n    environment:\n      - NODE_ENV=production\n    restart: always  # Restart the container if it stops\n\nnetworks:\n  default:\n    driver: bridge  # Use bridge network\n```\n\n### 3. Chuyển Dữ Liệu Lên Server\n\n- **Sao Chép Mã Nguồn**: Sử dụng `scp` hoặc `rsync` để sao chép mã nguồn của bạn lên server. Ví dụ:\n```bash\nscp -r /path/to/your/project username@103.253.20.13:/path/to/deploy/\n```\nThay thế `/path/to/your/project` bằng đường dẫn đến dự án của bạn và `username` bằng tên người dùng trên server.\n\n### 4. Đăng Nhập Vào Server\n\n- **SSH vào Server**:\n```bash\nssh username@103.253.20.13\n```\n\n### 5. Chạy Docker Compose\n\n- **Điều Hướng Đến Thư Mục Dự Án**:\n```bash\ncd /path/to/deploy/\n```\n\n- **Chạy Docker Compose**:\n```bash\ndocker-compose -f docker-compose.prod.yml up -d --build\n```\n\n### 6. Kiểm Tra Trạng Thái\n\n- **Kiểm Tra Trạng Thái Containers**:\n```bash\ndocker-compose -f docker-compose.prod.yml ps\n```\n\n- **Xem Logs**:\n```bash\ndocker-compose -f docker-compose.prod.yml logs -f\n```\n\n### 7. Truy Cập Ứng Dụng\n\n- **Truy Cập Ứng Dụng**:\n   - Nếu bạn deploy trên server công ty: `http://103.253.20.13:25036`\n   - Nếu bạn deploy trên IP local: `http://192.168.22.80:25036`\n\n### 8. Cấu Hình Firewall\n\n- **Mở Ports**: Đảm bảo rằng firewall trên server cho phép truy cập vào các port 25035 và 25036. Bạn có thể sử dụng `ufw` hoặc `iptables` để cấu hình firewall.\n\n### 9. Cấu Hình Nginx (Tùy Chọn)\n\nNếu bạn muốn sử dụng Nginx làm reverse proxy để quản lý SSL và routing, bạn có thể cài đặt Nginx và cấu hình như sau:\n\n```nginx\nserver {\n    listen 80;\n    server_name 103.253.20.13;\n\n    location / {\n        proxy_pass http://localhost:25036;  # Chuyển tiếp đến frontend\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n\n    location /api/ {\n        proxy_pass http://localhost:25035;  # Chuyển tiếp đến backend\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n}\n```\n\n### 10. Kiểm Tra và Bảo Trì\n\n- **Theo Dõi Logs**: Theo dõi logs để phát hiện lỗi và xử lý sự cố.\n- **Cập Nhật**: Khi có thay đổi trong mã nguồn, bạn có thể rebuild và restart containers bằng lệnh:\n```bash\ndocker-compose -f docker-compose.prod.yml up -d --build\n```\n\n### Kết Luận\n\nVới các bước trên, bạn có thể deploy ứng dụng của mình lên server công ty hoặc trên IP local một cách hiệu quả. Nếu có bất kỳ câu hỏi nào hoặc cần thêm trợ giúp, hãy cho tôi biết!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-11T10:03:22.738Z",
+          "context": [],
+          "kv_store": {
+            "file_path_dict": {
+              "0": "docker-compose.prod.yml"
+            },
+            "file_paths": [
+              "docker-compose.prod.yml"
+            ]
+          }
+        },
+        {
+          "id": "46ec46db-9531-430e-8a07-5aaa8f647d92",
+          "messageText": "Có phải sửa @server.js và @script.js @script.js  @config.js  theo không",
+          "responseText": "Có, bạn cần sửa đổi một số phần trong `server.js`, `script.js`, và `config.js` để đảm bảo rằng ứng dụng hoạt động đúng trong cả môi trường phát triển và sản xuất. Dưới đây là các sửa đổi cần thiết:\n\n### 1. Sửa Đổi `server.js`\n\nTrong `server.js`, bạn cần đảm bảo rằng CORS được cấu hình đúng cho cả môi trường phát triển và sản xuất. Bạn cũng có thể thêm một số logging để dễ dàng theo dõi.\n\n```javascript:frontend/server.js\nconst http = require('http');\nconst fs = require('fs');\nconst path = require('path');\n\n// Add environment configuration\nconst env = process.env.NODE_ENV || 'development';\nconst config = {\n  development: {\n    port: 5000,\n    corsOrigin: 'http://localhost:25036'\n  },\n  production: {\n    port: 5000,\n    corsOrigin: 'http://103.253.20.13:25036'\n  }\n};\n\n// Use in your server setup\nconst currentConfig = config[env];\nconst port = process.env.PORT || currentConfig.port;\n\nconst server = http.createServer((req, res) => {\n  // Set CORS headers\n  res.setHeader('Access-Control-Allow-Origin', currentConfig.corsOrigin);\n  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');\n  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');\n\n  let filePath = '.' + req.url.split('?')[0];\n  if (filePath === './') {\n    filePath = './index.html';\n  }\n\n  if (filePath === './index.html' || filePath === './UIBuilder/index.html') {\n    filePath = path.join(__dirname, filePath);\n  }\n\n  const extname = String(path.extname(filePath)).toLowerCase();\n  const contentType = {\n    '.html': 'text/html',\n    '.js': 'text/javascript',\n    '.css': 'text/css',\n    '.json': 'application/json',\n    '.png': 'image/png',\n    '.jpg': 'image/jpg',\n  };\n\n  fs.readFile(filePath, (error, content) => {\n    if (error) {\n      if (error.code === 'ENOENT') {\n        fs.readFile(path.join(__dirname, 'index.html'), (err, content) => {\n          if (err) {\n            res.writeHead(404);\n            res.end('File not found');\n          } else {\n            res.writeHead(200, { 'Content-Type': 'text/html' });\n            res.end(content, 'utf-8');\n          }\n        });\n      } else {\n        res.writeHead(500);\n        res.end('Server error: ' + error.code);\n      }\n    } else {\n      res.writeHead(200, { 'Content-Type': contentType[extname] || 'text/plain' });\n      res.end(content, 'utf-8');\n    }\n  });\n});\n\nserver.listen(port, () => {\n  console.log(`Server running at port ${port}`);\n});\n```\n\n### 2. Sửa Đổi `script.js`\n\nTrong `script.js`, bạn cần đảm bảo rằng các API gọi đến backend sử dụng URL đúng cho môi trường sản xuất và phát triển.\n\n```javascript:frontend/script.js\nimport { getConfig } from './config.js';\n\nconst config = getConfig();\n\nasync function loadVideoFromUrl() {\n    const urlParams = new URLSearchParams(window.location.search);\n    const videoUrl = urlParams.get('video');\n    \n    if (videoUrl) {\n        const decodedUrl = decodeURIComponent(videoUrl);\n        console.log('URL video nhận được:', decodedUrl);\n        \n        // Set giá trị vào input\n        document.getElementById('videoLink').value = decodedUrl;\n        \n        try {\n            const apiUrl = `${config.backendUrl}/get_video_data?url=${encodeURIComponent(decodedUrl)}`;\n            console.log('API URL:', apiUrl);\n            \n            const response = await fetch(apiUrl);\n            if (!response.ok) {\n                throw new Error(`HTTP error! status: ${response.status}`);\n            }\n            \n            const data = await response.json();\n            console.log('API response:', data);\n            \n            // Load video\n            document.getElementById('loadVideo').click();\n            \n        } catch (error) {\n            console.error('Error loading video:', error);\n        }\n    }\n}\n\n// ... rest of your existing code ...\n```\n\n### 3. Sửa Đổi `config.js`\n\nTrong `config.js`, bạn cần đảm bảo rằng cấu hình cho môi trường sản xuất và phát triển được thiết lập chính xác.\n\n```javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: 'http://localhost:25036',\n    backendUrl: 'http://localhost:25035',\n    liveDevelopment: 'http://127.0.0.1:5502/frontend'\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n\n// Determine environment based on hostname\nconst getEnvironment = () => {\n  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {\n    return 'development';\n  }\n  return 'production';\n};\n\nexport const getConfig = () => {\n  const env = getEnvironment();\n  return config[env];\n};\n```\n\n### Kiểm Tra và Chạy Ứng Dụng\n\n1. **Chạy Ứng Dụng**: Sau khi thực hiện các thay đổi, hãy chạy lại ứng dụng của bạn bằng cách sử dụng Docker Compose:\n   ```bash\n   docker-compose -f docker-compose.prod.yml up -d --build\n   ```\n\n2. **Kiểm Tra Logs**: Kiểm tra logs để đảm bảo rằng không có lỗi nào xảy ra:\n   ```bash\n   docker-compose -f docker-compose.prod.yml logs -f\n   ```\n\n3. **Truy Cập Ứng Dụng**: Truy cập ứng dụng của bạn qua URL:\n   - Frontend: `http://103.253.20.13:25036`\n   - Backend: `http://103.253.20.13:25035`\n\n### Kết Luận\n\nVới các sửa đổi này, ứng dụng của bạn sẽ hoạt động đúng trong cả môi trường phát triển và sản xuất. Nếu bạn có bất kỳ câu hỏi nào hoặc cần thêm trợ giúp, hãy cho tôi biết!",
+          "model": "gpt-4o-mini",
+          "timestamp": "2024-11-11T10:03:22.738Z",
+          "context": [
+            {
+              "context_type": "file",
+              "key": "e516355e-e495-43b2-a4c3-6f4681a4d816",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\server.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "07ad8a84-9ca0-468f-ae7e-f8dce0d58e50",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\script.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "10abc29e-be5c-460e-be4b-60e47f43291c",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\UIBuilder\\script.js",
+                "isCurrentFile": false
+              }
+            },
+            {
+              "context_type": "file",
+              "key": "f29f5eb1-cfb5-4853-97ca-657a34d6c697",
+              "value": {
+                "human_readable": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\config.js",
+                "uri": "d:\\OneDrive - Hanoi University of Science and Technology\\GIT\\grading-video-mentor\\deploy1.3.6_view1_2HTML\\frontend\\config.js",
+                "isCurrentFile": false
+              }
+            }
+          ],
+          "kv_store": {}
         }
       ],
       "kv_store": {}
@@ -1927,13 +2013,13 @@
     "deletedPanelChatIDs": []
   },
   "kv_store": {
-    "unique_matched_lines_count": 1423,
-    "total_repo_line_count": 699638,
+    "unique_matched_lines_count": 1446,
+    "total_repo_line_count": 700876,
     "best_prompt_response": {
-      "prompt": "UX là tên vid phải thành 1 cột như a vẽ ấy\nngta cần xem list video ở đây\nTạm thời chưa cần hiển thị điểm ở đây",
-      "response": "I'll help modify the UI to show videos in a table format with columns. Here are the changes:\n\n1. First, update the HTML structure:\n\n```html:frontend/UIBuilder/index.html\n// ... existing header and filters ...\n\n<div class=\"table-container\">\n    <table class=\"video-table\">\n        <thead>\n            <tr>\n                <th>Video Name</th>\n                <th>Teaching Date</th>\n                <th>Mentor</th>\n                <th>Actions</th>\n            </tr>\n        </thead>\n        <tbody id=\"videoList\">\n            <!-- Video rows will be inserted here by JavaScript -->\n        </tbody>\n    </table>\n</div>\n```\n\n2. Update the rendering logic in script.js:\n\n```javascript:frontend/UIBuilder/script.js\n// Modify the renderVideos function\nfunction renderVideos() {\n    const videoList = document.getElementById('videoList');\n    const filteredVideos = filterVideos();\n    \n    videoList.innerHTML = filteredVideos.map(video => `\n        <tr class=\"video-row\">\n            <td class=\"video-title\">\n                <a href=\"${video.url_video}\" target=\"_blank\">${video.title}</a>\n            </td>\n            <td>${formatDate(video.timestamp)}</td>\n            <td>Mentor Name</td>\n            <td>\n                <button class=\"action-btn\">\n                    <i data-lucide=\"more-horizontal\" style=\"width: 16px; height: 16px;\"></i>\n                </button>\n            </td>\n        </tr>\n    `).join('');\n\n    lucide.createIcons();\n}\n\n// Helper function to format date\nfunction formatDate(timestamp) {\n    if (!timestamp) return '-';\n    return new Date(timestamp).toLocaleDateString('vi-VN');\n}\n```\n\n3. Add the corresponding CSS:\n\n```css:frontend/UIBuilder/styles.css\n.table-container {\n    margin-top: 20px;\n    overflow-x: auto;\n}\n\n.video-table {\n    width: 100%;\n    border-collapse: collapse;\n    background: white;\n}\n\n.video-table th,\n.video-table td {\n    padding: 12px 16px;\n    text-align: left;\n    border-bottom: 1px solid #eee;\n}\n\n.video-table th {\n    background: #f5f5f5;\n    font-weight: 600;\n    color: #333;\n}\n\n.video-row:hover {\n    background: #f8f8f8;\n}\n\n.video-title a {\n    color: #2563eb;\n    text-decoration: none;\n}\n\n.video-title a:hover {\n    text-decoration: underline;\n}\n\n.action-btn {\n    background: none;\n    border: none;\n    cursor: pointer;\n    padding: 4px;\n    border-radius: 4px;\n}\n\n.action-btn:hover {\n    background: #f0f0f0;\n}\n```\n\nThis will create a clean table layout with:\n- Video name (clickable link)\n- Teaching date\n- Mentor name\n- Actions column\n\nThe scores and detailed criteria are hidden by default and could be shown in a modal or expanded row when clicking the action button.\n\nWould you like me to add any specific functionality to the action button or make any adjustments to the layout?",
-      "match_count": 48,
-      "file": "frontend/UIBuilder/styles.css"
+      "prompt": "Có phải sửa @server.js và @script.js @script.js  @config.js  theo không",
+      "response": "Có, bạn cần sửa đổi một số phần trong `server.js`, `script.js`, và `config.js` để đảm bảo rằng ứng dụng hoạt động đúng trong cả môi trường phát triển và sản xuất. Dưới đây là các sửa đổi cần thiết:\n\n### 1. Sửa Đổi `server.js`\n\nTrong `server.js`, bạn cần đảm bảo rằng CORS được cấu hình đúng cho cả môi trường phát triển và sản xuất. Bạn cũng có thể thêm một số logging để dễ dàng theo dõi.\n\n```javascript:frontend/server.js\nconst http = require('http');\nconst fs = require('fs');\nconst path = require('path');\n\n// Add environment configuration\nconst env = process.env.NODE_ENV || 'development';\nconst config = {\n  development: {\n    port: 5000,\n    corsOrigin: 'http://localhost:25036'\n  },\n  production: {\n    port: 5000,\n    corsOrigin: 'http://103.253.20.13:25036'\n  }\n};\n\n// Use in your server setup\nconst currentConfig = config[env];\nconst port = process.env.PORT || currentConfig.port;\n\nconst server = http.createServer((req, res) => {\n  // Set CORS headers\n  res.setHeader('Access-Control-Allow-Origin', currentConfig.corsOrigin);\n  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');\n  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');\n\n  let filePath = '.' + req.url.split('?')[0];\n  if (filePath === './') {\n    filePath = './index.html';\n  }\n\n  if (filePath === './index.html' || filePath === './UIBuilder/index.html') {\n    filePath = path.join(__dirname, filePath);\n  }\n\n  const extname = String(path.extname(filePath)).toLowerCase();\n  const contentType = {\n    '.html': 'text/html',\n    '.js': 'text/javascript',\n    '.css': 'text/css',\n    '.json': 'application/json',\n    '.png': 'image/png',\n    '.jpg': 'image/jpg',\n  };\n\n  fs.readFile(filePath, (error, content) => {\n    if (error) {\n      if (error.code === 'ENOENT') {\n        fs.readFile(path.join(__dirname, 'index.html'), (err, content) => {\n          if (err) {\n            res.writeHead(404);\n            res.end('File not found');\n          } else {\n            res.writeHead(200, { 'Content-Type': 'text/html' });\n            res.end(content, 'utf-8');\n          }\n        });\n      } else {\n        res.writeHead(500);\n        res.end('Server error: ' + error.code);\n      }\n    } else {\n      res.writeHead(200, { 'Content-Type': contentType[extname] || 'text/plain' });\n      res.end(content, 'utf-8');\n    }\n  });\n});\n\nserver.listen(port, () => {\n  console.log(`Server running at port ${port}`);\n});\n```\n\n### 2. Sửa Đổi `script.js`\n\nTrong `script.js`, bạn cần đảm bảo rằng các API gọi đến backend sử dụng URL đúng cho môi trường sản xuất và phát triển.\n\n```javascript:frontend/script.js\nimport { getConfig } from './config.js';\n\nconst config = getConfig();\n\nasync function loadVideoFromUrl() {\n    const urlParams = new URLSearchParams(window.location.search);\n    const videoUrl = urlParams.get('video');\n    \n    if (videoUrl) {\n        const decodedUrl = decodeURIComponent(videoUrl);\n        console.log('URL video nhận được:', decodedUrl);\n        \n        // Set giá trị vào input\n        document.getElementById('videoLink').value = decodedUrl;\n        \n        try {\n            const apiUrl = `${config.backendUrl}/get_video_data?url=${encodeURIComponent(decodedUrl)}`;\n            console.log('API URL:', apiUrl);\n            \n            const response = await fetch(apiUrl);\n            if (!response.ok) {\n                throw new Error(`HTTP error! status: ${response.status}`);\n            }\n            \n            const data = await response.json();\n            console.log('API response:', data);\n            \n            // Load video\n            document.getElementById('loadVideo').click();\n            \n        } catch (error) {\n            console.error('Error loading video:', error);\n        }\n    }\n}\n\n// ... rest of your existing code ...\n```\n\n### 3. Sửa Đổi `config.js`\n\nTrong `config.js`, bạn cần đảm bảo rằng cấu hình cho môi trường sản xuất và phát triển được thiết lập chính xác.\n\n```javascript:frontend/config.js\nconst config = {\n  development: {\n    frontendUrl: 'http://localhost:25036',\n    backendUrl: 'http://localhost:25035',\n    liveDevelopment: 'http://127.0.0.1:5502/frontend'\n  },\n  production: {\n    frontendUrl: 'http://103.253.20.13:25036',\n    backendUrl: 'http://103.253.20.13:25035'\n  }\n};\n\n// Determine environment based on hostname\nconst getEnvironment = () => {\n  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {\n    return 'development';\n  }\n  return 'production';\n};\n\nexport const getConfig = () => {\n  const env = getEnvironment();\n  return config[env];\n};\n```\n\n### Kiểm Tra và Chạy Ứng Dụng\n\n1. **Chạy Ứng Dụng**: Sau khi thực hiện các thay đổi, hãy chạy lại ứng dụng của bạn bằng cách sử dụng Docker Compose:\n   ```bash\n   docker-compose -f docker-compose.prod.yml up -d --build\n   ```\n\n2. **Kiểm Tra Logs**: Kiểm tra logs để đảm bảo rằng không có lỗi nào xảy ra:\n   ```bash\n   docker-compose -f docker-compose.prod.yml logs -f\n   ```\n\n3. **Truy Cập Ứng Dụng**: Truy cập ứng dụng của bạn qua URL:\n   - Frontend: `http://103.253.20.13:25036`\n   - Backend: `http://103.253.20.13:25035`\n\n### Kết Luận\n\nVới các sửa đổi này, ứng dụng của bạn sẽ hoạt động đúng trong cả môi trường phát triển và sản xuất. Nếu bạn có bất kỳ câu hỏi nào hoặc cần thêm trợ giúp, hãy cho tôi biết!",
+      "match_count": 60,
+      "file": "frontend/server.js"
     },
     "file_statistics": [
       {
@@ -1941,12 +2027,6 @@
         "total_lines": 3,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
-      },
-      {
-        "file": "HowRun_demo2.md",
-        "total_lines": 42,
-        "ai_generated_lines": 1,
-        "ai_generated_percentage": 2.380952380952381
       },
       {
         "file": "Note_build_docker-compose.ipynb",
@@ -2243,16 +2323,10 @@
         "ai_generated_percentage": 0
       },
       {
-        "file": "docker-compose.dev.yml",
-        "total_lines": 40,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
-      },
-      {
         "file": "docker-compose.prod.yml",
-        "total_lines": 1,
-        "ai_generated_lines": 0,
-        "ai_generated_percentage": 0
+        "total_lines": 27,
+        "ai_generated_lines": 24,
+        "ai_generated_percentage": 88.88888888888889
       },
       {
         "file": "docker-compose.yml",
@@ -2562,7 +2636,7 @@
       },
       {
         "file": "testReadDB.txt",
-        "total_lines": 14,
+        "total_lines": 1308,
         "ai_generated_lines": 0,
         "ai_generated_percentage": 0
       }
