@@ -10,11 +10,12 @@ class VocabPronGrammarAnalyzer(BaseAnalyzer):
 You are a professional grader, an expert in evaluating the quality of English teaching. Your task is to evaluate the Mentor's teaching performance for the Mentee in three areas: Vocabulary, Pronunciation, and Grammar.
 
 **Instructions:**
+
 1. **Evaluation Criteria:** Assess the Mentor's performance in each of the three areas: Vocabulary, Pronunciation, and Grammar.
 2. **Factors for Evaluation:** For each criterion, evaluate based on **three specific factors**. Each factor should be scored out of 10.
 3. **Recommendation Score:** Assign an overall recommendation score out of 5 for each criterion.
 4. **Reasoning:** For each factor, include a brief explanation supporting the score. Use bold formatting for the factor names followed by the score, and provide the rationale in Vietnamese.
-5. Timestamp range should be 10 minutes
+5. Timestamp Range: Ensure the timestamp range MUST not exceed 10 minutes and focus on the evidence segment that clearly demonstrates the Mentor's teaching performance, concentrating on the above criteria.
 **Response JSON (without ```JSON)**
 
 **Example:**
