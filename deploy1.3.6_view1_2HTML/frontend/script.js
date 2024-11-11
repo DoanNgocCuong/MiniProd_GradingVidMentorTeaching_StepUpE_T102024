@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('viewAllVideos').addEventListener('click', () => {
-        window.location.href = './UIBuilder/index.html';
+        window.location.href = '/UIBuilder';
     });
 
     function updateTranscript(transcript) {
@@ -120,23 +120,72 @@ document.addEventListener('DOMContentLoaded', () => {
     function highlightTranscript(criterion) {
         const transcriptContent = document.getElementById('transcriptContent');
         
+        console.log('Highlighting details:', {
+            startTime: criterion.timestamp.start,
+            endTime: criterion.timestamp.end,
+            transcriptText: transcriptContent.innerHTML,
+            criterion: criterion
+        });
+        
+        // Remove old highlights
         const existingHighlights = transcriptContent.querySelectorAll('.highlight');
         existingHighlights.forEach(highlight => {
             highlight.classList.remove('highlight');
             highlight.outerHTML = highlight.innerHTML;
         });
-
+    
         const transcriptText = transcriptContent.innerHTML;
         const start = criterion.timestamp.start;
         const end = criterion.timestamp.end;
-        const regex = new RegExp(`(${start}.*?)(?=${end}|$)`, 'g');
         
-        const highlightedTranscript = transcriptText.replace(regex, `<div class="highlight" data-criteria="${criterion.recommendationScore.reason}">$1</div>`);
-        transcriptContent.innerHTML = highlightedTranscript;
-
+        // Convert timestamps to regex-safe format
+        const startRegex = start.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const endRegex = end.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        
+        // Find all lines between start and end timestamps
+        const lines = transcriptText.split('<br>');
+        let isHighlighting = false;
+        const highlightedLines = lines.map(line => {
+            // Check if line contains timestamp
+            const timeMatch = line.match(/\[(\d{2}:\d{2}:\d{2})\]/);
+            if (timeMatch) {
+                const timestamp = timeMatch[1];
+                
+                // Start highlighting when we reach start timestamp
+                if (timestamp >= startRegex) {
+                    isHighlighting = true;
+                }
+                
+                // Stop highlighting after end timestamp
+                if (timestamp > endRegex) {
+                    isHighlighting = false;
+                }
+            }
+            
+            // Wrap highlighted lines in div
+            if (isHighlighting && line.trim()) {
+                return `<div class="highlight" data-criteria="${criterion.recommendationScore.reason}">${line}</div>`;
+            }
+            
+            return line;
+        });
+        
+        // Update content
+        transcriptContent.innerHTML = highlightedLines.join('<br>');
+        
+        // Scroll to first highlighted element
         const highlightedElement = transcriptContent.querySelector('.highlight');
         if (highlightedElement) {
-            highlightedElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            highlightedElement.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        } else {
+            console.warn('No matching timestamp found in transcript', {
+                start,
+                end,
+                transcriptLength: transcriptText.length
+            });
         }
     }
 
